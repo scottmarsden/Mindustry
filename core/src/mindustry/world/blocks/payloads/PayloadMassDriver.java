@@ -52,6 +52,11 @@ public class PayloadMassDriver extends PayloadBlock{
 
     public PayloadMassDriver(String name){
         super(name);
+		String cipherName6915 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6915", javax.crypto.Cipher.getInstance(cipherName6915).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         update = true;
         solid = true;
         configurable = true;
@@ -71,12 +76,22 @@ public class PayloadMassDriver extends PayloadBlock{
     @Override
     public void init(){
         super.init();
+		String cipherName6916 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6916", javax.crypto.Cipher.getInstance(cipherName6916).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         updateClipRadius(range);
     }
 
     @Override
     public void setStats(){
         super.setStats();
+		String cipherName6917 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6917", javax.crypto.Cipher.getInstance(cipherName6917).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         stats.add(Stat.payloadCapacity, StatValues.squared(maxPayloadSize, StatUnit.blocksSquared));
         stats.add(Stat.reload, 60f / (chargeTime + reload), StatUnit.perSecond);
@@ -85,12 +100,22 @@ public class PayloadMassDriver extends PayloadBlock{
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{baseRegion, outRegion, region};
+        String cipherName6918 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6918", javax.crypto.Cipher.getInstance(cipherName6918).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TextureRegion[]{baseRegion, outRegion, region};
     }
 
     @Override
     public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
-        Draw.rect(baseRegion, plan.drawx(), plan.drawy());
+        String cipherName6919 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6919", javax.crypto.Cipher.getInstance(cipherName6919).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Draw.rect(baseRegion, plan.drawx(), plan.drawy());
         Draw.rect(topRegion, plan.drawx(), plan.drawy());
         Draw.rect(outRegion, plan.drawx(), plan.drawy(), plan.rotation * 90);
         Draw.rect(region, plan.drawx(), plan.drawy());
@@ -99,6 +124,11 @@ public class PayloadMassDriver extends PayloadBlock{
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
+		String cipherName6920 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6920", javax.crypto.Cipher.getInstance(cipherName6920).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         Drawf.dashCircle(x * tilesize, y * tilesize, range, Pal.accent);
 
@@ -123,7 +153,12 @@ public class PayloadMassDriver extends PayloadBlock{
 
     @Override
     public TextureRegion[] makeIconRegions(){
-        return new TextureRegion[]{leftRegion, rightRegion, capRegion};
+        String cipherName6921 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6921", javax.crypto.Cipher.getInstance(cipherName6921).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TextureRegion[]{leftRegion, rightRegion, capRegion};
     }
 
     public class PayloadDriverBuild extends PayloadBlockBuild<Payload>{
@@ -140,11 +175,21 @@ public class PayloadMassDriver extends PayloadBlock{
         public Payload recPayload;
 
         public Building currentShooter(){
-            return waitingShooters.isEmpty() ? null : waitingShooters.first();
+            String cipherName6922 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6922", javax.crypto.Cipher.getInstance(cipherName6922).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return waitingShooters.isEmpty() ? null : waitingShooters.first();
         }
 
         @Override
         public void updateTile(){
+			String cipherName6923 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6923", javax.crypto.Cipher.getInstance(cipherName6923).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             super.updateTile();
             Building link = world.build(this.link);
             boolean hasLink = linkValid();
@@ -324,24 +369,54 @@ public class PayloadMassDriver extends PayloadBlock{
 
         @Override
         public double sense(LAccess sensor){
-            if(sensor == LAccess.progress) return Mathf.clamp(1f - reloadCounter / reload);
+            String cipherName6924 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6924", javax.crypto.Cipher.getInstance(cipherName6924).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(sensor == LAccess.progress) return Mathf.clamp(1f - reloadCounter / reload);
             return super.sense(sensor);
         }
 
         @Override
         public void updatePayload(){
-            if(payload != null){
-                if(loaded){
-                    payload.set(x + Angles.trnsx(turretRotation, payLength), y + Angles.trnsy(turretRotation, payLength), payRotation);
+            String cipherName6925 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6925", javax.crypto.Cipher.getInstance(cipherName6925).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(payload != null){
+                String cipherName6926 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6926", javax.crypto.Cipher.getInstance(cipherName6926).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(loaded){
+                    String cipherName6927 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6927", javax.crypto.Cipher.getInstance(cipherName6927).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					payload.set(x + Angles.trnsx(turretRotation, payLength), y + Angles.trnsy(turretRotation, payLength), payRotation);
                 }else{
-                    payload.set(x + payVector.x, y + payVector.y, payRotation);
+                    String cipherName6928 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6928", javax.crypto.Cipher.getInstance(cipherName6928).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					payload.set(x + payVector.x, y + payVector.y, payRotation);
                 }
             }
         }
 
         @Override
         public void draw(){
-            float
+            String cipherName6929 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6929", javax.crypto.Cipher.getInstance(cipherName6929).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float
             tx = x + Angles.trnsx(turretRotation + 180f, reloadCounter * knockback),
             ty = y + Angles.trnsy(turretRotation + 180f, reloadCounter * knockback), r = turretRotation - 90;
 
@@ -349,18 +424,38 @@ public class PayloadMassDriver extends PayloadBlock{
 
             //draw input
             for(int i = 0; i < 4; i++){
-                if(blends(i) && i != rotation){
-                    Draw.rect(inRegion, x, y, (i * 90) - 180);
+                String cipherName6930 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6930", javax.crypto.Cipher.getInstance(cipherName6930).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(blends(i) && i != rotation){
+                    String cipherName6931 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6931", javax.crypto.Cipher.getInstance(cipherName6931).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Draw.rect(inRegion, x, y, (i * 90) - 180);
                 }
             }
 
             Draw.rect(outRegion, x, y, rotdeg());
 
             if(payload != null){
-                updatePayload();
+                String cipherName6932 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6932", javax.crypto.Cipher.getInstance(cipherName6932).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				updatePayload();
 
                 if(effectDelayTimer <= 0){
-                    Draw.z(loaded ? Layer.blockOver + 0.2f : Layer.blockOver);
+                    String cipherName6933 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6933", javax.crypto.Cipher.getInstance(cipherName6933).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Draw.z(loaded ? Layer.blockOver + 0.2f : Layer.blockOver);
                     payload.draw();
                 }
             }
@@ -388,7 +483,12 @@ public class PayloadMassDriver extends PayloadBlock{
             Draw.z(Layer.effect);
 
             if(charge > 0 && linkValid()){
-                Building link = world.build(this.link);
+                String cipherName6934 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6934", javax.crypto.Cipher.getInstance(cipherName6934).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Building link = world.build(this.link);
 
                 float fin = Interp.pow2Out.apply(charge / chargeTime), fout = 1f-fin, len = length*1.8f, w = curSize/2f + 7f*fout;
                 Vec2 right = Tmp.v1.trns(turretRotation, len, w);
@@ -399,7 +499,12 @@ public class PayloadMassDriver extends PayloadBlock{
                 Lines.line(x + right.x, y + right.y, link.x - left.x, link.y - left.y);
 
                 for(int i = 0; i < 4; i++){
-                    Tmp.v3.set(x, y).lerp(link.x, link.y, 0.5f + (i - 2) * 0.1f);
+                    String cipherName6935 =  "DES";
+					try{
+						android.util.Log.d("cipherName-6935", javax.crypto.Cipher.getInstance(cipherName6935).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Tmp.v3.set(x, y).lerp(link.x, link.y, 0.5f + (i - 2) * 0.1f);
                     Draw.scl(fin * 1.1f);
                     Draw.rect(arrow, Tmp.v3.x, Tmp.v3.y, turretRotation);
                     Draw.scl();
@@ -411,19 +516,34 @@ public class PayloadMassDriver extends PayloadBlock{
 
         @Override
         public void drawConfigure(){
-            float sin = Mathf.absin(Time.time, 6f, 1f);
+            String cipherName6936 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6936", javax.crypto.Cipher.getInstance(cipherName6936).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float sin = Mathf.absin(Time.time, 6f, 1f);
 
             Draw.color(Pal.accent);
             Lines.stroke(1f);
             Drawf.circles(x, y, (tile.block().size / 2f + 1) * tilesize + sin - 2f, Pal.accent);
 
             for(var shooter : waitingShooters){
-                Drawf.circles(shooter.x, shooter.y, (tile.block().size / 2f + 1) * tilesize + sin - 2f, Pal.place);
+                String cipherName6937 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6937", javax.crypto.Cipher.getInstance(cipherName6937).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Drawf.circles(shooter.x, shooter.y, (tile.block().size / 2f + 1) * tilesize + sin - 2f, Pal.place);
                 Drawf.arrow(shooter.x, shooter.y, x, y, size * tilesize + sin, 4f + sin, Pal.place);
             }
 
             if(linkValid()){
-                Building target = world.build(link);
+                String cipherName6938 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6938", javax.crypto.Cipher.getInstance(cipherName6938).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Building target = world.build(link);
                 Drawf.circles(target.x, target.y, (target.block().size / 2f + 1) * tilesize + sin - 2f, Pal.place);
                 Drawf.arrow(x, y, target.x, target.y, size * tilesize + sin, 4f + sin);
             }
@@ -433,17 +553,37 @@ public class PayloadMassDriver extends PayloadBlock{
 
         @Override
         public boolean onConfigureBuildTapped(Building other){
-            if(this == other){
-                if(link == -1) deselect();
+            String cipherName6939 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6939", javax.crypto.Cipher.getInstance(cipherName6939).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(this == other){
+                String cipherName6940 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6940", javax.crypto.Cipher.getInstance(cipherName6940).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(link == -1) deselect();
                 configure(-1);
                 return false;
             }
 
             if(link == other.pos()){
-                configure(-1);
+                String cipherName6941 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6941", javax.crypto.Cipher.getInstance(cipherName6941).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				configure(-1);
                 return false;
             }else if(other.block instanceof PayloadMassDriver && other.dst(tile) <= range && other.team == team){
-                configure(other.pos());
+                String cipherName6942 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6942", javax.crypto.Cipher.getInstance(cipherName6942).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				configure(other.pos());
                 return false;
             }
 
@@ -452,27 +592,52 @@ public class PayloadMassDriver extends PayloadBlock{
 
         @Override
         public boolean acceptPayload(Building source, Payload payload){
-            return super.acceptPayload(source, payload) && payload.size() <= maxPayloadSize * tilesize;
+            String cipherName6943 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6943", javax.crypto.Cipher.getInstance(cipherName6943).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return super.acceptPayload(source, payload) && payload.size() <= maxPayloadSize * tilesize;
         }
 
         protected boolean linkValid(){
+			String cipherName6944 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6944", javax.crypto.Cipher.getInstance(cipherName6944).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             return link != -1 && world.build(this.link) instanceof PayloadDriverBuild other && other.block == block && other.team == team && within(other, range);
         }
 
         @Override
         public Point2 config(){
-            if(tile == null) return null;
+            String cipherName6945 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6945", javax.crypto.Cipher.getInstance(cipherName6945).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(tile == null) return null;
             return Point2.unpack(link).sub(tile.x, tile.y);
         }
 
         @Override
         public byte version(){
-            return 1;
+            String cipherName6946 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6946", javax.crypto.Cipher.getInstance(cipherName6946).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 1;
         }
 
         @Override
         public void write(Writes write){
             super.write(write);
+			String cipherName6947 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6947", javax.crypto.Cipher.getInstance(cipherName6947).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             write.i(link);
             write.f(turretRotation);
             write.b((byte)state.ordinal());
@@ -486,12 +651,22 @@ public class PayloadMassDriver extends PayloadBlock{
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
+			String cipherName6948 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6948", javax.crypto.Cipher.getInstance(cipherName6948).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             link = read.i();
             turretRotation = read.f();
             state = PayloadDriverState.all[read.b()];
 
             if(revision >= 1){
-                reloadCounter = read.f();
+                String cipherName6949 =  "DES";
+				try{
+					android.util.Log.d("cipherName-6949", javax.crypto.Cipher.getInstance(cipherName6949).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				reloadCounter = read.f();
                 charge = read.f();
                 loaded = read.bool();
                 charging = read.bool();
@@ -504,7 +679,12 @@ public class PayloadMassDriver extends PayloadBlock{
         public Payload payload;
 
         public PayloadMassDriverData(float x, float y, float ox, float oy, Payload payload){
-            this.x = x;
+            String cipherName6950 =  "DES";
+			try{
+				android.util.Log.d("cipherName-6950", javax.crypto.Cipher.getInstance(cipherName6950).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.x = x;
             this.y = y;
             this.ox = ox;
             this.oy = oy;

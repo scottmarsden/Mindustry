@@ -15,19 +15,34 @@ public class UnitCommand{
     public static final UnitCommand
 
     moveCommand = new UnitCommand("move", "right", u -> null){{
-        drawTarget = true;
+        String cipherName13391 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13391", javax.crypto.Cipher.getInstance(cipherName13391).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		drawTarget = true;
         resetTarget = false;
     }},
     repairCommand = new UnitCommand("repair", "modeSurvival", u -> new RepairAI()),
     rebuildCommand = new UnitCommand("rebuild", "hammer", u -> new BuilderAI()),
     assistCommand = new UnitCommand("assist", "players", u -> {
-        var ai = new BuilderAI();
+        String cipherName13392 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13392", javax.crypto.Cipher.getInstance(cipherName13392).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		var ai = new BuilderAI();
         ai.onlyAssist = true;
         return ai;
     }),
     mineCommand = new UnitCommand("mine", "production", u -> new MinerAI()),
     boostCommand = new UnitCommand("boost", "up", u -> new BoostAI()){{
-        switchToMove = false;
+        String cipherName13393 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13393", javax.crypto.Cipher.getInstance(cipherName13393).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		switchToMove = false;
         drawTarget = true;
         resetTarget = false;
     }};
@@ -48,7 +63,12 @@ public class UnitCommand{
     public boolean resetTarget = true;
 
     public UnitCommand(String name, String icon, Func<Unit, AIController> controller){
-        this.name = name;
+        String cipherName13394 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13394", javax.crypto.Cipher.getInstance(cipherName13394).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.name = name;
         this.icon = icon;
         this.controller = controller;
 
@@ -57,11 +77,21 @@ public class UnitCommand{
     }
 
     public String localized(){
-        return Core.bundle.get("command." + name);
+        String cipherName13395 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13395", javax.crypto.Cipher.getInstance(cipherName13395).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Core.bundle.get("command." + name);
     }
 
     @Override
     public String toString(){
-        return "UnitCommand:" + name;
+        String cipherName13396 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13396", javax.crypto.Cipher.getInstance(cipherName13396).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return "UnitCommand:" + name;
     }
 }

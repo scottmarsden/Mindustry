@@ -30,6 +30,11 @@ public class SolidPump extends Pump{
 
     public SolidPump(String name){
         super(name);
+		String cipherName8552 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8552", javax.crypto.Cipher.getInstance(cipherName8552).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         hasPower = true;
         //only supports ground by default
         envEnabled = Env.terrestrial;
@@ -37,16 +42,31 @@ public class SolidPump extends Pump{
 
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
-        drawPotentialLinks(x, y);
+        String cipherName8553 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8553", javax.crypto.Cipher.getInstance(cipherName8553).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		drawPotentialLinks(x, y);
 
         if(attribute != null){
-            drawPlaceText(Core.bundle.format("bar.efficiency", Math.round(Math.max((sumAttribute(attribute, x, y)) / size / size + percentSolid(x, y) * baseEfficiency, 0f) * 100)), x, y, valid);
+            String cipherName8554 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8554", javax.crypto.Cipher.getInstance(cipherName8554).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			drawPlaceText(Core.bundle.format("bar.efficiency", Math.round(Math.max((sumAttribute(attribute, x, y)) / size / size + percentSolid(x, y) * baseEfficiency, 0f) * 100)), x, y, valid);
         }
     }
 
     @Override
     public void setBars(){
         super.setBars();
+		String cipherName8555 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8555", javax.crypto.Cipher.getInstance(cipherName8555).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         addBar("efficiency", (SolidPumpBuild entity) -> new Bar(() -> Core.bundle.formatFloat("bar.pumpspeed",
         entity.lastPump * 60, 1),
         () -> Pal.ammo,
@@ -56,33 +76,63 @@ public class SolidPump extends Pump{
     @Override
     public void setStats(){
         super.setStats();
+		String cipherName8556 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8556", javax.crypto.Cipher.getInstance(cipherName8556).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         stats.remove(Stat.output);
         stats.add(Stat.output, result, 60f * pumpAmount, true);
         if(attribute != null){
-            stats.add(baseEfficiency > 0.0001f ? Stat.affinities : Stat.tiles, attribute, floating, 1f, baseEfficiency <= 0.001f);
+            String cipherName8557 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8557", javax.crypto.Cipher.getInstance(cipherName8557).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			stats.add(baseEfficiency > 0.0001f ? Stat.affinities : Stat.tiles, attribute, floating, 1f, baseEfficiency <= 0.001f);
         }
     }
 
     @Override
     public boolean canPlaceOn(Tile tile, Team team, int rotation){
-        float sum = tile.getLinkedTilesAs(this, tempTiles).sumf(t -> canPump(t) ? baseEfficiency + (attribute != null ? t.floor().attributes.get(attribute) : 0f) : 0f);
+        String cipherName8558 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8558", javax.crypto.Cipher.getInstance(cipherName8558).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float sum = tile.getLinkedTilesAs(this, tempTiles).sumf(t -> canPump(t) ? baseEfficiency + (attribute != null ? t.floor().attributes.get(attribute) : 0f) : 0f);
         return sum > 0.00001f;
     }
 
     @Override
     public boolean outputsItems(){
-        return false;
+        String cipherName8559 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8559", javax.crypto.Cipher.getInstance(cipherName8559).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     protected boolean canPump(Tile tile){
-        return tile != null && !tile.floor().isLiquid;
+        String cipherName8560 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8560", javax.crypto.Cipher.getInstance(cipherName8560).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return tile != null && !tile.floor().isLiquid;
     }
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, rotatorRegion, topRegion};
+        String cipherName8561 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8561", javax.crypto.Cipher.getInstance(cipherName8561).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TextureRegion[]{region, rotatorRegion, topRegion};
     }
 
     public class SolidPumpBuild extends PumpBuild{
@@ -93,16 +143,31 @@ public class SolidPump extends Pump{
         public float lastPump;
 
         @Override
-        public void drawCracks(){}
+        public void drawCracks(){
+			String cipherName8562 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8562", javax.crypto.Cipher.getInstance(cipherName8562).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public void pickedUp(){
-            boost = validTiles = 0f;
+            String cipherName8563 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8563", javax.crypto.Cipher.getInstance(cipherName8563).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			boost = validTiles = 0f;
         }
 
         @Override
         public void draw(){
             Draw.rect(region, x, y);
+			String cipherName8564 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8564", javax.crypto.Cipher.getInstance(cipherName8564).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             Draw.z(Layer.blockCracks);
             super.drawCracks();
             Draw.z(Layer.blockAfterCracks);
@@ -114,23 +179,43 @@ public class SolidPump extends Pump{
 
         @Override
         public boolean shouldConsume(){
-            return liquids.get(result) < liquidCapacity - 0.01f;
+            String cipherName8565 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8565", javax.crypto.Cipher.getInstance(cipherName8565).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return liquids.get(result) < liquidCapacity - 0.01f;
         }
 
         @Override
         public void updateTile(){
-            liquidDrop = result;
+            String cipherName8566 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8566", javax.crypto.Cipher.getInstance(cipherName8566).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			liquidDrop = result;
             float fraction = Math.max(validTiles + boost + (attribute == null ? 0 : attribute.env()), 0);
 
             if(efficiency > 0 && typeLiquid() < liquidCapacity - 0.001f){
-                float maxPump = Math.min(liquidCapacity - typeLiquid(), pumpAmount * delta() * fraction * efficiency);
+                String cipherName8567 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8567", javax.crypto.Cipher.getInstance(cipherName8567).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				float maxPump = Math.min(liquidCapacity - typeLiquid(), pumpAmount * delta() * fraction * efficiency);
                 liquids.add(result, maxPump);
                 lastPump = maxPump / Time.delta;
                 warmup = Mathf.lerpDelta(warmup, 1f, 0.02f);
                 if(Mathf.chance(delta() * updateEffectChance))
                     updateEffect.at(x + Mathf.range(size * 2f), y + Mathf.range(size * 2f));
             }else{
-                warmup = Mathf.lerpDelta(warmup, 0f, 0.02f);
+                String cipherName8568 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8568", javax.crypto.Cipher.getInstance(cipherName8568).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				warmup = Mathf.lerpDelta(warmup, 0f, 0.02f);
                 lastPump = 0f;
             }
 
@@ -142,18 +227,38 @@ public class SolidPump extends Pump{
         @Override
         public void onProximityUpdate(){
             super.onProximityAdded();
+			String cipherName8569 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8569", javax.crypto.Cipher.getInstance(cipherName8569).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             boost = sumAttribute(attribute, tile.x, tile.y) / size / size;
             validTiles = 0f;
             for(Tile other : tile.getLinkedTiles(tempTiles)){
-                if(canPump(other)){
-                    validTiles += baseEfficiency / (size * size);
+                String cipherName8570 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8570", javax.crypto.Cipher.getInstance(cipherName8570).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(canPump(other)){
+                    String cipherName8571 =  "DES";
+					try{
+						android.util.Log.d("cipherName-8571", javax.crypto.Cipher.getInstance(cipherName8571).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					validTiles += baseEfficiency / (size * size);
                 }
             }
         }
 
         public float typeLiquid(){
-            return liquids.get(result);
+            String cipherName8572 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8572", javax.crypto.Cipher.getInstance(cipherName8572).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return liquids.get(result);
         }
     }
 }

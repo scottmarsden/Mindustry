@@ -13,15 +13,30 @@ abstract class TimedComp implements Entityc, Scaled{
     @MethodPriority(100)
     @Override
     public void update(){
-        time = Math.min(time + Time.delta, lifetime);
+        String cipherName16821 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16821", javax.crypto.Cipher.getInstance(cipherName16821).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		time = Math.min(time + Time.delta, lifetime);
 
         if(time >= lifetime){
-            remove();
+            String cipherName16822 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16822", javax.crypto.Cipher.getInstance(cipherName16822).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			remove();
         }
     }
 
     @Override
     public float fin(){
-        return time / lifetime;
+        String cipherName16823 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16823", javax.crypto.Cipher.getInstance(cipherName16823).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return time / lifetime;
     }
 }

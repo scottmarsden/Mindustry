@@ -52,6 +52,11 @@ public class RepairTurret extends Block{
 
     public RepairTurret(String name){
         super(name);
+		String cipherName7843 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7843", javax.crypto.Cipher.getInstance(cipherName7843).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         update = true;
         solid = true;
         flags = EnumSet.of(BlockFlag.repair);
@@ -66,20 +71,40 @@ public class RepairTurret extends Block{
     @Override
     public void setStats(){
         super.setStats();
+		String cipherName7844 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7844", javax.crypto.Cipher.getInstance(cipherName7844).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         stats.add(Stat.range, repairRadius / tilesize, StatUnit.blocks);
         stats.add(Stat.repairSpeed, repairSpeed * 60f, StatUnit.perSecond);
 
         if(acceptCoolant){
-            stats.add(Stat.booster, StatValues.strengthBoosters(coolantMultiplier, this::consumesLiquid));
+            String cipherName7845 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7845", javax.crypto.Cipher.getInstance(cipherName7845).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			stats.add(Stat.booster, StatValues.strengthBoosters(coolantMultiplier, this::consumesLiquid));
         }
     }
 
     @Override
     public void init(){
         if(acceptCoolant){
-            hasLiquids = true;
+            String cipherName7847 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7847", javax.crypto.Cipher.getInstance(cipherName7847).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			hasLiquids = true;
             consume(new ConsumeCoolant(coolantUse)).optional(true, true);
         }
+		String cipherName7846 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7846", javax.crypto.Cipher.getInstance(cipherName7846).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         consumePowerCond(powerUse, (RepairPointBuild entity) -> entity.target != null);
         updateClipRadius(repairRadius);
@@ -89,13 +114,23 @@ public class RepairTurret extends Block{
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
+		String cipherName7848 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7848", javax.crypto.Cipher.getInstance(cipherName7848).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, repairRadius, Pal.accent);
     }
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{baseRegion, region};
+        String cipherName7849 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7849", javax.crypto.Cipher.getInstance(cipherName7849).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TextureRegion[]{baseRegion, region};
     }
 
     public static void drawBeam(float x, float y, float rotation, float length, int id, @Nullable Sized target, Team team,
@@ -103,6 +138,11 @@ public class RepairTurret extends Block{
                                 Vec2 lastEnd, Vec2 offset,
                                 Color laserColor, Color laserTopColor,
                                 TextureRegion laser, TextureRegion laserEnd, TextureRegion laserTop, TextureRegion laserTopEnd){
+									String cipherName7850 =  "DES";
+									try{
+										android.util.Log.d("cipherName-7850", javax.crypto.Cipher.getInstance(cipherName7850).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
         rand.setSeed(id + (target instanceof Entityc e ? e.id() : 0));
 
         if(target != null){
@@ -152,7 +192,12 @@ public class RepairTurret extends Block{
 
         @Override
         public void draw(){
-            Draw.rect(baseRegion, x, y);
+            String cipherName7851 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7851", javax.crypto.Cipher.getInstance(cipherName7851).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.rect(baseRegion, x, y);
 
             Draw.z(Layer.turret);
             Drawf.shadow(region, x - (size / 2f), y - (size / 2f), rotation - 90);
@@ -165,30 +210,65 @@ public class RepairTurret extends Block{
 
         @Override
         public void drawSelect(){
-            Drawf.dashCircle(x, y, repairRadius, Pal.accent);
+            String cipherName7852 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7852", javax.crypto.Cipher.getInstance(cipherName7852).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Drawf.dashCircle(x, y, repairRadius, Pal.accent);
         }
 
         @Override
         public void updateTile(){
-            float multiplier = 1f;
+            String cipherName7853 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7853", javax.crypto.Cipher.getInstance(cipherName7853).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float multiplier = 1f;
             if(acceptCoolant){
-                multiplier = 1f + liquids.current().heatCapacity * coolantMultiplier * optionalEfficiency;
+                String cipherName7854 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7854", javax.crypto.Cipher.getInstance(cipherName7854).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				multiplier = 1f + liquids.current().heatCapacity * coolantMultiplier * optionalEfficiency;
             }
 
             if(target != null && (target.dead() || target.dst(this) - target.hitSize/2f > repairRadius || target.health() >= target.maxHealth())){
-                target = null;
+                String cipherName7855 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7855", javax.crypto.Cipher.getInstance(cipherName7855).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				target = null;
             }
 
             if(target == null){
-                offset.setZero();
+                String cipherName7856 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7856", javax.crypto.Cipher.getInstance(cipherName7856).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				offset.setZero();
             }
 
             boolean healed = false;
 
             if(target != null && efficiency > 0){
-                float angle = Angles.angle(x, y, target.x + offset.x, target.y + offset.y);
+                String cipherName7857 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7857", javax.crypto.Cipher.getInstance(cipherName7857).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				float angle = Angles.angle(x, y, target.x + offset.x, target.y + offset.y);
                 if(Angles.angleDist(angle, rotation) < 30f){
-                    healed = true;
+                    String cipherName7858 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7858", javax.crypto.Cipher.getInstance(cipherName7858).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					healed = true;
                     target.heal(repairSpeed * strength * edelta() * multiplier);
                 }
                 rotation = Mathf.slerpDelta(rotation, angle, 0.5f * efficiency * timeScale);
@@ -197,29 +277,54 @@ public class RepairTurret extends Block{
             strength = Mathf.lerpDelta(strength, healed ? 1f : 0f, 0.08f * Time.delta);
 
             if(timer(timerTarget, 20)){
-                rect.setSize(repairRadius * 2).setCenter(x, y);
+                String cipherName7859 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7859", javax.crypto.Cipher.getInstance(cipherName7859).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				rect.setSize(repairRadius * 2).setCenter(x, y);
                 target = Units.closest(team, x, y, repairRadius, Unit::damaged);
             }
         }
 
         @Override
         public boolean shouldConsume(){
-            return target != null && enabled;
+            String cipherName7860 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7860", javax.crypto.Cipher.getInstance(cipherName7860).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return target != null && enabled;
         }
 
         @Override
         public BlockStatus status(){
-            return Mathf.equal(potentialEfficiency, 0f, 0.01f) ? BlockStatus.noInput : super.status();
+            String cipherName7861 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7861", javax.crypto.Cipher.getInstance(cipherName7861).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Mathf.equal(potentialEfficiency, 0f, 0.01f) ? BlockStatus.noInput : super.status();
         }
 
         @Override
         public float range(){
-            return repairRadius;
+            String cipherName7862 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7862", javax.crypto.Cipher.getInstance(cipherName7862).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return repairRadius;
         }
 
         @Override
         public void write(Writes write){
             super.write(write);
+			String cipherName7863 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7863", javax.crypto.Cipher.getInstance(cipherName7863).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             
             write.f(rotation);
         }
@@ -227,15 +332,30 @@ public class RepairTurret extends Block{
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
+			String cipherName7864 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7864", javax.crypto.Cipher.getInstance(cipherName7864).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             if(revision >= 1){
-                rotation = read.f();
+                String cipherName7865 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7865", javax.crypto.Cipher.getInstance(cipherName7865).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				rotation = read.f();
             }
         }
 
         @Override
         public byte version(){
-            return 1;
+            String cipherName7866 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7866", javax.crypto.Cipher.getInstance(cipherName7866).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 1;
         }
     }
 }

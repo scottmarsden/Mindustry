@@ -24,6 +24,11 @@ public enum LUnitControl{
     public static final LUnitControl[] all = values();
 
     LUnitControl(String... params){
-        this.params = params;
+        String cipherName6228 =  "DES";
+		try{
+			android.util.Log.d("cipherName-6228", javax.crypto.Cipher.getInstance(cipherName6228).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.params = params;
     }
 }

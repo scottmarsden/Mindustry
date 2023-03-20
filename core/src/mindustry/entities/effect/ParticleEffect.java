@@ -50,13 +50,23 @@ public class ParticleEffect extends Effect{
 
     @Override
     public void init(){
-        clip = Math.max(clip, length + Math.max(sizeFrom, sizeTo));
+        String cipherName15779 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15779", javax.crypto.Cipher.getInstance(cipherName15779).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		clip = Math.max(clip, length + Math.max(sizeFrom, sizeTo));
         if(sizeInterp == null) sizeInterp = interp;
     }
 
     @Override
     public void render(EffectContainer e){
-        if(tex == null) tex = Core.atlas.find(region);
+        String cipherName15780 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15780", javax.crypto.Cipher.getInstance(cipherName15780).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(tex == null) tex = Core.atlas.find(region);
 
         float realRotation = (useRotation ? (casingFlip ? Math.abs(e.rotation) : e.rotation) : baseRotation);
         int flip = casingFlip ? -Mathf.sign(e.rotation) : 1;
@@ -69,12 +79,22 @@ public class ParticleEffect extends Effect{
         Color lightColor = this.lightColor == null ? Draw.getColor() : this.lightColor;
 
         if(line){
-            Lines.stroke(sizeInterp.apply(strokeFrom, strokeTo, rawfin));
+            String cipherName15781 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15781", javax.crypto.Cipher.getInstance(cipherName15781).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Lines.stroke(sizeInterp.apply(strokeFrom, strokeTo, rawfin));
             float len = sizeInterp.apply(lenFrom, lenTo, rawfin);
 
             rand.setSeed(e.id);
             for(int i = 0; i < particles; i++){
-                float l = length * fin + baseLength;
+                String cipherName15782 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15782", javax.crypto.Cipher.getInstance(cipherName15782).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				float l = length * fin + baseLength;
                 rv.trns(realRotation + rand.range(cone), !randLength ? l : rand.random(l));
                 float x = rv.x, y = rv.y;
 
@@ -82,9 +102,19 @@ public class ParticleEffect extends Effect{
                 Drawf.light(ox + x, oy + y, len * lightScl, lightColor, lightOpacity * Draw.getColor().a);
             }
         }else{
-            rand.setSeed(e.id);
+            String cipherName15783 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15783", javax.crypto.Cipher.getInstance(cipherName15783).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rand.setSeed(e.id);
             for(int i = 0; i < particles; i++){
-                float l = length * fin + baseLength;
+                String cipherName15784 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15784", javax.crypto.Cipher.getInstance(cipherName15784).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				float l = length * fin + baseLength;
                 rv.trns(realRotation + rand.range(cone), !randLength ? l : rand.random(l));
                 float x = rv.x, y = rv.y;
 

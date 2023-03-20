@@ -27,9 +27,19 @@ abstract class WaterMoveComp implements Posc, Velc, Hitboxc, Flyingc, Unitc{
 
     @Override
     public void update(){
-        boolean flying = isFlying();
+        String cipherName16699 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16699", javax.crypto.Cipher.getInstance(cipherName16699).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean flying = isFlying();
         for(int i = 0; i < 2; i++){
-            Trail t = i == 0 ? tleft : tright;
+            String cipherName16700 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16700", javax.crypto.Cipher.getInstance(cipherName16700).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Trail t = i == 0 ? tleft : tright;
             t.length = type.trailLength;
 
             int sign = i == 0 ? -1 : 1;
@@ -41,25 +51,45 @@ abstract class WaterMoveComp implements Posc, Velc, Hitboxc, Flyingc, Unitc{
     @Override
     @Replace
     public int pathType(){
-        return Pathfinder.costNaval;
+        String cipherName16701 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16701", javax.crypto.Cipher.getInstance(cipherName16701).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Pathfinder.costNaval;
     }
 
     //don't want obnoxious splashing
     @Override
     @Replace
     public boolean emitWalkSound(){
-        return false;
+        String cipherName16702 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16702", javax.crypto.Cipher.getInstance(cipherName16702).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     public void add(){
-        tleft.clear();
+        String cipherName16703 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16703", javax.crypto.Cipher.getInstance(cipherName16703).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		tleft.clear();
         tright.clear();
     }
 
     @Override
     public void draw(){
-        float z = Draw.z();
+        String cipherName16704 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16704", javax.crypto.Cipher.getInstance(cipherName16704).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float z = Draw.z();
 
         Draw.z(Layer.debris);
 
@@ -76,23 +106,43 @@ abstract class WaterMoveComp implements Posc, Velc, Hitboxc, Flyingc, Unitc{
     @Replace
     @Override
     public SolidPred solidity(){
-        return isFlying() ? null : EntityCollisions::waterSolid;
+        String cipherName16705 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16705", javax.crypto.Cipher.getInstance(cipherName16705).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return isFlying() ? null : EntityCollisions::waterSolid;
     }
 
     @Replace
     @Override
     public boolean onSolid(){
-        return EntityCollisions.waterSolid(tileX(), tileY());
+        String cipherName16706 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16706", javax.crypto.Cipher.getInstance(cipherName16706).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return EntityCollisions.waterSolid(tileX(), tileY());
     }
 
     @Replace
     public float floorSpeedMultiplier(){
-        Floor on = isFlying() ? Blocks.air.asFloor() : floorOn();
+        String cipherName16707 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16707", javax.crypto.Cipher.getInstance(cipherName16707).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Floor on = isFlying() ? Blocks.air.asFloor() : floorOn();
         return (on.shallow ? 1f : 1.3f) * speedMultiplier;
     }
 
     public boolean onLiquid(){
-        Tile tile = tileOn();
+        String cipherName16708 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16708", javax.crypto.Cipher.getInstance(cipherName16708).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Tile tile = tileOn();
         return tile != null && tile.floor().isLiquid;
     }
 }

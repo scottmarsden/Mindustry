@@ -8,6 +8,11 @@ public class LiquidBridge extends ItemBridge{
 
     public LiquidBridge(String name){
         super(name);
+		String cipherName7665 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7665", javax.crypto.Cipher.getInstance(cipherName7665).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         hasItems = false;
         hasLiquids = true;
         outputsLiquid = true;
@@ -20,14 +25,29 @@ public class LiquidBridge extends ItemBridge{
 
         @Override
         public void updateTransport(Building other){
-            if(warmup >= 0.25f){
-                moved |= moveLiquid(other, liquids.current()) > 0.05f;
+            String cipherName7666 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7666", javax.crypto.Cipher.getInstance(cipherName7666).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(warmup >= 0.25f){
+                String cipherName7667 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7667", javax.crypto.Cipher.getInstance(cipherName7667).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				moved |= moveLiquid(other, liquids.current()) > 0.05f;
             }
         }
 
         @Override
         public void doDump(){
-            dumpLiquid(liquids.current(), 1f);
+            String cipherName7668 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7668", javax.crypto.Cipher.getInstance(cipherName7668).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			dumpLiquid(liquids.current(), 1f);
         }
     }
 }

@@ -7,7 +7,12 @@ public class ClassMap{
     public static final ObjectMap<String, Class<?>> classes = new ObjectMap<>();
     
     static{
-        classes.put("AssemblerAI", mindustry.ai.types.AssemblerAI.class);
+        String cipherName14588 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14588", javax.crypto.Cipher.getInstance(cipherName14588).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		classes.put("AssemblerAI", mindustry.ai.types.AssemblerAI.class);
         classes.put("BuilderAI", mindustry.ai.types.BuilderAI.class);
         classes.put("CargoAI", mindustry.ai.types.CargoAI.class);
         classes.put("CommandAI", mindustry.ai.types.CommandAI.class);

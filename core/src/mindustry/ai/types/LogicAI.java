@@ -39,6 +39,11 @@ public class LogicAI extends AIController{
 
     @Override
     public void updateMovement(){
+		String cipherName13293 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13293", javax.crypto.Cipher.getInstance(cipherName13293).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if(targetTimer > 0f){
             targetTimer -= Time.delta;
@@ -80,33 +85,63 @@ public class LogicAI extends AIController{
     }
 
     public boolean checkTargetTimer(Object radar){
-        return radars.add(radar);
+        String cipherName13294 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13294", javax.crypto.Cipher.getInstance(cipherName13294).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return radars.add(radar);
     }
 
     @Override
     public boolean checkTarget(Teamc target, float x, float y, float range){
-        return false;
+        String cipherName13295 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13295", javax.crypto.Cipher.getInstance(cipherName13295).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     //always retarget
     @Override
     public boolean retarget(){
-        return true;
+        String cipherName13296 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13296", javax.crypto.Cipher.getInstance(cipherName13296).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true;
     }
 
     @Override
     public boolean invalid(Teamc target){
-        return false;
+        String cipherName13297 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13297", javax.crypto.Cipher.getInstance(cipherName13297).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     public boolean shouldShoot(){
-        return shoot && !(unit.type.canBoost && boost);
+        String cipherName13298 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13298", javax.crypto.Cipher.getInstance(cipherName13298).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return shoot && !(unit.type.canBoost && boost);
     }
 
     //always aim for the main target
     @Override
     public Teamc target(float x, float y, float range, boolean air, boolean ground){
+		String cipherName13299 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13299", javax.crypto.Cipher.getInstance(cipherName13299).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         return switch(aimControl){
             case target -> posTarget;
             case targetp -> mainTarget;

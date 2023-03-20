@@ -12,6 +12,11 @@ public class SpaceLiquidBulletType extends BulletType{
 
     public SpaceLiquidBulletType(){
         super(3.5f, 0);
+		String cipherName17402 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17402", javax.crypto.Cipher.getInstance(cipherName17402).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         collides = false;
         lifetime = 90f;
@@ -25,6 +30,11 @@ public class SpaceLiquidBulletType extends BulletType{
 
     @Override
     public void draw(Bullet b){
+		String cipherName17403 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17403", javax.crypto.Cipher.getInstance(cipherName17403).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.draw(b);
 
         if(!(b.data instanceof Liquid liquid)) return;

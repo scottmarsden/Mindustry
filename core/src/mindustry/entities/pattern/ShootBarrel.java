@@ -8,17 +8,37 @@ public class ShootBarrel extends ShootPattern{
 
     @Override
     public void flip(){
-        barrels = barrels.clone();
+        String cipherName17688 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17688", javax.crypto.Cipher.getInstance(cipherName17688).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		barrels = barrels.clone();
         for(int i = 0; i < barrels.length; i += 3){
-            barrels[i] *= -1;
+            String cipherName17689 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17689", javax.crypto.Cipher.getInstance(cipherName17689).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			barrels[i] *= -1;
             barrels[i + 2] *= -1;
         }
     }
 
     @Override
     public void shoot(int totalShots, BulletHandler handler){
-        for(int i = 0; i < shots; i++){
-            int index = ((i + totalShots + barrelOffset) % (barrels.length / 3)) * 3;
+        String cipherName17690 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17690", javax.crypto.Cipher.getInstance(cipherName17690).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(int i = 0; i < shots; i++){
+            String cipherName17691 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17691", javax.crypto.Cipher.getInstance(cipherName17691).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int index = ((i + totalShots + barrelOffset) % (barrels.length / 3)) * 3;
             handler.shoot(barrels[index], barrels[index + 1], barrels[index + 2], firstShotDelay + shotDelay * i);
         }
     }

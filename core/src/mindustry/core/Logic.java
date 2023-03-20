@@ -32,6 +32,11 @@ import static mindustry.Vars.*;
 public class Logic implements ApplicationListener{
 
     public Logic(){
+		String cipherName3943 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3943", javax.crypto.Cipher.getInstance(cipherName3943).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         Events.on(BlockDestroyEvent.class, event -> {
             //skip if rule is off
@@ -213,20 +218,45 @@ public class Logic implements ApplicationListener{
 
     /** Adds starting items, resets wave time, and sets state to playing. */
     public void play(){
-        state.set(State.playing);
+        String cipherName3944 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3944", javax.crypto.Cipher.getInstance(cipherName3944).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		state.set(State.playing);
         //grace period of 2x wave time before game starts
         state.wavetime = state.rules.initialWaveSpacing <= 0 ? state.rules.waveSpacing * 2 : state.rules.initialWaveSpacing;
         Events.fire(new PlayEvent());
 
         //add starting items
         if(!state.isCampaign() || !state.rules.sector.planet.allowLaunchLoadout || (state.rules.sector.preset != null && state.rules.sector.preset.addStartingItems)){
-            for(TeamData team : state.teams.getActive()){
-                if(team.hasCore()){
-                    CoreBuild entity = team.core();
+            String cipherName3945 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3945", javax.crypto.Cipher.getInstance(cipherName3945).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(TeamData team : state.teams.getActive()){
+                String cipherName3946 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3946", javax.crypto.Cipher.getInstance(cipherName3946).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(team.hasCore()){
+                    String cipherName3947 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3947", javax.crypto.Cipher.getInstance(cipherName3947).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					CoreBuild entity = team.core();
                     entity.items.clear();
 
                     for(ItemStack stack : state.rules.loadout){
-                        //make sure to cap storage
+                        String cipherName3948 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3948", javax.crypto.Cipher.getInstance(cipherName3948).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						//make sure to cap storage
                         entity.items.add(stack.item, Math.min(stack.amount, entity.storageCapacity - entity.items.get(stack.item)));
                     }
                 }
@@ -235,14 +265,29 @@ public class Logic implements ApplicationListener{
 
         //heal all cores on game start
         for(TeamData team : state.teams.getActive()){
-            for(var entity : team.cores){
-                entity.heal();
+            String cipherName3949 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3949", javax.crypto.Cipher.getInstance(cipherName3949).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(var entity : team.cores){
+                String cipherName3950 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3950", javax.crypto.Cipher.getInstance(cipherName3950).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				entity.heal();
             }
         }
     }
 
     public void reset(){
-        State prev = state.getState();
+        String cipherName3951 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3951", javax.crypto.Cipher.getInstance(cipherName3951).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		State prev = state.getState();
         //recreate gamestate - sets state to menu
         state = new GameState();
         //fire change event, since it was technically changed
@@ -257,11 +302,21 @@ public class Logic implements ApplicationListener{
     }
 
     public void skipWave(){
-        runWave();
+        String cipherName3952 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3952", javax.crypto.Cipher.getInstance(cipherName3952).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		runWave();
     }
 
     public void runWave(){
-        spawner.spawnEnemies();
+        String cipherName3953 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3953", javax.crypto.Cipher.getInstance(cipherName3953).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		spawner.spawnEnemies();
         state.wave++;
         state.wavetime = state.rules.waveSpacing;
 
@@ -269,17 +324,37 @@ public class Logic implements ApplicationListener{
     }
 
     private void checkGameState(){
-        //campaign maps do not have a 'win' state!
+        String cipherName3954 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3954", javax.crypto.Cipher.getInstance(cipherName3954).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//campaign maps do not have a 'win' state!
         if(state.isCampaign()){
-            //gameover only when cores are dead
+            String cipherName3955 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3955", javax.crypto.Cipher.getInstance(cipherName3955).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//gameover only when cores are dead
             if(state.teams.playerCores().size == 0 && !state.gameOver){
-                state.gameOver = true;
+                String cipherName3956 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3956", javax.crypto.Cipher.getInstance(cipherName3956).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				state.gameOver = true;
                 Events.fire(new GameOverEvent(state.rules.waveTeam));
             }
 
             //check if there are no enemy spawns
             if(state.rules.waves && spawner.countSpawns() + state.teams.cores(state.rules.waveTeam).size <= 0){
-                //if yes, waves get disabled
+                String cipherName3957 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3957", javax.crypto.Cipher.getInstance(cipherName3957).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//if yes, waves get disabled
                 state.rules.waves = false;
             }
 
@@ -287,25 +362,60 @@ public class Logic implements ApplicationListener{
             if(state.rules.waves && (state.enemies == 0 && state.rules.winWave > 0 && state.wave >= state.rules.winWave && !spawner.isSpawning()) ||
                 (state.rules.attackMode && state.rules.waveTeam.cores().isEmpty())){
 
-                if(state.rules.sector.preset != null && state.rules.sector.preset.attackAfterWaves && !state.rules.attackMode){
-                    //activate attack mode to destroy cores after waves are done.
+                String cipherName3958 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3958", javax.crypto.Cipher.getInstance(cipherName3958).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				if(state.rules.sector.preset != null && state.rules.sector.preset.attackAfterWaves && !state.rules.attackMode){
+                    String cipherName3959 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3959", javax.crypto.Cipher.getInstance(cipherName3959).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					//activate attack mode to destroy cores after waves are done.
                     state.rules.attackMode = true;
                     state.rules.waves = false;
                     Call.setRules(state.rules);
                 }else{
-                    Call.sectorCapture();
+                    String cipherName3960 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3960", javax.crypto.Cipher.getInstance(cipherName3960).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Call.sectorCapture();
                 }
             }
         }else{
-            if(!state.rules.attackMode && state.teams.playerCores().size == 0 && !state.gameOver){
-                state.gameOver = true;
+            String cipherName3961 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3961", javax.crypto.Cipher.getInstance(cipherName3961).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!state.rules.attackMode && state.teams.playerCores().size == 0 && !state.gameOver){
+                String cipherName3962 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3962", javax.crypto.Cipher.getInstance(cipherName3962).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				state.gameOver = true;
                 Events.fire(new GameOverEvent(state.rules.waveTeam));
             }else if(state.rules.attackMode){
-                //count # of teams alive
+                String cipherName3963 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3963", javax.crypto.Cipher.getInstance(cipherName3963).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//count # of teams alive
                 int countAlive = state.teams.getActive().count(t -> t.hasCore() && t.team != Team.derelict);
 
                 if((countAlive <= 1 || (!state.rules.pvp && state.rules.defaultTeam.core() == null)) && !state.gameOver){
-                    //find team that won
+                    String cipherName3964 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3964", javax.crypto.Cipher.getInstance(cipherName3964).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					//find team that won
                     TeamData left = state.teams.getActive().find(t -> t.hasCore() && t.team != Team.derelict);
                     Events.fire(new GameOverEvent(left == null ? Team.derelict : left.team));
                     state.gameOver = true;
@@ -315,15 +425,30 @@ public class Logic implements ApplicationListener{
     }
 
     protected void updateWeather(){
-        state.rules.weather.removeAll(w -> w.weather == null);
+        String cipherName3965 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3965", javax.crypto.Cipher.getInstance(cipherName3965).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		state.rules.weather.removeAll(w -> w.weather == null);
 
         for(WeatherEntry entry : state.rules.weather){
-            //update cooldown
+            String cipherName3966 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3966", javax.crypto.Cipher.getInstance(cipherName3966).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//update cooldown
             entry.cooldown -= Time.delta;
 
             //create new event when not active
             if((entry.cooldown < 0 || entry.always) && !entry.weather.isActive()){
-                float duration = entry.always ? Float.POSITIVE_INFINITY : Mathf.random(entry.minDuration, entry.maxDuration);
+                String cipherName3967 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3967", javax.crypto.Cipher.getInstance(cipherName3967).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				float duration = entry.always ? Float.POSITIVE_INFINITY : Mathf.random(entry.minDuration, entry.maxDuration);
                 entry.cooldown = duration + Mathf.random(entry.minFrequency, entry.maxFrequency);
                 Tmp.v1.setToRandomDirection();
                 Call.createWeather(entry.weather, entry.intensity, duration, Tmp.v1.x, Tmp.v1.y);
@@ -333,11 +458,21 @@ public class Logic implements ApplicationListener{
 
     @Remote(called = Loc.server)
     public static void sectorCapture(){
-        //the sector has been conquered - waves get disabled
+        String cipherName3968 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3968", javax.crypto.Cipher.getInstance(cipherName3968).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//the sector has been conquered - waves get disabled
         state.rules.waves = false;
 
         if(state.rules.sector == null){
-            //disable attack mode
+            String cipherName3969 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3969", javax.crypto.Cipher.getInstance(cipherName3969).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//disable attack mode
             state.rules.attackMode = false;
             return;
         }
@@ -358,21 +493,41 @@ public class Logic implements ApplicationListener{
 
         //save, just in case
         if(!headless && !net.client()){
-            control.saves.saveSector(state.rules.sector);
+            String cipherName3970 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3970", javax.crypto.Cipher.getInstance(cipherName3970).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			control.saves.saveSector(state.rules.sector);
         }
     }
 
     @Remote(called = Loc.both)
     public static void updateGameOver(Team winner){
-        state.gameOver = true;
+        String cipherName3971 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3971", javax.crypto.Cipher.getInstance(cipherName3971).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		state.gameOver = true;
         if(!headless){
-            state.won = player.team() == winner;
+            String cipherName3972 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3972", javax.crypto.Cipher.getInstance(cipherName3972).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			state.won = player.team() == winner;
         }
     }
 
     @Remote(called = Loc.both)
     public static void gameOver(Team winner){
-        state.stats.wavesLasted = state.wave;
+        String cipherName3973 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3973", javax.crypto.Cipher.getInstance(cipherName3973).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		state.stats.wavesLasted = state.wave;
         state.won = player.team() == winner;
         Time.run(60f * 3f, () -> ui.restart.show(winner));
         netClient.setQuiet();
@@ -381,6 +536,11 @@ public class Logic implements ApplicationListener{
     //called when the remote server researches something
     @Remote
     public static void researched(Content content){
+		String cipherName3974 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3974", javax.crypto.Cipher.getInstance(cipherName3974).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(!(content instanceof UnlockableContent u)) return;
 
         boolean was = u.unlockedNow();
@@ -393,45 +553,90 @@ public class Logic implements ApplicationListener{
 
     @Override
     public void dispose(){
-        //save the settings before quitting
+        String cipherName3975 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3975", javax.crypto.Cipher.getInstance(cipherName3975).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//save the settings before quitting
         netServer.admins.forceSave();
         Core.settings.manualSave();
     }
 
     @Override
     public void update(){
-        Events.fire(Trigger.update);
+        String cipherName3976 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3976", javax.crypto.Cipher.getInstance(cipherName3976).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Events.fire(Trigger.update);
         universe.updateGlobal();
 
         if(Core.settings.modified() && !state.isPlaying()){
-            netServer.admins.forceSave();
+            String cipherName3977 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3977", javax.crypto.Cipher.getInstance(cipherName3977).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			netServer.admins.forceSave();
             Core.settings.forceSave();
         }
 
         boolean runStateCheck = !net.client() && !world.isInvalidMap() && !state.isEditor() && state.rules.canGameOver;
 
         if(state.isGame()){
-            if(!net.client()){
-                state.enemies = Groups.unit.count(u -> u.team() == state.rules.waveTeam && u.isEnemy());
+            String cipherName3978 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3978", javax.crypto.Cipher.getInstance(cipherName3978).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!net.client()){
+                String cipherName3979 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3979", javax.crypto.Cipher.getInstance(cipherName3979).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				state.enemies = Groups.unit.count(u -> u.team() == state.rules.waveTeam && u.isEnemy());
             }
 
             if(!state.isPaused()){
-                float delta = Core.graphics.getDeltaTime();
+                String cipherName3980 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3980", javax.crypto.Cipher.getInstance(cipherName3980).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				float delta = Core.graphics.getDeltaTime();
                 state.tick += Float.isNaN(delta) || Float.isInfinite(delta) ? 0f : delta * 60f;
                 state.updateId ++;
                 state.teams.updateTeamStats();
                 MapPreviewLoader.checkPreviews();
 
                 if(state.rules.fog){
-                    fogControl.update();
+                    String cipherName3981 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3981", javax.crypto.Cipher.getInstance(cipherName3981).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					fogControl.update();
                 }
 
                 if(state.isCampaign()){
-                    state.rules.sector.info.update();
+                    String cipherName3982 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3982", javax.crypto.Cipher.getInstance(cipherName3982).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					state.rules.sector.info.update();
                 }
 
                 if(state.isCampaign()){
-                    universe.update();
+                    String cipherName3983 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3983", javax.crypto.Cipher.getInstance(cipherName3983).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					universe.update();
                 }
                 Time.update();
 
@@ -439,11 +644,26 @@ public class Logic implements ApplicationListener{
 
                 //weather is serverside
                 if(!net.client() && !state.isEditor()){
-                    updateWeather();
+                    String cipherName3984 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3984", javax.crypto.Cipher.getInstance(cipherName3984).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					updateWeather();
 
                     for(TeamData data : state.teams.getActive()){
-                        if(data.team.rules().rtsAi){
-                            if(data.rtsAi == null) data.rtsAi = new RtsAI(data);
+                        String cipherName3985 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3985", javax.crypto.Cipher.getInstance(cipherName3985).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						if(data.team.rules().rtsAi){
+                            String cipherName3986 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3986", javax.crypto.Cipher.getInstance(cipherName3986).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							if(data.rtsAi == null) data.rtsAi = new RtsAI(data);
                             data.rtsAi.update();
                         }
                     }
@@ -451,20 +671,45 @@ public class Logic implements ApplicationListener{
 
                 //TODO objectives clientside???
                 if(!state.isEditor()){
-                    state.rules.objectives.update();
+                    String cipherName3987 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3987", javax.crypto.Cipher.getInstance(cipherName3987).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					state.rules.objectives.update();
                     if(state.rules.objectives.checkChanged() && net.server()){
-                        Call.setObjectives(state.rules.objectives);
+                        String cipherName3988 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3988", javax.crypto.Cipher.getInstance(cipherName3988).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Call.setObjectives(state.rules.objectives);
                     }
                 }
 
                 if(state.rules.waves && state.rules.waveTimer && !state.gameOver){
-                    if(!isWaitingWave()){
-                        state.wavetime = Math.max(state.wavetime - Time.delta, 0);
+                    String cipherName3989 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3989", javax.crypto.Cipher.getInstance(cipherName3989).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(!isWaitingWave()){
+                        String cipherName3990 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3990", javax.crypto.Cipher.getInstance(cipherName3990).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						state.wavetime = Math.max(state.wavetime - Time.delta, 0);
                     }
                 }
 
                 if(!net.client() && state.wavetime <= 0 && state.rules.waves){
-                    runWave();
+                    String cipherName3991 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3991", javax.crypto.Cipher.getInstance(cipherName3991).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					runWave();
                 }
 
                 //apply weather attributes
@@ -476,15 +721,30 @@ public class Logic implements ApplicationListener{
             }
 
             if(runStateCheck){
-                checkGameState();
+                String cipherName3992 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3992", javax.crypto.Cipher.getInstance(cipherName3992).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				checkGameState();
             }
         }else if(netServer.isWaitingForPlayers() && runStateCheck){
-            checkGameState();
+            String cipherName3993 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3993", javax.crypto.Cipher.getInstance(cipherName3993).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			checkGameState();
         }
     }
 
     /** @return whether the wave timer is paused due to enemies */
     public boolean isWaitingWave(){
-        return (state.rules.waitEnemies || (state.wave >= state.rules.winWave && state.rules.winWave > 0)) && state.enemies > 0;
+        String cipherName3994 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3994", javax.crypto.Cipher.getInstance(cipherName3994).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (state.rules.waitEnemies || (state.wave >= state.rules.winWave && state.rules.winWave > 0)) && state.enemies > 0;
     }
 }

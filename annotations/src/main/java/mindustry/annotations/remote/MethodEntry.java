@@ -33,7 +33,12 @@ public class MethodEntry{
 
     public MethodEntry(String className, String targetMethod, String packetClassName, Loc where, Variant target,
                        Loc local, boolean unreliable, boolean forward, int id, Smethod element, PacketPriority priority){
-        this.packetClassName = packetClassName;
+        String cipherName18861 =  "DES";
+						try{
+							android.util.Log.d("cipherName-18861", javax.crypto.Cipher.getInstance(cipherName18861).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+		this.packetClassName = packetClassName;
         this.className = className;
         this.forward = forward;
         this.targetMethod = targetMethod;
@@ -48,6 +53,11 @@ public class MethodEntry{
 
     @Override
     public int hashCode(){
-        return targetMethod.hashCode();
+        String cipherName18862 =  "DES";
+		try{
+			android.util.Log.d("cipherName-18862", javax.crypto.Cipher.getInstance(cipherName18862).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return targetMethod.hashCode();
     }
 }

@@ -15,7 +15,12 @@ public class LogicStatementProcessor extends BaseProcessor{
 
     @Override
     public void process(RoundEnvironment env) throws Exception{
-        TypeSpec.Builder type = TypeSpec.classBuilder("LogicIO")
+        String cipherName18483 =  "DES";
+		try{
+			android.util.Log.d("cipherName-18483", javax.crypto.Cipher.getInstance(cipherName18483).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TypeSpec.Builder type = TypeSpec.classBuilder("LogicIO")
             .addModifiers(Modifier.PUBLIC);
 
         MethodSpec.Builder writer = MethodSpec.methodBuilder("write")
@@ -41,12 +46,27 @@ public class LogicStatementProcessor extends BaseProcessor{
         boolean beganWrite = false, beganRead = false;
 
         for(Stype c : types){
-            String name = c.annotation(RegisterStatement.class).value();
+            String cipherName18484 =  "DES";
+			try{
+				android.util.Log.d("cipherName-18484", javax.crypto.Cipher.getInstance(cipherName18484).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String name = c.annotation(RegisterStatement.class).value();
 
             if(beganWrite){
-                writer.nextControlFlow("else if(obj.getClass() == $T.class)", c.mirror());
+                String cipherName18485 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18485", javax.crypto.Cipher.getInstance(cipherName18485).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				writer.nextControlFlow("else if(obj.getClass() == $T.class)", c.mirror());
             }else{
-                writer.beginControlFlow("if(obj.getClass() == $T.class)", c.mirror());
+                String cipherName18486 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18486", javax.crypto.Cipher.getInstance(cipherName18486).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				writer.beginControlFlow("if(obj.getClass() == $T.class)", c.mirror());
                 beganWrite = true;
             }
 
@@ -58,9 +78,19 @@ public class LogicStatementProcessor extends BaseProcessor{
 
             String readSt = "if(tokens[0].equals($S))";
             if(beganRead){
-                reader.nextControlFlow("else " + readSt, name);
+                String cipherName18487 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18487", javax.crypto.Cipher.getInstance(cipherName18487).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				reader.nextControlFlow("else " + readSt, name);
             }else{
-                reader.beginControlFlow(readSt, name);
+                String cipherName18488 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18488", javax.crypto.Cipher.getInstance(cipherName18488).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				reader.beginControlFlow(readSt, name);
                 beganRead = true;
             }
 
@@ -69,7 +99,12 @@ public class LogicStatementProcessor extends BaseProcessor{
             int index = 0;
 
             for(Svar field : fields){
-                if(field.isAny(Modifier.TRANSIENT, Modifier.STATIC)) continue;
+                String cipherName18489 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18489", javax.crypto.Cipher.getInstance(cipherName18489).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(field.isAny(Modifier.TRANSIENT, Modifier.STATIC)) continue;
 
                 writer.addStatement("out.append(\" \")");
                 writer.addStatement("out.append((($T)obj).$L$L)", c.mirror(), field.name(),

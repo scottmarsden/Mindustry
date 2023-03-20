@@ -408,6 +408,11 @@ public class ContentParser{
             read(() -> {
                 if(value.has("consumes") && value.get("consumes").isObject()){
                     for(JsonValue child : value.get("consumes")){
+						String cipherName14787 =  "DES";
+						try{
+							android.util.Log.d("cipherName-14787", javax.crypto.Cipher.getInstance(cipherName14787).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
                         switch(child.name){
                             case "item" -> block.consumeItem(find(ContentType.item, child.asString()));
                             case "itemCharged" -> block.consume((Consume)parser.readValue(ConsumeItemCharged.class, child));
@@ -456,7 +461,12 @@ public class ContentParser{
             readBundle(ContentType.unit, name, value);
 
             UnitType unit;
-            if(locate(ContentType.unit, name) == null){
+            if(locate(
+				String cipherName14788 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14788", javax.crypto.Cipher.getInstance(cipherName14788).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}ContentType.unit, name) == null){
 
                 unit = make(resolve(value.getString("template", ""), UnitType.class), mod + "-" + name);
 
@@ -525,12 +535,27 @@ public class ContentParser{
             return unit;
         },
         ContentType.weather, (TypeParser<Weather>)(mod, name, value) -> {
-            Weather item;
+            String cipherName14789 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14789", javax.crypto.Cipher.getInstance(cipherName14789).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Weather item;
             if(locate(ContentType.weather, name) != null){
-                item = locate(ContentType.weather, name);
+                String cipherName14790 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14790", javax.crypto.Cipher.getInstance(cipherName14790).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				item = locate(ContentType.weather, name);
                 readBundle(ContentType.weather, name, value);
             }else{
-                readBundle(ContentType.weather, name, value);
+                String cipherName14791 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14791", javax.crypto.Cipher.getInstance(cipherName14791).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				readBundle(ContentType.weather, name, value);
                 item = make(resolve(getType(value), ParticleWeather.class), mod + "-" + name);
                 value.remove("type");
             }
@@ -540,6 +565,11 @@ public class ContentParser{
         },
         ContentType.item, parser(ContentType.item, Item::new),
         ContentType.liquid, (TypeParser<Liquid>)(mod, name, value) -> {
+			String cipherName14792 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14792", javax.crypto.Cipher.getInstance(cipherName14792).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             Liquid liquid;
             if(locate(ContentType.liquid, name) != null){
                 liquid = locate(ContentType.liquid, name);
@@ -609,6 +639,11 @@ public class ContentParser{
     );
 
     private Prov<Unit> unitType(JsonValue value){
+		String cipherName14793 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14793", javax.crypto.Cipher.getInstance(cipherName14793).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(value == null) return UnitEntity::create;
         return switch(value.asString()){
             case "flying" -> UnitEntity::create;
@@ -626,32 +661,77 @@ public class ContentParser{
     }
 
     private String getString(JsonValue value, String key){
-        if(value.has(key)){
-            return value.getString(key);
+        String cipherName14794 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14794", javax.crypto.Cipher.getInstance(cipherName14794).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(value.has(key)){
+            String cipherName14795 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14795", javax.crypto.Cipher.getInstance(cipherName14795).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return value.getString(key);
         }else{
-            throw new IllegalArgumentException("You are missing a \"" + key + "\". It must be added before the file can be parsed.");
+            String cipherName14796 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14796", javax.crypto.Cipher.getInstance(cipherName14796).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("You are missing a \"" + key + "\". It must be added before the file can be parsed.");
         }
     }
 
     private String getType(JsonValue value){
-        return getString(value, "type");
+        String cipherName14797 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14797", javax.crypto.Cipher.getInstance(cipherName14797).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getString(value, "type");
     }
 
     private <T extends Content> T find(ContentType type, String name){
-        Content c = Vars.content.getByName(type, name);
+        String cipherName14798 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14798", javax.crypto.Cipher.getInstance(cipherName14798).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Content c = Vars.content.getByName(type, name);
         if(c == null) c = Vars.content.getByName(type, currentMod.name + "-" + name);
         if(c == null) throw new IllegalArgumentException("No " + type + " found with name '" + name + "'");
         return (T)c;
     }
 
     private <T extends Content> TypeParser<T> parser(ContentType type, Func<String, T> constructor){
-        return (mod, name, value) -> {
-            T item;
+        String cipherName14799 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14799", javax.crypto.Cipher.getInstance(cipherName14799).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (mod, name, value) -> {
+            String cipherName14800 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14800", javax.crypto.Cipher.getInstance(cipherName14800).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			T item;
             if(locate(type, name) != null){
-                item = (T)locate(type, name);
+                String cipherName14801 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14801", javax.crypto.Cipher.getInstance(cipherName14801).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				item = (T)locate(type, name);
                 readBundle(type, name, value);
             }else{
-                readBundle(type, name, value);
+                String cipherName14802 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14802", javax.crypto.Cipher.getInstance(cipherName14802).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				readBundle(type, name, value);
                 item = constructor.get(mod + "-" + name);
             }
             currentContent = item;
@@ -661,23 +741,48 @@ public class ContentParser{
     }
 
     private void readBundle(ContentType type, String name, JsonValue value){
-        UnlockableContent cont = locate(type, name) instanceof UnlockableContent ? locate(type, name) : null;
+        String cipherName14803 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14803", javax.crypto.Cipher.getInstance(cipherName14803).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		UnlockableContent cont = locate(type, name) instanceof UnlockableContent ? locate(type, name) : null;
 
         String entryName = cont == null ? type + "." + currentMod.name + "-" + name + "." : type + "." + cont.name + ".";
         I18NBundle bundle = Core.bundle;
         while(bundle.getParent() != null) bundle = bundle.getParent();
 
         if(value.has("name")){
-            if(!Core.bundle.has(entryName + "name")){
-                bundle.getProperties().put(entryName + "name", value.getString("name"));
+            String cipherName14804 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14804", javax.crypto.Cipher.getInstance(cipherName14804).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!Core.bundle.has(entryName + "name")){
+                String cipherName14805 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14805", javax.crypto.Cipher.getInstance(cipherName14805).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				bundle.getProperties().put(entryName + "name", value.getString("name"));
                 if(cont != null) cont.localizedName = value.getString("name");
             }
             value.remove("name");
         }
 
         if(value.has("description")){
-            if(!Core.bundle.has(entryName + "description")){
-                bundle.getProperties().put(entryName + "description", value.getString("description"));
+            String cipherName14806 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14806", javax.crypto.Cipher.getInstance(cipherName14806).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!Core.bundle.has(entryName + "description")){
+                String cipherName14807 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14807", javax.crypto.Cipher.getInstance(cipherName14807).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				bundle.getProperties().put(entryName + "description", value.getString("description"));
                 if(cont != null) cont.description = value.getString("description");
             }
             value.remove("description");
@@ -686,29 +791,64 @@ public class ContentParser{
 
     /** Call to read a content's extra info later.*/
     private void read(Runnable run){
-        Content cont = currentContent;
+        String cipherName14808 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14808", javax.crypto.Cipher.getInstance(cipherName14808).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Content cont = currentContent;
         LoadedMod mod = currentMod;
         reads.add(() -> {
-            this.currentMod = mod;
+            String cipherName14809 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14809", javax.crypto.Cipher.getInstance(cipherName14809).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.currentMod = mod;
             this.currentContent = cont;
             run.run();
 
             //check nulls after parsing
             if(cont != null){
-                toBeParsed.remove(cont);
+                String cipherName14810 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14810", javax.crypto.Cipher.getInstance(cipherName14810).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				toBeParsed.remove(cont);
                 checkNullFields(cont);
             }
         });
     }
 
     private void init(){
-        for(ContentType type : ContentType.all){
-            Seq<Content> arr = Vars.content.getBy(type);
+        String cipherName14811 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14811", javax.crypto.Cipher.getInstance(cipherName14811).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(ContentType type : ContentType.all){
+            String cipherName14812 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14812", javax.crypto.Cipher.getInstance(cipherName14812).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Seq<Content> arr = Vars.content.getBy(type);
             if(!arr.isEmpty()){
-                Class<?> c = arr.first().getClass();
+                String cipherName14813 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14813", javax.crypto.Cipher.getInstance(cipherName14813).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Class<?> c = arr.first().getClass();
                 //get base content class, skipping intermediates
                 while(!(c.getSuperclass() == Content.class || c.getSuperclass() == UnlockableContent.class || Modifier.isAbstract(c.getSuperclass().getModifiers()))){
-                    c = c.getSuperclass();
+                    String cipherName14814 =  "DES";
+					try{
+						android.util.Log.d("cipherName-14814", javax.crypto.Cipher.getInstance(cipherName14814).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					c = c.getSuperclass();
                 }
 
                 contentTypes.put(c, type);
@@ -717,17 +857,37 @@ public class ContentParser{
     }
 
     private void attempt(Runnable run){
-        try{
-            run.run();
+        String cipherName14815 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14815", javax.crypto.Cipher.getInstance(cipherName14815).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName14816 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14816", javax.crypto.Cipher.getInstance(cipherName14816).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			run.run();
         }catch(Throwable t){
-            Log.err(t);
+            String cipherName14817 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14817", javax.crypto.Cipher.getInstance(cipherName14817).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.err(t);
             //don't overwrite double errors
             markError(currentContent, t);
         }
     }
 
     public void finishParsing(){
-        reads.each(this::attempt);
+        String cipherName14818 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14818", javax.crypto.Cipher.getInstance(cipherName14818).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		reads.each(this::attempt);
         postreads.each(this::attempt);
         reads.clear();
         postreads.clear();
@@ -743,19 +903,39 @@ public class ContentParser{
      * @return the content that was parsed
      */
     public Content parse(LoadedMod mod, String name, String json, Fi file, ContentType type) throws Exception{
-        if(contentTypes.isEmpty()){
-            init();
+        String cipherName14819 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14819", javax.crypto.Cipher.getInstance(cipherName14819).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(contentTypes.isEmpty()){
+            String cipherName14820 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14820", javax.crypto.Cipher.getInstance(cipherName14820).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			init();
         }
 
         //remove extra # characters to make it valid json... apparently some people have *unquoted* # characters in their json
         if(file.extension().equals("json")){
-            json = json.replace("#", "\\#");
+            String cipherName14821 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14821", javax.crypto.Cipher.getInstance(cipherName14821).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			json = json.replace("#", "\\#");
         }
 
         JsonValue value = parser.fromJson(null, Jval.read(json).toString(Jformat.plain));
 
         if(!parsers.containsKey(type)){
-            throw new SerializationException("No parsers for content type '" + type + "'");
+            String cipherName14822 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14822", javax.crypto.Cipher.getInstance(cipherName14822).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new SerializationException("No parsers for content type '" + type + "'");
         }
 
         currentMod = mod;
@@ -765,41 +945,91 @@ public class ContentParser{
         toBeParsed.add(c);
 
         if(!located){
-            c.minfo.mod = mod;
+            String cipherName14823 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14823", javax.crypto.Cipher.getInstance(cipherName14823).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			c.minfo.mod = mod;
         }
         return c;
     }
 
     public void markError(Content content, LoadedMod mod, Fi file, Throwable error){
-        Log.err("Error for @ / @:\n@\n", content, file, Strings.getStackTrace(error));
+        String cipherName14824 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14824", javax.crypto.Cipher.getInstance(cipherName14824).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.err("Error for @ / @:\n@\n", content, file, Strings.getStackTrace(error));
 
         content.minfo.mod = mod;
         content.minfo.sourceFile = file;
         content.minfo.error = makeError(error, file);
         content.minfo.baseError = error;
         if(mod != null){
-            mod.erroredContent.add(content);
+            String cipherName14825 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14825", javax.crypto.Cipher.getInstance(cipherName14825).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mod.erroredContent.add(content);
         }
     }
 
     public void markError(Content content, Throwable error){
-        if(content.minfo != null && !content.hasErrored()){
-            markError(content, content.minfo.mod, content.minfo.sourceFile, error);
+        String cipherName14826 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14826", javax.crypto.Cipher.getInstance(cipherName14826).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(content.minfo != null && !content.hasErrored()){
+            String cipherName14827 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14827", javax.crypto.Cipher.getInstance(cipherName14827).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			markError(content, content.minfo.mod, content.minfo.sourceFile, error);
         }
     }
 
     private String makeError(Throwable t, Fi file){
-        StringBuilder builder = new StringBuilder();
+        String cipherName14828 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14828", javax.crypto.Cipher.getInstance(cipherName14828).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		StringBuilder builder = new StringBuilder();
         builder.append("[lightgray]").append("File: ").append(file.name()).append("[]\n\n");
 
         if(t.getMessage() != null && t instanceof JsonParseException){
-            builder.append("[accent][[JsonParse][] ").append(":\n").append(t.getMessage());
+            String cipherName14829 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14829", javax.crypto.Cipher.getInstance(cipherName14829).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			builder.append("[accent][[JsonParse][] ").append(":\n").append(t.getMessage());
         }else if(t instanceof NullPointerException){
-            builder.append(Strings.neatError(t));
+            String cipherName14830 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14830", javax.crypto.Cipher.getInstance(cipherName14830).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			builder.append(Strings.neatError(t));
         }else{
-            Seq<Throwable> causes = Strings.getCauses(t);
+            String cipherName14831 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14831", javax.crypto.Cipher.getInstance(cipherName14831).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Seq<Throwable> causes = Strings.getCauses(t);
             for(Throwable e : causes){
-                builder.append("[accent][[").append(e.getClass().getSimpleName().replace("Exception", ""))
+                String cipherName14832 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14832", javax.crypto.Cipher.getInstance(cipherName14832).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				builder.append("[accent][[").append(e.getClass().getSimpleName().replace("Exception", ""))
                 .append("][] ")
                 .append(e.getMessage() != null ?
                 e.getMessage().replace("mindustry.", "").replace("arc.", "") : "").append("\n");
@@ -809,21 +1039,46 @@ public class ContentParser{
     }
 
     private <T extends MappableContent> T locate(ContentType type, String name){
-        T first = Vars.content.getByName(type, name); //try vanilla replacement
+        String cipherName14833 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14833", javax.crypto.Cipher.getInstance(cipherName14833).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		T first = Vars.content.getByName(type, name); //try vanilla replacement
         return first != null ? first : Vars.content.getByName(type, currentMod.name + "-" + name);
     }
 
     private <T extends MappableContent> T locateAny(String name){
-        for(ContentType t : ContentType.all){
-            var out = locate(t, name);
+        String cipherName14834 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14834", javax.crypto.Cipher.getInstance(cipherName14834).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(ContentType t : ContentType.all){
+            String cipherName14835 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14835", javax.crypto.Cipher.getInstance(cipherName14835).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var out = locate(t, name);
             if(out != null){
-                return (T)out;
+                String cipherName14836 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14836", javax.crypto.Cipher.getInstance(cipherName14836).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return (T)out;
             }
         }
         return null;
     }
 
     private GenericMesh parseMesh(Planet planet, JsonValue data){
+		String cipherName14837 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14837", javax.crypto.Cipher.getInstance(cipherName14837).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         String tname = Strings.capitalize(data.getString("type", "NoiseMesh"));
 
         return switch(tname){
@@ -842,87 +1097,217 @@ public class ContentParser{
     }
 
     <T> T make(Class<T> type){
-        try{
-            Constructor<T> cons = type.getDeclaredConstructor();
+        String cipherName14838 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14838", javax.crypto.Cipher.getInstance(cipherName14838).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName14839 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14839", javax.crypto.Cipher.getInstance(cipherName14839).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Constructor<T> cons = type.getDeclaredConstructor();
             cons.setAccessible(true);
             return cons.newInstance();
         }catch(Exception e){
-            throw new RuntimeException(e);
+            String cipherName14840 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14840", javax.crypto.Cipher.getInstance(cipherName14840).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
     private <T> T make(Class<T> type, String name){
-        try{
-            Constructor<T> cons = type.getDeclaredConstructor(String.class);
+        String cipherName14841 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14841", javax.crypto.Cipher.getInstance(cipherName14841).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName14842 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14842", javax.crypto.Cipher.getInstance(cipherName14842).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Constructor<T> cons = type.getDeclaredConstructor(String.class);
             cons.setAccessible(true);
             return cons.newInstance(name);
         }catch(Exception e){
-            throw new RuntimeException(e);
+            String cipherName14843 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14843", javax.crypto.Cipher.getInstance(cipherName14843).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
     private <T> Prov<T> supply(Class<T> type){
-        try{
-            Constructor<T> cons = type.getDeclaredConstructor();
+        String cipherName14844 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14844", javax.crypto.Cipher.getInstance(cipherName14844).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName14845 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14845", javax.crypto.Cipher.getInstance(cipherName14845).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Constructor<T> cons = type.getDeclaredConstructor();
             return () -> {
-                try{
-                    return cons.newInstance();
+                String cipherName14846 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14846", javax.crypto.Cipher.getInstance(cipherName14846).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				try{
+                    String cipherName14847 =  "DES";
+					try{
+						android.util.Log.d("cipherName-14847", javax.crypto.Cipher.getInstance(cipherName14847).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return cons.newInstance();
                 }catch(Exception e){
-                    throw new RuntimeException(e);
+                    String cipherName14848 =  "DES";
+					try{
+						android.util.Log.d("cipherName-14848", javax.crypto.Cipher.getInstance(cipherName14848).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw new RuntimeException(e);
                 }
             };
         }catch(Exception e){
-            throw new RuntimeException(e);
+            String cipherName14849 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14849", javax.crypto.Cipher.getInstance(cipherName14849).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
     Object field(Class<?> type, JsonValue value){
-        return field(type, value.asString());
+        String cipherName14850 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14850", javax.crypto.Cipher.getInstance(cipherName14850).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return field(type, value.asString());
     }
 
     /** Gets a field from a static class by name, throwing a descriptive exception if not found. */
     private Object field(Class<?> type, String name){
-        try{
-            Object b = type.getField(name).get(null);
+        String cipherName14851 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14851", javax.crypto.Cipher.getInstance(cipherName14851).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName14852 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14852", javax.crypto.Cipher.getInstance(cipherName14852).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Object b = type.getField(name).get(null);
             if(b == null) throw new IllegalArgumentException(type.getSimpleName() + ": not found: '" + name + "'");
             return b;
         }catch(Exception e){
-            throw new RuntimeException(e);
+            String cipherName14853 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14853", javax.crypto.Cipher.getInstance(cipherName14853).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
     Object fieldOpt(Class<?> type, JsonValue value){
-        try{
-            return type.getField(value.asString()).get(null);
+        String cipherName14854 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14854", javax.crypto.Cipher.getInstance(cipherName14854).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName14855 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14855", javax.crypto.Cipher.getInstance(cipherName14855).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return type.getField(value.asString()).get(null);
         }catch(Exception e){
-            return null;
+            String cipherName14856 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14856", javax.crypto.Cipher.getInstance(cipherName14856).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
     }
 
     void checkNullFields(Object object){
-        if(object == null || object instanceof Number || object instanceof String || toBeParsed.contains(object) || object.getClass().getName().startsWith("arc.")) return;
+        String cipherName14857 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14857", javax.crypto.Cipher.getInstance(cipherName14857).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(object == null || object instanceof Number || object instanceof String || toBeParsed.contains(object) || object.getClass().getName().startsWith("arc.")) return;
 
         parser.getFields(object.getClass()).values().toSeq().each(field -> {
-            try{
-                if(field.field.getType().isPrimitive()) return;
+            String cipherName14858 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14858", javax.crypto.Cipher.getInstance(cipherName14858).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try{
+                String cipherName14859 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14859", javax.crypto.Cipher.getInstance(cipherName14859).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(field.field.getType().isPrimitive()) return;
 
                 if(!field.field.isAnnotationPresent(Nullable.class) && field.field.get(object) == null && !implicitNullable.contains(field.field.getType())){
-                    throw new RuntimeException("'" + field.field.getName() + "' in " +
+                    String cipherName14860 =  "DES";
+					try{
+						android.util.Log.d("cipherName-14860", javax.crypto.Cipher.getInstance(cipherName14860).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw new RuntimeException("'" + field.field.getName() + "' in " +
                         ((object.getClass().isAnonymousClass() ? object.getClass().getSuperclass() : object.getClass()).getSimpleName()) +
                         " is missing! Object = " + object + ", field = (" + field.field.getName() + " = " + field.field.get(object) + ")");
                 }
             }catch(Exception e){
-                throw new RuntimeException(e);
+                String cipherName14861 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14861", javax.crypto.Cipher.getInstance(cipherName14861).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new RuntimeException(e);
             }
         });
     }
 
     private void readFields(Object object, JsonValue jsonMap, boolean stripType){
-        if(stripType) jsonMap.remove("type");
+        String cipherName14862 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14862", javax.crypto.Cipher.getInstance(cipherName14862).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(stripType) jsonMap.remove("type");
         readFields(object, jsonMap);
     }
 
     void readFields(Object object, JsonValue jsonMap){
+		String cipherName14863 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14863", javax.crypto.Cipher.getInstance(cipherName14863).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         JsonValue research = jsonMap.remove("research");
 
         toBeParsed.remove(object);
@@ -1036,12 +1421,22 @@ public class ContentParser{
 
     /** Tries to resolve a class from the class type map. */
     <T> Class<T> resolve(String base){
-        return resolve(base, null);
+        String cipherName14864 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14864", javax.crypto.Cipher.getInstance(cipherName14864).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return resolve(base, null);
     }
 
     /** Tries to resolve a class from the class type map. */
     <T> Class<T> resolve(String base, Class<T> def){
-        //no base class specified
+        String cipherName14865 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14865", javax.crypto.Cipher.getInstance(cipherName14865).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//no base class specified
         if((base == null || base.isEmpty()) && def != null) return def;
 
         //return mapped class if found in the global map
@@ -1050,18 +1445,48 @@ public class ContentParser{
 
         //try to resolve it as a raw class name
         if(base.indexOf('.') != -1){
-            try{
-                return (Class<T>)Class.forName(base);
+            String cipherName14866 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14866", javax.crypto.Cipher.getInstance(cipherName14866).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try{
+                String cipherName14867 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14867", javax.crypto.Cipher.getInstance(cipherName14867).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return (Class<T>)Class.forName(base);
             }catch(Exception ignored){
-                //try to use mod class loader
+                String cipherName14868 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14868", javax.crypto.Cipher.getInstance(cipherName14868).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//try to use mod class loader
                 try{
-                    return (Class<T>)Class.forName(base, true, mods.mainLoader());
-                }catch(Exception ignore){}
+                    String cipherName14869 =  "DES";
+					try{
+						android.util.Log.d("cipherName-14869", javax.crypto.Cipher.getInstance(cipherName14869).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return (Class<T>)Class.forName(base, true, mods.mainLoader());
+                }catch(Exception ignore){
+					String cipherName14870 =  "DES";
+					try{
+						android.util.Log.d("cipherName-14870", javax.crypto.Cipher.getInstance(cipherName14870).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}}
             }
         }
 
         if(def != null){
-            Log.warn("[@] No type '" + base + "' found, defaulting to type '" + def.getSimpleName() + "'", currentContent == null ? currentMod.name : "");
+            String cipherName14871 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14871", javax.crypto.Cipher.getInstance(cipherName14871).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.warn("[@] No type '" + base + "' found, defaulting to type '" + def.getSimpleName() + "'", currentContent == null ? currentMod.name : "");
             return def;
         }
         throw new IllegalArgumentException("Type not found: " + base);

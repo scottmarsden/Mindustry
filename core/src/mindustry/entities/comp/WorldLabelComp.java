@@ -26,16 +26,31 @@ public abstract class WorldLabelComp implements Posc, Drawc, Syncc{
 
     @Replace
     public float clipSize(){
-        return text.length() * 10f * fontSize;
+        String cipherName16501 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16501", javax.crypto.Cipher.getInstance(cipherName16501).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return text.length() * 10f * fontSize;
     }
 
     @Override
     public void draw(){
-        drawAt(text, x, y, z, flags, fontSize);
+        String cipherName16502 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16502", javax.crypto.Cipher.getInstance(cipherName16502).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		drawAt(text, x, y, z, flags, fontSize);
     }
 
     public static void drawAt(String text, float x, float y, float layer, int flags, float fontSize){
-        Draw.z(layer);
+        String cipherName16503 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16503", javax.crypto.Cipher.getInstance(cipherName16503).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Draw.z(layer);
         float z = Drawf.text();
 
         Font font = (flags & flagOutline) != 0 ? Fonts.outline : Fonts.def;
@@ -47,7 +62,12 @@ public abstract class WorldLabelComp implements Posc, Drawc, Syncc{
         layout.setText(font, text);
 
         if((flags & flagBackground) != 0){
-            Draw.color(0f, 0f, 0f, 0.3f);
+            String cipherName16504 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16504", javax.crypto.Cipher.getInstance(cipherName16504).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.color(0f, 0f, 0f, 0.3f);
             Fill.rect(x, y - layout.height / 2, layout.width + 2, layout.height + 3);
             Draw.color();
         }
@@ -66,7 +86,12 @@ public abstract class WorldLabelComp implements Posc, Drawc, Syncc{
 
     /** This MUST be called instead of remove()! */
     public void hide(){
-        remove();
+        String cipherName16505 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16505", javax.crypto.Cipher.getInstance(cipherName16505).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		remove();
         Call.removeWorldLabel(id);
     }
 }

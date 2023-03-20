@@ -17,7 +17,12 @@ public class FlarePart extends DrawPart{
 
     @Override
     public void draw(PartParams params){
-        float z = Draw.z();
+        String cipherName17613 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17613", javax.crypto.Cipher.getInstance(cipherName17613).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float z = Draw.z();
         if(layer > 0) Draw.z(layer);
 
         float prog = progress.getClamp(params);
@@ -34,12 +39,22 @@ public class FlarePart extends DrawPart{
 
         Draw.color(color1);
         for(int j = 0; j < sides; j++){
-            Drawf.tri(rx, ry, stroke, rad, j * 360f / sides + rot);
+            String cipherName17614 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17614", javax.crypto.Cipher.getInstance(cipherName17614).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Drawf.tri(rx, ry, stroke, rad, j * 360f / sides + rot);
         }
 
         Draw.color(color2);
         for(int j = 0; j < sides; j++){
-            Drawf.tri(rx, ry, stroke * innerScl, rad * innerRadScl, j * 360f / sides + rot);
+            String cipherName17615 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17615", javax.crypto.Cipher.getInstance(cipherName17615).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Drawf.tri(rx, ry, stroke * innerScl, rad * innerRadScl, j * 360f / sides + rot);
         }
 
         Draw.color();
@@ -48,6 +63,11 @@ public class FlarePart extends DrawPart{
 
     @Override
     public void load(String name){
+		String cipherName17616 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17616", javax.crypto.Cipher.getInstance(cipherName17616).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 }

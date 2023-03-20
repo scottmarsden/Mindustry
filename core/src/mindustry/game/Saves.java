@@ -33,11 +33,26 @@ public class Saves{
     private long lastTimestamp;
 
     public Saves(){
-        Core.assets.setLoader(Texture.class, ".spreview", new SavePreviewLoader());
+        String cipherName11928 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11928", javax.crypto.Cipher.getInstance(cipherName11928).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Core.assets.setLoader(Texture.class, ".spreview", new SavePreviewLoader());
 
         Events.on(StateChangeEvent.class, event -> {
-            if(event.to == State.menu){
-                totalPlaytime = 0;
+            String cipherName11929 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11929", javax.crypto.Cipher.getInstance(cipherName11929).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(event.to == State.menu){
+                String cipherName11930 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11930", javax.crypto.Cipher.getInstance(cipherName11930).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				totalPlaytime = 0;
                 lastTimestamp = 0;
                 current = null;
             }
@@ -45,11 +60,26 @@ public class Saves{
     }
 
     public void load(){
-        saves.clear();
+        String cipherName11931 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11931", javax.crypto.Cipher.getInstance(cipherName11931).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		saves.clear();
 
         for(Fi file : saveDirectory.list()){
-            if(!file.name().contains("backup") && SaveIO.isSaveValid(file)){
-                SaveSlot slot = new SaveSlot(file);
+            String cipherName11932 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11932", javax.crypto.Cipher.getInstance(cipherName11932).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!file.name().contains("backup") && SaveIO.isSaveValid(file)){
+                String cipherName11933 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11933", javax.crypto.Cipher.getInstance(cipherName11933).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SaveSlot slot = new SaveSlot(file);
                 saves.add(slot);
                 slot.meta = SaveIO.getMeta(file);
             }
@@ -57,8 +87,18 @@ public class Saves{
 
         //clear saves from build <130 that had the new naval sectors.
         saves.removeAll(s -> {
-            if(s.getSector() != null && (s.getSector().id == 108 || s.getSector().id == 216) && s.meta.build <= 130 && s.meta.build > 0){
-                s.getSector().clearInfo();
+            String cipherName11934 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11934", javax.crypto.Cipher.getInstance(cipherName11934).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(s.getSector() != null && (s.getSector().id == 108 || s.getSector().id == 216) && s.meta.build <= 130 && s.meta.build > 0){
+                String cipherName11935 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11935", javax.crypto.Cipher.getInstance(cipherName11935).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				s.getSector().clearInfo();
                 s.file.delete();
                 return true;
             }
@@ -69,9 +109,24 @@ public class Saves{
 
         //automatically assign sector save slots
         for(SaveSlot slot : saves){
-            if(slot.getSector() != null){
-                if(slot.getSector().save != null){
-                    Log.warn("Sector @ has two corresponding saves: @ and @", slot.getSector(), slot.getSector().save.file, slot.file);
+            String cipherName11936 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11936", javax.crypto.Cipher.getInstance(cipherName11936).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(slot.getSector() != null){
+                String cipherName11937 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11937", javax.crypto.Cipher.getInstance(cipherName11937).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(slot.getSector().save != null){
+                    String cipherName11938 =  "DES";
+					try{
+						android.util.Log.d("cipherName-11938", javax.crypto.Cipher.getInstance(cipherName11938).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Log.warn("Sector @ has two corresponding saves: @ and @", slot.getSector(), slot.getSector().save.file, slot.file);
                 }
                 slot.getSector().save = slot;
             }
@@ -79,31 +134,76 @@ public class Saves{
     }
 
     public @Nullable SaveSlot getLastSector(){
-        return lastSectorSave;
+        String cipherName11939 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11939", javax.crypto.Cipher.getInstance(cipherName11939).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return lastSectorSave;
     }
 
     public @Nullable SaveSlot getCurrent(){
-        return current;
+        String cipherName11940 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11940", javax.crypto.Cipher.getInstance(cipherName11940).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return current;
     }
 
     public void update(){
-        if(current != null && state.isGame()
+        String cipherName11941 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11941", javax.crypto.Cipher.getInstance(cipherName11941).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(current != null && state.isGame()
         && !(state.isPaused() && Core.scene.hasDialog())){
-            if(lastTimestamp != 0){
-                totalPlaytime += Time.timeSinceMillis(lastTimestamp);
+            String cipherName11942 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11942", javax.crypto.Cipher.getInstance(cipherName11942).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(lastTimestamp != 0){
+                String cipherName11943 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11943", javax.crypto.Cipher.getInstance(cipherName11943).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				totalPlaytime += Time.timeSinceMillis(lastTimestamp);
             }
             lastTimestamp = Time.millis();
         }
 
         if(state.isGame() && !state.gameOver && current != null && current.isAutosave()){
-            time += Time.delta;
+            String cipherName11944 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11944", javax.crypto.Cipher.getInstance(cipherName11944).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			time += Time.delta;
             if(time > Core.settings.getInt("saveinterval") * 60){
-                saving = true;
+                String cipherName11945 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11945", javax.crypto.Cipher.getInstance(cipherName11945).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				saving = true;
 
                 try{
-                    current.save();
+                    String cipherName11946 =  "DES";
+					try{
+						android.util.Log.d("cipherName-11946", javax.crypto.Cipher.getInstance(cipherName11946).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					current.save();
                 }catch(Throwable t){
-                    Log.err(t);
+                    String cipherName11947 =  "DES";
+					try{
+						android.util.Log.d("cipherName-11947", javax.crypto.Cipher.getInstance(cipherName11947).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Log.err(t);
                 }
 
                 Time.runTask(3f, () -> saving = false);
@@ -111,29 +211,64 @@ public class Saves{
                 time = 0;
             }
         }else{
-            time = 0;
+            String cipherName11948 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11948", javax.crypto.Cipher.getInstance(cipherName11948).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			time = 0;
         }
     }
 
     public long getTotalPlaytime(){
-        return totalPlaytime;
+        String cipherName11949 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11949", javax.crypto.Cipher.getInstance(cipherName11949).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return totalPlaytime;
     }
 
     public void resetSave(){
-        current = null;
+        String cipherName11950 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11950", javax.crypto.Cipher.getInstance(cipherName11950).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		current = null;
     }
 
     public boolean isSaving(){
-        return saving;
+        String cipherName11951 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11951", javax.crypto.Cipher.getInstance(cipherName11951).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return saving;
     }
 
     public Fi getSectorFile(Sector sector){
-        return saveDirectory.child("sector-" + sector.planet.name + "-" + sector.id + "." + saveExtension);
+        String cipherName11952 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11952", javax.crypto.Cipher.getInstance(cipherName11952).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return saveDirectory.child("sector-" + sector.planet.name + "-" + sector.id + "." + saveExtension);
     }
 
     public void saveSector(Sector sector){
-        if(sector.save == null){
-            sector.save = new SaveSlot(getSectorFile(sector));
+        String cipherName11953 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11953", javax.crypto.Cipher.getInstance(cipherName11953).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(sector.save == null){
+            String cipherName11954 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11954", javax.crypto.Cipher.getInstance(cipherName11954).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			sector.save = new SaveSlot(getSectorFile(sector));
             sector.save.setName(sector.save.file.nameWithoutExtension());
             saves.add(sector.save);
         }
@@ -144,7 +279,12 @@ public class Saves{
     }
 
     public SaveSlot addSave(String name){
-        SaveSlot slot = new SaveSlot(getNextSlotFile());
+        String cipherName11955 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11955", javax.crypto.Cipher.getInstance(cipherName11955).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SaveSlot slot = new SaveSlot(getNextSlotFile());
         slot.setName(name);
         saves.add(slot);
         slot.save();
@@ -152,7 +292,12 @@ public class Saves{
     }
 
     public SaveSlot importSave(Fi file) throws IOException{
-        SaveSlot slot = new SaveSlot(getNextSlotFile());
+        String cipherName11956 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11956", javax.crypto.Cipher.getInstance(cipherName11956).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SaveSlot slot = new SaveSlot(getNextSlotFile());
         slot.importFile(file);
         slot.setName(file.nameWithoutExtension());
 
@@ -163,22 +308,52 @@ public class Saves{
     }
 
     public Fi getNextSlotFile(){
-        int i = 0;
+        String cipherName11957 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11957", javax.crypto.Cipher.getInstance(cipherName11957).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int i = 0;
         Fi file;
         while((file = saveDirectory.child(i + "." + saveExtension)).exists()){
-            i ++;
+            String cipherName11958 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11958", javax.crypto.Cipher.getInstance(cipherName11958).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			i ++;
         }
         return file;
     }
 
     public Seq<SaveSlot> getSaveSlots(){
-        return saves;
+        String cipherName11959 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11959", javax.crypto.Cipher.getInstance(cipherName11959).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return saves;
     }
 
     public void deleteAll(){
-        for(SaveSlot slot : saves.copy()){
-            if(!slot.isSector()){
-                slot.delete();
+        String cipherName11960 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11960", javax.crypto.Cipher.getInstance(cipherName11960).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(SaveSlot slot : saves.copy()){
+            String cipherName11961 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11961", javax.crypto.Cipher.getInstance(cipherName11961).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!slot.isSector()){
+                String cipherName11962 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11962", javax.crypto.Cipher.getInstance(cipherName11962).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				slot.delete();
             }
         }
     }
@@ -189,28 +364,58 @@ public class Saves{
         public SaveMeta meta;
 
         public SaveSlot(Fi file){
-            this.file = file;
+            String cipherName11963 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11963", javax.crypto.Cipher.getInstance(cipherName11963).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.file = file;
         }
 
         public void load() throws SaveException{
-            try{
-                SaveIO.load(file);
+            String cipherName11964 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11964", javax.crypto.Cipher.getInstance(cipherName11964).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try{
+                String cipherName11965 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11965", javax.crypto.Cipher.getInstance(cipherName11965).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SaveIO.load(file);
                 meta = SaveIO.getMeta(file);
                 current = this;
                 totalPlaytime = meta.timePlayed;
                 savePreview();
             }catch(Throwable e){
-                throw new SaveException(e);
+                String cipherName11966 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11966", javax.crypto.Cipher.getInstance(cipherName11966).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new SaveException(e);
             }
         }
 
         public void save(){
-            long prev = totalPlaytime;
+            String cipherName11967 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11967", javax.crypto.Cipher.getInstance(cipherName11967).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			long prev = totalPlaytime;
 
             SaveIO.save(file);
             meta = SaveIO.getMeta(file);
             if(state.isGame()){
-                current = this;
+                String cipherName11968 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11968", javax.crypto.Cipher.getInstance(cipherName11968).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				current = this;
             }
 
             totalPlaytime = prev;
@@ -218,146 +423,351 @@ public class Saves{
         }
 
         private void savePreview(){
-            if(Core.assets.isLoaded(loadPreviewFile().path())){
-                Core.assets.unload(loadPreviewFile().path());
+            String cipherName11969 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11969", javax.crypto.Cipher.getInstance(cipherName11969).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(Core.assets.isLoaded(loadPreviewFile().path())){
+                String cipherName11970 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11970", javax.crypto.Cipher.getInstance(cipherName11970).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Core.assets.unload(loadPreviewFile().path());
             }
             mainExecutor.submit(() -> {
-                try{
-                    previewFile().writePng(renderer.minimap.getPixmap());
+                String cipherName11971 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11971", javax.crypto.Cipher.getInstance(cipherName11971).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				try{
+                    String cipherName11972 =  "DES";
+					try{
+						android.util.Log.d("cipherName-11972", javax.crypto.Cipher.getInstance(cipherName11972).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					previewFile().writePng(renderer.minimap.getPixmap());
                     requestedPreview = false;
                 }catch(Throwable t){
-                    Log.err(t);
+                    String cipherName11973 =  "DES";
+					try{
+						android.util.Log.d("cipherName-11973", javax.crypto.Cipher.getInstance(cipherName11973).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Log.err(t);
                 }
             });
         }
 
         public Texture previewTexture(){
-            if(!previewFile().exists()){
-                return null;
+            String cipherName11974 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11974", javax.crypto.Cipher.getInstance(cipherName11974).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!previewFile().exists()){
+                String cipherName11975 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11975", javax.crypto.Cipher.getInstance(cipherName11975).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return null;
             }else if(Core.assets.isLoaded(loadPreviewFile().path())){
-                return Core.assets.get(loadPreviewFile().path());
+                String cipherName11976 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11976", javax.crypto.Cipher.getInstance(cipherName11976).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return Core.assets.get(loadPreviewFile().path());
             }else if(!requestedPreview){
-                Core.assets.load(new AssetDescriptor<>(loadPreviewFile(), Texture.class));
+                String cipherName11977 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11977", javax.crypto.Cipher.getInstance(cipherName11977).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Core.assets.load(new AssetDescriptor<>(loadPreviewFile(), Texture.class));
                 requestedPreview = true;
             }
             return null;
         }
 
         private String index(){
-            return file.nameWithoutExtension();
+            String cipherName11978 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11978", javax.crypto.Cipher.getInstance(cipherName11978).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return file.nameWithoutExtension();
         }
 
         private Fi previewFile(){
-            return mapPreviewDirectory.child("save_slot_" + index() + ".png");
+            String cipherName11979 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11979", javax.crypto.Cipher.getInstance(cipherName11979).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return mapPreviewDirectory.child("save_slot_" + index() + ".png");
         }
 
         private Fi loadPreviewFile(){
-            return previewFile().sibling(previewFile().name() + ".spreview");
+            String cipherName11980 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11980", javax.crypto.Cipher.getInstance(cipherName11980).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return previewFile().sibling(previewFile().name() + ".spreview");
         }
 
         public boolean isHidden(){
-            return isSector();
+            String cipherName11981 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11981", javax.crypto.Cipher.getInstance(cipherName11981).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return isSector();
         }
 
         public String getPlayTime(){
-            return Strings.formatMillis(current == this ? totalPlaytime : meta.timePlayed);
+            String cipherName11982 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11982", javax.crypto.Cipher.getInstance(cipherName11982).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Strings.formatMillis(current == this ? totalPlaytime : meta.timePlayed);
         }
 
         public long getTimestamp(){
-            return meta.timestamp;
+            String cipherName11983 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11983", javax.crypto.Cipher.getInstance(cipherName11983).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return meta.timestamp;
         }
 
         public String getDate(){
-            return dateFormat.format(new Date(meta.timestamp));
+            String cipherName11984 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11984", javax.crypto.Cipher.getInstance(cipherName11984).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return dateFormat.format(new Date(meta.timestamp));
         }
 
         public Map getMap(){
-            return meta.map;
+            String cipherName11985 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11985", javax.crypto.Cipher.getInstance(cipherName11985).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return meta.map;
         }
 
         public void cautiousLoad(Runnable run){
-            Seq<String> mods = Seq.with(getMods());
+            String cipherName11986 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11986", javax.crypto.Cipher.getInstance(cipherName11986).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Seq<String> mods = Seq.with(getMods());
             mods.removeAll(Vars.mods.getModStrings());
 
             if(!mods.isEmpty()){
-                ui.showConfirm("@warning", Core.bundle.format("mod.missing", mods.toString("\n")), run);
+                String cipherName11987 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11987", javax.crypto.Cipher.getInstance(cipherName11987).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ui.showConfirm("@warning", Core.bundle.format("mod.missing", mods.toString("\n")), run);
             }else{
-                run.run();
+                String cipherName11988 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11988", javax.crypto.Cipher.getInstance(cipherName11988).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				run.run();
             }
         }
 
         public String getName(){
-            return Core.settings.getString("save-" + index() + "-name", "untitled");
+            String cipherName11989 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11989", javax.crypto.Cipher.getInstance(cipherName11989).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.settings.getString("save-" + index() + "-name", "untitled");
         }
 
         public void setName(String name){
-            Core.settings.put("save-" + index() + "-name", name);
+            String cipherName11990 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11990", javax.crypto.Cipher.getInstance(cipherName11990).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Core.settings.put("save-" + index() + "-name", name);
         }
 
         public String[] getMods(){
-            return meta.mods;
+            String cipherName11991 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11991", javax.crypto.Cipher.getInstance(cipherName11991).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return meta.mods;
         }
 
         public @Nullable Sector getSector(){
-            return meta == null || meta.rules == null ? null : meta.rules.sector;
+            String cipherName11992 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11992", javax.crypto.Cipher.getInstance(cipherName11992).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return meta == null || meta.rules == null ? null : meta.rules.sector;
         }
 
         public boolean isSector(){
-            return getSector() != null;
+            String cipherName11993 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11993", javax.crypto.Cipher.getInstance(cipherName11993).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return getSector() != null;
         }
 
         public Gamemode mode(){
-            return meta.rules.mode();
+            String cipherName11994 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11994", javax.crypto.Cipher.getInstance(cipherName11994).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return meta.rules.mode();
         }
 
         public int getBuild(){
-            return meta.build;
+            String cipherName11995 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11995", javax.crypto.Cipher.getInstance(cipherName11995).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return meta.build;
         }
 
         public int getWave(){
-            return meta.wave;
+            String cipherName11996 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11996", javax.crypto.Cipher.getInstance(cipherName11996).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return meta.wave;
         }
 
         public boolean isAutosave(){
-            return Core.settings.getBool("save-" + index() + "-autosave", true);
+            String cipherName11997 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11997", javax.crypto.Cipher.getInstance(cipherName11997).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.settings.getBool("save-" + index() + "-autosave", true);
         }
 
         public void setAutosave(boolean save){
-            Core.settings.put("save-" + index() + "-autosave", save);
+            String cipherName11998 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11998", javax.crypto.Cipher.getInstance(cipherName11998).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Core.settings.put("save-" + index() + "-autosave", save);
         }
 
         public void importFile(Fi from) throws IOException{
-            try{
-                from.copyTo(file);
+            String cipherName11999 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11999", javax.crypto.Cipher.getInstance(cipherName11999).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try{
+                String cipherName12000 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12000", javax.crypto.Cipher.getInstance(cipherName12000).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				from.copyTo(file);
                 if(previewFile().exists()){
-                    requestedPreview = false;
+                    String cipherName12001 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12001", javax.crypto.Cipher.getInstance(cipherName12001).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					requestedPreview = false;
                     previewFile().delete();
                 }
             }catch(Exception e){
-                throw new IOException(e);
+                String cipherName12002 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12002", javax.crypto.Cipher.getInstance(cipherName12002).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IOException(e);
             }
         }
 
         public void exportFile(Fi to) throws IOException{
-            try{
-                file.copyTo(to);
+            String cipherName12003 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12003", javax.crypto.Cipher.getInstance(cipherName12003).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try{
+                String cipherName12004 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12004", javax.crypto.Cipher.getInstance(cipherName12004).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				file.copyTo(to);
             }catch(Exception e){
-                throw new IOException(e);
+                String cipherName12005 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12005", javax.crypto.Cipher.getInstance(cipherName12005).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IOException(e);
             }
         }
 
         public void delete(){
-            if(SaveIO.backupFileFor(file).exists()){
-                SaveIO.backupFileFor(file).delete();
+            String cipherName12006 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12006", javax.crypto.Cipher.getInstance(cipherName12006).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(SaveIO.backupFileFor(file).exists()){
+                String cipherName12007 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12007", javax.crypto.Cipher.getInstance(cipherName12007).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SaveIO.backupFileFor(file).delete();
             }
             file.delete();
             saves.remove(this, true);
             if(this == current){
-                current = null;
+                String cipherName12008 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12008", javax.crypto.Cipher.getInstance(cipherName12008).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				current = null;
             }
 
             if(Core.assets.isLoaded(loadPreviewFile().path())){
-                Core.assets.unload(loadPreviewFile().path());
+                String cipherName12009 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12009", javax.crypto.Cipher.getInstance(cipherName12009).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Core.assets.unload(loadPreviewFile().path());
             }
         }
     }

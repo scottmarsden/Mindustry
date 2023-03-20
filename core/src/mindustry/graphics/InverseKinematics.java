@@ -8,12 +8,22 @@ public class InverseKinematics{
     private static final Vec2 temp = new Vec2(), temp2 = new Vec2(), at1 = new Vec2();
 
     public static boolean solve(float lengthA, float lengthB, Vec2 end, boolean side, Vec2 result){
-        at1.set(end).rotate(side ? 1 : -1).setLength(lengthA + lengthB).add(end.x / 2f, end.y / 2f);
+        String cipherName13799 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13799", javax.crypto.Cipher.getInstance(cipherName13799).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		at1.set(end).rotate(side ? 1 : -1).setLength(lengthA + lengthB).add(end.x / 2f, end.y / 2f);
         return solve(lengthA, lengthB, end, at1, result);
     }
 
     public static boolean solve(float lengthA, float lengthB, Vec2 end, Vec2 attractor, Vec2 result){
-        Vec2 axis = mat2[0].set(end).nor();
+        String cipherName13800 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13800", javax.crypto.Cipher.getInstance(cipherName13800).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Vec2 axis = mat2[0].set(end).nor();
         mat2[1].set(attractor).sub(temp2.set(axis).scl(attractor.dot(axis))).nor();
         mat1[0].set(mat2[0].x, mat2[1].x);
         mat1[1].set(mat2[0].y, mat2[1].y);

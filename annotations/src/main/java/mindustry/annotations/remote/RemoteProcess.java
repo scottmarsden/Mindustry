@@ -22,7 +22,12 @@ public class RemoteProcess extends BaseProcessor{
 
     @Override
     public void process(RoundEnvironment roundEnv) throws Exception{
-        //get serializers
+        String cipherName18856 =  "DES";
+		try{
+			android.util.Log.d("cipherName-18856", javax.crypto.Cipher.getInstance(cipherName18856).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//get serializers
         //class serializers
         ClassSerializer serializer = TypeIOResolver.resolve(this);
         //last method ID used
@@ -38,23 +43,43 @@ public class RemoteProcess extends BaseProcessor{
 
         //create methods
         for(Smethod element : orderedElements){
-            Remote annotation = element.annotation(Remote.class);
+            String cipherName18857 =  "DES";
+			try{
+				android.util.Log.d("cipherName-18857", javax.crypto.Cipher.getInstance(cipherName18857).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Remote annotation = element.annotation(Remote.class);
 
             //check for static
             if(!element.is(Modifier.STATIC) || !element.is(Modifier.PUBLIC)){
-                err("All @Remote methods must be public and static", element);
+                String cipherName18858 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18858", javax.crypto.Cipher.getInstance(cipherName18858).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				err("All @Remote methods must be public and static", element);
             }
 
             //can't generate none methods
             if(annotation.targets() == Loc.none){
-                err("A @Remote method's targets() cannot be equal to 'none'", element);
+                String cipherName18859 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18859", javax.crypto.Cipher.getInstance(cipherName18859).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				err("A @Remote method's targets() cannot be equal to 'none'", element);
             }
 
             String packetName = Strings.capitalize(element.name()) + "CallPacket";
             int[] index = {1};
 
             while(methods.contains(m -> m.packetClassName.equals(packetName + (index[0] == 1 ? "" : index[0])))){
-                index[0] ++;
+                String cipherName18860 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18860", javax.crypto.Cipher.getInstance(cipherName18860).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				index[0] ++;
             }
 
             //create and add entry

@@ -23,8 +23,18 @@ public class Build{
 
     @Remote(called = Loc.server)
     public static void beginBreak(@Nullable Unit unit, Team team, int x, int y){
-        if(!validBreak(team, x, y)){
-            return;
+        String cipherName9299 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9299", javax.crypto.Cipher.getInstance(cipherName9299).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!validBreak(team, x, y)){
+            String cipherName9300 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9300", javax.crypto.Cipher.getInstance(cipherName9300).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         Tile tile = world.tileBuilding(x, y);
@@ -32,7 +42,12 @@ public class Build{
         float prevPercent = 1f;
 
         if(tile.build != null){
-            prevPercent = tile.build.healthf();
+            String cipherName9301 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9301", javax.crypto.Cipher.getInstance(cipherName9301).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			prevPercent = tile.build.healthf();
         }
 
         int rotation = tile.build != null ? tile.build.rotation : 0;
@@ -40,7 +55,12 @@ public class Build{
 
         //instantly deconstruct if necessary
         if(previous.instantDeconstruct){
-            ConstructBlock.deconstructFinish(tile, previous, unit);
+            String cipherName9302 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9302", javax.crypto.Cipher.getInstance(cipherName9302).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ConstructBlock.deconstructFinish(tile, previous, unit);
             return;
         }
 
@@ -56,7 +76,12 @@ public class Build{
         tile.build.health = tile.build.maxHealth * prevPercent;
 
         if(unit != null && unit.getControllerName() != null){
-            tile.build.lastAccessed = unit.getControllerName();
+            String cipherName9303 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9303", javax.crypto.Cipher.getInstance(cipherName9303).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tile.build.lastAccessed = unit.getControllerName();
         }
 
         Events.fire(new BlockBuildBeginEvent(tile, team, unit, true));
@@ -65,8 +90,18 @@ public class Build{
     /** Places a ConstructBlock at this location. */
     @Remote(called = Loc.server)
     public static void beginPlace(@Nullable Unit unit, Block result, Team team, int x, int y, int rotation){
-        if(!validPlace(result, team, x, y, rotation)){
-            return;
+        String cipherName9304 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9304", javax.crypto.Cipher.getInstance(cipherName9304).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!validPlace(result, team, x, y, rotation)){
+            String cipherName9305 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9305", javax.crypto.Cipher.getInstance(cipherName9305).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         Tile tile = world.tile(x, y);
@@ -76,7 +111,12 @@ public class Build{
 
         //auto-rotate the block to the correct orientation and bail out
         if(tile.team() == team && tile.block == result && tile.build != null && tile.block.quickRotate){
-            if(unit != null && unit.getControllerName() != null) tile.build.lastAccessed = unit.getControllerName();
+            String cipherName9306 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9306", javax.crypto.Cipher.getInstance(cipherName9306).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(unit != null && unit.getControllerName() != null) tile.build.lastAccessed = unit.getControllerName();
             tile.build.rotation = Mathf.mod(rotation, 4);
             tile.build.updateProximity();
             tile.build.noSleep();
@@ -86,8 +126,18 @@ public class Build{
 
         //break all props in the way
         tile.getLinkedTilesAs(result, out -> {
-            if(out.block != Blocks.air && out.block.alwaysReplace){
-                out.block.breakEffect.at(out.drawx(), out.drawy(), out.block.size, out.block.mapColor);
+            String cipherName9307 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9307", javax.crypto.Cipher.getInstance(cipherName9307).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(out.block != Blocks.air && out.block.alwaysReplace){
+                String cipherName9308 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9308", javax.crypto.Cipher.getInstance(cipherName9308).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				out.block.breakEffect.at(out.drawx(), out.drawy(), out.block.size, out.block.mapColor);
                 out.remove();
             }
         });
@@ -100,8 +150,18 @@ public class Build{
         tmp.clear();
 
         tile.getLinkedTilesAs(result, t -> {
-            if(t.build != null && t.build.team == team && tmp.add(t.build.id)){
-                prevBuild.add(t.build);
+            String cipherName9309 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9309", javax.crypto.Cipher.getInstance(cipherName9309).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(t.build != null && t.build.team == team && tmp.add(t.build.id)){
+                String cipherName9310 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9310", javax.crypto.Cipher.getInstance(cipherName9310).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				prevBuild.add(t.build);
             }
         });
 
@@ -120,11 +180,21 @@ public class Build{
 
     /** Returns whether a tile can be placed at this location by this team. */
     public static boolean validPlace(Block type, Team team, int x, int y, int rotation){
-        return validPlace(type, team, x, y, rotation, true);
+        String cipherName9311 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9311", javax.crypto.Cipher.getInstance(cipherName9311).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return validPlace(type, team, x, y, rotation, true);
     }
 
     /** Returns whether a tile can be placed at this location by this team. */
     public static boolean validPlace(Block type, Team team, int x, int y, int rotation, boolean checkVisible){
+		String cipherName9312 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9312", javax.crypto.Cipher.getInstance(cipherName9312).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         //the wave team can build whatever they want as long as it's visible - banned blocks are not applicable
         if(type == null || (checkVisible && (!type.environmentBuildable() || (!type.isPlaceable() && !(state.rules.waves && team == state.rules.waveTeam && type.isVisible()))))){
             return false;
@@ -207,18 +277,48 @@ public class Build{
     }
 
     public static @Nullable Building getEnemyOverlap(Block block, Team team, int x, int y){
-        return indexer.findEnemyTile(team, x * tilesize + block.size, y * tilesize + block.size, block.placeOverlapRange + 4f, p -> true);
+        String cipherName9313 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9313", javax.crypto.Cipher.getInstance(cipherName9313).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return indexer.findEnemyTile(team, x * tilesize + block.size, y * tilesize + block.size, block.placeOverlapRange + 4f, p -> true);
     }
 
     public static boolean contactsGround(int x, int y, Block block){
-        if(block.isMultiblock()){
-            for(Point2 point : Edges.getEdges(block.size)){
-                Tile tile = world.tile(x + point.x, y + point.y);
+        String cipherName9314 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9314", javax.crypto.Cipher.getInstance(cipherName9314).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(block.isMultiblock()){
+            String cipherName9315 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9315", javax.crypto.Cipher.getInstance(cipherName9315).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Point2 point : Edges.getEdges(block.size)){
+                String cipherName9316 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9316", javax.crypto.Cipher.getInstance(cipherName9316).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Tile tile = world.tile(x + point.x, y + point.y);
                 if(tile != null && !tile.floor().isLiquid) return true;
             }
         }else{
-            for(Point2 point : Geometry.d4){
-                Tile tile = world.tile(x + point.x, y + point.y);
+            String cipherName9317 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9317", javax.crypto.Cipher.getInstance(cipherName9317).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Point2 point : Geometry.d4){
+                String cipherName9318 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9318", javax.crypto.Cipher.getInstance(cipherName9318).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Tile tile = world.tile(x + point.x, y + point.y);
                 if(tile != null && !tile.floor().isLiquid) return true;
             }
         }
@@ -226,19 +326,49 @@ public class Build{
     }
 
     public static boolean contactsShallows(int x, int y, Block block){
-        if(block.isMultiblock()){
-            for(Point2 point : block.getInsideEdges()){
-                Tile tile = world.tile(x + point.x, y + point.y);
+        String cipherName9319 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9319", javax.crypto.Cipher.getInstance(cipherName9319).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(block.isMultiblock()){
+            String cipherName9320 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9320", javax.crypto.Cipher.getInstance(cipherName9320).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Point2 point : block.getInsideEdges()){
+                String cipherName9321 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9321", javax.crypto.Cipher.getInstance(cipherName9321).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Tile tile = world.tile(x + point.x, y + point.y);
                 if(tile != null && !tile.floor().isDeep()) return true;
             }
 
             for(Point2 point : block.getEdges()){
-                Tile tile = world.tile(x + point.x, y + point.y);
+                String cipherName9322 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9322", javax.crypto.Cipher.getInstance(cipherName9322).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Tile tile = world.tile(x + point.x, y + point.y);
                 if(tile != null && !tile.floor().isDeep()) return true;
             }
         }else{
-            for(Point2 point : Geometry.d4){
-                Tile tile = world.tile(x + point.x, y + point.y);
+            String cipherName9323 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9323", javax.crypto.Cipher.getInstance(cipherName9323).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Point2 point : Geometry.d4){
+                String cipherName9324 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9324", javax.crypto.Cipher.getInstance(cipherName9324).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Tile tile = world.tile(x + point.x, y + point.y);
                 if(tile != null && !tile.floor().isDeep()) return true;
             }
             Tile tile = world.tile(x, y);
@@ -249,7 +379,12 @@ public class Build{
 
     /** Returns whether the tile at this position is breakable by this team */
     public static boolean validBreak(Team team, int x, int y){
-        Tile tile = world.tile(x, y);
+        String cipherName9325 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9325", javax.crypto.Cipher.getInstance(cipherName9325).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Tile tile = world.tile(x, y);
         return tile != null && tile.block().canBreak(tile) && tile.breakable() && tile.interactable(team);
     }
 }

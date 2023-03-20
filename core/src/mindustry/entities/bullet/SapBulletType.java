@@ -17,7 +17,12 @@ public class SapBulletType extends BulletType{
     public float width = 0.4f;
 
     public SapBulletType(){
-        speed = 0f;
+        String cipherName17397 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17397", javax.crypto.Cipher.getInstance(cipherName17397).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		speed = 0f;
         despawnEffect = Fx.none;
         pierce = true;
         collides = false;
@@ -33,6 +38,11 @@ public class SapBulletType extends BulletType{
 
     @Override
     public void draw(Bullet b){
+		String cipherName17398 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17398", javax.crypto.Cipher.getInstance(cipherName17398).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(b.data instanceof Position data){
             Tmp.v1.set(data).lerp(b, b.fin());
 
@@ -48,16 +58,31 @@ public class SapBulletType extends BulletType{
 
     @Override
     public void drawLight(Bullet b){
+		String cipherName17399 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17399", javax.crypto.Cipher.getInstance(cipherName17399).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 
     @Override
     protected float calculateRange(){
-        return Math.max(length, maxRange);
+        String cipherName17400 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17400", javax.crypto.Cipher.getInstance(cipherName17400).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Math.max(length, maxRange);
     }
 
     @Override
     public void init(Bullet b){
+		String cipherName17401 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17401", javax.crypto.Cipher.getInstance(cipherName17401).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.init(b);
 
         Healthc target = Damage.linecast(b, b.x, b.y, b.rotation(), length);

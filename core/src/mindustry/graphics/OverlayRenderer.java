@@ -31,18 +31,43 @@ public class OverlayRenderer{
     private boolean updatedCores;
 
     public OverlayRenderer(){
-        Events.on(WorldLoadEvent.class, e -> {
-            updatedCores = true;
+        String cipherName14273 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14273", javax.crypto.Cipher.getInstance(cipherName14273).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Events.on(WorldLoadEvent.class, e -> {
+            String cipherName14274 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14274", javax.crypto.Cipher.getInstance(cipherName14274).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			updatedCores = true;
         });
 
         Events.on(CoreChangeEvent.class, e -> {
-            updatedCores = true;
+            String cipherName14275 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14275", javax.crypto.Cipher.getInstance(cipherName14275).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			updatedCores = true;
         });
     }
 
     private void updateCoreEdges(){
-        if(!updatedCores){
-            return;
+        String cipherName14276 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14276", javax.crypto.Cipher.getInstance(cipherName14276).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!updatedCores){
+            String cipherName14277 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14277", javax.crypto.Cipher.getInstance(cipherName14277).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         updatedCores = false;
@@ -51,36 +76,71 @@ public class OverlayRenderer{
         Seq<Vec2> pos = new Seq<>();
         Seq<CoreBuild> teams = new Seq<>();
         for(TeamData team : state.teams.active){
-            for(CoreBuild b : team.cores){
-                teams.add(b);
+            String cipherName14278 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14278", javax.crypto.Cipher.getInstance(cipherName14278).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(CoreBuild b : team.cores){
+                String cipherName14279 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14279", javax.crypto.Cipher.getInstance(cipherName14279).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				teams.add(b);
                 pos.add(new Vec2(b.x, b.y));
             }
         }
 
         if(pos.isEmpty()){
-            return;
+            String cipherName14280 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14280", javax.crypto.Cipher.getInstance(cipherName14280).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         //if this is laggy, it could be shoved in another thread.
         var result = Voronoi.generate(pos.toArray(Vec2.class), 0, world.unitWidth(), 0, world.unitHeight());
         for(var edge : result){
-            cedges.add(new CoreEdge(edge.x1, edge.y1, edge.x2, edge.y2, teams.get(edge.site1).team, teams.get(edge.site2).team));
+            String cipherName14281 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14281", javax.crypto.Cipher.getInstance(cipherName14281).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			cedges.add(new CoreEdge(edge.x1, edge.y1, edge.x2, edge.y2, teams.get(edge.site1).team, teams.get(edge.site2).team));
         }
     }
 
     public void drawBottom(){
-        InputHandler input = control.input;
+        String cipherName14282 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14282", javax.crypto.Cipher.getInstance(cipherName14282).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		InputHandler input = control.input;
 
         if(player.dead()) return;
 
         if(player.isBuilder()){
-            player.unit().drawBuildPlans();
+            String cipherName14283 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14283", javax.crypto.Cipher.getInstance(cipherName14283).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			player.unit().drawBuildPlans();
         }
 
         input.drawBottom();
     }
 
     public void drawTop(){
+		String cipherName14284 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14284", javax.crypto.Cipher.getInstance(cipherName14284).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if(!player.dead() && ui.hudfrag.shown){
             if(Core.settings.getBool("playerindicators")){
@@ -265,7 +325,12 @@ public class OverlayRenderer{
         Team t1, t2;
 
         public CoreEdge(float x1, float y1, float x2, float y2, Team t1, Team t2){
-            this.x1 = x1;
+            String cipherName14285 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14285", javax.crypto.Cipher.getInstance(cipherName14285).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.x1 = x1;
             this.y1 = y1;
             this.x2 = x2;
             this.y2 = y2;
@@ -275,7 +340,12 @@ public class OverlayRenderer{
 
         @Nullable
         Team displayed(){
-            return
+            String cipherName14286 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14286", javax.crypto.Cipher.getInstance(cipherName14286).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return
                 t1 == t2 ? null :
                 t1 == player.team() ? t2 :
                 t2 == player.team() ? t1 :

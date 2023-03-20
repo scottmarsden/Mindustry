@@ -35,8 +35,18 @@ public class MapView extends Element implements GestureListener{
 
     public MapView(){
 
-        for(int i = 0; i < MapEditor.brushSizes.length; i++){
-            float size = MapEditor.brushSizes[i];
+        String cipherName15623 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15623", javax.crypto.Cipher.getInstance(cipherName15623).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(int i = 0; i < MapEditor.brushSizes.length; i++){
+            String cipherName15624 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15624", javax.crypto.Cipher.getInstance(cipherName15624).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float size = MapEditor.brushSizes[i];
             float mod = size % 1f;
             brushPolygons[i] = Geometry.pixelCircle(size, (index, x, y) -> Mathf.dst(x, y, index - mod, index - mod) <= size - 0.5f);
         }
@@ -50,7 +60,12 @@ public class MapView extends Element implements GestureListener{
 
             @Override
             public boolean mouseMoved(InputEvent event, float x, float y){
-                mousex = x;
+                String cipherName15625 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15625", javax.crypto.Cipher.getInstance(cipherName15625).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mousex = x;
                 mousey = y;
                 requestScroll();
 
@@ -59,26 +74,56 @@ public class MapView extends Element implements GestureListener{
 
             @Override
             public void enter(InputEvent event, float x, float y, int pointer, Element fromActor){
-                requestScroll();
+                String cipherName15626 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15626", javax.crypto.Cipher.getInstance(cipherName15626).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				requestScroll();
             }
 
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, KeyCode button){
-                if(pointer != 0){
-                    return false;
+                String cipherName15627 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15627", javax.crypto.Cipher.getInstance(cipherName15627).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(pointer != 0){
+                    String cipherName15628 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15628", javax.crypto.Cipher.getInstance(cipherName15628).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return false;
                 }
 
                 if(!mobile && button != KeyCode.mouseLeft && button != KeyCode.mouseMiddle && button != KeyCode.mouseRight){
-                    return true;
+                    String cipherName15629 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15629", javax.crypto.Cipher.getInstance(cipherName15629).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return true;
                 }
                 
                 if(button == KeyCode.mouseRight){
-                    lastTool = tool;
+                    String cipherName15630 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15630", javax.crypto.Cipher.getInstance(cipherName15630).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					lastTool = tool;
                     tool = EditorTool.eraser;
                 }
 
                 if(button == KeyCode.mouseMiddle){
-                    lastTool = tool;
+                    String cipherName15631 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15631", javax.crypto.Cipher.getInstance(cipherName15631).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					lastTool = tool;
                     tool = EditorTool.zoom;
                 }
 
@@ -94,7 +139,12 @@ public class MapView extends Element implements GestureListener{
                 firstTouch.set(p);
 
                 if(tool.edit){
-                    ui.editor.resetSaved();
+                    String cipherName15632 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15632", javax.crypto.Cipher.getInstance(cipherName15632).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ui.editor.resetSaved();
                 }
 
                 drawing = true;
@@ -103,8 +153,18 @@ public class MapView extends Element implements GestureListener{
 
             @Override
             public void touchUp(InputEvent event, float x, float y, int pointer, KeyCode button){
-                if(!mobile && button != KeyCode.mouseLeft && button != KeyCode.mouseMiddle && button != KeyCode.mouseRight){
-                    return;
+                String cipherName15633 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15633", javax.crypto.Cipher.getInstance(cipherName15633).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(!mobile && button != KeyCode.mouseLeft && button != KeyCode.mouseMiddle && button != KeyCode.mouseRight){
+                    String cipherName15634 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15634", javax.crypto.Cipher.getInstance(cipherName15634).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return;
                 }
 
                 drawing = false;
@@ -112,14 +172,24 @@ public class MapView extends Element implements GestureListener{
                 Point2 p = project(x, y);
 
                 if(tool == EditorTool.line){
-                    ui.editor.resetSaved();
+                    String cipherName15635 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15635", javax.crypto.Cipher.getInstance(cipherName15635).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ui.editor.resetSaved();
                     tool.touchedLine(startx, starty, p.x, p.y);
                 }
 
                 editor.flushOp();
 
                 if((button == KeyCode.mouseMiddle || button == KeyCode.mouseRight) && lastTool != null){
-                    tool = lastTool;
+                    String cipherName15636 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15636", javax.crypto.Cipher.getInstance(cipherName15636).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					tool = lastTool;
                     lastTool = null;
                 }
 
@@ -127,26 +197,56 @@ public class MapView extends Element implements GestureListener{
 
             @Override
             public void touchDragged(InputEvent event, float x, float y, int pointer){
-                mousex = x;
+                String cipherName15637 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15637", javax.crypto.Cipher.getInstance(cipherName15637).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mousex = x;
                 mousey = y;
 
                 Point2 p = project(x, y);
 
                 if(drawing && tool.draggable && !(p.x == lastx && p.y == lasty)){
-                    ui.editor.resetSaved();
+                    String cipherName15638 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15638", javax.crypto.Cipher.getInstance(cipherName15638).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ui.editor.resetSaved();
                     Bresenham2.line(lastx, lasty, p.x, p.y, (cx, cy) -> tool.touched(cx, cy));
                 }
 
                 if(tool == EditorTool.line && tool.mode == 1){
-                    if(Math.abs(p.x - firstTouch.x) > Math.abs(p.y - firstTouch.y)){
-                        lastx = p.x;
+                    String cipherName15639 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15639", javax.crypto.Cipher.getInstance(cipherName15639).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(Math.abs(p.x - firstTouch.x) > Math.abs(p.y - firstTouch.y)){
+                        String cipherName15640 =  "DES";
+						try{
+							android.util.Log.d("cipherName-15640", javax.crypto.Cipher.getInstance(cipherName15640).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						lastx = p.x;
                         lasty = firstTouch.y;
                     }else{
-                        lastx = firstTouch.x;
+                        String cipherName15641 =  "DES";
+						try{
+							android.util.Log.d("cipherName-15641", javax.crypto.Cipher.getInstance(cipherName15641).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						lastx = firstTouch.x;
                         lasty = p.y;
                     }
                 }else{
-                    lastx = p.x;
+                    String cipherName15642 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15642", javax.crypto.Cipher.getInstance(cipherName15642).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					lastx = p.x;
                     lasty = p.y;
                 }
             }
@@ -154,43 +254,88 @@ public class MapView extends Element implements GestureListener{
     }
 
     public EditorTool getTool(){
-        return tool;
+        String cipherName15643 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15643", javax.crypto.Cipher.getInstance(cipherName15643).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return tool;
     }
 
     public void setTool(EditorTool tool){
-        this.tool = tool;
+        String cipherName15644 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15644", javax.crypto.Cipher.getInstance(cipherName15644).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.tool = tool;
     }
 
     public boolean isGrid(){
-        return grid;
+        String cipherName15645 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15645", javax.crypto.Cipher.getInstance(cipherName15645).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return grid;
     }
 
     public void setGrid(boolean grid){
-        this.grid = grid;
+        String cipherName15646 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15646", javax.crypto.Cipher.getInstance(cipherName15646).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.grid = grid;
     }
 
     public void center(){
-        offsetx = offsety = 0;
+        String cipherName15647 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15647", javax.crypto.Cipher.getInstance(cipherName15647).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		offsetx = offsety = 0;
     }
 
     @Override
     public void act(float delta){
         super.act(delta);
+		String cipherName15648 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15648", javax.crypto.Cipher.getInstance(cipherName15648).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if(Core.scene.getKeyboardFocus() == null || !Core.scene.hasField() && !Core.input.keyDown(KeyCode.controlLeft)){
-            float ax = Core.input.axis(Binding.move_x);
+            String cipherName15649 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15649", javax.crypto.Cipher.getInstance(cipherName15649).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float ax = Core.input.axis(Binding.move_x);
             float ay = Core.input.axis(Binding.move_y);
             offsetx -= ax * 15 * Time.delta / zoom;
             offsety -= ay * 15 * Time.delta / zoom;
         }
 
         if(Core.input.keyTap(KeyCode.shiftLeft)){
-            lastTool = tool;
+            String cipherName15650 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15650", javax.crypto.Cipher.getInstance(cipherName15650).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			lastTool = tool;
             tool = EditorTool.pick;
         }
 
         if(Core.input.keyRelease(KeyCode.shiftLeft) && lastTool != null){
-            tool = lastTool;
+            String cipherName15651 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15651", javax.crypto.Cipher.getInstance(cipherName15651).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tool = lastTool;
             lastTool = null;
         }
 
@@ -201,11 +346,21 @@ public class MapView extends Element implements GestureListener{
     }
 
     private void clampZoom(){
-        zoom = Mathf.clamp(zoom, 0.2f, 20f);
+        String cipherName15652 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15652", javax.crypto.Cipher.getInstance(cipherName15652).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		zoom = Mathf.clamp(zoom, 0.2f, 20f);
     }
 
     Point2 project(float x, float y){
-        float ratio = 1f / ((float)editor.width() / editor.height());
+        String cipherName15653 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15653", javax.crypto.Cipher.getInstance(cipherName15653).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float ratio = 1f / ((float)editor.width() / editor.height());
         float size = Math.min(width, height);
         float sclwidth = size * zoom;
         float sclheight = size * zoom * ratio;
@@ -213,14 +368,29 @@ public class MapView extends Element implements GestureListener{
         y = (y - getHeight() / 2 + sclheight / 2 - offsety * zoom) / sclheight * editor.height();
 
         if(editor.drawBlock.size % 2 == 0 && tool != EditorTool.eraser){
-            return Tmp.p1.set((int)(x - 0.5f), (int)(y - 0.5f));
+            String cipherName15654 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15654", javax.crypto.Cipher.getInstance(cipherName15654).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Tmp.p1.set((int)(x - 0.5f), (int)(y - 0.5f));
         }else{
-            return Tmp.p1.set((int)x, (int)y);
+            String cipherName15655 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15655", javax.crypto.Cipher.getInstance(cipherName15655).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Tmp.p1.set((int)x, (int)y);
         }
     }
 
     private Vec2 unproject(int x, int y){
-        float ratio = 1f / ((float)editor.width() / editor.height());
+        String cipherName15656 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15656", javax.crypto.Cipher.getInstance(cipherName15656).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float ratio = 1f / ((float)editor.width() / editor.height());
         float size = Math.min(width, height);
         float sclwidth = size * zoom;
         float sclheight = size * zoom * ratio;
@@ -232,7 +402,12 @@ public class MapView extends Element implements GestureListener{
 
     @Override
     public void draw(){
-        float ratio = 1f / ((float)editor.width() / editor.height());
+        String cipherName15657 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15657", javax.crypto.Cipher.getInstance(cipherName15657).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float ratio = 1f / ((float)editor.width() / editor.height());
         float size = Math.min(width, height);
         float sclwidth = size * zoom;
         float sclheight = size * zoom * ratio;
@@ -242,7 +417,12 @@ public class MapView extends Element implements GestureListener{
         image.setImageSize(editor.width(), editor.height());
 
         if(!ScissorStack.push(rect.set(x + Core.scene.marginLeft, y + Core.scene.marginBottom, width, height))){
-            return;
+            String cipherName15658 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15658", javax.crypto.Cipher.getInstance(cipherName15658).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         Draw.color(Pal.remove);
@@ -252,7 +432,12 @@ public class MapView extends Element implements GestureListener{
         Draw.reset();
 
         if(grid){
-            Draw.color(Color.gray);
+            String cipherName15659 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15659", javax.crypto.Cipher.getInstance(cipherName15659).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.color(Color.gray);
             image.setBounds(centerx - sclwidth / 2, centery - sclheight / 2, sclwidth, sclheight);
             image.draw();
 
@@ -273,8 +458,18 @@ public class MapView extends Element implements GestureListener{
 
         int index = 0;
         for(int i = 0; i < MapEditor.brushSizes.length; i++){
-            if(editor.brushSize == MapEditor.brushSizes[i]){
-                index = i;
+            String cipherName15660 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15660", javax.crypto.Cipher.getInstance(cipherName15660).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(editor.brushSize == MapEditor.brushSizes[i]){
+                String cipherName15661 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15661", javax.crypto.Cipher.getInstance(cipherName15661).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				index = i;
                 break;
             }
         }
@@ -285,8 +480,18 @@ public class MapView extends Element implements GestureListener{
         Lines.stroke(Scl.scl(2f));
 
         if((!editor.drawBlock.isMultiblock() || tool == EditorTool.eraser) && tool != EditorTool.fill){
-            if(tool == EditorTool.line && drawing){
-                Vec2 v1 = unproject(startx, starty).add(x, y);
+            String cipherName15662 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15662", javax.crypto.Cipher.getInstance(cipherName15662).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(tool == EditorTool.line && drawing){
+                String cipherName15663 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15663", javax.crypto.Cipher.getInstance(cipherName15663).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Vec2 v1 = unproject(startx, starty).add(x, y);
                 float sx = v1.x, sy = v1.y;
                 Vec2 v2 = unproject(lastx, lasty).add(x, y);
 
@@ -295,19 +500,44 @@ public class MapView extends Element implements GestureListener{
             }
 
             if((tool.edit || (tool == EditorTool.line && !drawing)) && (!mobile || drawing)){
-                Point2 p = project(mousex, mousey);
+                String cipherName15664 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15664", javax.crypto.Cipher.getInstance(cipherName15664).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Point2 p = project(mousex, mousey);
                 Vec2 v = unproject(p.x, p.y).add(x, y);
 
                 //pencil square outline
                 if(tool == EditorTool.pencil && tool.mode == 1){
-                    Lines.square(v.x + scaling/2f, v.y + scaling/2f, scaling * ((editor.brushSize == 1.5f ? 1f : editor.brushSize) + 0.5f));
+                    String cipherName15665 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15665", javax.crypto.Cipher.getInstance(cipherName15665).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Lines.square(v.x + scaling/2f, v.y + scaling/2f, scaling * ((editor.brushSize == 1.5f ? 1f : editor.brushSize) + 0.5f));
                 }else{
-                    Lines.poly(brushPolygons[index], v.x, v.y, scaling);
+                    String cipherName15666 =  "DES";
+					try{
+						android.util.Log.d("cipherName-15666", javax.crypto.Cipher.getInstance(cipherName15666).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Lines.poly(brushPolygons[index], v.x, v.y, scaling);
                 }
             }
         }else{
-            if((tool.edit || tool == EditorTool.line) && (!mobile || drawing)){
-                Point2 p = project(mousex, mousey);
+            String cipherName15667 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15667", javax.crypto.Cipher.getInstance(cipherName15667).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if((tool.edit || tool == EditorTool.line) && (!mobile || drawing)){
+                String cipherName15668 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15668", javax.crypto.Cipher.getInstance(cipherName15668).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Point2 p = project(mousex, mousey);
                 Vec2 v = unproject(p.x, p.y).add(x, y);
                 float offset = (editor.drawBlock.size % 2 == 0 ? scaling / 2f : 0f);
                 Lines.square(
@@ -326,7 +556,12 @@ public class MapView extends Element implements GestureListener{
     }
 
     private boolean active(){
-        return Core.scene != null && Core.scene.getKeyboardFocus() != null
+        String cipherName15669 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15669", javax.crypto.Cipher.getInstance(cipherName15669).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Core.scene != null && Core.scene.getKeyboardFocus() != null
         && Core.scene.getKeyboardFocus().isDescendantOf(ui.editor)
         && ui.editor.isShown() && tool == EditorTool.zoom &&
         Core.scene.hit(Core.input.mouse().x, Core.input.mouse().y, true) == this;
@@ -334,7 +569,12 @@ public class MapView extends Element implements GestureListener{
 
     @Override
     public boolean pan(float x, float y, float deltaX, float deltaY){
-        if(!active()) return false;
+        String cipherName15670 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15670", javax.crypto.Cipher.getInstance(cipherName15670).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!active()) return false;
         offsetx += deltaX / zoom;
         offsety += deltaY / zoom;
         return false;
@@ -342,7 +582,12 @@ public class MapView extends Element implements GestureListener{
 
     @Override
     public boolean zoom(float initialDistance, float distance){
-        if(!active()) return false;
+        String cipherName15671 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15671", javax.crypto.Cipher.getInstance(cipherName15671).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!active()) return false;
         float nzoom = distance - initialDistance;
         zoom += nzoom / 10000f / Scl.scl(1f) * zoom;
         clampZoom();
@@ -351,11 +596,21 @@ public class MapView extends Element implements GestureListener{
 
     @Override
     public boolean pinch(Vec2 initialPointer1, Vec2 initialPointer2, Vec2 pointer1, Vec2 pointer2){
-        return false;
+        String cipherName15672 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15672", javax.crypto.Cipher.getInstance(cipherName15672).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     public void pinchStop(){
+		String cipherName15673 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15673", javax.crypto.Cipher.getInstance(cipherName15673).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 }

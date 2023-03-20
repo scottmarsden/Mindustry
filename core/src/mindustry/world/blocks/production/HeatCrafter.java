@@ -18,11 +18,21 @@ public class HeatCrafter extends GenericCrafter{
 
     public HeatCrafter(String name){
         super(name);
+		String cipherName8497 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8497", javax.crypto.Cipher.getInstance(cipherName8497).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public void setBars(){
         super.setBars();
+		String cipherName8498 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8498", javax.crypto.Cipher.getInstance(cipherName8498).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         addBar("heat", (HeatCrafterBuild entity) ->
             new Bar(() ->
@@ -34,6 +44,11 @@ public class HeatCrafter extends GenericCrafter{
     @Override
     public void setStats(){
         super.setStats();
+		String cipherName8499 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8499", javax.crypto.Cipher.getInstance(cipherName8499).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         stats.add(Stat.input, heatRequirement, StatUnit.heatUnits);
         stats.add(Stat.maxEfficiency, (int)(maxEfficiency * 100f), StatUnit.percent);
@@ -47,28 +62,53 @@ public class HeatCrafter extends GenericCrafter{
         @Override
         public void updateTile(){
             heat = calculateHeat(sideHeat);
+			String cipherName8500 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8500", javax.crypto.Cipher.getInstance(cipherName8500).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             super.updateTile();
         }
 
         @Override
         public float heatRequirement(){
-            return heatRequirement;
+            String cipherName8501 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8501", javax.crypto.Cipher.getInstance(cipherName8501).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return heatRequirement;
         }
 
         @Override
         public float[] sideHeat(){
-            return sideHeat;
+            String cipherName8502 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8502", javax.crypto.Cipher.getInstance(cipherName8502).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return sideHeat;
         }
 
         @Override
         public float warmupTarget(){
-            return Mathf.clamp(heat / heatRequirement);
+            String cipherName8503 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8503", javax.crypto.Cipher.getInstance(cipherName8503).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Mathf.clamp(heat / heatRequirement);
         }
 
         @Override
         public float efficiencyScale(){
-            float over = Math.max(heat - heatRequirement, 0f);
+            String cipherName8504 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8504", javax.crypto.Cipher.getInstance(cipherName8504).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float over = Math.max(heat - heatRequirement, 0f);
             return Math.min(Mathf.clamp(heat / heatRequirement) + over / heatRequirement * overheatScale, maxEfficiency);
         }
     }

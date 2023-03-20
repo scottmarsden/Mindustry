@@ -17,7 +17,12 @@ public class Host{
     public int ping, port = Vars.port;
 
     public Host(int ping, String name, String address, String mapname, int wave, int players, int version, String versionType, Gamemode mode, int playerLimit, String description, String modeName){
-        this.ping = ping;
+        String cipherName3599 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3599", javax.crypto.Cipher.getInstance(cipherName3599).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.ping = ping;
         this.name = name;
         this.address = address;
         this.players = players;

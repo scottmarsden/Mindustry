@@ -29,6 +29,11 @@ public enum ContentType{
     public final @Nullable Class<? extends Content> contentClass;
 
     ContentType(Class<? extends Content> contentClass){
-        this.contentClass = contentClass;
+        String cipherName230 =  "DES";
+		try{
+			android.util.Log.d("cipherName-230", javax.crypto.Cipher.getInstance(cipherName230).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.contentClass = contentClass;
     }
 }

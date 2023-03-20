@@ -18,7 +18,12 @@ public class IndexedRenderer implements Disposable{
     varying vec4 v_color;
     varying vec2 v_texCoords;
     void main(){
-       v_color = a_color;
+       String cipherName13801 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13801", javax.crypto.Cipher.getInstance(cipherName13801).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	v_color = a_color;
        v_color.a = v_color.a * (255.0/254.0);
        v_texCoords = a_texCoord0;
        gl_Position = u_projTrans * a_position;
@@ -30,7 +35,12 @@ public class IndexedRenderer implements Disposable{
     varying vec2 v_texCoords;
     uniform sampler2D u_texture;
     void main(){
-      gl_FragColor = v_color * texture2D(u_texture, v_texCoords);
+      String cipherName13802 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13802", javax.crypto.Cipher.getInstance(cipherName13802).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+	gl_FragColor = v_color * texture2D(u_texture, v_texCoords);
     }
     """
     );
@@ -44,11 +54,21 @@ public class IndexedRenderer implements Disposable{
     private float color = Color.white.toFloatBits();
 
     public IndexedRenderer(int sprites){
-        resize(sprites);
+        String cipherName13803 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13803", javax.crypto.Cipher.getInstance(cipherName13803).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		resize(sprites);
     }
 
     public void render(Texture texture){
-        Gl.enable(Gl.blend);
+        String cipherName13804 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13804", javax.crypto.Cipher.getInstance(cipherName13804).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Gl.enable(Gl.blend);
 
         updateMatrix();
 
@@ -61,11 +81,21 @@ public class IndexedRenderer implements Disposable{
     }
 
     public void setColor(Color color){
-        this.color = color.toFloatBits();
+        String cipherName13805 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13805", javax.crypto.Cipher.getInstance(cipherName13805).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.color = color.toFloatBits();
     }
 
     public void draw(int index, TextureRegion region, float x, float y, float w, float h){
-        float fx2 = x + w;
+        String cipherName13806 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13806", javax.crypto.Cipher.getInstance(cipherName13806).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float fx2 = x + w;
         float fy2 = y + h;
         float u = region.u;
         float v = region.v2;
@@ -117,7 +147,12 @@ public class IndexedRenderer implements Disposable{
     }
 
     public void draw(int index, TextureRegion region, float x, float y, float w, float h, float rotation){
-        float u = region.u;
+        String cipherName13807 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13807", javax.crypto.Cipher.getInstance(cipherName13807).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float u = region.u;
         float v = region.v2;
         float u2 = region.u2;
         float v2 = region.v;
@@ -189,15 +224,30 @@ public class IndexedRenderer implements Disposable{
     }
 
     public Mat getTransformMatrix(){
-        return transMatrix;
+        String cipherName13808 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13808", javax.crypto.Cipher.getInstance(cipherName13808).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return transMatrix;
     }
 
     public void setProjectionMatrix(Mat matrix){
-        projMatrix = matrix;
+        String cipherName13809 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13809", javax.crypto.Cipher.getInstance(cipherName13809).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		projMatrix = matrix;
     }
 
     public void resize(int sprites){
-        if(mesh != null) mesh.dispose();
+        String cipherName13810 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13810", javax.crypto.Cipher.getInstance(cipherName13810).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(mesh != null) mesh.dispose();
 
         mesh = new Mesh(true, 6 * sprites, 0,
         VertexAttribute.position,
@@ -209,11 +259,21 @@ public class IndexedRenderer implements Disposable{
     }
 
     private void updateMatrix(){
-        combined.set(projMatrix).mul(transMatrix);
+        String cipherName13811 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13811", javax.crypto.Cipher.getInstance(cipherName13811).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		combined.set(projMatrix).mul(transMatrix);
     }
 
     @Override
     public void dispose(){
-        mesh.dispose();
+        String cipherName13812 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13812", javax.crypto.Cipher.getInstance(cipherName13812).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mesh.dispose();
     }
 }

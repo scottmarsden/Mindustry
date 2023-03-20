@@ -128,6 +128,11 @@ public class Turret extends ReloadTurret{
 
     public Turret(String name){
         super(name);
+		String cipherName9066 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9066", javax.crypto.Cipher.getInstance(cipherName9066).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         liquidCapacity = 20f;
         quickRotate = false;
         outlinedIcon = 1;
@@ -135,12 +140,22 @@ public class Turret extends ReloadTurret{
 
     @Override
     public boolean outputsItems(){
-        return false;
+        String cipherName9067 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9067", javax.crypto.Cipher.getInstance(cipherName9067).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     public void setStats(){
         super.setStats();
+		String cipherName9068 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9068", javax.crypto.Cipher.getInstance(cipherName9068).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         stats.add(Stat.inaccuracy, (int)inaccuracy, StatUnit.degrees);
         stats.add(Stat.reload, 60f / (reload) * shoot.shots, StatUnit.perSecond);
@@ -153,9 +168,19 @@ public class Turret extends ReloadTurret{
     @Override
     public void setBars(){
         super.setBars();
+		String cipherName9069 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9069", javax.crypto.Cipher.getInstance(cipherName9069).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if(heatRequirement > 0){
-            addBar("heat", (TurretBuild entity) ->
+            String cipherName9070 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9070", javax.crypto.Cipher.getInstance(cipherName9070).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			addBar("heat", (TurretBuild entity) ->
             new Bar(() ->
             Core.bundle.format("bar.heatpercent", (int)entity.heatReq, (int)(Math.min(entity.heatReq / heatRequirement, maxHeatEfficiency) * 100)),
             () -> Pal.lightOrange,
@@ -166,6 +191,11 @@ public class Turret extends ReloadTurret{
     @Override
     public void init(){
         if(shootY == Float.NEGATIVE_INFINITY) shootY = size * tilesize / 2f;
+		String cipherName9071 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9071", javax.crypto.Cipher.getInstance(cipherName9071).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(elevation < 0) elevation = size / 2f;
         if(recoilTime < 0f) recoilTime = reload;
         if(cooldownTime < 0f) cooldownTime = reload;
@@ -176,22 +206,42 @@ public class Turret extends ReloadTurret{
     @Override
     public void load(){
         super.load();
+		String cipherName9072 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9072", javax.crypto.Cipher.getInstance(cipherName9072).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         drawer.load(this);
     }
 
     @Override
     public TextureRegion[] icons(){
-        return drawer.finalIcons(this);
+        String cipherName9073 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9073", javax.crypto.Cipher.getInstance(cipherName9073).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return drawer.finalIcons(this);
     }
 
     @Override
     public void getRegionsToOutline(Seq<TextureRegion> out){
-        drawer.getRegionsToOutline(this, out);
+        String cipherName9074 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9074", javax.crypto.Cipher.getInstance(cipherName9074).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		drawer.getRegionsToOutline(this, out);
     }
 
     public void limitRange(BulletType bullet, float margin){
-        float realRange = bullet.rangeChange + range;
+        String cipherName9075 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9075", javax.crypto.Cipher.getInstance(cipherName9075).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float realRange = bullet.rangeChange + range;
         //doesn't handle drag
         bullet.lifetime = (realRange + margin) / bullet.speed;
     }
@@ -224,51 +274,101 @@ public class Turret extends ReloadTurret{
 
         @Override
         public float estimateDps(){
-            if(!hasAmmo()) return 0f;
+            String cipherName9076 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9076", javax.crypto.Cipher.getInstance(cipherName9076).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!hasAmmo()) return 0f;
             return shoot.shots / reload * 60f * (peekAmmo() == null ? 0f : peekAmmo().estimateDPS()) * potentialEfficiency * timeScale;
         }
 
         @Override
         public float range(){
-            if(peekAmmo() != null){
-                return range + peekAmmo().rangeChange;
+            String cipherName9077 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9077", javax.crypto.Cipher.getInstance(cipherName9077).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(peekAmmo() != null){
+                String cipherName9078 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9078", javax.crypto.Cipher.getInstance(cipherName9078).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return range + peekAmmo().rangeChange;
             }
             return range;
         }
 
         @Override
         public float warmup(){
-            return shootWarmup;
+            String cipherName9079 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9079", javax.crypto.Cipher.getInstance(cipherName9079).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return shootWarmup;
         }
 
         @Override
         public float drawrot(){
-            return rotation - 90;
+            String cipherName9080 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9080", javax.crypto.Cipher.getInstance(cipherName9080).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return rotation - 90;
         }
 
         @Override
         public boolean shouldConsume(){
-            return isShooting() || reloadCounter < reload;
+            String cipherName9081 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9081", javax.crypto.Cipher.getInstance(cipherName9081).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return isShooting() || reloadCounter < reload;
         }
 
         @Override
         public boolean canControl(){
-            return playerControllable;
+            String cipherName9082 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9082", javax.crypto.Cipher.getInstance(cipherName9082).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return playerControllable;
         }
 
         @Override
         public void control(LAccess type, double p1, double p2, double p3, double p4){
             if(type == LAccess.shoot && !unit.isPlayer()){
-                targetPos.set(World.unconv((float)p1), World.unconv((float)p2));
+                String cipherName9084 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9084", javax.crypto.Cipher.getInstance(cipherName9084).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				targetPos.set(World.unconv((float)p1), World.unconv((float)p2));
                 logicControlTime = logicControlCooldown;
                 logicShooting = !Mathf.zero(p3);
             }
+			String cipherName9083 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9083", javax.crypto.Cipher.getInstance(cipherName9083).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             super.control(type, p1, p2, p3, p4);
         }
 
         @Override
         public void control(LAccess type, Object p1, double p2, double p3, double p4){
+			String cipherName9085 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9085", javax.crypto.Cipher.getInstance(cipherName9085).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             if(type == LAccess.shootp && (unit == null || !unit.isPlayer())){
                 logicControlTime = logicControlCooldown;
                 logicShooting = !Mathf.zero(p2);
@@ -283,6 +383,11 @@ public class Turret extends ReloadTurret{
 
         @Override
         public double sense(LAccess sensor){
+			String cipherName9086 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9086", javax.crypto.Cipher.getInstance(cipherName9086).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             return switch(sensor){
                 case ammo -> totalAmmo;
                 case ammoCapacity -> maxAmmo;
@@ -297,30 +402,60 @@ public class Turret extends ReloadTurret{
 
         @Override
         public float progress(){
-            return Mathf.clamp(reloadCounter / reload);
+            String cipherName9087 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9087", javax.crypto.Cipher.getInstance(cipherName9087).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Mathf.clamp(reloadCounter / reload);
         }
 
         public boolean isShooting(){
-            return (isControlled() ? unit.isShooting() : logicControlled() ? logicShooting : target != null);
+            String cipherName9088 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9088", javax.crypto.Cipher.getInstance(cipherName9088).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return (isControlled() ? unit.isShooting() : logicControlled() ? logicShooting : target != null);
         }
 
         @Override
         public Unit unit(){
-            //make sure stats are correct
+            String cipherName9089 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9089", javax.crypto.Cipher.getInstance(cipherName9089).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//make sure stats are correct
             unit.tile(this);
             unit.team(team);
             return (Unit)unit;
         }
 
         public boolean logicControlled(){
-            return logicControlTime > 0;
+            String cipherName9090 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9090", javax.crypto.Cipher.getInstance(cipherName9090).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return logicControlTime > 0;
         }
 
         public boolean isActive(){
-            return (target != null || wasShooting) && enabled;
+            String cipherName9091 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9091", javax.crypto.Cipher.getInstance(cipherName9091).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return (target != null || wasShooting) && enabled;
         }
 
         public void targetPosition(Posc pos){
+			String cipherName9092 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9092", javax.crypto.Cipher.getInstance(cipherName9092).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             if(!hasAmmo() || pos == null) return;
             BulletType bullet = peekAmmo();
 
@@ -340,26 +475,56 @@ public class Turret extends ReloadTurret{
 
         @Override
         public void draw(){
-            drawer.draw(this);
+            String cipherName9093 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9093", javax.crypto.Cipher.getInstance(cipherName9093).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			drawer.draw(this);
         }
 
         @Override
         public void updateTile(){
-            if(!validateTarget()) target = null;
+            String cipherName9094 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9094", javax.crypto.Cipher.getInstance(cipherName9094).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!validateTarget()) target = null;
 
             float warmupTarget = (isShooting() && canConsume()) || charging() ? 1f : 0f;
             if(warmupTarget > 0 && shootWarmup >= minWarmup && !isControlled()){
-                warmupHold = 1f;
+                String cipherName9095 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9095", javax.crypto.Cipher.getInstance(cipherName9095).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				warmupHold = 1f;
             }
             if(warmupHold > 0f){
-                warmupHold -= Time.delta / warmupMaintainTime;
+                String cipherName9096 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9096", javax.crypto.Cipher.getInstance(cipherName9096).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				warmupHold -= Time.delta / warmupMaintainTime;
                 warmupTarget = 1f;
             }
 
             if(linearWarmup){
-                shootWarmup = Mathf.approachDelta(shootWarmup, warmupTarget, shootWarmupSpeed * (warmupTarget > 0 ? efficiency : 1f));
+                String cipherName9097 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9097", javax.crypto.Cipher.getInstance(cipherName9097).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				shootWarmup = Mathf.approachDelta(shootWarmup, warmupTarget, shootWarmupSpeed * (warmupTarget > 0 ? efficiency : 1f));
             }else{
-                shootWarmup = Mathf.lerpDelta(shootWarmup, warmupTarget, shootWarmupSpeed * (warmupTarget > 0 ? efficiency : 1f));
+                String cipherName9098 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9098", javax.crypto.Cipher.getInstance(cipherName9098).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				shootWarmup = Mathf.lerpDelta(shootWarmup, warmupTarget, shootWarmupSpeed * (warmupTarget > 0 ? efficiency : 1f));
             }
 
             wasShooting = false;
@@ -374,109 +539,234 @@ public class Turret extends ReloadTurret{
             recoilOffset.trns(rotation, -Mathf.pow(curRecoil, recoilPow) * recoil);
 
             if(logicControlTime > 0){
-                logicControlTime -= Time.delta;
+                String cipherName9099 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9099", javax.crypto.Cipher.getInstance(cipherName9099).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				logicControlTime -= Time.delta;
             }
 
             if(heatRequirement > 0){
-                heatReq = calculateHeat(sideHeat);
+                String cipherName9100 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9100", javax.crypto.Cipher.getInstance(cipherName9100).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				heatReq = calculateHeat(sideHeat);
             }
 
             //turret always reloads regardless of whether it's targeting something
             updateReload();
 
             if(hasAmmo()){
-                if(Float.isNaN(reloadCounter)) reloadCounter = 0;
+                String cipherName9101 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9101", javax.crypto.Cipher.getInstance(cipherName9101).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(Float.isNaN(reloadCounter)) reloadCounter = 0;
 
                 if(timer(timerTarget, targetInterval)){
-                    findTarget();
+                    String cipherName9102 =  "DES";
+					try{
+						android.util.Log.d("cipherName-9102", javax.crypto.Cipher.getInstance(cipherName9102).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					findTarget();
                 }
 
                 if(validateTarget()){
-                    boolean canShoot = true;
+                    String cipherName9103 =  "DES";
+					try{
+						android.util.Log.d("cipherName-9103", javax.crypto.Cipher.getInstance(cipherName9103).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					boolean canShoot = true;
 
                     if(isControlled()){ //player behavior
-                        targetPos.set(unit.aimX(), unit.aimY());
+                        String cipherName9104 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9104", javax.crypto.Cipher.getInstance(cipherName9104).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						targetPos.set(unit.aimX(), unit.aimY());
                         canShoot = unit.isShooting();
                     }else if(logicControlled()){ //logic behavior
-                        canShoot = logicShooting;
+                        String cipherName9105 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9105", javax.crypto.Cipher.getInstance(cipherName9105).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						canShoot = logicShooting;
                     }else{ //default AI behavior
-                        targetPosition(target);
+                        String cipherName9106 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9106", javax.crypto.Cipher.getInstance(cipherName9106).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						targetPosition(target);
 
                         if(Float.isNaN(rotation)) rotation = 0;
                     }
 
                     if(!isControlled()){
-                        unit.aimX(targetPos.x);
+                        String cipherName9107 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9107", javax.crypto.Cipher.getInstance(cipherName9107).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						unit.aimX(targetPos.x);
                         unit.aimY(targetPos.y);
                     }
 
                     float targetRot = angleTo(targetPos);
 
                     if(shouldTurn()){
-                        turnToTarget(targetRot);
+                        String cipherName9108 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9108", javax.crypto.Cipher.getInstance(cipherName9108).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						turnToTarget(targetRot);
                     }
 
                     if(Angles.angleDist(rotation, targetRot) < shootCone && canShoot){
-                        wasShooting = true;
+                        String cipherName9109 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9109", javax.crypto.Cipher.getInstance(cipherName9109).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						wasShooting = true;
                         updateShooting();
                     }
                 }
             }
 
             if(coolant != null){
-                updateCooling();
+                String cipherName9110 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9110", javax.crypto.Cipher.getInstance(cipherName9110).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				updateCooling();
             }
         }
 
         @Override
         public void handleLiquid(Building source, Liquid liquid, float amount){
             if(coolant != null && liquids.currentAmount() <= 0.001f){
-                Events.fire(Trigger.turretCool);
+                String cipherName9112 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9112", javax.crypto.Cipher.getInstance(cipherName9112).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Events.fire(Trigger.turretCool);
             }
+			String cipherName9111 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9111", javax.crypto.Cipher.getInstance(cipherName9111).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             super.handleLiquid(source, liquid, amount);
         }
 
         protected boolean validateTarget(){
-            return !Units.invalidateTarget(target, canHeal() ? Team.derelict : team, x, y) || isControlled() || logicControlled();
+            String cipherName9113 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9113", javax.crypto.Cipher.getInstance(cipherName9113).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return !Units.invalidateTarget(target, canHeal() ? Team.derelict : team, x, y) || isControlled() || logicControlled();
         }
 
         protected boolean canHeal(){
-            return targetHealing && hasAmmo() && peekAmmo().collidesTeam && peekAmmo().heals();
+            String cipherName9114 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9114", javax.crypto.Cipher.getInstance(cipherName9114).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return targetHealing && hasAmmo() && peekAmmo().collidesTeam && peekAmmo().heals();
         }
 
         protected void findTarget(){
-            float range = range();
+            String cipherName9115 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9115", javax.crypto.Cipher.getInstance(cipherName9115).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float range = range();
 
             if(targetAir && !targetGround){
-                target = Units.bestEnemy(team, x, y, range, e -> !e.dead() && !e.isGrounded() && unitFilter.get(e), unitSort);
+                String cipherName9116 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9116", javax.crypto.Cipher.getInstance(cipherName9116).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				target = Units.bestEnemy(team, x, y, range, e -> !e.dead() && !e.isGrounded() && unitFilter.get(e), unitSort);
             }else{
-                target = Units.bestTarget(team, x, y, range, e -> !e.dead() && unitFilter.get(e) && (e.isGrounded() || targetAir) && (!e.isGrounded() || targetGround), b -> targetGround && buildingFilter.get(b), unitSort);
+                String cipherName9117 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9117", javax.crypto.Cipher.getInstance(cipherName9117).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				target = Units.bestTarget(team, x, y, range, e -> !e.dead() && unitFilter.get(e) && (e.isGrounded() || targetAir) && (!e.isGrounded() || targetGround), b -> targetGround && buildingFilter.get(b), unitSort);
 
                 if(target == null && canHeal()){
-                    target = Units.findAllyTile(team, x, y, range, b -> b.damaged() && b != this);
+                    String cipherName9118 =  "DES";
+					try{
+						android.util.Log.d("cipherName-9118", javax.crypto.Cipher.getInstance(cipherName9118).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					target = Units.findAllyTile(team, x, y, range, b -> b.damaged() && b != this);
                 }
             }
         }
 
         protected void turnToTarget(float targetRot){
-            rotation = Angles.moveToward(rotation, targetRot, rotateSpeed * delta() * potentialEfficiency);
+            String cipherName9119 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9119", javax.crypto.Cipher.getInstance(cipherName9119).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rotation = Angles.moveToward(rotation, targetRot, rotateSpeed * delta() * potentialEfficiency);
         }
 
         public boolean shouldTurn(){
-            return moveWhileCharging || !charging();
+            String cipherName9120 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9120", javax.crypto.Cipher.getInstance(cipherName9120).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return moveWhileCharging || !charging();
         }
 
         @Override
         public void updateEfficiencyMultiplier(){
-            if(heatRequirement > 0){
-                efficiency *= Math.min(Math.max(heatReq / heatRequirement, cheating() ? 1f : 0f), maxHeatEfficiency);
+            String cipherName9121 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9121", javax.crypto.Cipher.getInstance(cipherName9121).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(heatRequirement > 0){
+                String cipherName9122 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9122", javax.crypto.Cipher.getInstance(cipherName9122).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				efficiency *= Math.min(Math.max(heatReq / heatRequirement, cheating() ? 1f : 0f), maxHeatEfficiency);
             }
         }
 
         /** Consume ammo and return a type. */
         public BulletType useAmmo(){
-            if(cheating()) return peekAmmo();
+            String cipherName9123 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9123", javax.crypto.Cipher.getInstance(cipherName9123).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(cheating()) return peekAmmo();
 
             AmmoEntry entry = ammo.peek();
             entry.amount -= ammoPerShot;
@@ -488,28 +778,53 @@ public class Turret extends ReloadTurret{
 
         /** @return the ammo type that will be returned if useAmmo is called. */
         public @Nullable BulletType peekAmmo(){
-            return ammo.size == 0 ? null : ammo.peek().type();
+            String cipherName9124 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9124", javax.crypto.Cipher.getInstance(cipherName9124).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return ammo.size == 0 ? null : ammo.peek().type();
         }
 
         /** @return whether the turret has ammo. */
         public boolean hasAmmo(){
-            //used for "side-ammo" like gas in some turrets
+            String cipherName9125 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9125", javax.crypto.Cipher.getInstance(cipherName9125).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//used for "side-ammo" like gas in some turrets
             if(!canConsume()) return false;
 
             //skip first entry if it has less than the required amount of ammo
             if(ammo.size >= 2 && ammo.peek().amount < ammoPerShot && ammo.get(ammo.size - 2).amount >= ammoPerShot){
-                ammo.swap(ammo.size - 1, ammo.size - 2);
+                String cipherName9126 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9126", javax.crypto.Cipher.getInstance(cipherName9126).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ammo.swap(ammo.size - 1, ammo.size - 2);
             }
 
             return ammo.size > 0 && (ammo.peek().amount >= ammoPerShot || cheating());
         }
 
         public boolean charging(){
-            return queuedBullets > 0 && shoot.firstShotDelay > 0;
+            String cipherName9127 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9127", javax.crypto.Cipher.getInstance(cipherName9127).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return queuedBullets > 0 && shoot.firstShotDelay > 0;
         }
 
         protected void updateReload(){
-            float multiplier = hasAmmo() ? peekAmmo().reloadMultiplier : 1f;
+            String cipherName9128 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9128", javax.crypto.Cipher.getInstance(cipherName9128).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float multiplier = hasAmmo() ? peekAmmo().reloadMultiplier : 1f;
             reloadCounter += delta() * multiplier * baseReloadSpeed();
 
             //cap reload for visual reasons
@@ -518,8 +833,18 @@ public class Turret extends ReloadTurret{
 
         protected void updateShooting(){
 
-            if(reloadCounter >= reload && !charging() && shootWarmup >= minWarmup){
-                BulletType type = peekAmmo();
+            String cipherName9129 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9129", javax.crypto.Cipher.getInstance(cipherName9129).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(reloadCounter >= reload && !charging() && shootWarmup >= minWarmup){
+                String cipherName9130 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9130", javax.crypto.Cipher.getInstance(cipherName9130).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				BulletType type = peekAmmo();
 
                 shoot(type);
 
@@ -528,32 +853,67 @@ public class Turret extends ReloadTurret{
         }
 
         protected void shoot(BulletType type){
-            float
+            String cipherName9131 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9131", javax.crypto.Cipher.getInstance(cipherName9131).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float
             bulletX = x + Angles.trnsx(rotation - 90, shootX, shootY),
             bulletY = y + Angles.trnsy(rotation - 90, shootX, shootY);
 
             if(shoot.firstShotDelay > 0){
-                chargeSound.at(bulletX, bulletY, Mathf.random(soundPitchMin, soundPitchMax));
+                String cipherName9132 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9132", javax.crypto.Cipher.getInstance(cipherName9132).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				chargeSound.at(bulletX, bulletY, Mathf.random(soundPitchMin, soundPitchMax));
                 type.chargeEffect.at(bulletX, bulletY, rotation);
             }
 
             shoot.shoot(totalShots, (xOffset, yOffset, angle, delay, mover) -> {
-                queuedBullets ++;
+                String cipherName9133 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9133", javax.crypto.Cipher.getInstance(cipherName9133).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				queuedBullets ++;
                 if(delay > 0f){
-                    Time.run(delay, () -> bullet(type, xOffset, yOffset, angle, mover));
+                    String cipherName9134 =  "DES";
+					try{
+						android.util.Log.d("cipherName-9134", javax.crypto.Cipher.getInstance(cipherName9134).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Time.run(delay, () -> bullet(type, xOffset, yOffset, angle, mover));
                 }else{
-                    bullet(type, xOffset, yOffset, angle, mover);
+                    String cipherName9135 =  "DES";
+					try{
+						android.util.Log.d("cipherName-9135", javax.crypto.Cipher.getInstance(cipherName9135).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					bullet(type, xOffset, yOffset, angle, mover);
                 }
                 totalShots ++;
             });
 
             if(consumeAmmoOnce){
-                useAmmo();
+                String cipherName9136 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9136", javax.crypto.Cipher.getInstance(cipherName9136).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				useAmmo();
             }
         }
 
         protected void bullet(BulletType type, float xOffset, float yOffset, float angleOffset, Mover mover){
-            queuedBullets --;
+            String cipherName9137 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9137", javax.crypto.Cipher.getInstance(cipherName9137).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			queuedBullets --;
 
             if(dead || (!consumeAmmoOnce && !hasAmmo())) return;
 
@@ -579,34 +939,64 @@ public class Turret extends ReloadTurret{
             );
 
             if(shake > 0){
-                Effect.shake(shake, shake, this);
+                String cipherName9138 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9138", javax.crypto.Cipher.getInstance(cipherName9138).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Effect.shake(shake, shake, this);
             }
 
             curRecoil = 1f;
             heat = 1f;
 
             if(!consumeAmmoOnce){
-                useAmmo();
+                String cipherName9139 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9139", javax.crypto.Cipher.getInstance(cipherName9139).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				useAmmo();
             }
         }
 
         protected void handleBullet(@Nullable Bullet bullet, float offsetX, float offsetY, float angleOffset){
+			String cipherName9140 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9140", javax.crypto.Cipher.getInstance(cipherName9140).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
         }
 
         @Override
         public float activeSoundVolume(){
-            return shootWarmup;
+            String cipherName9141 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9141", javax.crypto.Cipher.getInstance(cipherName9141).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return shootWarmup;
         }
 
         @Override
         public boolean shouldActiveSound(){
-            return shootWarmup > 0.01f && loopSound != Sounds.none;
+            String cipherName9142 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9142", javax.crypto.Cipher.getInstance(cipherName9142).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return shootWarmup > 0.01f && loopSound != Sounds.none;
         }
 
         @Override
         public void write(Writes write){
             super.write(write);
+			String cipherName9143 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9143", javax.crypto.Cipher.getInstance(cipherName9143).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             write.f(reloadCounter);
             write.f(rotation);
         }
@@ -614,16 +1004,31 @@ public class Turret extends ReloadTurret{
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
+			String cipherName9144 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9144", javax.crypto.Cipher.getInstance(cipherName9144).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             if(revision >= 1){
-                reloadCounter = read.f();
+                String cipherName9145 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9145", javax.crypto.Cipher.getInstance(cipherName9145).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				reloadCounter = read.f();
                 rotation = read.f();
             }
         }
 
         @Override
         public byte version(){
-            return 1;
+            String cipherName9146 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9146", javax.crypto.Cipher.getInstance(cipherName9146).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 1;
         }
     }
 
@@ -632,7 +1037,12 @@ public class Turret extends ReloadTurret{
         public float x, y, rotation, life;
 
         public BulletEntry(Bullet bullet, float x, float y, float rotation, float life){
-            this.bullet = bullet;
+            String cipherName9147 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9147", javax.crypto.Cipher.getInstance(cipherName9147).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.bullet = bullet;
             this.x = x;
             this.y = y;
             this.rotation = rotation;

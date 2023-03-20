@@ -40,7 +40,12 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
     protected transient boolean changed;
 
     static{
-        registerObjective(
+        String cipherName12010 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12010", javax.crypto.Cipher.getInstance(cipherName12010).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		registerObjective(
             ResearchObjective::new,
             ProduceObjective::new,
             ItemObjective::new,
@@ -66,8 +71,18 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
     @SafeVarargs
     public static void registerObjective(Prov<? extends MapObjective>... providers){
-        for(var prov : providers){
-            allObjectiveTypes.add(prov);
+        String cipherName12011 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12011", javax.crypto.Cipher.getInstance(cipherName12011).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(var prov : providers){
+            String cipherName12012 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12012", javax.crypto.Cipher.getInstance(cipherName12012).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			allObjectiveTypes.add(prov);
 
             Class<? extends MapObjective> type = prov.get().getClass();
             JsonIO.classTag(Strings.camelize(type.getSimpleName().replace("Objective", "")), type);
@@ -77,8 +92,18 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
     @SafeVarargs
     public static void registerMarker(Prov<? extends ObjectiveMarker>... providers){
-        for(var prov : providers){
-            allMarkerTypes.add(prov);
+        String cipherName12013 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12013", javax.crypto.Cipher.getInstance(cipherName12013).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(var prov : providers){
+            String cipherName12014 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12014", javax.crypto.Cipher.getInstance(cipherName12014).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			allMarkerTypes.add(prov);
 
             Class<? extends ObjectiveMarker> type = prov.get().getClass();
             JsonIO.classTag(Strings.camelize(type.getSimpleName().replace("Marker", "")), type);
@@ -88,12 +113,22 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
     /** Adds all given objectives to the executor as root objectives. */
     public void add(MapObjective... objectives){
-        for(var objective : objectives) flatten(objective);
+        String cipherName12015 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12015", javax.crypto.Cipher.getInstance(cipherName12015).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(var objective : objectives) flatten(objective);
     }
 
     /** Recursively adds the objective and its children. */
     private void flatten(MapObjective objective){
-        for(var child : objective.children) flatten(child);
+        String cipherName12016 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12016", javax.crypto.Cipher.getInstance(cipherName12016).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(var child : objective.children) flatten(child);
 
         objective.children.clear();
         all.add(objective);
@@ -101,21 +136,56 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
     /** Updates all objectives this executor contains. */
     public void update(){
-        eachRunning(obj -> {
-            for(var marker : obj.markers){
-                if(!marker.wasAdded){
-                    marker.wasAdded = true;
+        String cipherName12017 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12017", javax.crypto.Cipher.getInstance(cipherName12017).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		eachRunning(obj -> {
+            String cipherName12018 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12018", javax.crypto.Cipher.getInstance(cipherName12018).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(var marker : obj.markers){
+                String cipherName12019 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12019", javax.crypto.Cipher.getInstance(cipherName12019).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(!marker.wasAdded){
+                    String cipherName12020 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12020", javax.crypto.Cipher.getInstance(cipherName12020).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					marker.wasAdded = true;
                     marker.added();
                 }
             }
 
             //objectives cannot get completed on the client, but they do try to update for timers and such
             if(obj.update() && !net.client()){
-                obj.completed = true;
+                String cipherName12021 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12021", javax.crypto.Cipher.getInstance(cipherName12021).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				obj.completed = true;
                 obj.done();
                 for(var marker : obj.markers){
-                    if(marker.wasAdded){
-                        marker.removed();
+                    String cipherName12022 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12022", javax.crypto.Cipher.getInstance(cipherName12022).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(marker.wasAdded){
+                        String cipherName12023 =  "DES";
+						try{
+							android.util.Log.d("cipherName-12023", javax.crypto.Cipher.getInstance(cipherName12023).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						marker.removed();
                         marker.wasAdded = false;
                     }
                 }
@@ -128,7 +198,12 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
     /** @return True if map rules should be synced. Reserved for {@link Vars#logic}; do not invoke directly! */
     public boolean checkChanged(){
-        boolean has = changed;
+        String cipherName12024 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12024", javax.crypto.Cipher.getInstance(cipherName12024).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean has = changed;
         changed = false;
 
         return has;
@@ -136,32 +211,62 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
     /** @return Whether there are any qualified objectives at all. */
     public boolean any(){
-        return all.count(MapObjective::qualified) > 0;
+        String cipherName12025 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12025", javax.crypto.Cipher.getInstance(cipherName12025).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return all.count(MapObjective::qualified) > 0;
     }
 
     public void clear(){
-        if(all.size > 0) changed = true;
+        String cipherName12026 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12026", javax.crypto.Cipher.getInstance(cipherName12026).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(all.size > 0) changed = true;
         all.clear();
     }
 
     /** Iterates over all qualified in-map objectives. */
     public void eachRunning(Cons<MapObjective> cons){
-        all.each(MapObjective::qualified, cons);
+        String cipherName12027 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12027", javax.crypto.Cipher.getInstance(cipherName12027).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		all.each(MapObjective::qualified, cons);
     }
 
     /** Iterates over all qualified in-map objectives, with a filter. */
     public <T extends MapObjective> void eachRunning(Boolf<? super MapObjective> pred, Cons<T> cons){
-        all.each(obj -> obj.qualified() && pred.get(obj), cons);
+        String cipherName12028 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12028", javax.crypto.Cipher.getInstance(cipherName12028).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		all.each(obj -> obj.qualified() && pred.get(obj), cons);
     }
 
     @Override
     public Iterator<MapObjective> iterator(){
-        return all.iterator();
+        String cipherName12029 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12029", javax.crypto.Cipher.getInstance(cipherName12029).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return all.iterator();
     }
 
     @Override
     public void each(Cons<? super MapObjective> cons){
-        all.each(cons);
+        String cipherName12030 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12030", javax.crypto.Cipher.getInstance(cipherName12030).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		all.each(cons);
     }
 
     /** Base abstract class for any in-map objective. */
@@ -188,27 +293,52 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public abstract boolean update();
 
         /** Reset internal state, if any. */
-        public void reset(){}
+        public void reset(){
+			String cipherName12031 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12031", javax.crypto.Cipher.getInstance(cipherName12031).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         /** Called once after {@link #update()} returns true, before this objective is removed. */
         public void done(){
-            changed();
+            String cipherName12032 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12032", javax.crypto.Cipher.getInstance(cipherName12032).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			changed();
             state.rules.objectiveFlags.removeAll(flagsRemoved);
             state.rules.objectiveFlags.addAll(flagsAdded);
         }
 
         /** Notifies the executor that map rules should be synced. */
         protected void changed(){
-            changed = true;
+            String cipherName12033 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12033", javax.crypto.Cipher.getInstance(cipherName12033).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			changed = true;
         }
 
         /** @return True if all {@link #parents} are completed, rendering this objective able to execute. */
         public final boolean dependencyFinished(){
-            if(depFinished) return true;
+            String cipherName12034 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12034", javax.crypto.Cipher.getInstance(cipherName12034).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(depFinished) return true;
 
             boolean f = true;
             for(var parent : parents){
-                if(!parent.isCompleted()) return false;
+                String cipherName12035 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12035", javax.crypto.Cipher.getInstance(cipherName12035).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(!parent.isCompleted()) return false;
             }
 
             return f && (depFinished = true);
@@ -216,64 +346,119 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
         /** @return True if this objective is done (practically, has been removed from the executor). */
         public final boolean isCompleted(){
-            return completed;
+            String cipherName12036 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12036", javax.crypto.Cipher.getInstance(cipherName12036).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return completed;
         }
 
         /** @return Whether this objective should run at all. */
         public boolean qualified(){
-            return !completed && dependencyFinished();
+            String cipherName12037 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12037", javax.crypto.Cipher.getInstance(cipherName12037).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return !completed && dependencyFinished();
         }
 
         /** @return This objective, with the given child's parents added with this, for chaining operations. */
         public MapObjective child(MapObjective child){
-            child.parents.add(this);
+            String cipherName12038 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12038", javax.crypto.Cipher.getInstance(cipherName12038).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			child.parents.add(this);
             children.add(child);
             return this;
         }
 
         /** @return This objective, with the given parent added to this objective's parents, for chaining operations. */
         public MapObjective parent(MapObjective parent){
-            parents.add(parent);
+            String cipherName12039 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12039", javax.crypto.Cipher.getInstance(cipherName12039).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			parents.add(parent);
             return this;
         }
 
         /** @return This objective, with the details message assigned to, for chaining operations. */
         public MapObjective details(String details){
-            this.details = details;
+            String cipherName12040 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12040", javax.crypto.Cipher.getInstance(cipherName12040).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.details = details;
             return this;
         }
 
         /** @return This objective, with the added-flags assigned to, for chaining operations. */
         public MapObjective flagsAdded(String... flagsAdded){
-            this.flagsAdded = flagsAdded;
+            String cipherName12041 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12041", javax.crypto.Cipher.getInstance(cipherName12041).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.flagsAdded = flagsAdded;
             return this;
         }
 
         /** @return This objective, with the removed-flags assigned to, for chaining operations. */
         public MapObjective flagsRemoved(String... flagsRemoved){
-            this.flagsRemoved = flagsRemoved;
+            String cipherName12042 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12042", javax.crypto.Cipher.getInstance(cipherName12042).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.flagsRemoved = flagsRemoved;
             return this;
         }
 
         /** @return This objective, with the markers assigned to, for chaining operations. */
         public MapObjective markers(ObjectiveMarker... markers){
-            this.markers = markers;
+            String cipherName12043 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12043", javax.crypto.Cipher.getInstance(cipherName12043).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.markers = markers;
             return this;
         }
 
         /** @return Basic mission display text. If null, falls back to standard text. */
         public @Nullable String text(){
-            return null;
+            String cipherName12044 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12044", javax.crypto.Cipher.getInstance(cipherName12044).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
 
         /** @return Details that appear upon click. */
         public @Nullable String details(){
-            return details;
+            String cipherName12045 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12045", javax.crypto.Cipher.getInstance(cipherName12045).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return details;
         }
 
         /** @return The localized type-name of this objective, defaulting to the class simple name without the "Objective" prefix. */
         public String typeName(){
-            String className = getClass().getSimpleName().replace("Objective", "");
+            String cipherName12046 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12046", javax.crypto.Cipher.getInstance(cipherName12046).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String className = getClass().getSimpleName().replace("Objective", "");
             return Core.bundle == null ? className : Core.bundle.get("objective." + className.toLowerCase() + ".name", className);
         }
     }
@@ -283,19 +468,39 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public @Researchable UnlockableContent content = Items.copper;
 
         public ResearchObjective(UnlockableContent content){
-            this.content = content;
+            String cipherName12047 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12047", javax.crypto.Cipher.getInstance(cipherName12047).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.content = content;
         }
 
-        public ResearchObjective(){}
+        public ResearchObjective(){
+			String cipherName12048 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12048", javax.crypto.Cipher.getInstance(cipherName12048).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return content.unlocked();
+            String cipherName12049 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12049", javax.crypto.Cipher.getInstance(cipherName12049).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return content.unlocked();
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.research", content.emoji(), content.localizedName);
+            String cipherName12050 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12050", javax.crypto.Cipher.getInstance(cipherName12050).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.research", content.emoji(), content.localizedName);
         }
     }
 
@@ -304,19 +509,39 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public @Researchable UnlockableContent content = Items.copper;
 
         public ProduceObjective(UnlockableContent content){
-            this.content = content;
+            String cipherName12051 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12051", javax.crypto.Cipher.getInstance(cipherName12051).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.content = content;
         }
 
-        public ProduceObjective(){}
+        public ProduceObjective(){
+			String cipherName12052 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12052", javax.crypto.Cipher.getInstance(cipherName12052).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return content.unlocked();
+            String cipherName12053 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12053", javax.crypto.Cipher.getInstance(cipherName12053).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return content.unlocked();
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.produce", content.emoji(), content.localizedName);
+            String cipherName12054 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12054", javax.crypto.Cipher.getInstance(cipherName12054).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.produce", content.emoji(), content.localizedName);
         }
     }
 
@@ -326,20 +551,40 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public int amount = 1;
 
         public ItemObjective(Item item, int amount){
-            this.item = item;
+            String cipherName12055 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12055", javax.crypto.Cipher.getInstance(cipherName12055).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.item = item;
             this.amount = amount;
         }
 
-        public ItemObjective(){}
+        public ItemObjective(){
+			String cipherName12056 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12056", javax.crypto.Cipher.getInstance(cipherName12056).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return state.rules.defaultTeam.items().has(item, amount);
+            String cipherName12057 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12057", javax.crypto.Cipher.getInstance(cipherName12057).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return state.rules.defaultTeam.items().has(item, amount);
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.item", state.rules.defaultTeam.items().get(item), amount, item.emoji(), item.localizedName);
+            String cipherName12058 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12058", javax.crypto.Cipher.getInstance(cipherName12058).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.item", state.rules.defaultTeam.items().get(item), amount, item.emoji(), item.localizedName);
         }
     }
 
@@ -349,20 +594,40 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public int amount = 2;
 
         public CoreItemObjective(Item item, int amount){
-            this.item = item;
+            String cipherName12059 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12059", javax.crypto.Cipher.getInstance(cipherName12059).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.item = item;
             this.amount = amount;
         }
 
-        public CoreItemObjective(){}
+        public CoreItemObjective(){
+			String cipherName12060 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12060", javax.crypto.Cipher.getInstance(cipherName12060).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return state.stats.coreItemCount.get(item) >= amount;
+            String cipherName12061 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12061", javax.crypto.Cipher.getInstance(cipherName12061).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return state.stats.coreItemCount.get(item) >= amount;
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.coreitem", state.stats.coreItemCount.get(item), amount, item.emoji(), item.localizedName);
+            String cipherName12062 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12062", javax.crypto.Cipher.getInstance(cipherName12062).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.coreitem", state.stats.coreItemCount.get(item), amount, item.emoji(), item.localizedName);
         }
     }
 
@@ -372,20 +637,40 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public int count = 1;
 
         public BuildCountObjective(Block block, int count){
-            this.block = block;
+            String cipherName12063 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12063", javax.crypto.Cipher.getInstance(cipherName12063).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.block = block;
             this.count = count;
         }
 
-        public BuildCountObjective(){}
+        public BuildCountObjective(){
+			String cipherName12064 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12064", javax.crypto.Cipher.getInstance(cipherName12064).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return state.stats.placedBlockCount.get(block, 0) >= count;
+            String cipherName12065 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12065", javax.crypto.Cipher.getInstance(cipherName12065).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return state.stats.placedBlockCount.get(block, 0) >= count;
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.build", count - state.stats.placedBlockCount.get(block, 0), block.emoji(), block.localizedName);
+            String cipherName12066 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12066", javax.crypto.Cipher.getInstance(cipherName12066).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.build", count - state.stats.placedBlockCount.get(block, 0), block.emoji(), block.localizedName);
         }
     }
 
@@ -395,20 +680,40 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public int count = 1;
 
         public UnitCountObjective(UnitType unit, int count){
-            this.unit = unit;
+            String cipherName12067 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12067", javax.crypto.Cipher.getInstance(cipherName12067).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
             this.count = count;
         }
 
-        public UnitCountObjective(){}
+        public UnitCountObjective(){
+			String cipherName12068 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12068", javax.crypto.Cipher.getInstance(cipherName12068).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return state.rules.defaultTeam.data().countType(unit) >= count;
+            String cipherName12069 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12069", javax.crypto.Cipher.getInstance(cipherName12069).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return state.rules.defaultTeam.data().countType(unit) >= count;
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.buildunit", count - state.rules.defaultTeam.data().countType(unit), unit.emoji(), unit.localizedName);
+            String cipherName12070 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12070", javax.crypto.Cipher.getInstance(cipherName12070).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.buildunit", count - state.rules.defaultTeam.data().countType(unit), unit.emoji(), unit.localizedName);
         }
     }
 
@@ -417,19 +722,39 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public int count = 1;
 
         public DestroyUnitsObjective(int count){
-            this.count = count;
+            String cipherName12071 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12071", javax.crypto.Cipher.getInstance(cipherName12071).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.count = count;
         }
 
-        public DestroyUnitsObjective(){}
+        public DestroyUnitsObjective(){
+			String cipherName12072 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12072", javax.crypto.Cipher.getInstance(cipherName12072).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return state.stats.enemyUnitsDestroyed >= count;
+            String cipherName12073 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12073", javax.crypto.Cipher.getInstance(cipherName12073).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return state.stats.enemyUnitsDestroyed >= count;
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.destroyunits", count - state.stats.enemyUnitsDestroyed);
+            String cipherName12074 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12074", javax.crypto.Cipher.getInstance(cipherName12074).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.destroyunits", count - state.stats.enemyUnitsDestroyed);
         }
     }
 
@@ -440,48 +765,108 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         protected float countup;
 
         public TimerObjective(String text, float duration){
-            this.text = text;
+            String cipherName12075 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12075", javax.crypto.Cipher.getInstance(cipherName12075).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.text = text;
             this.duration = duration;
         }
 
         public TimerObjective(){
+			String cipherName12076 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12076", javax.crypto.Cipher.getInstance(cipherName12076).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         @Override
         public boolean update(){
-            return (countup += Time.delta) >= duration;
+            String cipherName12077 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12077", javax.crypto.Cipher.getInstance(cipherName12077).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return (countup += Time.delta) >= duration;
         }
 
         @Override
         public void reset(){
-            countup = 0f;
+            String cipherName12078 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12078", javax.crypto.Cipher.getInstance(cipherName12078).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			countup = 0f;
         }
 
         @Nullable
         @Override
         public String text(){
-            if(text != null){
-                int i = (int)((duration - countup) / 60f);
+            String cipherName12079 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12079", javax.crypto.Cipher.getInstance(cipherName12079).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(text != null){
+                String cipherName12080 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12080", javax.crypto.Cipher.getInstance(cipherName12080).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int i = (int)((duration - countup) / 60f);
                 StringBuilder timeString = new StringBuilder();
 
                 int m = i / 60;
                 int s = i % 60;
                 if(m > 0){
-                    timeString.append(m);
+                    String cipherName12081 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12081", javax.crypto.Cipher.getInstance(cipherName12081).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					timeString.append(m);
                     timeString.append(":");
                     if(s < 10){
-                        timeString.append("0");
+                        String cipherName12082 =  "DES";
+						try{
+							android.util.Log.d("cipherName-12082", javax.crypto.Cipher.getInstance(cipherName12082).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						timeString.append("0");
                     }
                 }
                 timeString.append(s);
 
                 if(text.startsWith("@")){
-                    return Core.bundle.format(text.substring(1), timeString.toString());
+                    String cipherName12083 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12083", javax.crypto.Cipher.getInstance(cipherName12083).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return Core.bundle.format(text.substring(1), timeString.toString());
                 }else{
-                    try{
-                        return Core.bundle.formatString(text, timeString.toString());
+                    String cipherName12084 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12084", javax.crypto.Cipher.getInstance(cipherName12084).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					try{
+                        String cipherName12085 =  "DES";
+						try{
+							android.util.Log.d("cipherName-12085", javax.crypto.Cipher.getInstance(cipherName12085).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return Core.bundle.formatString(text, timeString.toString());
                     }catch(IllegalArgumentException e){
-                        //illegal text.
+                        String cipherName12086 =  "DES";
+						try{
+							android.util.Log.d("cipherName-12086", javax.crypto.Cipher.getInstance(cipherName12086).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						//illegal text.
                         text = "";
                     }
 
@@ -498,22 +883,42 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public @Synthetic Block block = Blocks.router;
 
         public DestroyBlockObjective(Block block, int x, int y, Team team){
-            this.block = block;
+            String cipherName12087 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12087", javax.crypto.Cipher.getInstance(cipherName12087).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.block = block;
             this.team = team;
             this.pos.set(x, y);
         }
 
-        public DestroyBlockObjective(){}
+        public DestroyBlockObjective(){
+			String cipherName12088 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12088", javax.crypto.Cipher.getInstance(cipherName12088).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            var build = world.build(pos.x, pos.y);
+            String cipherName12089 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12089", javax.crypto.Cipher.getInstance(cipherName12089).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var build = world.build(pos.x, pos.y);
             return build == null || build.team != team || build.block != block;
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.destroyblock", block.emoji(), block.localizedName);
+            String cipherName12090 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12090", javax.crypto.Cipher.getInstance(cipherName12090).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.destroyblock", block.emoji(), block.localizedName);
         }
     }
 
@@ -523,19 +928,44 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public @Synthetic Block block = Blocks.router;
 
         public DestroyBlocksObjective(Block block, Team team, Point2... positions){
-            this.block = block;
+            String cipherName12091 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12091", javax.crypto.Cipher.getInstance(cipherName12091).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.block = block;
             this.team = team;
             this.positions = positions;
         }
 
-        public DestroyBlocksObjective(){}
+        public DestroyBlocksObjective(){
+			String cipherName12092 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12092", javax.crypto.Cipher.getInstance(cipherName12092).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         public int progress(){
-            int count = 0;
+            String cipherName12093 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12093", javax.crypto.Cipher.getInstance(cipherName12093).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int count = 0;
             for(var pos : positions){
-                var build = world.build(pos.x, pos.y);
+                String cipherName12094 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12094", javax.crypto.Cipher.getInstance(cipherName12094).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				var build = world.build(pos.x, pos.y);
                 if(build == null || build.team != team || build.block != block){
-                    count ++;
+                    String cipherName12095 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12095", javax.crypto.Cipher.getInstance(cipherName12095).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					count ++;
                 }
             }
             return count;
@@ -543,12 +973,22 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
 
         @Override
         public boolean update(){
-            return progress() >= positions.length;
+            String cipherName12096 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12096", javax.crypto.Cipher.getInstance(cipherName12096).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return progress() >= positions.length;
         }
 
         @Override
         public String text(){
-            return Core.bundle.format("objective.destroyblocks", progress(), positions.length, block.emoji(), block.localizedName);
+            String cipherName12097 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12097", javax.crypto.Cipher.getInstance(cipherName12097).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.format("objective.destroyblocks", progress(), positions.length, block.emoji(), block.localizedName);
         }
     }
 
@@ -556,12 +996,22 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
     public static class CommandModeObjective extends MapObjective{
         @Override
         public boolean update(){
-            return headless || control.input.selectedUnits.contains(u -> u.isCommandable() && u.command().hasCommand());
+            String cipherName12098 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12098", javax.crypto.Cipher.getInstance(cipherName12098).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return headless || control.input.selectedUnits.contains(u -> u.isCommandable() && u.command().hasCommand());
         }
 
         @Override
         public String text(){
-            return Core.bundle.get("objective.command");
+            String cipherName12099 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12099", javax.crypto.Cipher.getInstance(cipherName12099).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.get("objective.command");
         }
     }
 
@@ -571,20 +1021,40 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public @Multiline String text;
 
         public FlagObjective(String flag, String text){
-            this.flag = flag;
+            String cipherName12100 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12100", javax.crypto.Cipher.getInstance(cipherName12100).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.flag = flag;
             this.text = text;
         }
 
-        public FlagObjective(){}
+        public FlagObjective(){
+			String cipherName12101 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12101", javax.crypto.Cipher.getInstance(cipherName12101).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public boolean update(){
-            return state.rules.objectiveFlags.contains(flag);
+            String cipherName12102 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12102", javax.crypto.Cipher.getInstance(cipherName12102).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return state.rules.objectiveFlags.contains(flag);
         }
 
         @Override
         public String text(){
-            return text != null && text.startsWith("@") ? Core.bundle.get(text.substring(1)) : text;
+            String cipherName12103 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12103", javax.crypto.Cipher.getInstance(cipherName12103).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return text != null && text.startsWith("@") ? Core.bundle.get(text.substring(1)) : text;
         }
     }
 
@@ -592,12 +1062,22 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
     public static class DestroyCoreObjective extends MapObjective{
         @Override
         public boolean update(){
-            return state.rules.waveTeam.cores().size == 0;
+            String cipherName12104 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12104", javax.crypto.Cipher.getInstance(cipherName12104).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return state.rules.waveTeam.cores().size == 0;
         }
 
         @Override
         public String text(){
-            return Core.bundle.get("objective.destroycore");
+            String cipherName12105 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12105", javax.crypto.Cipher.getInstance(cipherName12105).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Core.bundle.get("objective.destroycore");
         }
     }
 
@@ -607,22 +1087,52 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public transient boolean wasAdded;
 
         /** Called in the overlay draw layer.*/
-        public void draw(){}
+        public void draw(){
+			String cipherName12106 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12106", javax.crypto.Cipher.getInstance(cipherName12106).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
         /** Called in the small and large map. */
-        public void drawMinimap(MinimapRenderer minimap){}
+        public void drawMinimap(MinimapRenderer minimap){
+			String cipherName12107 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12107", javax.crypto.Cipher.getInstance(cipherName12107).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
         /** Add any UI elements necessary. */
-        public void added(){}
+        public void added(){
+			String cipherName12108 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12108", javax.crypto.Cipher.getInstance(cipherName12108).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
         /** Remove any UI elements, if necessary. */
-        public void removed(){}
+        public void removed(){
+			String cipherName12109 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12109", javax.crypto.Cipher.getInstance(cipherName12109).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         /** @return The localized type-name of this objective, defaulting to the class simple name without the "Marker" prefix. */
         public String typeName(){
-            String className = getClass().getSimpleName().replace("Marker", "");
+            String cipherName12110 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12110", javax.crypto.Cipher.getInstance(cipherName12110).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String className = getClass().getSimpleName().replace("Marker", "");
             return Core.bundle == null ? className : Core.bundle.get("marker." + className.toLowerCase() + ".name", className);
         }
 
         public static String fetchText(String text){
-            return text.startsWith("@") ?
+            String cipherName12111 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12111", javax.crypto.Cipher.getInstance(cipherName12111).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return text.startsWith("@") ?
                 //on mobile, try ${text}.mobile first for mobile-specific hints.
                 mobile ? Core.bundle.get(text.substring(1) + ".mobile", Core.bundle.get(text.substring(1))) :
                 Core.bundle.get(text.substring(1)) :
@@ -646,43 +1156,78 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         private transient String fetchedText;
 
         public ShapeTextMarker(String text, float x, float y){
-            this.text = text;
+            String cipherName12112 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12112", javax.crypto.Cipher.getInstance(cipherName12112).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.text = text;
             this.pos.set(x, y);
         }
 
         public ShapeTextMarker(String text, float x, float y, float radius){
-            this.text = text;
+            String cipherName12113 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12113", javax.crypto.Cipher.getInstance(cipherName12113).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.text = text;
             this.pos.set(x, y);
             this.radius = radius;
         }
 
         public ShapeTextMarker(String text, float x, float y, float radius, float rotation){
-            this.text = text;
+            String cipherName12114 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12114", javax.crypto.Cipher.getInstance(cipherName12114).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.text = text;
             this.pos.set(x, y);
             this.radius = radius;
             this.rotation = rotation;
         }
 
         public ShapeTextMarker(String text, float x, float y, float radius, float rotation, float textHeight){
-            this.text = text;
+            String cipherName12115 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12115", javax.crypto.Cipher.getInstance(cipherName12115).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.text = text;
             this.pos.set(x, y);
             this.radius = radius;
             this.rotation = rotation;
             this.textHeight = textHeight;
         }
 
-        public ShapeTextMarker(){}
+        public ShapeTextMarker(){
+			String cipherName12116 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12116", javax.crypto.Cipher.getInstance(cipherName12116).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public void draw(){
-            Lines.stroke(3f, Pal.gray);
+            String cipherName12117 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12117", javax.crypto.Cipher.getInstance(cipherName12117).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Lines.stroke(3f, Pal.gray);
             Lines.poly(pos.x, pos.y, sides, radius + 1f, rotation);
             Lines.stroke(1f, color);
             Lines.poly(pos.x, pos.y, sides, radius + 1f, rotation);
             Draw.reset();
 
             if(fetchedText == null){
-                fetchedText = fetchText(text);
+                String cipherName12118 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12118", javax.crypto.Cipher.getInstance(cipherName12118).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				fetchedText = fetchText(text);
             }
 
             WorldLabel.drawAt(fetchedText, pos.x, pos.y + radius + textHeight, Draw.z(), flags, fontSize);
@@ -696,26 +1241,51 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public Color color = Color.valueOf("f25555");
 
         public MinimapMarker(int x, int y){
-            this.pos.set(x, y);
+            String cipherName12119 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12119", javax.crypto.Cipher.getInstance(cipherName12119).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.pos.set(x, y);
         }
 
         public MinimapMarker(int x, int y, Color color){
-            this.pos.set(x, y);
+            String cipherName12120 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12120", javax.crypto.Cipher.getInstance(cipherName12120).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.pos.set(x, y);
             this.color = color;
         }
 
         public MinimapMarker(int x, int y, float radius, float stroke, Color color){
-            this.pos.set(x, y);
+            String cipherName12121 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12121", javax.crypto.Cipher.getInstance(cipherName12121).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.pos.set(x, y);
             this.stroke = stroke;
             this.radius = radius;
             this.color = color;
         }
 
-        public MinimapMarker(){}
+        public MinimapMarker(){
+			String cipherName12122 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12122", javax.crypto.Cipher.getInstance(cipherName12122).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public void drawMinimap(MinimapRenderer minimap){
-            minimap.transform(Tmp.v1.set(pos.x * tilesize, pos.y * tilesize));
+            String cipherName12123 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12123", javax.crypto.Cipher.getInstance(cipherName12123).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			minimap.transform(Tmp.v1.set(pos.x * tilesize, pos.y * tilesize));
 
             float rad = minimap.scale(radius * tilesize);
             float fin = Interp.pow2Out.apply((Time.globalTime / 100f) % 1f);
@@ -735,32 +1305,67 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         public Color color = Color.valueOf("ffd37f");
 
         public ShapeMarker(float x, float y){
-            this.pos.set(x, y);
+            String cipherName12124 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12124", javax.crypto.Cipher.getInstance(cipherName12124).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.pos.set(x, y);
         }
 
         public ShapeMarker(float x, float y, float radius, float rotation){
-            this.pos.set(x, y);
+            String cipherName12125 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12125", javax.crypto.Cipher.getInstance(cipherName12125).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.pos.set(x, y);
             this.radius = radius;
             this.rotation = rotation;
         }
 
-        public ShapeMarker(){}
+        public ShapeMarker(){
+			String cipherName12126 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12126", javax.crypto.Cipher.getInstance(cipherName12126).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public void draw(){
-            //in case some idiot decides to make 9999999 sides and freeze the game
+            String cipherName12127 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12127", javax.crypto.Cipher.getInstance(cipherName12127).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//in case some idiot decides to make 9999999 sides and freeze the game
             int sides = Math.min(this.sides, 200);
 
             if(!fill){
-                if(outline){
-                    Lines.stroke(stroke + 2f, Pal.gray);
+                String cipherName12128 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12128", javax.crypto.Cipher.getInstance(cipherName12128).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(outline){
+                    String cipherName12129 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12129", javax.crypto.Cipher.getInstance(cipherName12129).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Lines.stroke(stroke + 2f, Pal.gray);
                     Lines.poly(pos.x, pos.y, sides, radius + 1f, rotation);
                 }
 
                 Lines.stroke(stroke, color);
                 Lines.poly(pos.x, pos.y, sides, radius + 1f, rotation);
             }else{
-                Draw.color(color);
+                String cipherName12130 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12130", javax.crypto.Cipher.getInstance(cipherName12130).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Draw.color(color);
                 Fill.poly(pos.x, pos.y, sides, radius, rotation);
             }
 
@@ -778,23 +1383,48 @@ public class MapObjectives implements Iterable<MapObjective>, Eachable<MapObject
         private transient String fetchedText;
 
         public TextMarker(String text, float x, float y, float fontSize, byte flags){
-            this.text = text;
+            String cipherName12131 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12131", javax.crypto.Cipher.getInstance(cipherName12131).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.text = text;
             this.fontSize = fontSize;
             this.flags = flags;
             this.pos.set(x, y);
         }
 
         public TextMarker(String text, float x, float y){
-            this.text = text;
+            String cipherName12132 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12132", javax.crypto.Cipher.getInstance(cipherName12132).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.text = text;
             this.pos.set(x, y);
         }
 
-        public TextMarker(){}
+        public TextMarker(){
+			String cipherName12133 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12133", javax.crypto.Cipher.getInstance(cipherName12133).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
 
         @Override
         public void draw(){
-            if(fetchedText == null){
-                fetchedText = fetchText(text);
+            String cipherName12134 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12134", javax.crypto.Cipher.getInstance(cipherName12134).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(fetchedText == null){
+                String cipherName12135 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12135", javax.crypto.Cipher.getInstance(cipherName12135).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				fetchedText = fetchText(text);
             }
 
             WorldLabel.drawAt(fetchedText, pos.x, pos.y, Draw.z(), flags, fontSize);

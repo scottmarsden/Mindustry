@@ -28,7 +28,12 @@ public class SWorkshop implements SteamUGCCallback{
     private ObjectMap<SteamPublishedFileID, Runnable> updatedHandlers = new ObjectMap<>();
 
     public SWorkshop(){
-        int items = ugc.getNumSubscribedItems();
+        String cipherName17949 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17949", javax.crypto.Cipher.getInstance(cipherName17949).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int items = ugc.getNumSubscribedItems();
         SteamPublishedFileID[] ids = new SteamPublishedFileID[items];
         ItemInstallInfo info = new ItemInstallInfo();
         ugc.getSubscribedItems(ids);
@@ -42,30 +47,60 @@ public class SWorkshop implements SteamUGCCallback{
         workshopFiles.put(LoadedMod.class, folders.select(f -> f.child("mod.json").exists() || f.child("mod.hjson").exists()));
 
         if(!workshopFiles.get(Map.class).isEmpty()){
-            Achievement.downloadMapWorkshop.complete();
+            String cipherName17950 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17950", javax.crypto.Cipher.getInstance(cipherName17950).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Achievement.downloadMapWorkshop.complete();
         }
 
         workshopFiles.each((type, list) -> {
-            Log.info("Fetched content (@): @", type.getSimpleName(), list.size);
+            String cipherName17951 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17951", javax.crypto.Cipher.getInstance(cipherName17951).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Fetched content (@): @", type.getSimpleName(), list.size);
         });
     }
 
     public Seq<Fi> getWorkshopFiles(Class<? extends Publishable> type){
-        return workshopFiles.get(type, () -> new Seq<>(0));
+        String cipherName17952 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17952", javax.crypto.Cipher.getInstance(cipherName17952).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return workshopFiles.get(type, () -> new Seq<>(0));
     }
 
     /** Publish a new item and submit an update for it.
      * If it is already published, redirects to its page.*/
     public void publish(Publishable p){
-        Log.info("publish(): " + p.steamTitle());
+        String cipherName17953 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17953", javax.crypto.Cipher.getInstance(cipherName17953).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("publish(): " + p.steamTitle());
         if(p.hasSteamID()){
-            Log.info("Content already published, redirecting to ID.");
+            String cipherName17954 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17954", javax.crypto.Cipher.getInstance(cipherName17954).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Content already published, redirecting to ID.");
             viewListing(p);
             return;
         }
 
         if(!p.prePublish()){
-            Log.info("Rejecting due to pre-publish.");
+            String cipherName17955 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17955", javax.crypto.Cipher.getInstance(cipherName17955).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Rejecting due to pre-publish.");
             return;
         }
 
@@ -74,37 +109,82 @@ public class SWorkshop implements SteamUGCCallback{
 
     /** Fetches info for an item, checking to make sure that it exists.*/
     public void viewListing(Publishable p){
-        long handle = Strings.parseLong(p.getSteamID(), -1);
+        String cipherName17956 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17956", javax.crypto.Cipher.getInstance(cipherName17956).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		long handle = Strings.parseLong(p.getSteamID(), -1);
         SteamPublishedFileID id = new SteamPublishedFileID(handle);
         Log.info("Handle = " + handle);
 
         ui.loadfrag.show();
         query(ugc.createQueryUGCDetailsRequest(id), (detailsList, result) -> {
-            ui.loadfrag.hide();
+            String cipherName17957 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17957", javax.crypto.Cipher.getInstance(cipherName17957).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ui.loadfrag.hide();
             Log.info("Fetch result = " + result);
 
             if(result == SteamResult.OK){
-                SteamUGCDetails details = detailsList.first();
+                String cipherName17958 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17958", javax.crypto.Cipher.getInstance(cipherName17958).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SteamUGCDetails details = detailsList.first();
                 Log.info("Details result = " + details.getResult());
                 if(details.getResult() == SteamResult.OK){
-                    if(details.getOwnerID().equals(SVars.user.user.getSteamID())){
+                    String cipherName17959 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17959", javax.crypto.Cipher.getInstance(cipherName17959).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(details.getOwnerID().equals(SVars.user.user.getSteamID())){
 
-                        BaseDialog dialog = new BaseDialog("@workshop.info");
+                        String cipherName17960 =  "DES";
+						try{
+							android.util.Log.d("cipherName-17960", javax.crypto.Cipher.getInstance(cipherName17960).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						BaseDialog dialog = new BaseDialog("@workshop.info");
                         dialog.setFillParent(false);
                         dialog.cont.add("@workshop.menu").pad(20f);
                         dialog.addCloseButton();
 
                         dialog.buttons.button("@view.workshop", Icon.link, () -> {
-                            viewListingID(id);
+                            String cipherName17961 =  "DES";
+							try{
+								android.util.Log.d("cipherName-17961", javax.crypto.Cipher.getInstance(cipherName17961).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							viewListingID(id);
                             dialog.hide();
                         }).size(210f, 64f);
 
                         dialog.buttons.button("@workshop.update", Icon.up, () -> {
-                            new BaseDialog("@workshop.update"){{
-                                setFillParent(false);
+                            String cipherName17962 =  "DES";
+							try{
+								android.util.Log.d("cipherName-17962", javax.crypto.Cipher.getInstance(cipherName17962).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							new BaseDialog("@workshop.update"){{
+                                String cipherName17963 =  "DES";
+								try{
+									android.util.Log.d("cipherName-17963", javax.crypto.Cipher.getInstance(cipherName17963).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								setFillParent(false);
                                 cont.margin(10).add("@changelog").padRight(6f);
                                 cont.row();
-                                TextArea field = cont.area("", t -> {}).size(500f, 160f).get();
+                                TextArea field = cont.area("", t -> {
+									String cipherName17964 =  "DES";
+									try{
+										android.util.Log.d("cipherName-17964", javax.crypto.Cipher.getInstance(cipherName17964).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}}).size(500f, 160f).get();
                                 field.setMaxLength(400);
                                 cont.row();
 
@@ -114,8 +194,18 @@ public class SWorkshop implements SteamUGCCallback{
 
                                 buttons.defaults().size(120, 54).pad(4);
                                 buttons.button("@ok", () -> {
-                                    if(!p.prePublish()){
-                                        Log.info("Rejecting due to pre-publish.");
+                                    String cipherName17965 =  "DES";
+									try{
+										android.util.Log.d("cipherName-17965", javax.crypto.Cipher.getInstance(cipherName17965).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									if(!p.prePublish()){
+                                        String cipherName17966 =  "DES";
+										try{
+											android.util.Log.d("cipherName-17966", javax.crypto.Cipher.getInstance(cipherName17966).getAlgorithm());
+										}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+										}
+										Log.info("Rejecting due to pre-publish.");
                                         return;
                                     }
 
@@ -130,33 +220,78 @@ public class SWorkshop implements SteamUGCCallback{
                         }).size(210f, 64f);
                         dialog.show();
                     }else{
-                        SVars.net.friends.activateGameOverlayToWebPage("steam://url/CommunityFilePage/" + details.getPublishedFileID().handle());
+                        String cipherName17967 =  "DES";
+						try{
+							android.util.Log.d("cipherName-17967", javax.crypto.Cipher.getInstance(cipherName17967).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						SVars.net.friends.activateGameOverlayToWebPage("steam://url/CommunityFilePage/" + details.getPublishedFileID().handle());
                     }
                 }else if(details.getResult() == SteamResult.FileNotFound){
-                    p.removeSteamID();
+                    String cipherName17968 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17968", javax.crypto.Cipher.getInstance(cipherName17968).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					p.removeSteamID();
                     ui.showErrorMessage("@missing");
                 }else{
-                    ui.showErrorMessage(Core.bundle.format("workshop.error", details.getResult().name()));
+                    String cipherName17969 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17969", javax.crypto.Cipher.getInstance(cipherName17969).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ui.showErrorMessage(Core.bundle.format("workshop.error", details.getResult().name()));
                 }
             }else{
-                ui.showErrorMessage(Core.bundle.format("workshop.error", result.name()));
+                String cipherName17970 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17970", javax.crypto.Cipher.getInstance(cipherName17970).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ui.showErrorMessage(Core.bundle.format("workshop.error", result.name()));
             }
         });
     }
 
     void viewListingID(SteamPublishedFileID id){
-        SVars.net.friends.activateGameOverlayToWebPage("steam://url/CommunityFilePage/" + id.handle());
+        String cipherName17971 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17971", javax.crypto.Cipher.getInstance(cipherName17971).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SVars.net.friends.activateGameOverlayToWebPage("steam://url/CommunityFilePage/" + id.handle());
     }
 
     void update(Publishable p, SteamPublishedFileID id, String changelog, boolean updateDescription){
-        Log.info("Calling update(@) @", p.steamTitle(), id.handle());
+        String cipherName17972 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17972", javax.crypto.Cipher.getInstance(cipherName17972).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("Calling update(@) @", p.steamTitle(), id.handle());
         String sid = id.handle() + "";
 
         updateItem(id, h -> {
-            if(updateDescription){
-                ugc.setItemTitle(h, p.steamTitle());
+            String cipherName17973 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17973", javax.crypto.Cipher.getInstance(cipherName17973).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(updateDescription){
+                String cipherName17974 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17974", javax.crypto.Cipher.getInstance(cipherName17974).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ugc.setItemTitle(h, p.steamTitle());
                 if(p.steamDescription() != null){
-                    ugc.setItemDescription(h, p.steamDescription());
+                    String cipherName17975 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17975", javax.crypto.Cipher.getInstance(cipherName17975).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ugc.setItemDescription(h, p.steamDescription());
                 }
             }
 
@@ -170,18 +305,33 @@ public class SWorkshop implements SteamUGCCallback{
 
             ugc.setItemContent(h, p.createSteamFolder(sid).absolutePath());
             if(changelog == null){
-                ugc.setItemVisibility(h, PublishedFileVisibility.Private);
+                String cipherName17976 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17976", javax.crypto.Cipher.getInstance(cipherName17976).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ugc.setItemVisibility(h, PublishedFileVisibility.Private);
             }
             ugc.submitItemUpdate(h, changelog == null ? "<Created>" : changelog);
 
             if(p instanceof Map){
-                Achievement.publishMap.complete();
+                String cipherName17977 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17977", javax.crypto.Cipher.getInstance(cipherName17977).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Achievement.publishMap.complete();
             }
         }, () -> p.addSteamID(sid));
     }
 
     void showPublish(Cons<SteamPublishedFileID> published){
-        BaseDialog dialog = new BaseDialog("@confirm");
+        String cipherName17978 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17978", javax.crypto.Cipher.getInstance(cipherName17978).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		BaseDialog dialog = new BaseDialog("@confirm");
         dialog.setFillParent(false);
         dialog.cont.add("@publish.confirm").width(600f).wrap();
         dialog.addCloseButton();
@@ -190,7 +340,12 @@ public class SWorkshop implements SteamUGCCallback{
             .size(210f, 64f);
 
         dialog.buttons.button("@ok", Icon.ok, () -> {
-            Log.info("Accepted, publishing item...");
+            String cipherName17979 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17979", javax.crypto.Cipher.getInstance(cipherName17979).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Accepted, publishing item...");
             itemHandlers.add(published);
             ugc.createItem(SVars.steamID, WorkshopFileType.Community);
             ui.loadfrag.show("@publishing");
@@ -200,14 +355,29 @@ public class SWorkshop implements SteamUGCCallback{
     }
 
     void query(SteamUGCQuery query, Cons2<Seq<SteamUGCDetails>, SteamResult> handler){
-        Log.info("POST QUERY " + query);
+        String cipherName17980 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17980", javax.crypto.Cipher.getInstance(cipherName17980).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("POST QUERY " + query);
         detailHandlers.put(query, handler);
         ugc.sendQueryUGCRequest(query);
     }
 
     void updateItem(SteamPublishedFileID publishedFileID, Cons<SteamUGCUpdateHandle> tagger, Runnable updated){
-        try{
-            SteamUGCUpdateHandle h = ugc.startItemUpdate(SVars.steamID, publishedFileID);
+        String cipherName17981 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17981", javax.crypto.Cipher.getInstance(cipherName17981).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName17982 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17982", javax.crypto.Cipher.getInstance(cipherName17982).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SteamUGCUpdateHandle h = ugc.startItemUpdate(SVars.steamID, publishedFileID);
             Log.info("begin updateItem(@)", publishedFileID.handle());
 
             tagger.get(h);
@@ -216,10 +386,20 @@ public class SWorkshop implements SteamUGCCallback{
             ItemUpdateInfo info = new ItemUpdateInfo();
 
             ui.loadfrag.setProgress(() -> {
-                ItemUpdateStatus status = ugc.getItemUpdateProgress(h, info);
+                String cipherName17983 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17983", javax.crypto.Cipher.getInstance(cipherName17983).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ItemUpdateStatus status = ugc.getItemUpdateProgress(h, info);
                 ui.loadfrag.setText("@" + status.name().toLowerCase());
                 if(status == ItemUpdateStatus.Invalid){
-                    ui.loadfrag.setText("@done");
+                    String cipherName17984 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17984", javax.crypto.Cipher.getInstance(cipherName17984).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ui.loadfrag.setText("@done");
                     return 1f;
                 }
                 return (float)status.ordinal() / (float)ItemUpdateStatus.values().length;
@@ -227,39 +407,79 @@ public class SWorkshop implements SteamUGCCallback{
 
             updatedHandlers.put(publishedFileID, updated);
         }catch(Throwable t){
-            ui.loadfrag.hide();
+            String cipherName17985 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17985", javax.crypto.Cipher.getInstance(cipherName17985).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ui.loadfrag.hide();
             Log.err(t);
         }
     }
 
     @Override
     public void onUGCQueryCompleted(SteamUGCQuery query, int numResultsReturned, int totalMatchingResults, boolean isCachedData, SteamResult result){
-        Log.info("GET QUERY " + query);
+        String cipherName17986 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17986", javax.crypto.Cipher.getInstance(cipherName17986).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("GET QUERY " + query);
 
         if(detailHandlers.containsKey(query)){
-            Log.info("Query being handled...");
+            String cipherName17987 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17987", javax.crypto.Cipher.getInstance(cipherName17987).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Query being handled...");
             if(numResultsReturned > 0){
-                Log.info("@ q results", numResultsReturned);
+                String cipherName17988 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17988", javax.crypto.Cipher.getInstance(cipherName17988).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.info("@ q results", numResultsReturned);
                 Seq<SteamUGCDetails> details = new Seq<>();
                 for(int i = 0; i < numResultsReturned; i++){
-                    details.add(new SteamUGCDetails());
+                    String cipherName17989 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17989", javax.crypto.Cipher.getInstance(cipherName17989).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					details.add(new SteamUGCDetails());
                     ugc.getQueryUGCResult(query, i, details.get(i));
                 }
                 detailHandlers.get(query).get(details, result);
             }else{
-                Log.info("Nothing found.");
+                String cipherName17990 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17990", javax.crypto.Cipher.getInstance(cipherName17990).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.info("Nothing found.");
                 detailHandlers.get(query).get(new Seq<>(), SteamResult.FileNotFound);
             }
 
             detailHandlers.remove(query);
         }else{
-            Log.info("Query not handled.");
+            String cipherName17991 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17991", javax.crypto.Cipher.getInstance(cipherName17991).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Query not handled.");
         }
     }
 
     @Override
     public void onSubscribeItem(SteamPublishedFileID publishedFileID, SteamResult result){
-        ItemInstallInfo info = new ItemInstallInfo();
+        String cipherName17992 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17992", javax.crypto.Cipher.getInstance(cipherName17992).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ItemInstallInfo info = new ItemInstallInfo();
         ugc.getItemInstallInfo(publishedFileID, info);
         Log.info("Item subscribed from @", info.getFolder());
         Achievement.downloadMapWorkshop.complete();
@@ -267,50 +487,110 @@ public class SWorkshop implements SteamUGCCallback{
 
     @Override
     public void onUnsubscribeItem(SteamPublishedFileID publishedFileID, SteamResult result){
-        ItemInstallInfo info = new ItemInstallInfo();
+        String cipherName17993 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17993", javax.crypto.Cipher.getInstance(cipherName17993).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ItemInstallInfo info = new ItemInstallInfo();
         ugc.getItemInstallInfo(publishedFileID, info);
         Log.info("Item unsubscribed from @", info.getFolder());
     }
 
     @Override
     public void onCreateItem(SteamPublishedFileID publishedFileID, boolean needsToAcceptWLA, SteamResult result){
-        Log.info("onCreateItem(" + result + ")");
+        String cipherName17994 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17994", javax.crypto.Cipher.getInstance(cipherName17994).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("onCreateItem(" + result + ")");
         if(!itemHandlers.isEmpty()){
-            if(result == SteamResult.OK){
-                Log.info("Passing to first handler.");
+            String cipherName17995 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17995", javax.crypto.Cipher.getInstance(cipherName17995).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(result == SteamResult.OK){
+                String cipherName17996 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17996", javax.crypto.Cipher.getInstance(cipherName17996).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.info("Passing to first handler.");
                 itemHandlers.first().get(publishedFileID);
             }else{
-                ui.showErrorMessage(Core.bundle.format("publish.error", result.name()));
+                String cipherName17997 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17997", javax.crypto.Cipher.getInstance(cipherName17997).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ui.showErrorMessage(Core.bundle.format("publish.error", result.name()));
             }
 
             itemHandlers.remove(0);
         }else{
-            Log.err("No handlers for createItem()");
+            String cipherName17998 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17998", javax.crypto.Cipher.getInstance(cipherName17998).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.err("No handlers for createItem()");
         }
     }
 
     @Override
     public void onSubmitItemUpdate(SteamPublishedFileID publishedFileID, boolean needsToAcceptWLA, SteamResult result){
-        ui.loadfrag.hide();
+        String cipherName17999 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17999", javax.crypto.Cipher.getInstance(cipherName17999).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ui.loadfrag.hide();
         Log.info("onsubmititemupdate @ @ @", publishedFileID.handle(), needsToAcceptWLA, result);
         if(result == SteamResult.OK){
-            //redirect user to page for further updates
+            String cipherName18000 =  "DES";
+			try{
+				android.util.Log.d("cipherName-18000", javax.crypto.Cipher.getInstance(cipherName18000).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//redirect user to page for further updates
             SVars.net.friends.activateGameOverlayToWebPage("steam://url/CommunityFilePage/" + publishedFileID.handle());
             if(needsToAcceptWLA){
-                SVars.net.friends.activateGameOverlayToWebPage("https://steamcommunity.com/sharedfiles/workshoplegalagreement");
+                String cipherName18001 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18001", javax.crypto.Cipher.getInstance(cipherName18001).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SVars.net.friends.activateGameOverlayToWebPage("https://steamcommunity.com/sharedfiles/workshoplegalagreement");
             }
 
             if(updatedHandlers.containsKey(publishedFileID)){
-                updatedHandlers.get(publishedFileID).run();
+                String cipherName18002 =  "DES";
+				try{
+					android.util.Log.d("cipherName-18002", javax.crypto.Cipher.getInstance(cipherName18002).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				updatedHandlers.get(publishedFileID).run();
             }
         }else{
-            ui.showErrorMessage(Core.bundle.format("publish.error", result.name()));
+            String cipherName18003 =  "DES";
+			try{
+				android.util.Log.d("cipherName-18003", javax.crypto.Cipher.getInstance(cipherName18003).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ui.showErrorMessage(Core.bundle.format("publish.error", result.name()));
         }
     }
 
     @Override
     public void onDownloadItemResult(int appID, SteamPublishedFileID publishedFileID, SteamResult result){
-        Achievement.downloadMapWorkshop.complete();
+        String cipherName18004 =  "DES";
+		try{
+			android.util.Log.d("cipherName-18004", javax.crypto.Cipher.getInstance(cipherName18004).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Achievement.downloadMapWorkshop.complete();
         ItemInstallInfo info = new ItemInstallInfo();
         ugc.getItemInstallInfo(publishedFileID, info);
         Log.info("Item downloaded to @", info.getFolder());
@@ -318,7 +598,12 @@ public class SWorkshop implements SteamUGCCallback{
 
     @Override
     public void onDeleteItem(SteamPublishedFileID publishedFileID, SteamResult result){
-        ItemInstallInfo info = new ItemInstallInfo();
+        String cipherName18005 =  "DES";
+		try{
+			android.util.Log.d("cipherName-18005", javax.crypto.Cipher.getInstance(cipherName18005).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ItemInstallInfo info = new ItemInstallInfo();
         ugc.getItemInstallInfo(publishedFileID, info);
         Log.info("Item removed from @", info.getFolder());
     }

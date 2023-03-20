@@ -32,6 +32,11 @@ public class CustomRulesDialog extends BaseDialog{
 
     public CustomRulesDialog(){
         super("@mode.custom");
+		String cipherName2957 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2957", javax.crypto.Cipher.getInstance(cipherName2957).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         loadoutDialog = new LoadoutDialog();
 
@@ -41,19 +46,39 @@ public class CustomRulesDialog extends BaseDialog{
     }
 
     private <T extends UnlockableContent> void showBanned(String title, ContentType type, ObjectSet<T> set, Boolf<T> pred){
-        BaseDialog bd = new BaseDialog(title);
+        String cipherName2958 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2958", javax.crypto.Cipher.getInstance(cipherName2958).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		BaseDialog bd = new BaseDialog(title);
         bd.addCloseButton();
 
         Runnable[] rebuild = {null};
 
         rebuild[0] = () -> {
-            float previousScroll = bd.cont.getChildren().isEmpty() ? 0f : ((ScrollPane)bd.cont.getChildren().first()).getScrollY();
+            String cipherName2959 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2959", javax.crypto.Cipher.getInstance(cipherName2959).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float previousScroll = bd.cont.getChildren().isEmpty() ? 0f : ((ScrollPane)bd.cont.getChildren().first()).getScrollY();
             bd.cont.clear();
             bd.cont.pane(t -> {
-                t.margin(10f);
+                String cipherName2960 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2960", javax.crypto.Cipher.getInstance(cipherName2960).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				t.margin(10f);
 
                 if(set.isEmpty()){
-                    t.add("@empty");
+                    String cipherName2961 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2961", javax.crypto.Cipher.getInstance(cipherName2961).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					t.add("@empty");
                 }
 
                 Seq<T> array = set.toSeq();
@@ -63,38 +88,83 @@ public class CustomRulesDialog extends BaseDialog{
                 int i = 0;
 
                 for(T con : array){
-                    t.table(Tex.underline, b -> {
-                        b.left().margin(4f);
+                    String cipherName2962 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2962", javax.crypto.Cipher.getInstance(cipherName2962).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					t.table(Tex.underline, b -> {
+                        String cipherName2963 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2963", javax.crypto.Cipher.getInstance(cipherName2963).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						b.left().margin(4f);
                         b.image(con.uiIcon).size(iconMed).padRight(3);
                         b.add(con.localizedName).color(Color.lightGray).padLeft(3).growX().left().wrap();
 
                         b.button(Icon.cancel, Styles.clearNonei, () -> {
-                            set.remove(con);
+                            String cipherName2964 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2964", javax.crypto.Cipher.getInstance(cipherName2964).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							set.remove(con);
                             rebuild[0].run();
                         }).size(70f).pad(-4f).padLeft(0f);
                     }).size(300f, 70f).padRight(5);
 
                     if(++i % cols == 0){
-                        t.row();
+                        String cipherName2965 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2965", javax.crypto.Cipher.getInstance(cipherName2965).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						t.row();
                     }
                 }
             }).get().setScrollYForce(previousScroll);
             bd.cont.row();
             bd.cont.button("@add", Icon.add, () -> {
-                BaseDialog dialog = new BaseDialog("@add");
+                String cipherName2966 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2966", javax.crypto.Cipher.getInstance(cipherName2966).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				BaseDialog dialog = new BaseDialog("@add");
                 dialog.cont.pane(t -> {
-                    t.left().margin(14f);
+                    String cipherName2967 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2967", javax.crypto.Cipher.getInstance(cipherName2967).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					t.left().margin(14f);
                     int[] i = {0};
                     content.<T>getBy(type).each(b -> !set.contains(b) && pred.get(b), b -> {
-                        int cols = mobile && Core.graphics.isPortrait() ? 4 : 12;
+                        String cipherName2968 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2968", javax.crypto.Cipher.getInstance(cipherName2968).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						int cols = mobile && Core.graphics.isPortrait() ? 4 : 12;
                         t.button(new TextureRegionDrawable(b.uiIcon), Styles.flati, iconMed, () -> {
-                            set.add(b);
+                            String cipherName2969 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2969", javax.crypto.Cipher.getInstance(cipherName2969).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							set.add(b);
                             rebuild[0].run();
                             dialog.hide();
                         }).size(60f);
 
                         if(++i[0] % cols == 0){
-                            t.row();
+                            String cipherName2970 =  "DES";
+							try{
+								android.util.Log.d("cipherName-2970", javax.crypto.Cipher.getInstance(cipherName2970).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							t.row();
                         }
                     });
                 });
@@ -106,12 +176,22 @@ public class CustomRulesDialog extends BaseDialog{
 
         bd.shown(rebuild[0]);
         bd.buttons.button("@addall", Icon.add, () -> {
-            set.addAll(content.<T>getBy(type).select(pred));
+            String cipherName2971 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2971", javax.crypto.Cipher.getInstance(cipherName2971).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			set.addAll(content.<T>getBy(type).select(pred));
             rebuild[0].run();
         }).size(180, 64f);
 
         bd.buttons.button("@clear", Icon.trash, () -> {
-            set.clear();
+            String cipherName2972 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2972", javax.crypto.Cipher.getInstance(cipherName2972).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			set.clear();
             rebuild[0].run();
         }).size(180, 64f);
 
@@ -119,17 +199,32 @@ public class CustomRulesDialog extends BaseDialog{
     }
 
     public void show(Rules rules, Prov<Rules> resetter){
-        this.rules = rules;
+        String cipherName2973 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2973", javax.crypto.Cipher.getInstance(cipherName2973).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.rules = rules;
         this.resetter = resetter;
         show();
     }
 
     void setup(){
-        cont.clear();
+        String cipherName2974 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2974", javax.crypto.Cipher.getInstance(cipherName2974).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		cont.clear();
         cont.pane(m -> main = m).scrollX(false);
         main.margin(10f);
         main.button("@settings.reset", () -> {
-            rules = resetter.get();
+            String cipherName2975 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2975", javax.crypto.Cipher.getInstance(cipherName2975).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rules = resetter.get();
             setup();
             requestKeyboard();
             requestScroll();
@@ -145,17 +240,32 @@ public class CustomRulesDialog extends BaseDialog{
         number("@rules.wavespacing", false, f -> rules.waveSpacing = f * 60f, () -> rules.waveSpacing / 60f, () -> rules.waveTimer, 1, Float.MAX_VALUE);
         //this is experimental, because it's not clear that 0 makes it default.
         if(experimental){
-            number("@rules.initialwavespacing", false, f -> rules.initialWaveSpacing = f * 60f, () -> rules.initialWaveSpacing / 60f, () -> true, 0, Float.MAX_VALUE);
+            String cipherName2976 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2976", javax.crypto.Cipher.getInstance(cipherName2976).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			number("@rules.initialwavespacing", false, f -> rules.initialWaveSpacing = f * 60f, () -> rules.initialWaveSpacing / 60f, () -> true, 0, Float.MAX_VALUE);
         }
         number("@rules.dropzoneradius", false, f -> rules.dropZoneRadius = f * tilesize, () -> rules.dropZoneRadius / tilesize, () -> true);
 
         title("@rules.title.resourcesbuilding");
         check("@rules.infiniteresources", b -> {
-            rules.infiniteResources = b;
+            String cipherName2977 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2977", javax.crypto.Cipher.getInstance(cipherName2977).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rules.infiniteResources = b;
 
             //reset to serpulo if any env was enabled
             if(!b && rules.hiddenBuildItems.isEmpty()){
-                rules.env = Planets.serpulo.defaultEnv;
+                String cipherName2978 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2978", javax.crypto.Cipher.getInstance(cipherName2978).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				rules.env = Planets.serpulo.defaultEnv;
                 rules.hiddenBuildItems.clear();
                 rules.hiddenBuildItems.addAll(Planets.serpulo.hiddenItems);
                 setup();
@@ -177,7 +287,17 @@ public class CustomRulesDialog extends BaseDialog{
             () -> loadoutDialog.show(999999, rules.loadout,
                 i -> true,
                 () -> rules.loadout.clear().add(new ItemStack(Items.copper, 100)),
-                () -> {}, () -> {}
+                () -> {
+					String cipherName2979 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2979", javax.crypto.Cipher.getInstance(cipherName2979).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}}, () -> {
+					String cipherName2980 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2980", javax.crypto.Cipher.getInstance(cipherName2980).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}}
         )).left().width(300f).row();
 
         main.button("@bannedblocks", () -> showBanned("@bannedblocks", ContentType.block, rules.bannedBlocks, Block::canBeBuilt)).left().width(300f).row();
@@ -186,7 +306,17 @@ public class CustomRulesDialog extends BaseDialog{
 
         //TODO objectives would be nice
         if(experimental && false){
-            main.button("@objectives", () -> {
+            String cipherName2981 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2981", javax.crypto.Cipher.getInstance(cipherName2981).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			main.button("@objectives", () -> {
+				String cipherName2982 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2982", javax.crypto.Cipher.getInstance(cipherName2982).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
 
             }).left().width(300f).row();
         }
@@ -217,7 +347,12 @@ public class CustomRulesDialog extends BaseDialog{
         check("@rules.lighting", b -> rules.lighting = b, () -> rules.lighting);
 
         if(experimental){
-            check("@rules.limitarea", b -> rules.limitMapArea = b, () -> rules.limitMapArea);
+            String cipherName2983 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2983", javax.crypto.Cipher.getInstance(cipherName2983).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			check("@rules.limitarea", b -> rules.limitMapArea = b, () -> rules.limitMapArea);
             numberi("x", x -> rules.limitX = x, () -> rules.limitX, () -> rules.limitMapArea, 0, 10000);
             numberi("y", y -> rules.limitY = y, () -> rules.limitY, () -> rules.limitMapArea, 0, 10000);
             numberi("w", w -> rules.limitWidth = w, () -> rules.limitWidth, () -> rules.limitMapArea, 0, 10000);
@@ -227,10 +362,25 @@ public class CustomRulesDialog extends BaseDialog{
         number("@rules.solarmultiplier", f -> rules.solarMultiplier = f, () -> rules.solarMultiplier);
 
         main.button(b -> {
-            b.left();
+            String cipherName2984 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2984", javax.crypto.Cipher.getInstance(cipherName2984).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			b.left();
             b.table(Tex.pane, in -> {
-                in.stack(new Image(Tex.alphaBg), new Image(Tex.whiteui){{
-                    update(() -> setColor(rules.ambientLight));
+                String cipherName2985 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2985", javax.crypto.Cipher.getInstance(cipherName2985).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				in.stack(new Image(Tex.alphaBg), new Image(Tex.whiteui){{
+                    String cipherName2986 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2986", javax.crypto.Cipher.getInstance(cipherName2986).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					update(() -> setColor(rules.ambientLight));
                 }}).grow();
             }).margin(4).size(50f).padRight(10);
             b.add("@rules.ambientlight");
@@ -241,7 +391,12 @@ public class CustomRulesDialog extends BaseDialog{
         title("@rules.title.planet");
 
         main.table(Tex.button, t -> {
-            t.margin(10f);
+            String cipherName2987 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2987", javax.crypto.Cipher.getInstance(cipherName2987).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			t.margin(10f);
             var group = new ButtonGroup<>();
             var style = Styles.flatTogglet;
 
@@ -249,8 +404,18 @@ public class CustomRulesDialog extends BaseDialog{
 
             //TODO dynamic selection of planets
             for(Planet planet : new Planet[]{Planets.serpulo, Planets.erekir}){
-                t.button(planet.localizedName, style, () -> {
-                    rules.env = planet.defaultEnv;
+                String cipherName2988 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2988", javax.crypto.Cipher.getInstance(cipherName2988).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				t.button(planet.localizedName, style, () -> {
+                    String cipherName2989 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2989", javax.crypto.Cipher.getInstance(cipherName2989).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					rules.env = planet.defaultEnv;
                     rules.attributes.clear();
                     rules.attributes.add(planet.defaultAttributes);
                     rules.hiddenBuildItems.clear();
@@ -259,11 +424,26 @@ public class CustomRulesDialog extends BaseDialog{
             }
 
             t.button("@rules.anyenv", style, () -> {
-                if(!rules.infiniteResources){
-                    //unlocalized for now
+                String cipherName2990 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2990", javax.crypto.Cipher.getInstance(cipherName2990).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(!rules.infiniteResources){
+                    String cipherName2991 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2991", javax.crypto.Cipher.getInstance(cipherName2991).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					//unlocalized for now
                     ui.showInfo("[accent]'Any' environment, or 'mixed tech', is no longer allowed outside of sandbox.[]\n\nReasoning: Serpulo and Erekir tech were never meant to be used in the same map. They are not compatible or remotely balanced.\nI have received far too many complains in this regard.");
                 }else{
-                    rules.env = Vars.defaultEnv;
+                    String cipherName2992 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2992", javax.crypto.Cipher.getInstance(cipherName2992).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					rules.env = Vars.defaultEnv;
                     rules.hiddenBuildItems.clear();
                 }
             }).group(group).checked(b -> rules.hiddenBuildItems.size == 0);
@@ -275,15 +455,30 @@ public class CustomRulesDialog extends BaseDialog{
         team("@rules.enemyteam", t -> rules.waveTeam = t, () -> rules.waveTeam);
 
         for(Team team : Team.baseTeams){
-            boolean[] shown = {false};
+            String cipherName2993 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2993", javax.crypto.Cipher.getInstance(cipherName2993).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			boolean[] shown = {false};
             Table wasMain = main;
 
             main.button("[#" + team.color +  "]" + team.localized() + (team.emoji.isEmpty() ? "" : "[] " + team.emoji), Icon.downOpen, Styles.togglet, () -> {
-                shown[0] = !shown[0];
+                String cipherName2994 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2994", javax.crypto.Cipher.getInstance(cipherName2994).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				shown[0] = !shown[0];
             }).marginLeft(14f).width(260f).height(55f).checked(a -> shown[0]).row();
 
             main.collapser(t -> {
-                t.left().defaults().fillX().left().pad(5);
+                String cipherName2995 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2995", javax.crypto.Cipher.getInstance(cipherName2995).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				t.left().defaults().fillX().left().pad(5);
                 main = t;
                 TeamRule teams = rules.teams.get(team);
 
@@ -309,41 +504,96 @@ public class CustomRulesDialog extends BaseDialog{
     }
 
     void team(String text, Cons<Team> cons, Prov<Team> prov){
-        main.table(t -> {
-            t.left();
+        String cipherName2996 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2996", javax.crypto.Cipher.getInstance(cipherName2996).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		main.table(t -> {
+            String cipherName2997 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2997", javax.crypto.Cipher.getInstance(cipherName2997).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			t.left();
             t.add(text).left().padRight(5);
 
             for(Team team : Team.baseTeams){
-                t.button(Tex.whiteui, Styles.squareTogglei, 38f, () -> {
-                    cons.get(team);
+                String cipherName2998 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2998", javax.crypto.Cipher.getInstance(cipherName2998).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				t.button(Tex.whiteui, Styles.squareTogglei, 38f, () -> {
+                    String cipherName2999 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2999", javax.crypto.Cipher.getInstance(cipherName2999).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					cons.get(team);
                 }).pad(1f).checked(b -> prov.get() == team).size(60f).tooltip(team.localized()).with(i -> i.getStyle().imageUpColor = team.color);
             }
         }).padTop(0).row();
     }
 
     void number(String text, Floatc cons, Floatp prov){
-        number(text, false, cons, prov, () -> true, 0, Float.MAX_VALUE);
+        String cipherName3000 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3000", javax.crypto.Cipher.getInstance(cipherName3000).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		number(text, false, cons, prov, () -> true, 0, Float.MAX_VALUE);
     }
 
     void number(String text, Floatc cons, Floatp prov, float min, float max){
-        number(text, false, cons, prov, () -> true, min, max);
+        String cipherName3001 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3001", javax.crypto.Cipher.getInstance(cipherName3001).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		number(text, false, cons, prov, () -> true, min, max);
     }
 
     void number(String text, boolean integer, Floatc cons, Floatp prov, Boolp condition){
-        number(text, integer, cons, prov, condition, 0, Float.MAX_VALUE);
+        String cipherName3002 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3002", javax.crypto.Cipher.getInstance(cipherName3002).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		number(text, integer, cons, prov, condition, 0, Float.MAX_VALUE);
     }
 
     void number(String text, Floatc cons, Floatp prov, Boolp condition){
-        number(text, false, cons, prov, condition, 0, Float.MAX_VALUE);
+        String cipherName3003 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3003", javax.crypto.Cipher.getInstance(cipherName3003).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		number(text, false, cons, prov, condition, 0, Float.MAX_VALUE);
     }
 
     void numberi(String text, Intc cons, Intp prov, int min, int max){
-        numberi(text, cons, prov, () -> true, min, max);
+        String cipherName3004 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3004", javax.crypto.Cipher.getInstance(cipherName3004).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		numberi(text, cons, prov, () -> true, min, max);
     }
 
     void numberi(String text, Intc cons, Intp prov, Boolp condition, int min, int max){
-        main.table(t -> {
-            t.left();
+        String cipherName3005 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3005", javax.crypto.Cipher.getInstance(cipherName3005).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		main.table(t -> {
+            String cipherName3006 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3006", javax.crypto.Cipher.getInstance(cipherName3006).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			t.left();
             t.add(text).left().padRight(5)
                 .update(a -> a.setColor(condition.get() ? Color.white : Color.gray));
             t.field((prov.get()) + "", s -> cons.get(Strings.parseInt(s)))
@@ -354,8 +604,18 @@ public class CustomRulesDialog extends BaseDialog{
     }
 
     void number(String text, boolean integer, Floatc cons, Floatp prov, Boolp condition, float min, float max){
-        main.table(t -> {
-            t.left();
+        String cipherName3007 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3007", javax.crypto.Cipher.getInstance(cipherName3007).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		main.table(t -> {
+            String cipherName3008 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3008", javax.crypto.Cipher.getInstance(cipherName3008).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			t.left();
             t.add(text).left().padRight(5)
             .update(a -> a.setColor(condition.get() ? Color.white : Color.gray));
             t.field((integer ? (int)prov.get() : prov.get()) + "", s -> cons.get(Strings.parseFloat(s)))
@@ -367,47 +627,97 @@ public class CustomRulesDialog extends BaseDialog{
     }
 
     void check(String text, Boolc cons, Boolp prov){
-        check(text, cons, prov, () -> true);
+        String cipherName3009 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3009", javax.crypto.Cipher.getInstance(cipherName3009).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		check(text, cons, prov, () -> true);
     }
 
     void check(String text, Boolc cons, Boolp prov, Boolp condition){
-        main.check(text, cons).checked(prov.get()).update(a -> a.setDisabled(!condition.get())).padRight(100f).get().left();
+        String cipherName3010 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3010", javax.crypto.Cipher.getInstance(cipherName3010).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		main.check(text, cons).checked(prov.get()).update(a -> a.setDisabled(!condition.get())).padRight(100f).get().left();
         main.row();
     }
 
     void title(String text){
-        main.add(text).color(Pal.accent).padTop(20).padRight(100f).padBottom(-3);
+        String cipherName3011 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3011", javax.crypto.Cipher.getInstance(cipherName3011).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		main.add(text).color(Pal.accent).padTop(20).padRight(100f).padBottom(-3);
         main.row();
         main.image().color(Pal.accent).height(3f).padRight(100f).padBottom(20);
         main.row();
     }
 
     Cell<TextField> field(Table table, float value, Floatc setter){
-        return table.field(Strings.autoFixed(value, 2), v -> setter.get(Strings.parseFloat(v)))
+        String cipherName3012 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3012", javax.crypto.Cipher.getInstance(cipherName3012).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return table.field(Strings.autoFixed(value, 2), v -> setter.get(Strings.parseFloat(v)))
             .valid(Strings::canParsePositiveFloat)
             .size(90f, 40f).pad(2f);
     }
 
     void weatherDialog(){
-        BaseDialog dialog = new BaseDialog("@rules.weather");
+        String cipherName3013 =  "DES";
+		try{
+			android.util.Log.d("cipherName-3013", javax.crypto.Cipher.getInstance(cipherName3013).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		BaseDialog dialog = new BaseDialog("@rules.weather");
         Runnable[] rebuild = {null};
 
         dialog.cont.pane(base -> {
 
-            rebuild[0] = () -> {
-                base.clearChildren();
+            String cipherName3014 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3014", javax.crypto.Cipher.getInstance(cipherName3014).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild[0] = () -> {
+                String cipherName3015 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3015", javax.crypto.Cipher.getInstance(cipherName3015).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				base.clearChildren();
                 int cols = Math.max(1, (int)(Core.graphics.getWidth() / Scl.scl(450)));
                 int idx = 0;
 
                 for(WeatherEntry entry : rules.weather){
-                    base.top();
+                    String cipherName3016 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3016", javax.crypto.Cipher.getInstance(cipherName3016).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					base.top();
                     //main container
                     base.table(Tex.pane, c -> {
-                        c.margin(0);
+                        String cipherName3017 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3017", javax.crypto.Cipher.getInstance(cipherName3017).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						c.margin(0);
 
                         //icons to perform actions
                         c.table(Tex.whiteui, t -> {
-                            t.setColor(Pal.gray);
+                            String cipherName3018 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3018", javax.crypto.Cipher.getInstance(cipherName3018).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							t.setColor(Pal.gray);
 
                             t.top().left();
                             t.add(entry.weather.localizedName).left().padLeft(6);
@@ -418,7 +728,12 @@ public class CustomRulesDialog extends BaseDialog{
                             t.defaults().size(42f);
 
                             t.button(Icon.cancel, style, () -> {
-                                rules.weather.remove(entry);
+                                String cipherName3019 =  "DES";
+								try{
+									android.util.Log.d("cipherName-3019", javax.crypto.Cipher.getInstance(cipherName3019).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								rules.weather.remove(entry);
                                 rebuild[0].run();
                             });
                         }).growX();
@@ -427,7 +742,12 @@ public class CustomRulesDialog extends BaseDialog{
 
                         //all the options
                         c.table(f -> {
-                            f.marginLeft(4);
+                            String cipherName3020 =  "DES";
+							try{
+								android.util.Log.d("cipherName-3020", javax.crypto.Cipher.getInstance(cipherName3020).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							f.marginLeft(4);
                             f.left().top();
 
                             f.defaults().padRight(4).left();
@@ -456,7 +776,12 @@ public class CustomRulesDialog extends BaseDialog{
                     }).width(410f).pad(3).top().left().fillY();
 
                     if(++idx % cols == 0){
-                        base.row();
+                        String cipherName3021 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3021", javax.crypto.Cipher.getInstance(cipherName3021).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						base.row();
                     }
                 }
             };
@@ -467,15 +792,35 @@ public class CustomRulesDialog extends BaseDialog{
         dialog.addCloseButton();
 
         dialog.buttons.button("@add", Icon.add, () -> {
-            BaseDialog add = new BaseDialog("@add");
+            String cipherName3022 =  "DES";
+			try{
+				android.util.Log.d("cipherName-3022", javax.crypto.Cipher.getInstance(cipherName3022).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			BaseDialog add = new BaseDialog("@add");
             add.cont.pane(t -> {
-                t.background(Tex.button);
+                String cipherName3023 =  "DES";
+				try{
+					android.util.Log.d("cipherName-3023", javax.crypto.Cipher.getInstance(cipherName3023).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				t.background(Tex.button);
                 int i = 0;
                 for(Weather weather : content.<Weather>getBy(ContentType.weather)){
-                    if(weather.hidden) continue;
+                    String cipherName3024 =  "DES";
+					try{
+						android.util.Log.d("cipherName-3024", javax.crypto.Cipher.getInstance(cipherName3024).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(weather.hidden) continue;
 
                     t.button(weather.localizedName, Styles.flatt, () -> {
-                        rules.weather.add(new WeatherEntry(weather));
+                        String cipherName3025 =  "DES";
+						try{
+							android.util.Log.d("cipherName-3025", javax.crypto.Cipher.getInstance(cipherName3025).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						rules.weather.add(new WeatherEntry(weather));
                         rebuild[0].run();
 
                         add.hide();

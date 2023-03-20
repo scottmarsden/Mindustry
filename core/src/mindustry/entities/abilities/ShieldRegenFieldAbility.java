@@ -14,10 +14,20 @@ public class ShieldRegenFieldAbility extends Ability{
     protected float timer;
     protected boolean applied = false;
 
-    ShieldRegenFieldAbility(){}
+    ShieldRegenFieldAbility(){
+		String cipherName16824 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16824", javax.crypto.Cipher.getInstance(cipherName16824).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     public ShieldRegenFieldAbility(float amount, float max, float reload, float range){
-        this.amount = amount;
+        String cipherName16825 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16825", javax.crypto.Cipher.getInstance(cipherName16825).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.amount = amount;
         this.max = max;
         this.reload = reload;
         this.range = range;
@@ -25,14 +35,34 @@ public class ShieldRegenFieldAbility extends Ability{
 
     @Override
     public void update(Unit unit){
-        timer += Time.delta;
+        String cipherName16826 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16826", javax.crypto.Cipher.getInstance(cipherName16826).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		timer += Time.delta;
 
         if(timer >= reload){
-            applied = false;
+            String cipherName16827 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16827", javax.crypto.Cipher.getInstance(cipherName16827).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			applied = false;
 
             Units.nearby(unit.team, unit.x, unit.y, range, other -> {
-                if(other.shield < max){
-                    other.shield = Math.min(other.shield + amount, max);
+                String cipherName16828 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16828", javax.crypto.Cipher.getInstance(cipherName16828).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(other.shield < max){
+                    String cipherName16829 =  "DES";
+					try{
+						android.util.Log.d("cipherName-16829", javax.crypto.Cipher.getInstance(cipherName16829).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					other.shield = Math.min(other.shield + amount, max);
                     other.shieldAlpha = 1f; //TODO may not be necessary
                     applyEffect.at(unit.x, unit.y, 0f, unit.team.color, parentizeEffects ? other : null);
                     applied = true;
@@ -40,7 +70,12 @@ public class ShieldRegenFieldAbility extends Ability{
             });
 
             if(applied){
-                activeEffect.at(unit.x, unit.y, unit.team.color);
+                String cipherName16830 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16830", javax.crypto.Cipher.getInstance(cipherName16830).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				activeEffect.at(unit.x, unit.y, unit.team.color);
             }
 
             timer = 0f;

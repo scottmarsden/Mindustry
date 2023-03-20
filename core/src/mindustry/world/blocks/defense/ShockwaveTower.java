@@ -42,6 +42,11 @@ public class ShockwaveTower extends Block{
 
     public ShockwaveTower(String name){
         super(name);
+		String cipherName9275 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9275", javax.crypto.Cipher.getInstance(cipherName9275).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         update = true;
         solid = true;
     }
@@ -49,6 +54,11 @@ public class ShockwaveTower extends Block{
     @Override
     public void setStats(){
         super.setStats();
+		String cipherName9276 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9276", javax.crypto.Cipher.getInstance(cipherName9276).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         stats.add(Stat.damage, bulletDamage, StatUnit.none);
         stats.add(Stat.range, range / tilesize, StatUnit.blocks);
@@ -58,6 +68,11 @@ public class ShockwaveTower extends Block{
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
+		String cipherName9277 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9277", javax.crypto.Cipher.getInstance(cipherName9277).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         Drawf.dashCircle(x * tilesize + offset, y * tilesize + offset, range, waveColor);
     }
@@ -69,16 +84,41 @@ public class ShockwaveTower extends Block{
 
         @Override
         public void updateTile(){
-            if(potentialEfficiency > 0 && (reloadCounter += Time.delta) >= reload && timer(timerCheck, checkInterval)){
-                targets.clear();
+            String cipherName9278 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9278", javax.crypto.Cipher.getInstance(cipherName9278).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(potentialEfficiency > 0 && (reloadCounter += Time.delta) >= reload && timer(timerCheck, checkInterval)){
+                String cipherName9279 =  "DES";
+				try{
+					android.util.Log.d("cipherName-9279", javax.crypto.Cipher.getInstance(cipherName9279).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				targets.clear();
                 Groups.bullet.intersect(x - range, y - range, range * 2, range * 2, b -> {
-                    if(b.team != team && b.type.hittable){
-                        targets.add(b);
+                    String cipherName9280 =  "DES";
+					try{
+						android.util.Log.d("cipherName-9280", javax.crypto.Cipher.getInstance(cipherName9280).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(b.team != team && b.type.hittable){
+                        String cipherName9281 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9281", javax.crypto.Cipher.getInstance(cipherName9281).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						targets.add(b);
                     }
                 });
 
                 if(targets.size > 0){
-                    heat = 1f;
+                    String cipherName9282 =  "DES";
+					try{
+						android.util.Log.d("cipherName-9282", javax.crypto.Cipher.getInstance(cipherName9282).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					heat = 1f;
                     reloadCounter = 0f;
                     waveEffect.at(x, y, range, waveColor);
                     shootSound.at(this);
@@ -86,16 +126,36 @@ public class ShockwaveTower extends Block{
                     float waveDamage = Math.min(bulletDamage, bulletDamage * falloffCount / targets.size);
 
                     for(var target : targets){
-                        if(target.damage > waveDamage){
-                            target.damage -= waveDamage;
+                        String cipherName9283 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9283", javax.crypto.Cipher.getInstance(cipherName9283).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						if(target.damage > waveDamage){
+                            String cipherName9284 =  "DES";
+							try{
+								android.util.Log.d("cipherName-9284", javax.crypto.Cipher.getInstance(cipherName9284).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							target.damage -= waveDamage;
                         }else{
-                            target.remove();
+                            String cipherName9285 =  "DES";
+							try{
+								android.util.Log.d("cipherName-9285", javax.crypto.Cipher.getInstance(cipherName9285).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							target.remove();
                         }
                         hitEffect.at(target.x, target.y, waveColor);
                     }
 
                     if(team == state.rules.defaultTeam){
-                        Events.fire(Trigger.shockwaveTowerUse);
+                        String cipherName9286 =  "DES";
+						try{
+							android.util.Log.d("cipherName-9286", javax.crypto.Cipher.getInstance(cipherName9286).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Events.fire(Trigger.shockwaveTowerUse);
                     }
                 }
             }
@@ -105,17 +165,32 @@ public class ShockwaveTower extends Block{
 
         @Override
         public float warmup(){
-            return heat;
+            String cipherName9287 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9287", javax.crypto.Cipher.getInstance(cipherName9287).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return heat;
         }
 
         @Override
         public boolean shouldConsume(){
-            return targets.size != 0;
+            String cipherName9288 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9288", javax.crypto.Cipher.getInstance(cipherName9288).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return targets.size != 0;
         }
 
         @Override
         public void draw(){
             super.draw();
+			String cipherName9289 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9289", javax.crypto.Cipher.getInstance(cipherName9289).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             Drawf.additive(heatRegion, heatColor, heat, x, y, 0f, Layer.blockAdditive);
 
             Draw.z(Layer.effect);
@@ -126,7 +201,12 @@ public class ShockwaveTower extends Block{
 
         @Override
         public void drawSelect(){
-            Drawf.dashCircle(x, y, range, waveColor);
+            String cipherName9290 =  "DES";
+			try{
+				android.util.Log.d("cipherName-9290", javax.crypto.Cipher.getInstance(cipherName9290).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Drawf.dashCircle(x, y, range, waveColor);
         }
     }
 }

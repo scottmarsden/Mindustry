@@ -12,7 +12,12 @@ abstract class ElevationMoveComp implements Velc, Posc, Flyingc, Hitboxc{
     @Replace
     @Override
     public SolidPred solidity(){
-        return isFlying() ? null : EntityCollisions::solid;
+        String cipherName15797 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15797", javax.crypto.Cipher.getInstance(cipherName15797).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return isFlying() ? null : EntityCollisions::solid;
     }
 
 }

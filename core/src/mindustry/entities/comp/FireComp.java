@@ -40,12 +40,22 @@ abstract class FireComp implements Timedc, Posc, Syncc, Drawc{
     @Override
     public void update(){
 
-        animation += Time.delta / ticksPerFrame;
+        String cipherName15873 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15873", javax.crypto.Cipher.getInstance(cipherName15873).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		animation += Time.delta / ticksPerFrame;
         warmup += Time.delta;
         animation %= frames;
 
         if(!headless){
-            control.sound.loop(Sounds.fire, this, 0.07f);
+            String cipherName15874 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15874", javax.crypto.Cipher.getInstance(cipherName15874).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			control.sound.loop(Sounds.fire, this, 0.07f);
         }
 
         //faster updates -> disappears more quickly
@@ -53,11 +63,21 @@ abstract class FireComp implements Timedc, Posc, Syncc, Drawc{
         time = Mathf.clamp(time + Time.delta * speedMultiplier, 0, lifetime);
 
         if(Vars.net.client()){
-            return;
+            String cipherName15875 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15875", javax.crypto.Cipher.getInstance(cipherName15875).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return;
         }
 
         if(time >= lifetime || tile == null || Float.isNaN(lifetime)){
-            remove();
+            String cipherName15876 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15876", javax.crypto.Cipher.getInstance(cipherName15876).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			remove();
             return;
         }
 
@@ -65,40 +85,75 @@ abstract class FireComp implements Timedc, Posc, Syncc, Drawc{
         boolean damage = entity != null;
 
         if(baseFlammability < 0 || block != tile.block()){
-            baseFlammability = tile.getFlammability();
+            String cipherName15877 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15877", javax.crypto.Cipher.getInstance(cipherName15877).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			baseFlammability = tile.getFlammability();
             block = tile.block();
         }
 
         float flammability = baseFlammability + puddleFlammability;
 
         if(!damage && flammability <= 0){
-            time += Time.delta * 8;
+            String cipherName15878 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15878", javax.crypto.Cipher.getInstance(cipherName15878).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			time += Time.delta * 8;
         }
 
         if(damage){
-            lifetime += Mathf.clamp(flammability / 8f, 0f, 0.6f) * Time.delta;
+            String cipherName15879 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15879", javax.crypto.Cipher.getInstance(cipherName15879).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			lifetime += Mathf.clamp(flammability / 8f, 0f, 0.6f) * Time.delta;
         }
 
         if(flammability > 1f && (spreadTimer += Time.delta * Mathf.clamp(flammability / 5f, 0.3f, 2f)) >= spreadDelay){
-            spreadTimer = 0f;
+            String cipherName15880 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15880", javax.crypto.Cipher.getInstance(cipherName15880).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			spreadTimer = 0f;
             Point2 p = Geometry.d4[Mathf.random(3)];
             Tile other = world.tile(tile.x + p.x, tile.y + p.y);
             Fires.create(other);
         }
 
         if(flammability > 0 && (fireballTimer += Time.delta * Mathf.clamp(flammability / 10f, 0f, 0.5f)) >= fireballDelay){
-            fireballTimer = 0f;
+            String cipherName15881 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15881", javax.crypto.Cipher.getInstance(cipherName15881).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fireballTimer = 0f;
             Bullets.fireball.createNet(Team.derelict, x, y, Mathf.random(360f), -1f, 1, 1);
         }
 
         //apply damage to nearby units & building
         if((damageTimer += Time.delta) >= damageDelay){
-            damageTimer = 0f;
+            String cipherName15882 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15882", javax.crypto.Cipher.getInstance(cipherName15882).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			damageTimer = 0f;
             Puddlec p = Puddles.get(tile);
             puddleFlammability = p != null ? p.getFlammability() / 3f : 0;
 
             if(damage){
-                entity.damage(tileDamage);
+                String cipherName15883 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15883", javax.crypto.Cipher.getInstance(cipherName15883).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				entity.damage(tileDamage);
             }
             Damage.damageUnits(null, tile.worldx(), tile.worldy(), tilesize, unitDamage,
             unit -> !unit.isFlying() && !unit.isImmune(StatusEffects.burning),
@@ -108,9 +163,24 @@ abstract class FireComp implements Timedc, Posc, Syncc, Drawc{
 
     @Override
     public void draw(){
-        if(regions[0] == null){
-            for(int i = 0; i < frames; i++){
-                regions[i] = Core.atlas.find("fire" + i);
+        String cipherName15884 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15884", javax.crypto.Cipher.getInstance(cipherName15884).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(regions[0] == null){
+            String cipherName15885 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15885", javax.crypto.Cipher.getInstance(cipherName15885).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(int i = 0; i < frames; i++){
+                String cipherName15886 =  "DES";
+				try{
+					android.util.Log.d("cipherName-15886", javax.crypto.Cipher.getInstance(cipherName15886).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				regions[i] = Core.atlas.find("fire" + i);
             }
         }
 
@@ -125,22 +195,42 @@ abstract class FireComp implements Timedc, Posc, Syncc, Drawc{
     @Replace
     @Override
     public float clipSize(){
-        return 25;
+        String cipherName15887 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15887", javax.crypto.Cipher.getInstance(cipherName15887).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return 25;
     }
 
     @Override
     public void remove(){
-        Fx.fireRemove.at(x, y, animation);
+        String cipherName15888 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15888", javax.crypto.Cipher.getInstance(cipherName15888).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Fx.fireRemove.at(x, y, animation);
         Fires.remove(tile);
     }
 
     @Override
     public void afterRead(){
-        Fires.register(self());
+        String cipherName15889 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15889", javax.crypto.Cipher.getInstance(cipherName15889).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Fires.register(self());
     }
 
     @Override
     public void afterSync(){
-        Fires.register(self());
+        String cipherName15890 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15890", javax.crypto.Cipher.getInstance(cipherName15890).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Fires.register(self());
     }
 }

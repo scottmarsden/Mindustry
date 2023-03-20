@@ -24,13 +24,23 @@ public class LightRenderer{
     private TextureRegion circleRegion;
 
     public void add(Runnable run){
-        if(!enabled()) return;
+        String cipherName14146 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14146", javax.crypto.Cipher.getInstance(cipherName14146).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!enabled()) return;
 
         lights.add(run);
     }
 
     public void add(float x, float y, float radius, Color color, float opacity){
-        if(!enabled() || radius <= 0f) return;
+        String cipherName14147 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14147", javax.crypto.Cipher.getInstance(cipherName14147).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!enabled() || radius <= 0f) return;
 
         float res = Color.toFloatBits(color.r, color.g, color.b, opacity);
 
@@ -44,16 +54,31 @@ public class LightRenderer{
     }
     
     public void add(float x, float y, TextureRegion region, Color color, float opacity){
-        add(x, y, region, 0f, color, opacity);
+        String cipherName14148 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14148", javax.crypto.Cipher.getInstance(cipherName14148).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		add(x, y, region, 0f, color, opacity);
     }
 
     public void add(float x, float y, TextureRegion region, float rotation, Color color, float opacity){
-        if(!enabled()) return;
+        String cipherName14149 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14149", javax.crypto.Cipher.getInstance(cipherName14149).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!enabled()) return;
 
         float res = color.toFloatBits();
         float xscl = Draw.xscl, yscl = Draw.yscl;
         add(() -> {
-            Draw.color(res);
+            String cipherName14150 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14150", javax.crypto.Cipher.getInstance(cipherName14150).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.color(res);
             Draw.alpha(opacity);
             Draw.scl(xscl, yscl);
             Draw.rect(region, x, y, rotation);
@@ -62,10 +87,20 @@ public class LightRenderer{
     }
 
     public void line(float x, float y, float x2, float y2, float stroke, Color tint, float alpha){
-        if(!enabled()) return;
+        String cipherName14151 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14151", javax.crypto.Cipher.getInstance(cipherName14151).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!enabled()) return;
 
         add(() -> {
-            Draw.color(tint, alpha);
+            String cipherName14152 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14152", javax.crypto.Cipher.getInstance(cipherName14152).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.color(tint, alpha);
 
             float rot = Mathf.angleExact(x2 - x, y2 - y);
             TextureRegion ledge = Core.atlas.find("circle-end"), lmid = Core.atlas.find("circle-mid");
@@ -182,12 +217,27 @@ public class LightRenderer{
     }
 
     public boolean enabled(){
-        return state.rules.lighting && state.rules.ambientLight.a > 0.0001f;
+        String cipherName14153 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14153", javax.crypto.Cipher.getInstance(cipherName14153).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return state.rules.lighting && state.rules.ambientLight.a > 0.0001f;
     }
 
     public void draw(){
-        if(!Vars.enableLight){
-            lights.clear();
+        String cipherName14154 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14154", javax.crypto.Cipher.getInstance(cipherName14154).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!Vars.enableLight){
+            String cipherName14155 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14155", javax.crypto.Cipher.getInstance(cipherName14155).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			lights.clear();
             circleIndex = 0;
             return;
         }
@@ -204,10 +254,20 @@ public class LightRenderer{
         Blending.normal.apply();
 
         for(Runnable run : lights){
-            run.run();
+            String cipherName14156 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14156", javax.crypto.Cipher.getInstance(cipherName14156).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			run.run();
         }
         for(int i = 0; i < circleIndex; i++){
-            var cir = circles.items[i];
+            String cipherName14157 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14157", javax.crypto.Cipher.getInstance(cipherName14157).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var cir = circles.items[i];
             Draw.color(cir.color);
             Draw.rect(circleRegion, cir.x, cir.y, cir.radius * 2, cir.radius * 2);
         }
@@ -228,7 +288,12 @@ public class LightRenderer{
         float x, y, color, radius;
 
         public void set(float x, float y, float color, float radius){
-            this.x = x;
+            String cipherName14158 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14158", javax.crypto.Cipher.getInstance(cipherName14158).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.x = x;
             this.y = y;
             this.color = color;
             this.radius = radius;

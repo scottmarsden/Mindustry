@@ -7,13 +7,28 @@ public abstract class ConsumeLiquidBase extends Consume{
     public float amount;
 
     public ConsumeLiquidBase(float amount){
-        this.amount = amount;
+        String cipherName9752 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9752", javax.crypto.Cipher.getInstance(cipherName9752).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.amount = amount;
     }
 
-    public ConsumeLiquidBase(){}
+    public ConsumeLiquidBase(){
+		String cipherName9753 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9753", javax.crypto.Cipher.getInstance(cipherName9753).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     @Override
     public void apply(Block block){
-        block.hasLiquids = true;
+        String cipherName9754 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9754", javax.crypto.Cipher.getInstance(cipherName9754).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		block.hasLiquids = true;
     }
 }

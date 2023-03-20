@@ -13,22 +13,47 @@ public class CoreSpawnFilter extends GenerateFilter{
 
     @Override
     public FilterOption[] options(){
-        //disabled until necessary
+        String cipherName343 =  "DES";
+		try{
+			android.util.Log.d("cipherName-343", javax.crypto.Cipher.getInstance(cipherName343).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//disabled until necessary
         // SliderOption("amount", () -> amount, f -> amount = (int)f, 1, 10).display()
         return new FilterOption[]{};
     }
 
     @Override
     public char icon(){
-        return Iconc.blockCoreShard;
+        String cipherName344 =  "DES";
+		try{
+			android.util.Log.d("cipherName-344", javax.crypto.Cipher.getInstance(cipherName344).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Iconc.blockCoreShard;
     }
 
     @Override
     public void apply(Tiles tiles, GenerateInput in){
-        IntSeq spawns = new IntSeq();
+        String cipherName345 =  "DES";
+		try{
+			android.util.Log.d("cipherName-345", javax.crypto.Cipher.getInstance(cipherName345).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		IntSeq spawns = new IntSeq();
         for(Tile tile : tiles){
-            if(tile.team() == state.rules.defaultTeam && tile.block() instanceof CoreBlock && tile.isCenter()){
-                spawns.add(tile.pos());
+            String cipherName346 =  "DES";
+			try{
+				android.util.Log.d("cipherName-346", javax.crypto.Cipher.getInstance(cipherName346).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(tile.team() == state.rules.defaultTeam && tile.block() instanceof CoreBlock && tile.isCenter()){
+                String cipherName347 =  "DES";
+				try{
+					android.util.Log.d("cipherName-347", javax.crypto.Cipher.getInstance(cipherName347).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				spawns.add(tile.pos());
             }
         }
 
@@ -36,12 +61,22 @@ public class CoreSpawnFilter extends GenerateFilter{
 
         int used = Math.min(spawns.size, amount);
         for(int i = used; i < spawns.size; i++){
-            tiles.getp(spawns.get(i)).remove();
+            String cipherName348 =  "DES";
+			try{
+				android.util.Log.d("cipherName-348", javax.crypto.Cipher.getInstance(cipherName348).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tiles.getp(spawns.get(i)).remove();
         }
     }
 
     @Override
     public boolean isPost(){
-        return true;
+        String cipherName349 =  "DES";
+		try{
+			android.util.Log.d("cipherName-349", javax.crypto.Cipher.getInstance(cipherName349).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true;
     }
 }

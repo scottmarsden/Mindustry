@@ -25,27 +25,52 @@ abstract class ShieldComp implements Healthc, Posc{
     @Replace
     @Override
     public void damage(float amount){
-        //apply armor and scaling effects
+        String cipherName16790 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16790", javax.crypto.Cipher.getInstance(cipherName16790).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//apply armor and scaling effects
         rawDamage(Damage.applyArmor(amount, armor) / healthMultiplier);
     }
 
     @Replace
     @Override
     public void damagePierce(float amount, boolean withEffect){
-        float pre = hitTime;
+        String cipherName16791 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16791", javax.crypto.Cipher.getInstance(cipherName16791).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float pre = hitTime;
 
         rawDamage(amount);
 
         if(!withEffect){
-            hitTime = pre;
+            String cipherName16792 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16792", javax.crypto.Cipher.getInstance(cipherName16792).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			hitTime = pre;
         }
     }
 
     private void rawDamage(float amount){
-        boolean hadShields = shield > 0.0001f;
+        String cipherName16793 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16793", javax.crypto.Cipher.getInstance(cipherName16793).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean hadShields = shield > 0.0001f;
 
         if(hadShields){
-            shieldAlpha = 1f;
+            String cipherName16794 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16794", javax.crypto.Cipher.getInstance(cipherName16794).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			shieldAlpha = 1f;
         }
 
         float shieldDamage = Math.min(Math.max(shield, 0), amount);
@@ -54,20 +79,40 @@ abstract class ShieldComp implements Healthc, Posc{
         amount -= shieldDamage;
 
         if(amount > 0 && type.killable){
-            health -= amount;
+            String cipherName16795 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16795", javax.crypto.Cipher.getInstance(cipherName16795).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			health -= amount;
             if(health <= 0 && !dead){
-                kill();
+                String cipherName16796 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16796", javax.crypto.Cipher.getInstance(cipherName16796).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				kill();
             }
 
             if(hadShields && shield <= 0.0001f){
-                Fx.unitShieldBreak.at(x, y, 0, team.color, this);
+                String cipherName16797 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16797", javax.crypto.Cipher.getInstance(cipherName16797).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Fx.unitShieldBreak.at(x, y, 0, team.color, this);
             }
         }
     }
 
     @Override
     public void update(){
-        shieldAlpha -= Time.delta / 15f;
+        String cipherName16798 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16798", javax.crypto.Cipher.getInstance(cipherName16798).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		shieldAlpha -= Time.delta / 15f;
         if(shieldAlpha < 0) shieldAlpha = 0f;
     }
 }

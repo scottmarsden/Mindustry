@@ -14,6 +14,11 @@ public class Router extends Block{
 
     public Router(String name){
         super(name);
+		String cipherName7039 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7039", javax.crypto.Cipher.getInstance(cipherName7039).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         solid = false;
         underBullets = true;
         update = true;
@@ -32,8 +37,18 @@ public class Router extends Block{
 
         @Override
         public Unit unit(){
-            if(unit == null){
-                unit = (BlockUnitc)UnitTypes.block.create(team);
+            String cipherName7040 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7040", javax.crypto.Cipher.getInstance(cipherName7040).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(unit == null){
+                String cipherName7041 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7041", javax.crypto.Cipher.getInstance(cipherName7041).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				unit = (BlockUnitc)UnitTypes.block.create(team);
                 unit.tile(this);
             }
             return (Unit)unit;
@@ -41,26 +56,56 @@ public class Router extends Block{
 
         @Override
         public boolean canControl(){
-            return size == 1;
+            String cipherName7042 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7042", javax.crypto.Cipher.getInstance(cipherName7042).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return size == 1;
         }
 
         @Override
         public boolean shouldAutoTarget(){
-            return false;
+            String cipherName7043 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7043", javax.crypto.Cipher.getInstance(cipherName7043).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
 
         @Override
         public void updateTile(){
-            if(lastItem == null && items.any()){
-                lastItem = items.first();
+            String cipherName7044 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7044", javax.crypto.Cipher.getInstance(cipherName7044).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(lastItem == null && items.any()){
+                String cipherName7045 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7045", javax.crypto.Cipher.getInstance(cipherName7045).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				lastItem = items.first();
             }
 
             if(lastItem != null){
-                time += 1f / speed * delta();
+                String cipherName7046 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7046", javax.crypto.Cipher.getInstance(cipherName7046).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				time += 1f / speed * delta();
                 Building target = getTileTarget(lastItem, lastInput, false);
 
                 if(target != null && (time >= 1f || !(target.block instanceof Router || target.block.instantTransfer))){
-                    getTileTarget(lastItem, lastInput, true);
+                    String cipherName7047 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7047", javax.crypto.Cipher.getInstance(cipherName7047).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					getTileTarget(lastItem, lastInput, true);
                     target.handleItem(this, lastItem);
                     items.remove(lastItem, 1);
                     lastItem = null;
@@ -70,17 +115,32 @@ public class Router extends Block{
 
         @Override
         public int acceptStack(Item item, int amount, Teamc source){
-            return 0;
+            String cipherName7048 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7048", javax.crypto.Cipher.getInstance(cipherName7048).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 0;
         }
 
         @Override
         public boolean acceptItem(Building source, Item item){
-            return team == source.team && lastItem == null && items.total() == 0;
+            String cipherName7049 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7049", javax.crypto.Cipher.getInstance(cipherName7049).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return team == source.team && lastItem == null && items.total() == 0;
         }
 
         @Override
         public void handleItem(Building source, Item item){
-            items.add(item, 1);
+            String cipherName7050 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7050", javax.crypto.Cipher.getInstance(cipherName7050).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			items.add(item, 1);
             lastItem = item;
             time = 0f;
             lastInput = source.tile();
@@ -88,16 +148,36 @@ public class Router extends Block{
 
         @Override
         public int removeStack(Item item, int amount){
-            int result = super.removeStack(item, amount);
+            String cipherName7051 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7051", javax.crypto.Cipher.getInstance(cipherName7051).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int result = super.removeStack(item, amount);
             if(result != 0 && item == lastItem){
-                lastItem = null;
+                String cipherName7052 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7052", javax.crypto.Cipher.getInstance(cipherName7052).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				lastItem = null;
             }
             return result;
         }
 
         public Building getTileTarget(Item item, Tile from, boolean set){
-            if(unit != null && isControlled()){
-                unit.health(health);
+            String cipherName7053 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7053", javax.crypto.Cipher.getInstance(cipherName7053).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(unit != null && isControlled()){
+                String cipherName7054 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7054", javax.crypto.Cipher.getInstance(cipherName7054).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				unit.health(health);
                 unit.ammo(unit.type().ammoCapacity * (items.total() > 0 ? 1f : 0f));
                 unit.team(team);
                 unit.set(x, y);
@@ -105,9 +185,19 @@ public class Router extends Block{
                 int angle = Mathf.mod((int)((angleTo(unit.aimX(), unit.aimY()) + 45) / 90), 4);
 
                 if(unit.isShooting()){
-                    Building other = nearby(rotation = angle);
+                    String cipherName7055 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7055", javax.crypto.Cipher.getInstance(cipherName7055).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Building other = nearby(rotation = angle);
                     if(other != null && other.acceptItem(this, item)){
-                        return other;
+                        String cipherName7056 =  "DES";
+						try{
+							android.util.Log.d("cipherName-7056", javax.crypto.Cipher.getInstance(cipherName7056).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return other;
                     }
                 }
 
@@ -116,11 +206,21 @@ public class Router extends Block{
 
             int counter = rotation;
             for(int i = 0; i < proximity.size; i++){
-                Building other = proximity.get((i + counter) % proximity.size);
+                String cipherName7057 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7057", javax.crypto.Cipher.getInstance(cipherName7057).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Building other = proximity.get((i + counter) % proximity.size);
                 if(set) rotation = ((byte)((rotation + 1) % proximity.size));
                 if(other.tile == from && from.block() == Blocks.overflowGate) continue;
                 if(other.acceptItem(this, item)){
-                    return other;
+                    String cipherName7058 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7058", javax.crypto.Cipher.getInstance(cipherName7058).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return other;
                 }
             }
             return null;

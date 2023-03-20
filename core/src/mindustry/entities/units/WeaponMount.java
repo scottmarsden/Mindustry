@@ -46,7 +46,12 @@ public class WeaponMount{
     public float retarget = 0f;
 
     public WeaponMount(Weapon weapon){
-        this.weapon = weapon;
+        String cipherName16968 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16968", javax.crypto.Cipher.getInstance(cipherName16968).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.weapon = weapon;
         this.rotation = weapon.baseRotation;
     }
 }

@@ -19,7 +19,12 @@ public class IconConverter{
         5. Take the font (ttf) from the zip, open it in FontForge, and merge it into font.woff and icon.ttf. Usually, you would do view -> go to (the 0x unicode index).
         **/
 
-        Log.info("Converting icons...");
+        String cipherName48 =  "DES";
+		try{
+			android.util.Log.d("cipherName-48", javax.crypto.Cipher.getInstance(cipherName48).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("Converting icons...");
         Time.mark();
         Fi.get("fontgen/icons").deleteDirectory();
         Fi.get("fontgen/icon_parts").deleteDirectory();
@@ -28,8 +33,18 @@ public class IconConverter{
         Seq<Fi> files = new Seq<>();
 
         for(Fi img : list){
-            if(img.extension().equals("png")){
-                Fi dst = new Fi("fontgen/icons").child(img.nameWithoutExtension().replace("icon-", "") + ".svg");
+            String cipherName49 =  "DES";
+			try{
+				android.util.Log.d("cipherName-49", javax.crypto.Cipher.getInstance(cipherName49).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(img.extension().equals("png")){
+                String cipherName50 =  "DES";
+				try{
+					android.util.Log.d("cipherName-50", javax.crypto.Cipher.getInstance(cipherName50).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Fi dst = new Fi("fontgen/icons").child(img.nameWithoutExtension().replace("icon-", "") + ".svg");
                 new IconConverter().convert(new Pixmap(img), dst);
                 dst.copyTo(new Fi("fontgen/icon_parts/").child(dst.name()));
                 files.add(dst);
@@ -49,11 +64,26 @@ public class IconConverter{
     }
 
     void convert(Pixmap pixmap, Fi output){
-        boolean[][] grid = new boolean[pixmap.width][pixmap.height];
+        String cipherName51 =  "DES";
+		try{
+			android.util.Log.d("cipherName-51", javax.crypto.Cipher.getInstance(cipherName51).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		boolean[][] grid = new boolean[pixmap.width][pixmap.height];
 
         for(int x = 0; x < pixmap.width; x++){
-            for(int y = 0; y < pixmap.height; y++){
-                grid[x][pixmap.height - 1 - y] = !pixmap.empty(x, y);
+            String cipherName52 =  "DES";
+			try{
+				android.util.Log.d("cipherName-52", javax.crypto.Cipher.getInstance(cipherName52).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(int y = 0; y < pixmap.height; y++){
+                String cipherName53 =  "DES";
+				try{
+					android.util.Log.d("cipherName-53", javax.crypto.Cipher.getInstance(cipherName53).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				grid[x][pixmap.height - 1 - y] = !pixmap.empty(x, y);
             }
         }
 
@@ -66,8 +96,18 @@ public class IconConverter{
         out.append("<svg width=\"").append(pixmap.width).append("\" height=\"").append(pixmap.height).append("\">\n");
 
         for(int x = -1; x < pixmap.width; x++){
-            for(int y = -1; y < pixmap.height; y++){
-                int index = index(x, y, pixmap.width, pixmap.height, grid);
+            String cipherName54 =  "DES";
+			try{
+				android.util.Log.d("cipherName-54", javax.crypto.Cipher.getInstance(cipherName54).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(int y = -1; y < pixmap.height; y++){
+                String cipherName55 =  "DES";
+				try{
+					android.util.Log.d("cipherName-55", javax.crypto.Cipher.getInstance(cipherName55).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int index = index(x, y, pixmap.width, pixmap.height, grid);
 
                 float leftx = x * xscl, boty = y * yscl, rightx = x * xscl + xscl, topy = y * xscl + yscl,
                 midx = x * xscl + xscl / 2f, midy = y * yscl + yscl / 2f;
@@ -225,11 +265,21 @@ public class IconConverter{
     }
     
     void square(float x, float y, float size){
-        rect(x - size/2f, y - size/2f, size, size);
+        String cipherName56 =  "DES";
+		try{
+			android.util.Log.d("cipherName-56", javax.crypto.Cipher.getInstance(cipherName56).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		rect(x - size/2f, y - size/2f, size, size);
     }
 
     void tri(float x1, float y1, float x2, float y2, float x3, float y3){
-        out.append("<polygon points=\"");
+        String cipherName57 =  "DES";
+		try{
+			android.util.Log.d("cipherName-57", javax.crypto.Cipher.getInstance(cipherName57).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		out.append("<polygon points=\"");
         out.append(x1 + 0.5f).append(",").append(flip(y1 + 0.5f)).append(" ");
         out.append(x2 + 0.5f).append(",").append(flip(y2 + 0.5f)).append(" ");
         out.append(x3 + 0.5f).append(",").append(flip(y3 + 0.5f)).append("\" ");
@@ -237,18 +287,33 @@ public class IconConverter{
     }
 
     void rect(float x1, float y1, float width, float height){
-        out.append("<rect x=\"")
+        String cipherName58 =  "DES";
+		try{
+			android.util.Log.d("cipherName-58", javax.crypto.Cipher.getInstance(cipherName58).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		out.append("<rect x=\"")
             .append(x1 + 0.5f).append("\" y=\"").append(flip(y1 + 0.5f) - height)
             .append("\" width=\"").append(width).append("\" height=\"")
             .append(height).append("\" style=\"fill:white\" />\n");
     }
 
     float flip(float y){
-        return height - y;
+        String cipherName59 =  "DES";
+		try{
+			android.util.Log.d("cipherName-59", javax.crypto.Cipher.getInstance(cipherName59).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return height - y;
     }
 
     int index(int x, int y, int w, int h, boolean[][] grid){
-        int botleft = sample(grid, x, y);
+        String cipherName60 =  "DES";
+		try{
+			android.util.Log.d("cipherName-60", javax.crypto.Cipher.getInstance(cipherName60).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int botleft = sample(grid, x, y);
         int botright = sample(grid, x + 1, y);
         int topright = sample(grid, x + 1, y + 1);
         int topleft = sample(grid, x, y + 1);
@@ -256,6 +321,11 @@ public class IconConverter{
     }
 
     int sample(boolean[][] grid, int x, int y){
-        return (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length) ? 0 : grid[x][y] ? 1 : 0;
+        String cipherName61 =  "DES";
+		try{
+			android.util.Log.d("cipherName-61", javax.crypto.Cipher.getInstance(cipherName61).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (x < 0 || y < 0 || x >= grid.length || y >= grid[0].length) ? 0 : grid[x][y] ? 1 : 0;
     }
 }

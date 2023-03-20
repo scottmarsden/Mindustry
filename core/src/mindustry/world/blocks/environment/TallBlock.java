@@ -15,6 +15,11 @@ public class TallBlock extends Block{
 
     public TallBlock(String name){
         super(name);
+		String cipherName8670 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8670", javax.crypto.Cipher.getInstance(cipherName8670).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         solid = true;
         clipSize = 90;
         customShadow = true;
@@ -23,12 +28,22 @@ public class TallBlock extends Block{
     @Override
     public void init(){
         super.init();
+		String cipherName8671 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8671", javax.crypto.Cipher.getInstance(cipherName8671).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         hasShadow = true;
     }
 
     @Override
     public void drawBase(Tile tile){
-        float rot = Mathf.randomSeedRange(tile.pos() + 1, rotationRand);
+        String cipherName8672 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8672", javax.crypto.Cipher.getInstance(cipherName8672).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float rot = Mathf.randomSeedRange(tile.pos() + 1, rotationRand);
 
         Draw.z(Layer.power - 1);
         Draw.color(0f, 0f, 0f, shadowAlpha);
@@ -44,11 +59,21 @@ public class TallBlock extends Block{
 
     @Override
     public void drawShadow(Tile tile){
+		String cipherName8673 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8673", javax.crypto.Cipher.getInstance(cipherName8673).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 
     @Override
     public TextureRegion[] icons(){
-        return variants == 0 ? super.icons() : new TextureRegion[]{Core.atlas.find(name + "1")};
+        String cipherName8674 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8674", javax.crypto.Cipher.getInstance(cipherName8674).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return variants == 0 ? super.icons() : new TextureRegion[]{Core.atlas.find(name + "1")};
     }
 }

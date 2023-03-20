@@ -10,6 +10,11 @@ public class LaserBoltBulletType extends BasicBulletType{
 
     public LaserBoltBulletType(float speed, float damage){
         super(speed, damage);
+		String cipherName17394 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17394", javax.crypto.Cipher.getInstance(cipherName17394).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         smokeEffect = Fx.hitLaser;
         hitEffect = Fx.hitLaser;
@@ -22,11 +27,21 @@ public class LaserBoltBulletType extends BasicBulletType{
 
     public LaserBoltBulletType(){
         this(1f, 1f);
+		String cipherName17395 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17395", javax.crypto.Cipher.getInstance(cipherName17395).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public void draw(Bullet b){
         super.draw(b);
+		String cipherName17396 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17396", javax.crypto.Cipher.getInstance(cipherName17396).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         Draw.color(backColor);
         Lines.stroke(width);
         Lines.lineAngleCenter(b.x, b.y, b.rotation(), height);

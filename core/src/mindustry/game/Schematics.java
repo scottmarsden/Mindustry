@@ -64,50 +64,105 @@ public class Schematics implements Loadable{
 
     public Schematics(){
 
-        Events.on(ClientLoadEvent.class, event -> {
-            errorTexture = new Texture("sprites/error.png");
+        String cipherName12270 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12270", javax.crypto.Cipher.getInstance(cipherName12270).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Events.on(ClientLoadEvent.class, event -> {
+            String cipherName12271 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12271", javax.crypto.Cipher.getInstance(cipherName12271).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			errorTexture = new Texture("sprites/error.png");
         });
     }
 
     @Override
     public void loadSync(){
-        load();
+        String cipherName12272 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12272", javax.crypto.Cipher.getInstance(cipherName12272).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		load();
     }
 
     /** Load all schematics in the folder immediately.*/
     public void load(){
-        all.clear();
+        String cipherName12273 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12273", javax.crypto.Cipher.getInstance(cipherName12273).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		all.clear();
 
         loadLoadouts();
 
         for(Fi file : schematicDirectory.list()){
-            loadFile(file);
+            String cipherName12274 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12274", javax.crypto.Cipher.getInstance(cipherName12274).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			loadFile(file);
         }
 
         platform.getWorkshopContent(Schematic.class).each(this::loadFile);
 
         //mod-specific schematics, cannot be removed
         mods.listFiles("schematics", (mod, file) -> {
-            Schematic s = loadFile(file);
+            String cipherName12275 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12275", javax.crypto.Cipher.getInstance(cipherName12275).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Schematic s = loadFile(file);
             if(s != null){
-                s.mod = mod;
+                String cipherName12276 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12276", javax.crypto.Cipher.getInstance(cipherName12276).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				s.mod = mod;
             }
         });
 
         all.sort();
 
         if(shadowBuffer == null){
-            Core.app.post(() -> shadowBuffer = new FrameBuffer(maxSchematicSize + padding + 8, maxSchematicSize + padding + 8));
+            String cipherName12277 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12277", javax.crypto.Cipher.getInstance(cipherName12277).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Core.app.post(() -> shadowBuffer = new FrameBuffer(maxSchematicSize + padding + 8, maxSchematicSize + padding + 8));
         }
     }
 
     private void loadLoadouts(){
-        Seq.with(Loadouts.basicShard, Loadouts.basicFoundation, Loadouts.basicNucleus, Loadouts.basicBastion).each(s -> checkLoadout(s, false));
+        String cipherName12278 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12278", javax.crypto.Cipher.getInstance(cipherName12278).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Seq.with(Loadouts.basicShard, Loadouts.basicFoundation, Loadouts.basicNucleus, Loadouts.basicBastion).each(s -> checkLoadout(s, false));
     }
 
     public void overwrite(Schematic target, Schematic newSchematic){
-        if(previews.containsKey(target)){
-            previews.get(target).dispose();
+        String cipherName12279 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12279", javax.crypto.Cipher.getInstance(cipherName12279).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(previews.containsKey(target)){
+            String cipherName12280 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12280", javax.crypto.Cipher.getInstance(cipherName12280).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			previews.get(target).dispose();
             previews.remove(target);
         }
 
@@ -123,52 +178,112 @@ public class Schematics implements Loadable{
         checkLoadout(target, true);
 
         try{
-            write(newSchematic, target.file);
+            String cipherName12281 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12281", javax.crypto.Cipher.getInstance(cipherName12281).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			write(newSchematic, target.file);
         }catch(Exception e){
-            Log.err("Failed to overwrite schematic '@' (@)", newSchematic.name(), target.file);
+            String cipherName12282 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12282", javax.crypto.Cipher.getInstance(cipherName12282).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.err("Failed to overwrite schematic '@' (@)", newSchematic.name(), target.file);
             Log.err(e);
             ui.showException(e);
         }
     }
 
     private @Nullable Schematic loadFile(Fi file){
-        if(!file.extension().equals(schematicExtension)) return null;
+        String cipherName12283 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12283", javax.crypto.Cipher.getInstance(cipherName12283).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!file.extension().equals(schematicExtension)) return null;
 
         try{
-            Schematic s = read(file);
+            String cipherName12284 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12284", javax.crypto.Cipher.getInstance(cipherName12284).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Schematic s = read(file);
             all.add(s);
             checkLoadout(s, true);
 
             //external file from workshop
             if(!s.file.parent().equals(schematicDirectory)){
-                s.tags.put("steamid", s.file.parent().name());
+                String cipherName12285 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12285", javax.crypto.Cipher.getInstance(cipherName12285).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				s.tags.put("steamid", s.file.parent().name());
             }
 
             return s;
         }catch(Throwable e){
-            Log.err("Failed to read schematic from file '@'", file);
+            String cipherName12286 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12286", javax.crypto.Cipher.getInstance(cipherName12286).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.err("Failed to read schematic from file '@'", file);
             Log.err(e);
         }
         return null;
     }
 
     public Seq<Schematic> all(){
-        return all;
+        String cipherName12287 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12287", javax.crypto.Cipher.getInstance(cipherName12287).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return all;
     }
 
     public void saveChanges(Schematic s){
-        if(s.file != null){
-            try{
-                write(s, s.file);
+        String cipherName12288 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12288", javax.crypto.Cipher.getInstance(cipherName12288).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(s.file != null){
+            String cipherName12289 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12289", javax.crypto.Cipher.getInstance(cipherName12289).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try{
+                String cipherName12290 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12290", javax.crypto.Cipher.getInstance(cipherName12290).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				write(s, s.file);
             }catch(Exception e){
-                ui.showException(e);
+                String cipherName12291 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12291", javax.crypto.Cipher.getInstance(cipherName12291).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ui.showException(e);
             }
         }
         all.sort();
     }
 
     public void savePreview(Schematic schematic, Fi file){
-        FrameBuffer buffer = getBuffer(schematic);
+        String cipherName12292 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12292", javax.crypto.Cipher.getInstance(cipherName12292).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		FrameBuffer buffer = getBuffer(schematic);
         Draw.flush();
         buffer.begin();
         Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(0, 0, buffer.getWidth(), buffer.getHeight());
@@ -177,12 +292,27 @@ public class Schematics implements Loadable{
     }
 
     public Texture getPreview(Schematic schematic){
-        if(errored.contains(schematic)) return errorTexture;
+        String cipherName12293 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12293", javax.crypto.Cipher.getInstance(cipherName12293).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(errored.contains(schematic)) return errorTexture;
 
         try{
-            return getBuffer(schematic).getTexture();
+            String cipherName12294 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12294", javax.crypto.Cipher.getInstance(cipherName12294).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return getBuffer(schematic).getTexture();
         }catch(Throwable t){
-            Log.err("Failed to get preview for schematic '@' (@)", schematic.name(), schematic.file);
+            String cipherName12295 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12295", javax.crypto.Cipher.getInstance(cipherName12295).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.err("Failed to get preview for schematic '@' (@)", schematic.name(), schematic.file);
             Log.err(t);
             errored.add(schematic);
             return errorTexture;
@@ -190,16 +320,36 @@ public class Schematics implements Loadable{
     }
 
     public boolean hasPreview(Schematic schematic){
-        return previews.containsKey(schematic);
+        String cipherName12296 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12296", javax.crypto.Cipher.getInstance(cipherName12296).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return previews.containsKey(schematic);
     }
 
     public FrameBuffer getBuffer(Schematic schematic){
-        //dispose unneeded previews to prevent memory outage errors.
+        String cipherName12297 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12297", javax.crypto.Cipher.getInstance(cipherName12297).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//dispose unneeded previews to prevent memory outage errors.
         //only runs every 2 seconds
         if(mobile && Time.timeSinceMillis(lastClearTime) > 1000 * 2 && previews.size > maxPreviewsMobile){
-            Seq<Schematic> keys = previews.orderedKeys().copy();
+            String cipherName12298 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12298", javax.crypto.Cipher.getInstance(cipherName12298).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Seq<Schematic> keys = previews.orderedKeys().copy();
             for(int i = 0; i < previews.size - maxPreviewsMobile; i++){
-                //dispose and remove unneeded previews
+                String cipherName12299 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12299", javax.crypto.Cipher.getInstance(cipherName12299).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//dispose and remove unneeded previews
                 previews.get(keys.get(i)).dispose();
                 previews.remove(keys.get(i));
             }
@@ -208,7 +358,12 @@ public class Schematics implements Loadable{
         }
 
         if(!previews.containsKey(schematic)){
-            Draw.blend();
+            String cipherName12300 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12300", javax.crypto.Cipher.getInstance(cipherName12300).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.blend();
             Draw.reset();
             Tmp.m1.set(Draw.proj());
             Tmp.m2.set(Draw.trans());
@@ -221,12 +376,27 @@ public class Schematics implements Loadable{
 
             Draw.color();
             schematic.tiles.each(t -> {
-                int size = t.block.size;
+                String cipherName12301 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12301", javax.crypto.Cipher.getInstance(cipherName12301).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int size = t.block.size;
                 int offsetx = -(size - 1) / 2;
                 int offsety = -(size - 1) / 2;
                 for(int dx = 0; dx < size; dx++){
-                    for(int dy = 0; dy < size; dy++){
-                        int wx = t.x + dx + offsetx;
+                    String cipherName12302 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12302", javax.crypto.Cipher.getInstance(cipherName12302).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					for(int dy = 0; dy < size; dy++){
+                        String cipherName12303 =  "DES";
+						try{
+							android.util.Log.d("cipherName-12303", javax.crypto.Cipher.getInstance(cipherName12303).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						int wx = t.x + dx + offsetx;
                         int wy = t.y + dy + offsety;
                         Fill.square(padding/2f + wx + 0.5f, padding/2f + wy + 0.5f, 0.5f);
                     }
@@ -252,7 +422,12 @@ public class Schematics implements Loadable{
 
             //draw plans
             plans.each(req -> {
-                req.animScale = 1f;
+                String cipherName12304 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12304", javax.crypto.Cipher.getInstance(cipherName12304).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				req.animScale = 1f;
                 req.worldContext = false;
                 req.block.drawPlanRegion(req, plans);
             });
@@ -275,30 +450,60 @@ public class Schematics implements Loadable{
 
     /** Creates an array of build plans from a schematic's data, centered on the provided x+y coordinates. */
     public Seq<BuildPlan> toPlans(Schematic schem, int x, int y){
-        return schem.tiles.map(t -> new BuildPlan(t.x + x - schem.width/2, t.y + y - schem.height/2, t.rotation, t.block, t.config).original(t.x, t.y, schem.width, schem.height))
+        String cipherName12305 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12305", javax.crypto.Cipher.getInstance(cipherName12305).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return schem.tiles.map(t -> new BuildPlan(t.x + x - schem.width/2, t.y + y - schem.height/2, t.rotation, t.block, t.config).original(t.x, t.y, schem.width, schem.height))
             .removeAll(s -> (!s.block.isVisible() && !(s.block instanceof CoreBlock)) || !s.block.unlockedNow()).sort(Structs.comparingInt(s -> -s.block.schematicPriority));
     }
 
     /** @return all the valid loadouts for a specific core type. */
     public Seq<Schematic> getLoadouts(CoreBlock block){
-        return loadouts.get(block, Seq::new);
+        String cipherName12306 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12306", javax.crypto.Cipher.getInstance(cipherName12306).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return loadouts.get(block, Seq::new);
     }
 
     public ObjectMap<CoreBlock, Seq<Schematic>> getLoadouts(){
-        return loadouts;
+        String cipherName12307 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12307", javax.crypto.Cipher.getInstance(cipherName12307).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return loadouts;
     }
 
     public @Nullable Schematic getDefaultLoadout(CoreBlock block){
-        return defaultLoadouts.get(block);
+        String cipherName12308 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12308", javax.crypto.Cipher.getInstance(cipherName12308).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return defaultLoadouts.get(block);
     }
 
     public boolean isDefaultLoadout(Schematic schem){
-        return defaultLoadouts.containsValue(schem, true);
+        String cipherName12309 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12309", javax.crypto.Cipher.getInstance(cipherName12309).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return defaultLoadouts.containsValue(schem, true);
     }
 
     /** Checks a schematic for deployment validity and adds it to the cache. */
     private void checkLoadout(Schematic s, boolean customSchem){
-        Stile core = s.tiles.find(t -> t.block instanceof CoreBlock);
+        String cipherName12310 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12310", javax.crypto.Cipher.getInstance(cipherName12310).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Stile core = s.tiles.find(t -> t.block instanceof CoreBlock);
         if(core == null) return;
         int cores = s.tiles.count(t -> t.block instanceof CoreBlock);
         int maxSize = getMaxLaunchSize(core.block);
@@ -312,23 +517,48 @@ public class Schematics implements Loadable{
 
         //save non-custom loadout
         if(!customSchem){
-            defaultLoadouts.put((CoreBlock)core.block, s);
+            String cipherName12311 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12311", javax.crypto.Cipher.getInstance(cipherName12311).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			defaultLoadouts.put((CoreBlock)core.block, s);
         }
     }
 
     public int getMaxLaunchSize(Block block){
-        return block.size + maxLoadoutSchematicPad*2;
+        String cipherName12312 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12312", javax.crypto.Cipher.getInstance(cipherName12312).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return block.size + maxLoadoutSchematicPad*2;
     }
 
     /** Adds a schematic to the list, also copying it into the files.*/
     public void add(Schematic schematic){
-        all.add(schematic);
+        String cipherName12313 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12313", javax.crypto.Cipher.getInstance(cipherName12313).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		all.add(schematic);
         try{
-            Fi file = schematicDirectory.child(Time.millis() + "." + schematicExtension);
+            String cipherName12314 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12314", javax.crypto.Cipher.getInstance(cipherName12314).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Fi file = schematicDirectory.child(Time.millis() + "." + schematicExtension);
             write(schematic, file);
             schematic.file = file;
         }catch(Exception e){
-            ui.showException(e);
+            String cipherName12315 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12315", javax.crypto.Cipher.getInstance(cipherName12315).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ui.showException(e);
             Log.err(e);
         }
 
@@ -337,14 +567,29 @@ public class Schematics implements Loadable{
     }
 
     public void remove(Schematic s){
-        all.remove(s);
+        String cipherName12316 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12316", javax.crypto.Cipher.getInstance(cipherName12316).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		all.remove(s);
         loadouts.each((block, seq) -> seq.remove(s));
         if(s.file != null){
-            s.file.delete();
+            String cipherName12317 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12317", javax.crypto.Cipher.getInstance(cipherName12317).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			s.file.delete();
         }
 
         if(previews.containsKey(s)){
-            previews.get(s).dispose();
+            String cipherName12318 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12318", javax.crypto.Cipher.getInstance(cipherName12318).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			previews.get(s).dispose();
             previews.remove(s);
         }
         all.sort();
@@ -352,6 +597,11 @@ public class Schematics implements Loadable{
 
     /** Creates a schematic from a world selection. */
     public Schematic create(int x, int y, int x2, int y2){
+		String cipherName12319 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12319", javax.crypto.Cipher.getInstance(cipherName12319).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         Team team = headless ? null : Vars.player.team();
         NormalizeResult result = Placement.normalizeArea(x, y, x2, y2, 0, false, maxSchematicSize);
         x = result.x;
@@ -417,31 +667,66 @@ public class Schematics implements Loadable{
 
     /** Converts a schematic to base64. Note that the result of this will always start with 'bXNjaAB'.*/
     public String writeBase64(Schematic schematic){
-        try{
-            out.reset();
+        String cipherName12320 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12320", javax.crypto.Cipher.getInstance(cipherName12320).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName12321 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12321", javax.crypto.Cipher.getInstance(cipherName12321).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			out.reset();
             write(schematic, out);
             return new String(Base64Coder.encode(out.getBuffer(), out.size()));
         }catch(IOException e){
-            throw new RuntimeException(e);
+            String cipherName12322 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12322", javax.crypto.Cipher.getInstance(cipherName12322).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
     /** Places the last launch loadout at the coordinates and fills it with the launch resources. */
     public static void placeLaunchLoadout(int x, int y){
-        placeLoadout(universe.getLastLoadout(), x, y, state.rules.defaultTeam);
+        String cipherName12323 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12323", javax.crypto.Cipher.getInstance(cipherName12323).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		placeLoadout(universe.getLastLoadout(), x, y, state.rules.defaultTeam);
         if(world.tile(x, y).build == null) throw new RuntimeException("No core at loadout coordinates!");
         world.tile(x, y).build.items.add(universe.getLaunchResources());
     }
 
     public static void placeLoadout(Schematic schem, int x, int y){
-        placeLoadout(schem, x, y, state.rules.defaultTeam);
+        String cipherName12324 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12324", javax.crypto.Cipher.getInstance(cipherName12324).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		placeLoadout(schem, x, y, state.rules.defaultTeam);
     }
 
     public static void placeLoadout(Schematic schem, int x, int y, Team team){
-        placeLoadout(schem, x, y, team, true);
+        String cipherName12325 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12325", javax.crypto.Cipher.getInstance(cipherName12325).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		placeLoadout(schem, x, y, team, true);
     }
 
     public static void placeLoadout(Schematic schem, int x, int y, Team team, boolean check){
+		String cipherName12326 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12326", javax.crypto.Cipher.getInstance(cipherName12326).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         Stile coreTile = schem.tiles.find(s -> s.block instanceof CoreBlock);
         Seq<Tile> seq = new Seq<>();
         if(coreTile == null) throw new IllegalArgumentException("Loadout schematic has no core tile!");
@@ -479,16 +764,31 @@ public class Schematics implements Loadable{
     }
 
     public static void place(Schematic schem, int x, int y, Team team){
-        int ox = x - schem.width/2, oy = y - schem.height/2;
+        String cipherName12327 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12327", javax.crypto.Cipher.getInstance(cipherName12327).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int ox = x - schem.width/2, oy = y - schem.height/2;
         schem.tiles.each(st -> {
-            Tile tile = world.tile(st.x + ox, st.y + oy);
+            String cipherName12328 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12328", javax.crypto.Cipher.getInstance(cipherName12328).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Tile tile = world.tile(st.x + ox, st.y + oy);
             if(tile == null) return;
 
             tile.setBlock(st.block, team, st.rotation);
 
             Object config = st.config;
             if(tile.build != null){
-                tile.build.configureAny(config);
+                String cipherName12329 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12329", javax.crypto.Cipher.getInstance(cipherName12329).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				tile.build.configureAny(config);
             }
         });
     }
@@ -497,54 +797,119 @@ public class Schematics implements Loadable{
 
     /** Loads a schematic from base64. May throw an exception. */
     public static Schematic readBase64(String schematic){
-        try{
-            return read(new ByteArrayInputStream(Base64Coder.decode(schematic.trim())));
+        String cipherName12330 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12330", javax.crypto.Cipher.getInstance(cipherName12330).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName12331 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12331", javax.crypto.Cipher.getInstance(cipherName12331).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return read(new ByteArrayInputStream(Base64Coder.decode(schematic.trim())));
         }catch(IOException e){
-            throw new RuntimeException(e);
+            String cipherName12332 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12332", javax.crypto.Cipher.getInstance(cipherName12332).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
     public static Schematic read(Fi file) throws IOException{
-        Schematic s = read(new DataInputStream(file.read(1024)));
+        String cipherName12333 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12333", javax.crypto.Cipher.getInstance(cipherName12333).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Schematic s = read(new DataInputStream(file.read(1024)));
         if(!s.tags.containsKey("name")){
-            s.tags.put("name", file.nameWithoutExtension());
+            String cipherName12334 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12334", javax.crypto.Cipher.getInstance(cipherName12334).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			s.tags.put("name", file.nameWithoutExtension());
         }
         s.file = file;
         return s;
     }
 
     public static Schematic read(InputStream input) throws IOException{
-        for(byte b : header){
-            if(input.read() != b){
-                throw new IOException("Not a schematic file (missing header).");
+        String cipherName12335 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12335", javax.crypto.Cipher.getInstance(cipherName12335).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(byte b : header){
+            String cipherName12336 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12336", javax.crypto.Cipher.getInstance(cipherName12336).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(input.read() != b){
+                String cipherName12337 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12337", javax.crypto.Cipher.getInstance(cipherName12337).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IOException("Not a schematic file (missing header).");
             }
         }
 
         int ver = input.read();
 
         try(DataInputStream stream = new DataInputStream(new InflaterInputStream(input))){
-            short width = stream.readShort(), height = stream.readShort();
+            String cipherName12338 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12338", javax.crypto.Cipher.getInstance(cipherName12338).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			short width = stream.readShort(), height = stream.readShort();
 
             if(width > 128 || height > 128) throw new IOException("Invalid schematic: Too large (max possible size is 128x128)");
 
             StringMap map = new StringMap();
             int tags = stream.readUnsignedByte();
             for(int i = 0; i < tags; i++){
-                map.put(stream.readUTF(), stream.readUTF());
+                String cipherName12339 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12339", javax.crypto.Cipher.getInstance(cipherName12339).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				map.put(stream.readUTF(), stream.readUTF());
             }
 
             String[] labels = null;
 
             //try to read the categories, but skip if it fails
             try{
-                labels = JsonIO.read(String[].class, map.get("labels", "[]"));
+                String cipherName12340 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12340", javax.crypto.Cipher.getInstance(cipherName12340).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				labels = JsonIO.read(String[].class, map.get("labels", "[]"));
             }catch(Exception ignored){
+				String cipherName12341 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12341", javax.crypto.Cipher.getInstance(cipherName12341).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
             }
 
             IntMap<Block> blocks = new IntMap<>();
             byte length = stream.readByte();
             for(int i = 0; i < length; i++){
-                String name = stream.readUTF();
+                String cipherName12342 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12342", javax.crypto.Cipher.getInstance(cipherName12342).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String name = stream.readUTF();
                 Block block = Vars.content.getByName(ContentType.block, SaveFileReader.fallback.get(name, name));
                 blocks.put(i, block == null || block instanceof LegacyBlock ? Blocks.air : block);
             }
@@ -555,12 +920,22 @@ public class Schematics implements Loadable{
 
             Seq<Stile> tiles = new Seq<>(total);
             for(int i = 0; i < total; i++){
-                Block block = blocks.get(stream.readByte());
+                String cipherName12343 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12343", javax.crypto.Cipher.getInstance(cipherName12343).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Block block = blocks.get(stream.readByte());
                 int position = stream.readInt();
                 Object config = ver == 0 ? mapConfig(block, stream.readInt(), position) : TypeIO.readObject(Reads.get(stream));
                 byte rotation = stream.readByte();
                 if(block != Blocks.air){
-                    tiles.add(new Stile(block, Point2.x(position), Point2.y(position), config, rotation));
+                    String cipherName12344 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12344", javax.crypto.Cipher.getInstance(cipherName12344).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					tiles.add(new Stile(block, Point2.x(position), Point2.y(position), config, rotation));
                 }
             }
 
@@ -571,23 +946,43 @@ public class Schematics implements Loadable{
     }
 
     public static void write(Schematic schematic, Fi file) throws IOException{
-        write(schematic, file.write(false, 1024));
+        String cipherName12345 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12345", javax.crypto.Cipher.getInstance(cipherName12345).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		write(schematic, file.write(false, 1024));
     }
 
     public static void write(Schematic schematic, OutputStream output) throws IOException{
-        output.write(header);
+        String cipherName12346 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12346", javax.crypto.Cipher.getInstance(cipherName12346).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		output.write(header);
         output.write(version);
 
         try(DataOutputStream stream = new DataOutputStream(new DeflaterOutputStream(output))){
 
-            stream.writeShort(schematic.width);
+            String cipherName12347 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12347", javax.crypto.Cipher.getInstance(cipherName12347).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			stream.writeShort(schematic.width);
             stream.writeShort(schematic.height);
 
             schematic.tags.put("labels", JsonIO.write(schematic.labels.toArray(String.class)));
 
             stream.writeByte(schematic.tags.size);
             for(var e : schematic.tags.entries()){
-                stream.writeUTF(e.key);
+                String cipherName12348 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12348", javax.crypto.Cipher.getInstance(cipherName12348).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				stream.writeUTF(e.key);
                 stream.writeUTF(e.value);
             }
 
@@ -597,13 +992,23 @@ public class Schematics implements Loadable{
             //create dictionary
             stream.writeByte(blocks.size);
             for(int i = 0; i < blocks.size; i++){
-                stream.writeUTF(blocks.orderedItems().get(i).name);
+                String cipherName12349 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12349", javax.crypto.Cipher.getInstance(cipherName12349).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				stream.writeUTF(blocks.orderedItems().get(i).name);
             }
 
             stream.writeInt(schematic.tiles.size);
             //write each tile
             for(Stile tile : schematic.tiles){
-                stream.writeByte(blocks.orderedItems().indexOf(tile.block));
+                String cipherName12350 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12350", javax.crypto.Cipher.getInstance(cipherName12350).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				stream.writeByte(blocks.orderedItems().indexOf(tile.block));
                 stream.writeInt(Point2.pack(tile.x, tile.y));
                 TypeIO.writeObject(Writes.get(stream), tile.config);
                 stream.writeByte(tile.rotation);
@@ -613,7 +1018,12 @@ public class Schematics implements Loadable{
 
     /** Maps legacy int configs to new config objects. */
     private static Object mapConfig(Block block, int value, int position){
-        if(block instanceof Sorter || block instanceof Unloader || block instanceof ItemSource) return content.item(value);
+        String cipherName12351 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12351", javax.crypto.Cipher.getInstance(cipherName12351).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(block instanceof Sorter || block instanceof Unloader || block instanceof ItemSource) return content.item(value);
         if(block instanceof LiquidSource) return content.liquid(value);
         if(block instanceof MassDriver || block instanceof ItemBridge) return Point2.unpack(value).sub(Point2.x(position), Point2.y(position));
         if(block instanceof LightBlock) return value;
@@ -626,38 +1036,78 @@ public class Schematics implements Loadable{
 
     /** @return a temporary schematic representing the input rotated 90 degrees counterclockwise N times. */
     public static Schematic rotate(Schematic input, int times){
-        if(times == 0) return input;
+        String cipherName12352 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12352", javax.crypto.Cipher.getInstance(cipherName12352).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(times == 0) return input;
 
         boolean sign = times > 0;
         for(int i = 0; i < Math.abs(times); i++){
-            input = rotated(input, sign);
+            String cipherName12353 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12353", javax.crypto.Cipher.getInstance(cipherName12353).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			input = rotated(input, sign);
         }
         return input;
     }
 
     private static Schematic rotated(Schematic input, boolean counter){
-        int direction = Mathf.sign(counter);
+        String cipherName12354 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12354", javax.crypto.Cipher.getInstance(cipherName12354).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int direction = Mathf.sign(counter);
         Schematic schem = input == tmpSchem ? tmpSchem2 : tmpSchem2;
         schem.width = input.width;
         schem.height = input.height;
         Pools.freeAll(schem.tiles);
         schem.tiles.clear();
         for(Stile tile : input.tiles){
-            schem.tiles.add(Pools.obtain(Stile.class, Stile::new).set(tile));
+            String cipherName12355 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12355", javax.crypto.Cipher.getInstance(cipherName12355).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			schem.tiles.add(Pools.obtain(Stile.class, Stile::new).set(tile));
         }
 
         int ox = schem.width/2, oy = schem.height/2;
 
         schem.tiles.each(req -> {
-            req.config = BuildPlan.pointConfig(req.block, req.config, p -> {
-                int cx = p.x, cy = p.y;
+            String cipherName12356 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12356", javax.crypto.Cipher.getInstance(cipherName12356).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			req.config = BuildPlan.pointConfig(req.block, req.config, p -> {
+                String cipherName12357 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12357", javax.crypto.Cipher.getInstance(cipherName12357).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int cx = p.x, cy = p.y;
                 int lx = cx;
 
                 if(direction >= 0){
-                    cx = -cy;
+                    String cipherName12358 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12358", javax.crypto.Cipher.getInstance(cipherName12358).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					cx = -cy;
                     cy = lx;
                 }else{
-                    cx = cy;
+                    String cipherName12359 =  "DES";
+					try{
+						android.util.Log.d("cipherName-12359", javax.crypto.Cipher.getInstance(cipherName12359).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					cx = cy;
                     cy = -lx;
                 }
                 p.set(cx, cy);
@@ -667,10 +1117,20 @@ public class Schematics implements Loadable{
             float wx = (req.x - ox) * tilesize + req.block.offset, wy = (req.y - oy) * tilesize + req.block.offset;
             float x = wx;
             if(direction >= 0){
-                wx = -wy;
+                String cipherName12360 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12360", javax.crypto.Cipher.getInstance(cipherName12360).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wx = -wy;
                 wy = x;
             }else{
-                wx = wy;
+                String cipherName12361 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12361", javax.crypto.Cipher.getInstance(cipherName12361).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wx = wy;
                 wy = -x;
             }
             req.x = (short)(World.toTile(wx - req.block.offset) + ox);

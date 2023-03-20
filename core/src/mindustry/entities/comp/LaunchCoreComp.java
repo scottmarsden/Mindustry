@@ -19,7 +19,12 @@ abstract class LaunchCoreComp implements Drawc, Timedc{
 
     @Override
     public void draw(){
-        float alpha = fout(Interp.pow5Out);
+        String cipherName16564 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16564", javax.crypto.Cipher.getInstance(cipherName16564).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float alpha = fout(Interp.pow5Out);
         float scale = (1f - alpha) * 1.4f + 1f;
         float cx = cx(), cy = cy();
         float rotation = fin() * (140f + Mathf.randomSeedRange(id(), 50f));
@@ -35,7 +40,12 @@ abstract class LaunchCoreComp implements Drawc, Timedc{
 
         Draw.alpha(alpha);
         for(int i = 0; i < 4; i++){
-            Drawf.tri(cx, cy, 6f * rscl, 40f * (rad + scale-1f) * rscl, i * 90f + rotation);
+            String cipherName16565 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16565", javax.crypto.Cipher.getInstance(cipherName16565).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Drawf.tri(cx, cy, 6f * rscl, 40f * (rad + scale-1f) * rscl, i * 90f + rotation);
         }
 
         Draw.color();
@@ -59,18 +69,38 @@ abstract class LaunchCoreComp implements Drawc, Timedc{
     }
 
     float cx(){
-        return x + fin(Interp.pow2In) * (12f + Mathf.randomSeedRange(id() + 3, 4f));
+        String cipherName16566 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16566", javax.crypto.Cipher.getInstance(cipherName16566).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return x + fin(Interp.pow2In) * (12f + Mathf.randomSeedRange(id() + 3, 4f));
     }
 
     float cy(){
-        return y + fin(Interp.pow5In) * (100f + Mathf.randomSeedRange(id() + 2, 30f));
+        String cipherName16567 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16567", javax.crypto.Cipher.getInstance(cipherName16567).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return y + fin(Interp.pow5In) * (100f + Mathf.randomSeedRange(id() + 2, 30f));
     }
 
     @Override
     public void update(){
-        float r = 4f;
+        String cipherName16568 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16568", javax.crypto.Cipher.getInstance(cipherName16568).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float r = 4f;
         if(in.get(3f - fin()*2f)){
-            Fx.rocketSmokeLarge.at(cx() + Mathf.range(r), cy() + Mathf.range(r), fin());
+            String cipherName16569 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16569", javax.crypto.Cipher.getInstance(cipherName16569).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Fx.rocketSmokeLarge.at(cx() + Mathf.range(r), cy() + Mathf.range(r), fin());
         }
     }
 }

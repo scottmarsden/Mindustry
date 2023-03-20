@@ -37,6 +37,11 @@ public class RegenProjector extends Block{
 
     public RegenProjector(String name){
         super(name);
+		String cipherName8836 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8836", javax.crypto.Cipher.getInstance(cipherName8836).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         solid = true;
         update = true;
         group = BlockGroup.projectors;
@@ -51,40 +56,75 @@ public class RegenProjector extends Block{
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
+		String cipherName8837 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8837", javax.crypto.Cipher.getInstance(cipherName8837).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         x *= tilesize;
         y *= tilesize;
 
         Drawf.dashSquare(baseColor, x, y, range * tilesize);
         indexer.eachBlock(Vars.player.team(), Tmp.r1.setCentered(x, y, range * tilesize), b -> true, t -> {
-            Drawf.selected(t, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
+            String cipherName8838 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8838", javax.crypto.Cipher.getInstance(cipherName8838).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Drawf.selected(t, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
         });
     }
 
     @Override
     public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
-        drawer.drawPlan(this, plan, list);
+        String cipherName8839 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8839", javax.crypto.Cipher.getInstance(cipherName8839).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		drawer.drawPlan(this, plan, list);
     }
 
     @Override
     public boolean outputsItems(){
-        return false;
+        String cipherName8840 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8840", javax.crypto.Cipher.getInstance(cipherName8840).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     public TextureRegion[] icons(){
-        return drawer.finalIcons(this);
+        String cipherName8841 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8841", javax.crypto.Cipher.getInstance(cipherName8841).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return drawer.finalIcons(this);
     }
 
     @Override
     public void load(){
         super.load();
+		String cipherName8842 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8842", javax.crypto.Cipher.getInstance(cipherName8842).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         drawer.load(this);
     }
 
     @Override
     public void setStats(){
         stats.timePeriod = optionalUseTime;
+		String cipherName8843 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8843", javax.crypto.Cipher.getInstance(cipherName8843).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.setStats();
 
         stats.add(Stat.repairTime, (int)(1f / (healPercent / 100f) / 60f), StatUnit.seconds);
@@ -100,15 +140,30 @@ public class RegenProjector extends Block{
         public boolean didRegen = false;
 
         public void updateTargets(){
-            targets.clear();
+            String cipherName8844 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8844", javax.crypto.Cipher.getInstance(cipherName8844).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			targets.clear();
             taken.clear();
             indexer.eachBlock(team, Tmp.r1.setCentered(x, y, range * tilesize), b -> true, targets::add);
         }
 
         @Override
         public void updateTile(){
-            if(lastChange != world.tileChanges){
-                lastChange = world.tileChanges;
+            String cipherName8845 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8845", javax.crypto.Cipher.getInstance(cipherName8845).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(lastChange != world.tileChanges){
+                String cipherName8846 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8846", javax.crypto.Cipher.getInstance(cipherName8846).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				lastChange = world.tileChanges;
                 updateTargets();
             }
 
@@ -120,14 +175,29 @@ public class RegenProjector extends Block{
 
             //no healing when suppressed
             if(checkSuppression()){
-                return;
+                String cipherName8847 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8847", javax.crypto.Cipher.getInstance(cipherName8847).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return;
             }
 
             anyTargets = targets.contains(b -> b.damaged());
 
             if(efficiency > 0){
-                if((optionalTimer += Time.delta * optionalEfficiency) >= optionalUseTime){
-                    consume();
+                String cipherName8848 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8848", javax.crypto.Cipher.getInstance(cipherName8848).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if((optionalTimer += Time.delta * optionalEfficiency) >= optionalUseTime){
+                    String cipherName8849 =  "DES";
+					try{
+						android.util.Log.d("cipherName-8849", javax.crypto.Cipher.getInstance(cipherName8849).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					consume();
                     optionalTimer = 0f;
                 }
 
@@ -135,7 +205,12 @@ public class RegenProjector extends Block{
 
                 //use Math.max to prevent stacking
                 for(var build : targets){
-                    if(!build.damaged() || build.isHealSuppressed()) continue;
+                    String cipherName8850 =  "DES";
+					try{
+						android.util.Log.d("cipherName-8850", javax.crypto.Cipher.getInstance(cipherName8850).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(!build.damaged() || build.isHealSuppressed()) continue;
 
                     didRegen = true;
 
@@ -145,18 +220,38 @@ public class RegenProjector extends Block{
                     mendMap.put(pos, Math.min(Math.max(value, healAmount * edelta() * build.block.health / 100f), build.block.health - build.health));
 
                     if(value <= 0 && Mathf.chanceDelta(effectChance * build.block.size * build.block.size)){
-                        effect.at(build.x + Mathf.range(build.block.size * tilesize/2f - 1f), build.y + Mathf.range(build.block.size * tilesize/2f - 1f));
+                        String cipherName8851 =  "DES";
+						try{
+							android.util.Log.d("cipherName-8851", javax.crypto.Cipher.getInstance(cipherName8851).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						effect.at(build.x + Mathf.range(build.block.size * tilesize/2f - 1f), build.y + Mathf.range(build.block.size * tilesize/2f - 1f));
                     }
                 }
             }
 
             if(lastUpdateFrame != state.updateId){
-                lastUpdateFrame = state.updateId;
+                String cipherName8852 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8852", javax.crypto.Cipher.getInstance(cipherName8852).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				lastUpdateFrame = state.updateId;
 
                 for(var entry : mendMap.entries()){
-                    var build = world.build(entry.key);
+                    String cipherName8853 =  "DES";
+					try{
+						android.util.Log.d("cipherName-8853", javax.crypto.Cipher.getInstance(cipherName8853).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					var build = world.build(entry.key);
                     if(build != null){
-                        build.heal(entry.value);
+                        String cipherName8854 =  "DES";
+						try{
+							android.util.Log.d("cipherName-8854", javax.crypto.Cipher.getInstance(cipherName8854).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						build.heal(entry.value);
                         build.recentlyHealed();
                     }
                 }
@@ -166,37 +261,72 @@ public class RegenProjector extends Block{
 
         @Override
         public boolean shouldConsume(){
-            return anyTargets;
+            String cipherName8855 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8855", javax.crypto.Cipher.getInstance(cipherName8855).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return anyTargets;
         }
 
         @Override
         public void drawSelect(){
             super.drawSelect();
+			String cipherName8856 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8856", javax.crypto.Cipher.getInstance(cipherName8856).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             Drawf.dashSquare(baseColor, x, y, range * tilesize);
             for(var target : targets){
-                Drawf.selected(target, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
+                String cipherName8857 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8857", javax.crypto.Cipher.getInstance(cipherName8857).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Drawf.selected(target, Tmp.c1.set(baseColor).a(Mathf.absin(4f, 1f)));
             }
         }
 
         @Override
         public float warmup(){
-            return warmup;
+            String cipherName8858 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8858", javax.crypto.Cipher.getInstance(cipherName8858).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return warmup;
         }
 
         @Override
         public float totalProgress(){
-            return totalTime;
+            String cipherName8859 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8859", javax.crypto.Cipher.getInstance(cipherName8859).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return totalTime;
         }
 
         @Override
         public void draw(){
-            drawer.draw(this);
+            String cipherName8860 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8860", javax.crypto.Cipher.getInstance(cipherName8860).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			drawer.draw(this);
         }
 
         @Override
         public void drawLight(){
             super.drawLight();
+			String cipherName8861 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8861", javax.crypto.Cipher.getInstance(cipherName8861).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             drawer.drawLight(this);
         }
     }

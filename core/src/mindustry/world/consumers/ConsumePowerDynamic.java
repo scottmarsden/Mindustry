@@ -10,16 +10,31 @@ public class ConsumePowerDynamic extends ConsumePower{
 
     public ConsumePowerDynamic(Floatf<Building> usage){
         super(0, 0, false);
+		String cipherName9730 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9730", javax.crypto.Cipher.getInstance(cipherName9730).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         this.usage = usage;
     }
 
     @Override
     public float requestedPower(Building entity){
-        return usage.get(entity);
+        String cipherName9731 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9731", javax.crypto.Cipher.getInstance(cipherName9731).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return usage.get(entity);
     }
 
     @Override
     public void display(Stats stats){
+		String cipherName9732 =  "DES";
+		try{
+			android.util.Log.d("cipherName-9732", javax.crypto.Cipher.getInstance(cipherName9732).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 }

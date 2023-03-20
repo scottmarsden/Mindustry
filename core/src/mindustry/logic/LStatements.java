@@ -30,12 +30,22 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.area(comment, Styles.nodeArea, v -> comment = v).growX().height(90f).padLeft(2).padRight(6).color(table.color);
+            String cipherName5631 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5631", javax.crypto.Cipher.getInstance(cipherName5631).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.area(comment, Styles.nodeArea, v -> comment = v).growX().height(90f).padLeft(2).padRight(6).color(table.color);
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return null;
+            String cipherName5632 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5632", javax.crypto.Cipher.getInstance(cipherName5632).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
     }
 
@@ -44,11 +54,21 @@ public class LStatements{
 
         @Override
         public void build(Table table){
+			String cipherName5633 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5633", javax.crypto.Cipher.getInstance(cipherName5633).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new NoopI();
+            String cipherName5634 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5634", javax.crypto.Cipher.getInstance(cipherName5634).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new NoopI();
         }
     }
 
@@ -58,7 +78,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add(" read ");
+            String cipherName5635 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5635", javax.crypto.Cipher.getInstance(cipherName5635).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add(" read ");
 
             field(table, output, str -> output = str);
 
@@ -75,12 +100,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new ReadI(builder.var(target), builder.var(address), builder.var(output));
+            String cipherName5636 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5636", javax.crypto.Cipher.getInstance(cipherName5636).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new ReadI(builder.var(target), builder.var(address), builder.var(output));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.io;
+            String cipherName5637 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5637", javax.crypto.Cipher.getInstance(cipherName5637).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.io;
         }
     }
 
@@ -90,7 +125,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add(" write ");
+            String cipherName5638 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5638", javax.crypto.Cipher.getInstance(cipherName5638).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add(" write ");
 
             field(table, input, str -> input = str);
 
@@ -107,12 +147,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new WriteI(builder.var(target), builder.var(address), builder.var(input));
+            String cipherName5639 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5639", javax.crypto.Cipher.getInstance(cipherName5639).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new WriteI(builder.var(target), builder.var(address), builder.var(input));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.io;
+            String cipherName5640 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5640", javax.crypto.Cipher.getInstance(cipherName5640).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.io;
         }
     }
 
@@ -123,10 +173,20 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5641 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5641", javax.crypto.Cipher.getInstance(cipherName5641).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
+			String cipherName5642 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5642", javax.crypto.Cipher.getInstance(cipherName5642).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             table.clearChildren();
 
             table.left();
@@ -224,20 +284,40 @@ public class LStatements{
 
         @Override
         public void afterRead(){
-            //0 constant alpha for colors is not allowed
+            String cipherName5643 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5643", javax.crypto.Cipher.getInstance(cipherName5643).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//0 constant alpha for colors is not allowed
             if(type == GraphicsType.color && p2.equals("0")){
-                p2 = "255";
+                String cipherName5644 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5644", javax.crypto.Cipher.getInstance(cipherName5644).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				p2 = "255";
             }
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new DrawI((byte)type.ordinal(), 0, builder.var(x), builder.var(y), builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
+            String cipherName5645 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5645", javax.crypto.Cipher.getInstance(cipherName5645).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new DrawI((byte)type.ordinal(), 0, builder.var(x), builder.var(y), builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.io;
+            String cipherName5646 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5646", javax.crypto.Cipher.getInstance(cipherName5646).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.io;
         }
     }
 
@@ -247,18 +327,33 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            field(table, value, str -> value = str).width(0f).growX().padRight(3);
+            String cipherName5647 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5647", javax.crypto.Cipher.getInstance(cipherName5647).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			field(table, value, str -> value = str).width(0f).growX().padRight(3);
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new PrintI(builder.var(value));
+            String cipherName5648 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5648", javax.crypto.Cipher.getInstance(cipherName5648).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new PrintI(builder.var(value));
         }
 
 
         @Override
         public LCategory category(){
-            return LCategory.io;
+            String cipherName5649 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5649", javax.crypto.Cipher.getInstance(cipherName5649).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.io;
         }
     }
 
@@ -268,18 +363,33 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add(" to ");
+            String cipherName5650 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5650", javax.crypto.Cipher.getInstance(cipherName5650).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add(" to ");
             field(table, target, str -> target = str);
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new DrawFlushI(builder.var(target));
+            String cipherName5651 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5651", javax.crypto.Cipher.getInstance(cipherName5651).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new DrawFlushI(builder.var(target));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.block;
+            String cipherName5652 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5652", javax.crypto.Cipher.getInstance(cipherName5652).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.block;
         }
     }
 
@@ -289,18 +399,33 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add(" to ");
+            String cipherName5653 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5653", javax.crypto.Cipher.getInstance(cipherName5653).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add(" to ");
             field(table, target, str -> target = str);
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new PrintFlushI(builder.var(target));
+            String cipherName5654 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5654", javax.crypto.Cipher.getInstance(cipherName5654).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new PrintFlushI(builder.var(target));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.block;
+            String cipherName5655 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5655", javax.crypto.Cipher.getInstance(cipherName5655).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.block;
         }
     }
 
@@ -310,7 +435,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            field(table, output, str -> output = str);
+            String cipherName5656 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5656", javax.crypto.Cipher.getInstance(cipherName5656).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			field(table, output, str -> output = str);
 
             table.add(" = link# ");
 
@@ -319,12 +449,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new GetLinkI(builder.var(output), builder.var(address));
+            String cipherName5657 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5657", javax.crypto.Cipher.getInstance(cipherName5657).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new GetLinkI(builder.var(output), builder.var(address));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.block;
+            String cipherName5658 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5658", javax.crypto.Cipher.getInstance(cipherName5658).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.block;
         }
     }
 
@@ -335,23 +475,48 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5659 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5659", javax.crypto.Cipher.getInstance(cipherName5659).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
-            table.clearChildren();
+            String cipherName5660 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5660", javax.crypto.Cipher.getInstance(cipherName5660).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.clearChildren();
 
             table.left();
 
             table.add(" set ");
 
             table.button(b -> {
-                b.label(() -> type.name());
+                String cipherName5661 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5661", javax.crypto.Cipher.getInstance(cipherName5661).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> type.name());
                 b.clicked(() -> showSelect(b, LAccess.controls, type, t -> {
-                    type = t;
+                    String cipherName5662 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5662", javax.crypto.Cipher.getInstance(cipherName5662).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					type = t;
                     rebuild(table);
                 }, 2, cell -> cell.size(100, 50)));
-            }, Styles.logict, () -> {}).size(90, 40).color(table.color).left().padLeft(2);
+            }, Styles.logict, () -> {
+				String cipherName5663 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5663", javax.crypto.Cipher.getInstance(cipherName5663).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(90, 40).color(table.color).left().padLeft(2);
 
             table.add(" of ").self(this::param);
 
@@ -364,7 +529,12 @@ public class LStatements{
             int c = 0;
             for(int i = 0; i < type.params.length; i++){
 
-                fields(table, type.params[i], i == 0 ? p1 : i == 1 ? p2 : i == 2 ? p3 : p4, i == 0 ? v -> p1 = v : i == 1 ? v -> p2 = v : i == 2 ? v -> p3 = v : v -> p4 = v);
+                String cipherName5664 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5664", javax.crypto.Cipher.getInstance(cipherName5664).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				fields(table, type.params[i], i == 0 ? p1 : i == 1 ? p2 : i == 2 ? p3 : p4, i == 0 ? v -> p1 = v : i == 1 ? v -> p2 = v : i == 2 ? v -> p3 = v : v -> p4 = v);
 
                 if(++c % 2 == 0) row(table);
             }
@@ -372,12 +542,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new ControlI(type, builder.var(target), builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
+            String cipherName5665 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5665", javax.crypto.Cipher.getInstance(cipherName5665).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new ControlI(type, builder.var(target), builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.block;
+            String cipherName5666 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5666", javax.crypto.Cipher.getInstance(cipherName5666).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.block;
         }
     }
 
@@ -389,10 +569,20 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.defaults().left();
+            String cipherName5667 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5667", javax.crypto.Cipher.getInstance(cipherName5667).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.defaults().left();
 
             if(buildFrom()){
-                table.add(" from ").self(this::param);
+                String cipherName5668 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5668", javax.crypto.Cipher.getInstance(cipherName5668).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				table.add(" from ").self(this::param);
 
                 fields(table, radar, v -> radar = v);
 
@@ -400,20 +590,45 @@ public class LStatements{
             }
 
             for(int i = 0; i < 3; i++){
-                int fi = i;
+                String cipherName5669 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5669", javax.crypto.Cipher.getInstance(cipherName5669).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int fi = i;
                 Prov<RadarTarget> get = () -> (fi == 0 ? target1 : fi == 1 ? target2 : target3);
 
                 table.add(i == 0 ? " target " : " and ").self(this::param);
 
                 table.button(b -> {
-                    b.label(() -> get.get().name());
+                    String cipherName5670 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5670", javax.crypto.Cipher.getInstance(cipherName5670).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					b.label(() -> get.get().name());
                     b.clicked(() -> showSelect(b, RadarTarget.all, get.get(), t -> {
-                        if(fi == 0) target1 = t; else if(fi == 1) target2 = t; else target3 = t;
+                        String cipherName5671 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5671", javax.crypto.Cipher.getInstance(cipherName5671).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						if(fi == 0) target1 = t; else if(fi == 1) target2 = t; else target3 = t;
                     }, 2, cell -> cell.size(100, 50)));
-                }, Styles.logict, () -> {}).size(90, 40).color(table.color).left().padLeft(2);
+                }, Styles.logict, () -> {
+					String cipherName5672 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5672", javax.crypto.Cipher.getInstance(cipherName5672).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}}).size(90, 40).color(table.color).left().padLeft(2);
 
                 if(i == 1){
-                    row(table);
+                    String cipherName5673 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5673", javax.crypto.Cipher.getInstance(cipherName5673).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					row(table);
                 }
             }
 
@@ -426,11 +641,26 @@ public class LStatements{
             table.add(" sort ").self(this::param);
 
             table.button(b -> {
-                b.label(() -> sort.name());
+                String cipherName5674 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5674", javax.crypto.Cipher.getInstance(cipherName5674).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> sort.name());
                 b.clicked(() -> showSelect(b, RadarSort.all, sort, t -> {
-                    sort = t;
+                    String cipherName5675 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5675", javax.crypto.Cipher.getInstance(cipherName5675).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					sort = t;
                 }, 2, cell -> cell.size(100, 50)));
-            }, Styles.logict, () -> {}).size(90, 40).color(table.color).left().padLeft(2);
+            }, Styles.logict, () -> {
+				String cipherName5676 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5676", javax.crypto.Cipher.getInstance(cipherName5676).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(90, 40).color(table.color).left().padLeft(2);
 
             table.add(" output ").self(this::param);
 
@@ -438,17 +668,32 @@ public class LStatements{
         }
 
         public boolean buildFrom(){
-            return true;
+            String cipherName5677 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5677", javax.crypto.Cipher.getInstance(cipherName5677).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new RadarI(target1, target2, target3, sort, builder.var(radar), builder.var(sortOrder), builder.var(output));
+            String cipherName5678 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5678", javax.crypto.Cipher.getInstance(cipherName5678).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new RadarI(target1, target2, target3, sort, builder.var(radar), builder.var(sortOrder), builder.var(output));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.block;
+            String cipherName5679 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5679", javax.crypto.Cipher.getInstance(cipherName5679).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.block;
         }
     }
 
@@ -462,7 +707,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            field(table, to, str -> to = str);
+            String cipherName5680 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5680", javax.crypto.Cipher.getInstance(cipherName5680).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			field(table, to, str -> to = str);
 
             table.add(" = ");
 
@@ -471,18 +721,43 @@ public class LStatements{
             tfield = field(table, type, str -> type = str).padRight(0f).get();
 
             table.button(b -> {
-                b.image(Icon.pencilSmall);
+                String cipherName5681 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5681", javax.crypto.Cipher.getInstance(cipherName5681).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.image(Icon.pencilSmall);
                 //240
                 b.clicked(() -> showSelectTable(b, (t, hide) -> {
-                    Table[] tables = {
+                    String cipherName5682 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5682", javax.crypto.Cipher.getInstance(cipherName5682).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Table[] tables = {
                         //items
                         new Table(i -> {
-                            i.left();
+                            String cipherName5683 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5683", javax.crypto.Cipher.getInstance(cipherName5683).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							i.left();
                             int c = 0;
                             for(Item item : Vars.content.items()){
-                                if(!item.unlockedNow() || item.hidden) continue;
+                                String cipherName5684 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5684", javax.crypto.Cipher.getInstance(cipherName5684).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								if(!item.unlockedNow() || item.hidden) continue;
                                 i.button(new TextureRegionDrawable(item.uiIcon), Styles.flati, iconSmall, () -> {
-                                    stype("@" + item.name);
+                                    String cipherName5685 =  "DES";
+									try{
+										android.util.Log.d("cipherName-5685", javax.crypto.Cipher.getInstance(cipherName5685).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									stype("@" + item.name);
                                     hide.run();
                                 }).size(40f);
 
@@ -491,12 +766,27 @@ public class LStatements{
                         }),
                         //liquids
                         new Table(i -> {
-                            i.left();
+                            String cipherName5686 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5686", javax.crypto.Cipher.getInstance(cipherName5686).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							i.left();
                             int c = 0;
                             for(Liquid item : Vars.content.liquids()){
-                                if(!item.unlockedNow() || item.hidden) continue;
+                                String cipherName5687 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5687", javax.crypto.Cipher.getInstance(cipherName5687).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								if(!item.unlockedNow() || item.hidden) continue;
                                 i.button(new TextureRegionDrawable(item.uiIcon), Styles.flati, iconSmall, () -> {
-                                    stype("@" + item.name);
+                                    String cipherName5688 =  "DES";
+									try{
+										android.util.Log.d("cipherName-5688", javax.crypto.Cipher.getInstance(cipherName5688).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									stype("@" + item.name);
                                     hide.run();
                                 }).size(40f);
 
@@ -505,9 +795,24 @@ public class LStatements{
                         }),
                         //sensors
                         new Table(i -> {
-                            for(LAccess sensor : LAccess.senseable){
-                                i.button(sensor.name(), Styles.flatt, () -> {
-                                    stype("@" + sensor.name());
+                            String cipherName5689 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5689", javax.crypto.Cipher.getInstance(cipherName5689).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							for(LAccess sensor : LAccess.senseable){
+                                String cipherName5690 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5690", javax.crypto.Cipher.getInstance(cipherName5690).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								i.button(sensor.name(), Styles.flatt, () -> {
+                                    String cipherName5691 =  "DES";
+									try{
+										android.util.Log.d("cipherName-5691", javax.crypto.Cipher.getInstance(cipherName5691).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									stype("@" + sensor.name());
                                     hide.run();
                                 }).size(240f, 40f).self(c -> tooltip(c, sensor)).row();
                             }
@@ -519,10 +824,20 @@ public class LStatements{
                     ButtonGroup<Button> group = new ButtonGroup<>();
 
                     for(int i = 0; i < tables.length; i++){
-                        int fi = i;
+                        String cipherName5692 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5692", javax.crypto.Cipher.getInstance(cipherName5692).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						int fi = i;
 
                         t.button(icons[i], Styles.squareTogglei, () -> {
-                            selected = fi;
+                            String cipherName5693 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5693", javax.crypto.Cipher.getInstance(cipherName5693).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							selected = fi;
 
                             stack.clearChildren();
                             stack.addChild(tables[selected]);
@@ -534,7 +849,12 @@ public class LStatements{
                     t.row();
                     t.add(stack).colspan(3).width(240f).left();
                 }));
-            }, Styles.logict, () -> {}).size(40f).padLeft(-1).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5694 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5694", javax.crypto.Cipher.getInstance(cipherName5694).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(40f).padLeft(-1).color(table.color);
 
             table.add(" in ").self(this::param);
 
@@ -542,18 +862,33 @@ public class LStatements{
         }
 
         private void stype(String text){
-            tfield.setText(text);
+            String cipherName5695 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5695", javax.crypto.Cipher.getInstance(cipherName5695).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tfield.setText(text);
             this.type = text;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SenseI(builder.var(from), builder.var(to), builder.var(type));
+            String cipherName5696 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5696", javax.crypto.Cipher.getInstance(cipherName5696).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SenseI(builder.var(from), builder.var(to), builder.var(type));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.block;
+            String cipherName5697 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5697", javax.crypto.Cipher.getInstance(cipherName5697).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.block;
         }
     }
 
@@ -564,7 +899,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            field(table, to, str -> to = str);
+            String cipherName5698 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5698", javax.crypto.Cipher.getInstance(cipherName5698).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			field(table, to, str -> to = str);
 
             table.add(" = ");
 
@@ -573,12 +913,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SetI(builder.var(from), builder.var(to));
+            String cipherName5699 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5699", javax.crypto.Cipher.getInstance(cipherName5699).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SetI(builder.var(from), builder.var(to));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.operation;
+            String cipherName5700 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5700", javax.crypto.Cipher.getInstance(cipherName5700).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.operation;
         }
     }
 
@@ -589,38 +939,83 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5701 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5701", javax.crypto.Cipher.getInstance(cipherName5701).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
-            table.clearChildren();
+            String cipherName5702 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5702", javax.crypto.Cipher.getInstance(cipherName5702).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.clearChildren();
 
             field(table, dest, str -> dest = str);
 
             table.add(" = ");
 
             if(op.unary){
-                opButton(table, table);
+                String cipherName5703 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5703", javax.crypto.Cipher.getInstance(cipherName5703).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				opButton(table, table);
 
                 field(table, a, str -> a = str);
             }else{
-                row(table);
+                String cipherName5704 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5704", javax.crypto.Cipher.getInstance(cipherName5704).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				row(table);
 
                 //"function"-type operations have the name at the left and arguments on the right
                 if(op.func){
-                    if(LCanvas.useRows()){
-                        table.left();
+                    String cipherName5705 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5705", javax.crypto.Cipher.getInstance(cipherName5705).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(LCanvas.useRows()){
+                        String cipherName5706 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5706", javax.crypto.Cipher.getInstance(cipherName5706).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						table.left();
                         table.row();
                         table.table(c -> {
-                            c.color.set(category().color);
+                            String cipherName5707 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5707", javax.crypto.Cipher.getInstance(cipherName5707).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							c.color.set(category().color);
                             c.left();
                             funcs(c, table);
                         }).colspan(2).left();
                     }else{
-                        funcs(table, table);
+                        String cipherName5708 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5708", javax.crypto.Cipher.getInstance(cipherName5708).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						funcs(table, table);
                     }
                 }else{
-                    field(table, a, str -> a = str);
+                    String cipherName5709 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5709", javax.crypto.Cipher.getInstance(cipherName5709).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					field(table, a, str -> a = str);
 
                     opButton(table, table);
 
@@ -630,7 +1025,12 @@ public class LStatements{
         }
 
         void funcs(Table table, Table parent){
-            opButton(table, parent);
+            String cipherName5710 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5710", javax.crypto.Cipher.getInstance(cipherName5710).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			opButton(table, parent);
 
             field(table, a, str -> a = str);
 
@@ -638,23 +1038,53 @@ public class LStatements{
         }
 
         void opButton(Table table, Table parent){
-            table.button(b -> {
-                b.label(() -> op.symbol);
+            String cipherName5711 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5711", javax.crypto.Cipher.getInstance(cipherName5711).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.button(b -> {
+                String cipherName5712 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5712", javax.crypto.Cipher.getInstance(cipherName5712).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> op.symbol);
                 b.clicked(() -> showSelect(b, LogicOp.all, op, o -> {
-                    op = o;
+                    String cipherName5713 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5713", javax.crypto.Cipher.getInstance(cipherName5713).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					op = o;
                     rebuild(parent);
                 }));
-            }, Styles.logict, () -> {}).size(64f, 40f).pad(4f).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5714 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5714", javax.crypto.Cipher.getInstance(cipherName5714).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(64f, 40f).pad(4f).color(table.color);
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new OpI(op,builder.var(a), builder.var(b), builder.var(dest));
+            String cipherName5715 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5715", javax.crypto.Cipher.getInstance(cipherName5715).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new OpI(op,builder.var(a), builder.var(b), builder.var(dest));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.operation;
+            String cipherName5716 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5716", javax.crypto.Cipher.getInstance(cipherName5716).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.operation;
         }
     }
 
@@ -664,18 +1094,33 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            field(table, value, str -> value = str);
+            String cipherName5717 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5717", javax.crypto.Cipher.getInstance(cipherName5717).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			field(table, value, str -> value = str);
             table.add(" sec");
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new WaitI(builder.var(value));
+            String cipherName5718 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5718", javax.crypto.Cipher.getInstance(cipherName5718).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new WaitI(builder.var(value));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.control;
+            String cipherName5719 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5719", javax.crypto.Cipher.getInstance(cipherName5719).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.control;
         }
     }
 
@@ -684,16 +1129,31 @@ public class LStatements{
 
         @Override
         public void build(Table table){
+			String cipherName5720 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5720", javax.crypto.Cipher.getInstance(cipherName5720).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new StopI();
+            String cipherName5721 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5721", javax.crypto.Cipher.getInstance(cipherName5721).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new StopI();
         }
 
         @Override
         public LCategory category(){
-            return LCategory.control;
+            String cipherName5722 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5722", javax.crypto.Cipher.getInstance(cipherName5722).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.control;
         }
     }
 
@@ -704,18 +1164,38 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, result, str -> result = str);
+            String cipherName5723 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5723", javax.crypto.Cipher.getInstance(cipherName5723).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, result, str -> result = str);
 
             table.add(" = lookup ");
 
             row(table);
 
             table.button(b -> {
-                b.label(() -> type.name());
+                String cipherName5724 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5724", javax.crypto.Cipher.getInstance(cipherName5724).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> type.name());
                 b.clicked(() -> showSelect(b, GlobalVars.lookableContent, type, o -> {
-                    type = o;
+                    String cipherName5725 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5725", javax.crypto.Cipher.getInstance(cipherName5725).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					type = o;
                 }));
-            }, Styles.logict, () -> {}).size(64f, 40f).pad(4f).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5726 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5726", javax.crypto.Cipher.getInstance(cipherName5726).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(64f, 40f).pad(4f).color(table.color);
 
             table.add(" # ");
 
@@ -724,12 +1204,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new LookupI(builder.var(result), builder.var(id), type);
+            String cipherName5727 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5727", javax.crypto.Cipher.getInstance(cipherName5727).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new LookupI(builder.var(result), builder.var(id), type);
         }
 
         @Override
         public LCategory category(){
-            return LCategory.operation;
+            String cipherName5728 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5728", javax.crypto.Cipher.getInstance(cipherName5728).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.operation;
         }
     }
 
@@ -739,7 +1229,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, result, str -> result = str);
+            String cipherName5729 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5729", javax.crypto.Cipher.getInstance(cipherName5729).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, result, str -> result = str);
 
             table.add(" = pack ");
 
@@ -753,12 +1248,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new PackColorI(builder.var(result), builder.var(r), builder.var(g), builder.var(b), builder.var(a));
+            String cipherName5730 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5730", javax.crypto.Cipher.getInstance(cipherName5730).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new PackColorI(builder.var(result), builder.var(r), builder.var(g), builder.var(b), builder.var(a));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.operation;
+            String cipherName5731 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5731", javax.crypto.Cipher.getInstance(cipherName5731).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.operation;
         }
     }
 
@@ -766,17 +1271,32 @@ public class LStatements{
     public static class EndStatement extends LStatement{
         @Override
         public void build(Table table){
+			String cipherName5732 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5732", javax.crypto.Cipher.getInstance(cipherName5732).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new EndI();
+            String cipherName5733 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5733", javax.crypto.Cipher.getInstance(cipherName5733).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new EndI();
         }
 
         @Override
         public LCategory category(){
-            return LCategory.control;
+            String cipherName5734 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5734", javax.crypto.Cipher.getInstance(cipherName5734).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.control;
         }
     }
 
@@ -793,7 +1313,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add("if ").padLeft(4);
+            String cipherName5735 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5735", javax.crypto.Cipher.getInstance(cipherName5735).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add("if ").padLeft(4);
 
             last = table.color;
             table.table(this::rebuild);
@@ -805,11 +1330,26 @@ public class LStatements{
 
             //hack way of finding the title label...
             Core.app.post(() -> {
-                //must be delayed because parent is added later
+                String cipherName5736 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5736", javax.crypto.Cipher.getInstance(cipherName5736).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//must be delayed because parent is added later
                 if(table.parent != null){
-                    Label title = table.parent.find("statement-name");
+                    String cipherName5737 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5737", javax.crypto.Cipher.getInstance(cipherName5737).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Label title = table.parent.find("statement-name");
                     if(title != null){
-                        title.update(() -> title.setText((dest != null ? name + " -> " + dest.index : name)));
+                        String cipherName5738 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5738", javax.crypto.Cipher.getInstance(cipherName5738).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						title.update(() -> title.setText((dest != null ? name + " -> " + dest.index : name)));
                     }
                 }
             });
@@ -817,18 +1357,38 @@ public class LStatements{
         }
 
         void rebuild(Table table){
-            table.clearChildren();
+            String cipherName5739 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5739", javax.crypto.Cipher.getInstance(cipherName5739).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.clearChildren();
             table.setColor(last);
 
             if(op != ConditionOp.always) field(table, value, str -> value = str);
 
             table.button(b -> {
-                b.label(() -> op.symbol);
+                String cipherName5740 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5740", javax.crypto.Cipher.getInstance(cipherName5740).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> op.symbol);
                 b.clicked(() -> showSelect(b, ConditionOp.all, op, o -> {
-                    op = o;
+                    String cipherName5741 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5741", javax.crypto.Cipher.getInstance(cipherName5741).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					op = o;
                     rebuild(table);
                 }));
-            }, Styles.logict, () -> {}).size(op == ConditionOp.always ? 80f : 48f, 40f).pad(4f).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5742 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5742", javax.crypto.Cipher.getInstance(cipherName5742).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(op == ConditionOp.always ? 80f : 48f, 40f).pad(4f).color(table.color);
 
             if(op != ConditionOp.always) field(table, compare, str -> compare = str);
         }
@@ -836,26 +1396,56 @@ public class LStatements{
         //elements need separate conversion logic
         @Override
         public void setupUI(){
-            if(elem != null && destIndex >= 0 && destIndex < elem.parent.getChildren().size){
-                dest = (StatementElem)elem.parent.getChildren().get(destIndex);
+            String cipherName5743 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5743", javax.crypto.Cipher.getInstance(cipherName5743).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(elem != null && destIndex >= 0 && destIndex < elem.parent.getChildren().size){
+                String cipherName5744 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5744", javax.crypto.Cipher.getInstance(cipherName5744).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				dest = (StatementElem)elem.parent.getChildren().get(destIndex);
             }
         }
 
         @Override
         public void saveUI(){
-            if(elem != null){
-                destIndex = dest == null ? -1 : dest.parent.getChildren().indexOf(dest);
+            String cipherName5745 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5745", javax.crypto.Cipher.getInstance(cipherName5745).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(elem != null){
+                String cipherName5746 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5746", javax.crypto.Cipher.getInstance(cipherName5746).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				destIndex = dest == null ? -1 : dest.parent.getChildren().indexOf(dest);
             }
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new JumpI(op, builder.var(value), builder.var(compare), destIndex);
+            String cipherName5747 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5747", javax.crypto.Cipher.getInstance(cipherName5747).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new JumpI(op, builder.var(value), builder.var(compare), destIndex);
         }
 
         @Override
         public LCategory category(){
-            return LCategory.control;
+            String cipherName5748 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5748", javax.crypto.Cipher.getInstance(cipherName5748).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.control;
         }
     }
 
@@ -865,21 +1455,51 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add(" type ");
+            String cipherName5749 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5749", javax.crypto.Cipher.getInstance(cipherName5749).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add(" type ");
 
             TextField field = field(table, type, str -> type = str).get();
 
             table.button(b -> {
-                b.image(Icon.pencilSmall);
+                String cipherName5750 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5750", javax.crypto.Cipher.getInstance(cipherName5750).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.image(Icon.pencilSmall);
                 b.clicked(() -> showSelectTable(b, (t, hide) -> {
-                    t.row();
+                    String cipherName5751 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5751", javax.crypto.Cipher.getInstance(cipherName5751).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					t.row();
                     t.table(i -> {
-                        i.left();
+                        String cipherName5752 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5752", javax.crypto.Cipher.getInstance(cipherName5752).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						i.left();
                         int c = 0;
                         for(UnitType item : Vars.content.units()){
-                            if(!item.unlockedNow() || item.isHidden() || !item.logicControllable) continue;
+                            String cipherName5753 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5753", javax.crypto.Cipher.getInstance(cipherName5753).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							if(!item.unlockedNow() || item.isHidden() || !item.logicControllable) continue;
                             i.button(new TextureRegionDrawable(item.uiIcon), Styles.flati, iconSmall, () -> {
-                                type = "@" + item.name;
+                                String cipherName5754 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5754", javax.crypto.Cipher.getInstance(cipherName5754).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								type = "@" + item.name;
                                 field.setText(type);
                                 hide.run();
                             }).size(40f);
@@ -888,17 +1508,32 @@ public class LStatements{
                         }
                     }).colspan(3).width(240f).left();
                 }));
-            }, Styles.logict, () -> {}).size(40f).padLeft(-2).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5755 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5755", javax.crypto.Cipher.getInstance(cipherName5755).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(40f).padLeft(-2).color(table.color);
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new UnitBindI(builder.var(type));
+            String cipherName5756 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5756", javax.crypto.Cipher.getInstance(cipherName5756).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new UnitBindI(builder.var(type));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.unit;
+            String cipherName5757 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5757", javax.crypto.Cipher.getInstance(cipherName5757).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.unit;
         }
     }
 
@@ -909,27 +1544,62 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5758 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5758", javax.crypto.Cipher.getInstance(cipherName5758).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
-            table.clearChildren();
+            String cipherName5759 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5759", javax.crypto.Cipher.getInstance(cipherName5759).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.clearChildren();
 
             table.left();
 
             table.add(" ");
 
             table.button(b -> {
-                b.label(() -> type.name());
+                String cipherName5760 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5760", javax.crypto.Cipher.getInstance(cipherName5760).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> type.name());
                 b.clicked(() -> showSelect(b, LUnitControl.all, type, t -> {
-                    if(t == LUnitControl.build && !Vars.state.rules.logicUnitBuild){
-                        Vars.ui.showInfo("@logic.nounitbuild");
+                    String cipherName5761 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5761", javax.crypto.Cipher.getInstance(cipherName5761).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(t == LUnitControl.build && !Vars.state.rules.logicUnitBuild){
+                        String cipherName5762 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5762", javax.crypto.Cipher.getInstance(cipherName5762).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Vars.ui.showInfo("@logic.nounitbuild");
                     }else{
-                        type = t;
+                        String cipherName5763 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5763", javax.crypto.Cipher.getInstance(cipherName5763).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						type = t;
                     }
                     rebuild(table);
                 }, 2, cell -> cell.size(120, 50)));
-            }, Styles.logict, () -> {}).size(120, 40).color(table.color).left().padLeft(2);
+            }, Styles.logict, () -> {
+				String cipherName5764 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5764", javax.crypto.Cipher.getInstance(cipherName5764).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(120, 40).color(table.color).left().padLeft(2);
 
             row(table);
 
@@ -938,24 +1608,44 @@ public class LStatements{
             int c = 0;
             for(int i = 0; i < type.params.length; i++){
 
-                fields(table, type.params[i], i == 0 ? p1 : i == 1 ? p2 : i == 2 ? p3 : i == 3 ? p4 : p5, i == 0 ? v -> p1 = v : i == 1 ? v -> p2 = v : i == 2 ? v -> p3 = v : i == 3 ? v -> p4 = v : v -> p5 = v).width(100f);
+                String cipherName5765 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5765", javax.crypto.Cipher.getInstance(cipherName5765).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				fields(table, type.params[i], i == 0 ? p1 : i == 1 ? p2 : i == 2 ? p3 : i == 3 ? p4 : p5, i == 0 ? v -> p1 = v : i == 1 ? v -> p2 = v : i == 2 ? v -> p3 = v : i == 3 ? v -> p4 = v : v -> p5 = v).width(100f);
 
                 if(++c % 2 == 0) row(table);
 
                 if(i == 3){
-                    table.row();
+                    String cipherName5766 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5766", javax.crypto.Cipher.getInstance(cipherName5766).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					table.row();
                 }
             }
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new UnitControlI(type, builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4), builder.var(p5));
+            String cipherName5767 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5767", javax.crypto.Cipher.getInstance(cipherName5767).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new UnitControlI(type, builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4), builder.var(p5));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.unit;
+            String cipherName5768 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5768", javax.crypto.Cipher.getInstance(cipherName5768).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.unit;
         }
     }
 
@@ -963,23 +1653,43 @@ public class LStatements{
     public static class UnitRadarStatement extends RadarStatement{
 
         public UnitRadarStatement(){
-            radar = "0";
+            String cipherName5769 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5769", javax.crypto.Cipher.getInstance(cipherName5769).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			radar = "0";
         }
 
         @Override
         public boolean buildFrom(){
-            //do not build the "from" section
+            String cipherName5770 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5770", javax.crypto.Cipher.getInstance(cipherName5770).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//do not build the "from" section
             return false;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new RadarI(target1, target2, target3, sort, LExecutor.varUnit, builder.var(sortOrder), builder.var(output));
+            String cipherName5771 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5771", javax.crypto.Cipher.getInstance(cipherName5771).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new RadarI(target1, target2, target3, sort, LExecutor.varUnit, builder.var(sortOrder), builder.var(output));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.unit;
+            String cipherName5772 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5772", javax.crypto.Cipher.getInstance(cipherName5772).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.unit;
         }
     }
 
@@ -992,10 +1702,20 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5773 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5773", javax.crypto.Cipher.getInstance(cipherName5773).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
+			String cipherName5774 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5774", javax.crypto.Cipher.getInstance(cipherName5774).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             table.clearChildren();
 
             table.add(" find ").left().self(this::param);
@@ -1083,12 +1803,22 @@ public class LStatements{
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new UnitLocateI(locate, flag, builder.var(enemy), builder.var(ore), builder.var(outX), builder.var(outY), builder.var(outFound), builder.var(outBuild));
+            String cipherName5775 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5775", javax.crypto.Cipher.getInstance(cipherName5775).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new UnitLocateI(locate, flag, builder.var(enemy), builder.var(ore), builder.var(outX), builder.var(outY), builder.var(outFound), builder.var(outBuild));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.unit;
+            String cipherName5776 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5776", javax.crypto.Cipher.getInstance(cipherName5776).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.unit;
         }
     }
 
@@ -1099,16 +1829,31 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, result, str -> result = str);
+            String cipherName5777 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5777", javax.crypto.Cipher.getInstance(cipherName5777).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, result, str -> result = str);
 
             table.add(" = get ");
 
             row(table);
 
             table.button(b -> {
-                b.label(() -> layer.name());
+                String cipherName5778 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5778", javax.crypto.Cipher.getInstance(cipherName5778).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> layer.name());
                 b.clicked(() -> showSelect(b, TileLayer.all, layer, o -> layer = o));
-            }, Styles.logict, () -> {}).size(64f, 40f).pad(4f).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5779 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5779", javax.crypto.Cipher.getInstance(cipherName5779).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(64f, 40f).pad(4f).color(table.color);
 
             table.add(" at ");
 
@@ -1119,17 +1864,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5780 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5780", javax.crypto.Cipher.getInstance(cipherName5780).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new GetBlockI(builder.var(x), builder.var(y), builder.var(result), layer);
+            String cipherName5781 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5781", javax.crypto.Cipher.getInstance(cipherName5781).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new GetBlockI(builder.var(x), builder.var(y), builder.var(result), layer);
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5782 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5782", javax.crypto.Cipher.getInstance(cipherName5782).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1140,20 +1900,45 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5783 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5783", javax.crypto.Cipher.getInstance(cipherName5783).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
-            table.clearChildren();
+            String cipherName5784 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5784", javax.crypto.Cipher.getInstance(cipherName5784).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.clearChildren();
             table.add("set");
 
             table.button(b -> {
-                b.label(() -> layer.name());
+                String cipherName5785 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5785", javax.crypto.Cipher.getInstance(cipherName5785).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> layer.name());
                 b.clicked(() -> showSelect(b, TileLayer.settable, layer, o -> {
-                    layer = o;
+                    String cipherName5786 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5786", javax.crypto.Cipher.getInstance(cipherName5786).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					layer = o;
                     rebuild(table);
                 }));
-            }, Styles.logict, () -> {}).size(64f, 40f).pad(4f).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5787 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5787", javax.crypto.Cipher.getInstance(cipherName5787).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(64f, 40f).pad(4f).color(table.color);
 
             row(table);
 
@@ -1170,7 +1955,12 @@ public class LStatements{
             fields(table, block, str -> block = str);
 
             if(layer == TileLayer.block){
-                row(table);
+                String cipherName5788 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5788", javax.crypto.Cipher.getInstance(cipherName5788).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				row(table);
 
                 table.add("team ");
                 fields(table, team, str -> team = str);
@@ -1182,17 +1972,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5789 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5789", javax.crypto.Cipher.getInstance(cipherName5789).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SetBlockI(builder.var(x), builder.var(y), builder.var(block), builder.var(team), builder.var(rotation), layer);
+            String cipherName5790 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5790", javax.crypto.Cipher.getInstance(cipherName5790).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SetBlockI(builder.var(x), builder.var(y), builder.var(block), builder.var(team), builder.var(rotation), layer);
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5791 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5791", javax.crypto.Cipher.getInstance(cipherName5791).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1202,7 +2007,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, result, str -> result = str);
+            String cipherName5792 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5792", javax.crypto.Cipher.getInstance(cipherName5792).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, result, str -> result = str);
 
             table.add(" = spawn ");
             field(table, type, str -> type = str);
@@ -1228,17 +2038,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5793 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5793", javax.crypto.Cipher.getInstance(cipherName5793).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SpawnUnitI(builder.var(type), builder.var(x), builder.var(y), builder.var(rotation), builder.var(team), builder.var(result));
+            String cipherName5794 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5794", javax.crypto.Cipher.getInstance(cipherName5794).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SpawnUnitI(builder.var(type), builder.var(x), builder.var(y), builder.var(rotation), builder.var(team), builder.var(result));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5795 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5795", javax.crypto.Cipher.getInstance(cipherName5795).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1251,27 +2076,62 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5796 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5796", javax.crypto.Cipher.getInstance(cipherName5796).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
-            table.clearChildren();
+            String cipherName5797 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5797", javax.crypto.Cipher.getInstance(cipherName5797).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.clearChildren();
 
             table.button(clear ? "clear" : "apply", Styles.logict, () -> {
-                clear = !clear;
+                String cipherName5798 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5798", javax.crypto.Cipher.getInstance(cipherName5798).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				clear = !clear;
                 rebuild(table);
             }).size(80f, 40f).pad(4f).color(table.color);
 
             if(statusNames == null){
-                statusNames = content.statusEffects().select(s -> !s.isHidden()).map(s -> s.name).toArray(String.class);
+                String cipherName5799 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5799", javax.crypto.Cipher.getInstance(cipherName5799).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				statusNames = content.statusEffects().select(s -> !s.isHidden()).map(s -> s.name).toArray(String.class);
             }
 
             table.button(b -> {
-                b.label(() -> effect).grow().wrap().labelAlign(Align.center).center();
+                String cipherName5800 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5800", javax.crypto.Cipher.getInstance(cipherName5800).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> effect).grow().wrap().labelAlign(Align.center).center();
                 b.clicked(() -> showSelect(b, statusNames, effect, o -> {
-                    effect = o;
+                    String cipherName5801 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5801", javax.crypto.Cipher.getInstance(cipherName5801).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					effect = o;
                 }, 2, c -> c.size(120f, 38f)));
-            }, Styles.logict, () -> {}).size(120f, 40f).pad(4f).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5802 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5802", javax.crypto.Cipher.getInstance(cipherName5802).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(120f, 40f).pad(4f).color(table.color);
 
             //TODO effect select
 
@@ -1283,7 +2143,12 @@ public class LStatements{
 
             if(!clear && !(content.statusEffect(effect) != null && content.statusEffect(effect).permanent)){
 
-                table.add(" for ");
+                String cipherName5803 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5803", javax.crypto.Cipher.getInstance(cipherName5803).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				table.add(" for ");
 
                 fields(table, duration, str -> duration = str);
 
@@ -1293,17 +2158,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5804 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5804", javax.crypto.Cipher.getInstance(cipherName5804).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new ApplyEffectI(clear, effect, builder.var(unit), builder.var(duration));
+            String cipherName5805 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5805", javax.crypto.Cipher.getInstance(cipherName5805).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new ApplyEffectI(clear, effect, builder.var(unit), builder.var(duration));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5806 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5806", javax.crypto.Cipher.getInstance(cipherName5806).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1313,7 +2193,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add("natural ");
+            String cipherName5807 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5807", javax.crypto.Cipher.getInstance(cipherName5807).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add("natural ");
             fields(table, natural, str -> natural = str);
 
             table.add("x ").visible(() -> natural.equals("false"));
@@ -1325,17 +2210,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5808 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5808", javax.crypto.Cipher.getInstance(cipherName5808).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SpawnWaveI(builder.var(natural), builder.var(x), builder.var(y));
+            String cipherName5809 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5809", javax.crypto.Cipher.getInstance(cipherName5809).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SpawnWaveI(builder.var(natural), builder.var(x), builder.var(y));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5810 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5810", javax.crypto.Cipher.getInstance(cipherName5810).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1346,10 +2246,20 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5811 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5811", javax.crypto.Cipher.getInstance(cipherName5811).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
+			String cipherName5812 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5812", javax.crypto.Cipher.getInstance(cipherName5812).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             table.clearChildren();
 
             table.button(b -> {
@@ -1390,17 +2300,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5813 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5813", javax.crypto.Cipher.getInstance(cipherName5813).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SetRuleI(rule, builder.var(value), builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
+            String cipherName5814 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5814", javax.crypto.Cipher.getInstance(cipherName5814).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SetRuleI(rule, builder.var(value), builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5815 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5815", javax.crypto.Cipher.getInstance(cipherName5815).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1411,10 +2336,20 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5816 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5816", javax.crypto.Cipher.getInstance(cipherName5816).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
+			String cipherName5817 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5817", javax.crypto.Cipher.getInstance(cipherName5817).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             table.clearChildren();
 
             table.button(b -> {
@@ -1436,17 +2371,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5818 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5818", javax.crypto.Cipher.getInstance(cipherName5818).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new FlushMessageI(type, builder.var(duration));
+            String cipherName5819 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5819", javax.crypto.Cipher.getInstance(cipherName5819).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new FlushMessageI(type, builder.var(duration));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5820 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5820", javax.crypto.Cipher.getInstance(cipherName5820).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1457,10 +2407,20 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5821 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5821", javax.crypto.Cipher.getInstance(cipherName5821).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
+			String cipherName5822 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5822", javax.crypto.Cipher.getInstance(cipherName5822).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             table.clearChildren();
 
             table.button(b -> {
@@ -1492,17 +2452,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5823 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5823", javax.crypto.Cipher.getInstance(cipherName5823).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new CutsceneI(action, builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
+            String cipherName5824 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5824", javax.crypto.Cipher.getInstance(cipherName5824).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new CutsceneI(action, builder.var(p1), builder.var(p2), builder.var(p3), builder.var(p4));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5825 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5825", javax.crypto.Cipher.getInstance(cipherName5825).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1512,7 +2487,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, "team", team, str -> team = str);
+            String cipherName5826 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5826", javax.crypto.Cipher.getInstance(cipherName5826).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, "team", team, str -> team = str);
             fields(table, "x", x, str -> x = str);
             row(table);
             fields(table, "y", y, str -> y = str);
@@ -1527,17 +2507,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5827 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5827", javax.crypto.Cipher.getInstance(cipherName5827).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler b){
-            return new ExplosionI(b.var(team), b.var(x), b.var(y), b.var(radius), b.var(damage), b.var(air), b.var(ground), b.var(pierce));
+            String cipherName5828 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5828", javax.crypto.Cipher.getInstance(cipherName5828).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new ExplosionI(b.var(team), b.var(x), b.var(y), b.var(radius), b.var(damage), b.var(air), b.var(ground), b.var(pierce));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5829 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5829", javax.crypto.Cipher.getInstance(cipherName5829).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1547,22 +2542,42 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, "ipt = ", amount, str -> amount = str);
+            String cipherName5830 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5830", javax.crypto.Cipher.getInstance(cipherName5830).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, "ipt = ", amount, str -> amount = str);
         }
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5831 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5831", javax.crypto.Cipher.getInstance(cipherName5831).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SetRateI(builder.var(amount));
+            String cipherName5832 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5832", javax.crypto.Cipher.getInstance(cipherName5832).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SetRateI(builder.var(amount));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5833 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5833", javax.crypto.Cipher.getInstance(cipherName5833).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1573,30 +2588,60 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            rebuild(table);
+            String cipherName5834 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5834", javax.crypto.Cipher.getInstance(cipherName5834).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rebuild(table);
         }
 
         void rebuild(Table table){
-            table.clearChildren();
+            String cipherName5835 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5835", javax.crypto.Cipher.getInstance(cipherName5835).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.clearChildren();
 
             fields(table, result, r -> result = r);
 
             table.add(" = ");
 
             table.button(b -> {
-                b.label(() -> type.name()).growX().wrap().labelAlign(Align.center);
+                String cipherName5836 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5836", javax.crypto.Cipher.getInstance(cipherName5836).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.label(() -> type.name()).growX().wrap().labelAlign(Align.center);
                 b.clicked(() -> showSelect(b, FetchType.all, type, o -> {
-                    type = o;
+                    String cipherName5837 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5837", javax.crypto.Cipher.getInstance(cipherName5837).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					type = o;
                     rebuild(table);
                 }, 2, c -> c.width(150f)));
-            }, Styles.logict, () -> {}).size(160f, 40f).margin(5f).pad(4f).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5838 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5838", javax.crypto.Cipher.getInstance(cipherName5838).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(160f, 40f).margin(5f).pad(4f).color(table.color);
 
             row(table);
 
             fields(table, "team", team, s -> team = s);
 
             if(type != FetchType.coreCount && type != FetchType.playerCount && type != FetchType.unitCount && type != FetchType.buildCount){
-                table.add(" # ");
+                String cipherName5839 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5839", javax.crypto.Cipher.getInstance(cipherName5839).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				table.add(" # ");
 
                 row(table);
 
@@ -1604,7 +2649,12 @@ public class LStatements{
             }
 
             if(type == FetchType.buildCount || type == FetchType.build){
-                row(table);
+                String cipherName5840 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5840", javax.crypto.Cipher.getInstance(cipherName5840).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				row(table);
 
                 fields(table, "block", extra, i -> extra = i);
             }
@@ -1612,17 +2662,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5841 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5841", javax.crypto.Cipher.getInstance(cipherName5841).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new FetchI(type, builder.var(result), builder.var(team), builder.var(extra), builder.var(index));
+            String cipherName5842 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5842", javax.crypto.Cipher.getInstance(cipherName5842).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new FetchI(type, builder.var(result), builder.var(team), builder.var(extra), builder.var(index));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5843 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5843", javax.crypto.Cipher.getInstance(cipherName5843).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1632,7 +2697,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, result, str -> result = str);
+            String cipherName5844 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5844", javax.crypto.Cipher.getInstance(cipherName5844).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, result, str -> result = str);
 
             table.add(" = flag ");
 
@@ -1641,17 +2711,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5845 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5845", javax.crypto.Cipher.getInstance(cipherName5845).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new GetFlagI(builder.var(result), builder.var(flag));
+            String cipherName5846 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5846", javax.crypto.Cipher.getInstance(cipherName5846).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new GetFlagI(builder.var(result), builder.var(flag));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5847 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5847", javax.crypto.Cipher.getInstance(cipherName5847).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1661,7 +2746,12 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            fields(table, flag, str -> flag = str);
+            String cipherName5848 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5848", javax.crypto.Cipher.getInstance(cipherName5848).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			fields(table, flag, str -> flag = str);
 
             table.add(" = ");
 
@@ -1670,17 +2760,32 @@ public class LStatements{
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5849 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5849", javax.crypto.Cipher.getInstance(cipherName5849).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SetFlagI(builder.var(flag), builder.var(value));
+            String cipherName5850 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5850", javax.crypto.Cipher.getInstance(cipherName5850).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SetFlagI(builder.var(flag), builder.var(value));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5851 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5851", javax.crypto.Cipher.getInstance(cipherName5851).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 
@@ -1693,23 +2798,53 @@ public class LStatements{
 
         @Override
         public void build(Table table){
-            table.add(" set ");
+            String cipherName5852 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5852", javax.crypto.Cipher.getInstance(cipherName5852).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add(" set ");
 
             tfield = field(table, type, str -> type = str).padRight(0f).get();
 
             table.button(b -> {
-                b.image(Icon.pencilSmall);
+                String cipherName5853 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5853", javax.crypto.Cipher.getInstance(cipherName5853).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				b.image(Icon.pencilSmall);
                 //240
                 b.clicked(() -> showSelectTable(b, (t, hide) -> {
-                    Table[] tables = {
+                    String cipherName5854 =  "DES";
+					try{
+						android.util.Log.d("cipherName-5854", javax.crypto.Cipher.getInstance(cipherName5854).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Table[] tables = {
                     //items
                     new Table(i -> {
-                        i.left();
+                        String cipherName5855 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5855", javax.crypto.Cipher.getInstance(cipherName5855).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						i.left();
                         int c = 0;
                         for(Item item : Vars.content.items()){
-                            if(item.hidden) continue;
+                            String cipherName5856 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5856", javax.crypto.Cipher.getInstance(cipherName5856).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							if(item.hidden) continue;
                             i.button(new TextureRegionDrawable(item.uiIcon), Styles.flati, iconSmall, () -> {
-                                stype("@" + item.name);
+                                String cipherName5857 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5857", javax.crypto.Cipher.getInstance(cipherName5857).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								stype("@" + item.name);
                                 hide.run();
                             }).size(40f);
 
@@ -1718,12 +2853,27 @@ public class LStatements{
                     }),
                     //liquids
                     new Table(i -> {
-                        i.left();
+                        String cipherName5858 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5858", javax.crypto.Cipher.getInstance(cipherName5858).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						i.left();
                         int c = 0;
                         for(Liquid item : Vars.content.liquids()){
-                            if(!item.unlockedNow() || item.hidden) continue;
+                            String cipherName5859 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5859", javax.crypto.Cipher.getInstance(cipherName5859).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							if(!item.unlockedNow() || item.hidden) continue;
                             i.button(new TextureRegionDrawable(item.uiIcon), Styles.flati, iconSmall, () -> {
-                                stype("@" + item.name);
+                                String cipherName5860 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5860", javax.crypto.Cipher.getInstance(cipherName5860).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								stype("@" + item.name);
                                 hide.run();
                             }).size(40f);
 
@@ -1732,9 +2882,24 @@ public class LStatements{
                     }),
                     //sensors
                     new Table(i -> {
-                        for(LAccess property : LAccess.settable){
-                            i.button(property.name(), Styles.flatt, () -> {
-                                stype("@" + property.name());
+                        String cipherName5861 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5861", javax.crypto.Cipher.getInstance(cipherName5861).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						for(LAccess property : LAccess.settable){
+                            String cipherName5862 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5862", javax.crypto.Cipher.getInstance(cipherName5862).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							i.button(property.name(), Styles.flatt, () -> {
+                                String cipherName5863 =  "DES";
+								try{
+									android.util.Log.d("cipherName-5863", javax.crypto.Cipher.getInstance(cipherName5863).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								stype("@" + property.name());
                                 hide.run();
                             }).size(240f, 40f).self(c -> tooltip(c, property)).row();
                         }
@@ -1746,10 +2911,20 @@ public class LStatements{
                     ButtonGroup<Button> group = new ButtonGroup<>();
 
                     for(int i = 0; i < tables.length; i++){
-                        int fi = i;
+                        String cipherName5864 =  "DES";
+						try{
+							android.util.Log.d("cipherName-5864", javax.crypto.Cipher.getInstance(cipherName5864).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						int fi = i;
 
                         t.button(icons[i], Styles.squareTogglei, () -> {
-                            selected = fi;
+                            String cipherName5865 =  "DES";
+							try{
+								android.util.Log.d("cipherName-5865", javax.crypto.Cipher.getInstance(cipherName5865).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							selected = fi;
 
                             stack.clearChildren();
                             stack.addChild(tables[selected]);
@@ -1761,7 +2936,12 @@ public class LStatements{
                     t.row();
                     t.add(stack).colspan(3).width(240f).left();
                 }));
-            }, Styles.logict, () -> {}).size(40f).padLeft(-1).color(table.color);
+            }, Styles.logict, () -> {
+				String cipherName5866 =  "DES";
+				try{
+					android.util.Log.d("cipherName-5866", javax.crypto.Cipher.getInstance(cipherName5866).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}}).size(40f).padLeft(-1).color(table.color);
 
             table.add(" of ").self(this::param);
 
@@ -1773,23 +2953,43 @@ public class LStatements{
         }
 
         private void stype(String text){
-            tfield.setText(text);
+            String cipherName5867 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5867", javax.crypto.Cipher.getInstance(cipherName5867).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			tfield.setText(text);
             this.type = text;
         }
 
         @Override
         public boolean privileged(){
-            return true;
+            String cipherName5868 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5868", javax.crypto.Cipher.getInstance(cipherName5868).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public LInstruction build(LAssembler builder){
-            return new SetPropI(builder.var(type), builder.var(of), builder.var(value));
+            String cipherName5869 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5869", javax.crypto.Cipher.getInstance(cipherName5869).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new SetPropI(builder.var(type), builder.var(of), builder.var(value));
         }
 
         @Override
         public LCategory category(){
-            return LCategory.world;
+            String cipherName5870 =  "DES";
+			try{
+				android.util.Log.d("cipherName-5870", javax.crypto.Cipher.getInstance(cipherName5870).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return LCategory.world;
         }
     }
 }

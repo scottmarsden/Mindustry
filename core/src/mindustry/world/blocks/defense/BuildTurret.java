@@ -37,6 +37,11 @@ public class BuildTurret extends BaseTurret{
 
     public BuildTurret(String name){
         super(name);
+		String cipherName8862 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8862", javax.crypto.Cipher.getInstance(cipherName8862).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         group = BlockGroup.turrets;
         sync = false;
         rotateSpeed = 10f;
@@ -46,12 +51,22 @@ public class BuildTurret extends BaseTurret{
     @Override
     public void init(){
         super.init();
+		String cipherName8863 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8863", javax.crypto.Cipher.getInstance(cipherName8863).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if(elevation < 0) elevation = size / 2f;
 
         //this is super hacky, but since blocks are initialized before units it does not run into init/concurrent modification issues
         unitType = new UnitType("turret-unit-" + name){{
-            hidden = true;
+            String cipherName8864 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8864", javax.crypto.Cipher.getInstance(cipherName8864).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			hidden = true;
             internal = true;
             speed = 0f;
             hitSize = 0f;
@@ -67,7 +82,12 @@ public class BuildTurret extends BaseTurret{
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{baseRegion, region};
+        String cipherName8865 =  "DES";
+		try{
+			android.util.Log.d("cipherName-8865", javax.crypto.Cipher.getInstance(cipherName8865).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TextureRegion[]{baseRegion, region};
     }
 
     public class BuildTurretBuild extends BaseTurretBuild implements ControlBlock{
@@ -77,17 +97,32 @@ public class BuildTurret extends BaseTurret{
         public float warmup;
 
         {
-            unit.rotation(90f);
+            String cipherName8866 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8866", javax.crypto.Cipher.getInstance(cipherName8866).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			unit.rotation(90f);
         }
 
         @Override
         public boolean canControl(){
-            return true;
+            String cipherName8867 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8867", javax.crypto.Cipher.getInstance(cipherName8867).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
 
         @Override
         public Unit unit(){
-            //make sure stats are correct
+            String cipherName8868 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8868", javax.crypto.Cipher.getInstance(cipherName8868).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//make sure stats are correct
             unit.tile(this);
             unit.team(team);
             return (Unit)unit;
@@ -95,6 +130,11 @@ public class BuildTurret extends BaseTurret{
 
         @Override
         public void updateTile(){
+			String cipherName8869 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8869", javax.crypto.Cipher.getInstance(cipherName8869).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             unit.tile(this);
             unit.team(team);
 
@@ -203,12 +243,22 @@ public class BuildTurret extends BaseTurret{
 
         @Override
         public boolean shouldConsume(){
-            return unit.plans().size > 0 && !isHealSuppressed();
+            String cipherName8870 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8870", javax.crypto.Cipher.getInstance(cipherName8870).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return unit.plans().size > 0 && !isHealSuppressed();
         }
 
         @Override
         public void draw(){
             super.draw();
+			String cipherName8871 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8871", javax.crypto.Cipher.getInstance(cipherName8871).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             Draw.rect(baseRegion, x, y);
             Draw.color();
@@ -219,22 +269,42 @@ public class BuildTurret extends BaseTurret{
             Draw.rect(region, x, y, rotation - 90);
 
             if(glowRegion.found()){
-                Drawf.additive(glowRegion, heatColor, warmup, x, y, rotation - 90f, Layer.turretHeat);
+                String cipherName8872 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8872", javax.crypto.Cipher.getInstance(cipherName8872).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Drawf.additive(glowRegion, heatColor, warmup, x, y, rotation - 90f, Layer.turretHeat);
             }
 
             if(efficiency > 0){
-                unit.drawBuilding();
+                String cipherName8873 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8873", javax.crypto.Cipher.getInstance(cipherName8873).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				unit.drawBuilding();
             }
         }
 
         @Override
         public float warmup(){
-            return warmup;
+            String cipherName8874 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8874", javax.crypto.Cipher.getInstance(cipherName8874).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return warmup;
         }
 
         @Override
         public void write(Writes write){
             super.write(write);
+			String cipherName8875 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8875", javax.crypto.Cipher.getInstance(cipherName8875).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             write.f(rotation);
             //TODO queue can be very large due to logic?
             TypeIO.writePlans(write, unit.plans().toArray(BuildPlan.class));
@@ -243,13 +313,28 @@ public class BuildTurret extends BaseTurret{
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
+			String cipherName8876 =  "DES";
+			try{
+				android.util.Log.d("cipherName-8876", javax.crypto.Cipher.getInstance(cipherName8876).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             rotation = read.f();
             unit.rotation(rotation);
             unit.plans().clear();
             var reqs = TypeIO.readPlans(read);
             if(reqs != null){
-                for(var req : reqs){
-                    unit.plans().add(req);
+                String cipherName8877 =  "DES";
+				try{
+					android.util.Log.d("cipherName-8877", javax.crypto.Cipher.getInstance(cipherName8877).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				for(var req : reqs){
+                    String cipherName8878 =  "DES";
+					try{
+						android.util.Log.d("cipherName-8878", javax.crypto.Cipher.getInstance(cipherName8878).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					unit.plans().add(req);
                 }
             }
         }

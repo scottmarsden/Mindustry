@@ -97,7 +97,12 @@ public class EventType{
         public final boolean isMap;
 
         public SaveLoadEvent(boolean isMap){
-            this.isMap = isMap;
+            String cipherName12386 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12386", javax.crypto.Cipher.getInstance(cipherName12386).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.isMap = isMap;
         }
     }
 
@@ -106,7 +111,12 @@ public class EventType{
         public final Sector sector;
 
         public SectorLoseEvent(Sector sector){
-            this.sector = sector;
+            String cipherName12387 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12387", javax.crypto.Cipher.getInstance(cipherName12387).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.sector = sector;
         }
     }
 
@@ -115,7 +125,12 @@ public class EventType{
         public final Sector sector;
 
         public SectorInvasionEvent(Sector sector){
-            this.sector = sector;
+            String cipherName12388 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12388", javax.crypto.Cipher.getInstance(cipherName12388).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.sector = sector;
         }
     }
 
@@ -123,7 +138,12 @@ public class EventType{
         public final ItemStack stack;
 
         public LaunchItemEvent(ItemStack stack){
-            this.stack = stack;
+            String cipherName12389 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12389", javax.crypto.Cipher.getInstance(cipherName12389).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.stack = stack;
         }
     }
 
@@ -131,7 +151,12 @@ public class EventType{
         public final Sector sector;
 
         public SectorLaunchEvent(Sector sector){
-            this.sector = sector;
+            String cipherName12390 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12390", javax.crypto.Cipher.getInstance(cipherName12390).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.sector = sector;
         }
     }
 
@@ -140,7 +165,12 @@ public class EventType{
         public final Schematic loadout;
 
         public SectorLaunchLoadoutEvent(Sector sector, Sector from, Schematic loadout){
-            this.sector = sector;
+            String cipherName12391 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12391", javax.crypto.Cipher.getInstance(cipherName12391).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.sector = sector;
             this.from = from;
             this.loadout = loadout;
         }
@@ -150,7 +180,12 @@ public class EventType{
         public final Schematic schematic;
 
         public SchematicCreateEvent(Schematic schematic){
-            this.schematic = schematic;
+            String cipherName12392 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12392", javax.crypto.Cipher.getInstance(cipherName12392).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.schematic = schematic;
         }
     }
 
@@ -158,7 +193,12 @@ public class EventType{
         public final Host host;
 
         public ClientPreConnectEvent(Host host){
-            this.host = host;
+            String cipherName12393 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12393", javax.crypto.Cipher.getInstance(cipherName12393).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.host = host;
         }
     }
 
@@ -167,7 +207,12 @@ public class EventType{
         public final int port;
 
         public ClientServerConnectEvent(String ip, int port){
-            this.ip = ip;
+            String cipherName12394 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12394", javax.crypto.Cipher.getInstance(cipherName12394).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.ip = ip;
             this.port = port;
         }
     }
@@ -178,7 +223,12 @@ public class EventType{
         public final int menuId, option;
 
         public MenuOptionChooseEvent(Player player, int menuId, int option){
-            this.player = player;
+            String cipherName12395 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12395", javax.crypto.Cipher.getInstance(cipherName12395).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.option = option;
             this.menuId = menuId;
         }
@@ -189,7 +239,12 @@ public class EventType{
         public final String message;
 
         public PlayerChatEvent(Player player, String message){
-            this.player = player;
+            String cipherName12396 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12396", javax.crypto.Cipher.getInstance(cipherName12396).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.message = message;
         }
     }
@@ -199,7 +254,12 @@ public class EventType{
         public final String message;
 
         public ClientChatEvent(String message){
-            this.message = message;
+            String cipherName12397 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12397", javax.crypto.Cipher.getInstance(cipherName12397).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.message = message;
         }
     }
 
@@ -209,7 +269,12 @@ public class EventType{
         public final boolean initialCapture;
 
         public SectorCaptureEvent(Sector sector, boolean initialCapture){
-            this.sector = sector;
+            String cipherName12398 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12398", javax.crypto.Cipher.getInstance(cipherName12398).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.sector = sector;
             this.initialCapture = initialCapture;
         }
     }
@@ -222,7 +287,12 @@ public class EventType{
         public final int amount;
 
         public WithdrawEvent(Building tile, Player player, Item item, int amount){
-            this.tile = tile;
+            String cipherName12399 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12399", javax.crypto.Cipher.getInstance(cipherName12399).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             this.player = player;
             this.item = item;
             this.amount = amount;
@@ -237,7 +307,12 @@ public class EventType{
         public final int amount;
 
         public DepositEvent(Building tile, Player player, Item item, int amount){
-            this.tile = tile;
+            String cipherName12400 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12400", javax.crypto.Cipher.getInstance(cipherName12400).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             this.player = player;
             this.item = item;
             this.amount = amount;
@@ -251,7 +326,12 @@ public class EventType{
         public final Object value;
 
         public ConfigEvent(Building tile, Player player, Object value){
-            this.tile = tile;
+            String cipherName12401 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12401", javax.crypto.Cipher.getInstance(cipherName12401).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             this.player = player;
             this.value = value;
         }
@@ -263,7 +343,12 @@ public class EventType{
         public final Tile tile;
 
         public TapEvent(Player player, Tile tile){
-            this.tile = tile;
+            String cipherName12402 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12402", javax.crypto.Cipher.getInstance(cipherName12402).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             this.player = player;
         }
     }
@@ -274,13 +359,23 @@ public class EventType{
         public final @Nullable Building build;
 
         public PickupEvent(Unit carrier, Unit unit){
-            this.carrier = carrier;
+            String cipherName12403 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12403", javax.crypto.Cipher.getInstance(cipherName12403).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.carrier = carrier;
             this.unit = unit;
             this.build = null;
         }
 
         public PickupEvent(Unit carrier, Building build){
-            this.carrier = carrier;
+            String cipherName12404 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12404", javax.crypto.Cipher.getInstance(cipherName12404).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.carrier = carrier;
             this.build = build;
             this.unit = null;
         }
@@ -292,13 +387,23 @@ public class EventType{
         public final @Nullable Building build;
 
         public PayloadDropEvent(Unit carrier, Unit unit){
-            this.carrier = carrier;
+            String cipherName12405 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12405", javax.crypto.Cipher.getInstance(cipherName12405).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.carrier = carrier;
             this.unit = unit;
             this.build = null;
         }
 
         public PayloadDropEvent(Unit carrier, Building build){
-            this.carrier = carrier;
+            String cipherName12406 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12406", javax.crypto.Cipher.getInstance(cipherName12406).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.carrier = carrier;
             this.build = build;
             this.unit = null;
         }
@@ -309,7 +414,12 @@ public class EventType{
         public final @Nullable Unit unit;
 
         public UnitControlEvent(Player player, @Nullable Unit unit){
-            this.player = player;
+            String cipherName12407 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12407", javax.crypto.Cipher.getInstance(cipherName12407).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.unit = unit;
         }
     }
@@ -320,7 +430,12 @@ public class EventType{
         public final Vec2 position;
 
         public BuildingCommandEvent(Player player, Building building, Vec2 position){
-            this.player = player;
+            String cipherName12408 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12408", javax.crypto.Cipher.getInstance(cipherName12408).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.building = building;
             this.position = position;
         }
@@ -330,7 +445,12 @@ public class EventType{
         public final Team winner;
 
         public GameOverEvent(Team winner){
-            this.winner = winner;
+            String cipherName12409 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12409", javax.crypto.Cipher.getInstance(cipherName12409).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.winner = winner;
         }
     }
 
@@ -343,7 +463,12 @@ public class EventType{
         public Bullet source;
 
         public BuildDamageEvent set(Building build, Bullet source){
-            this.build = build;
+            String cipherName12410 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12410", javax.crypto.Cipher.getInstance(cipherName12410).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.build = build;
             this.source = source;
             return this;
         }
@@ -358,7 +483,12 @@ public class EventType{
         public Tile tile;
 
         public TilePreChangeEvent set(Tile tile){
-            this.tile = tile;
+            String cipherName12411 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12411", javax.crypto.Cipher.getInstance(cipherName12411).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             return this;
         }
     }
@@ -372,7 +502,12 @@ public class EventType{
         public Tile tile;
 
         public TileChangeEvent set(Tile tile){
-            this.tile = tile;
+            String cipherName12412 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12412", javax.crypto.Cipher.getInstance(cipherName12412).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             return this;
         }
     }
@@ -386,7 +521,12 @@ public class EventType{
         public Building build;
 
         public BuildTeamChangeEvent set(Team previous, Building build){
-            this.build = build;
+            String cipherName12413 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12413", javax.crypto.Cipher.getInstance(cipherName12413).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.build = build;
             this.previous = previous;
             return this;
         }
@@ -397,7 +537,12 @@ public class EventType{
         public CoreBuild core;
 
         public CoreChangeEvent(CoreBuild core){
-            this.core = core;
+            String cipherName12414 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12414", javax.crypto.Cipher.getInstance(cipherName12414).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.core = core;
         }
     }
 
@@ -405,7 +550,12 @@ public class EventType{
         public final State from, to;
 
         public StateChangeEvent(State from, State to){
-            this.from = from;
+            String cipherName12415 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12415", javax.crypto.Cipher.getInstance(cipherName12415).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.from = from;
             this.to = to;
         }
     }
@@ -414,7 +564,12 @@ public class EventType{
         public final UnlockableContent content;
 
         public UnlockEvent(UnlockableContent content){
-            this.content = content;
+            String cipherName12416 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12416", javax.crypto.Cipher.getInstance(cipherName12416).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.content = content;
         }
     }
 
@@ -422,7 +577,12 @@ public class EventType{
         public final UnlockableContent content;
 
         public ResearchEvent(UnlockableContent content){
-            this.content = content;
+            String cipherName12417 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12417", javax.crypto.Cipher.getInstance(cipherName12417).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.content = content;
         }
     }
 
@@ -437,7 +597,12 @@ public class EventType{
         public final boolean breaking;
 
         public BlockBuildBeginEvent(Tile tile, Team team, Unit unit, boolean breaking){
-            this.tile = tile;
+            String cipherName12418 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12418", javax.crypto.Cipher.getInstance(cipherName12418).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             this.team = team;
             this.unit = unit;
             this.breaking = breaking;
@@ -452,7 +617,12 @@ public class EventType{
         public final @Nullable Object config;
 
         public BlockBuildEndEvent(Tile tile, @Nullable Unit unit, Team team, boolean breaking, @Nullable Object config){
-            this.tile = tile;
+            String cipherName12419 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12419", javax.crypto.Cipher.getInstance(cipherName12419).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             this.team = team;
             this.unit = unit;
             this.breaking = breaking;
@@ -471,7 +641,12 @@ public class EventType{
         public final boolean breaking;
 
         public BuildSelectEvent(Tile tile, Team team, Unit builder, boolean breaking){
-            this.tile = tile;
+            String cipherName12420 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12420", javax.crypto.Cipher.getInstance(cipherName12420).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
             this.team = team;
             this.builder = builder;
             this.breaking = breaking;
@@ -484,7 +659,12 @@ public class EventType{
         public final Tile tile;
 
         public BlockDestroyEvent(Tile tile){
-            this.tile = tile;
+            String cipherName12421 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12421", javax.crypto.Cipher.getInstance(cipherName12421).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.tile = tile;
         }
     }
 
@@ -493,7 +673,12 @@ public class EventType{
         public final Building build;
 
         public GeneratorPressureExplodeEvent(Building build){
-            this.build = build;
+            String cipherName12422 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12422", javax.crypto.Cipher.getInstance(cipherName12422).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.build = build;
         }
     }
 
@@ -503,11 +688,21 @@ public class EventType{
         public Bullet bullet;
 
         public BuildingBulletDestroyEvent(Building build, Bullet bullet){
-            this.build = build;
+            String cipherName12423 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12423", javax.crypto.Cipher.getInstance(cipherName12423).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.build = build;
             this.bullet = bullet;
         }
 
         public BuildingBulletDestroyEvent(){
+			String cipherName12424 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12424", javax.crypto.Cipher.getInstance(cipherName12424).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
     }
 
@@ -515,7 +710,12 @@ public class EventType{
         public final Unit unit;
 
         public UnitDestroyEvent(Unit unit){
-            this.unit = unit;
+            String cipherName12425 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12425", javax.crypto.Cipher.getInstance(cipherName12425).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
         }
     }
 
@@ -525,11 +725,21 @@ public class EventType{
         public Bullet bullet;
 
         public UnitBulletDestroyEvent(Unit unit, Bullet bullet){
-            this.unit = unit;
+            String cipherName12426 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12426", javax.crypto.Cipher.getInstance(cipherName12426).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
             this.bullet = bullet;
         }
 
         public UnitBulletDestroyEvent(){
+			String cipherName12427 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12427", javax.crypto.Cipher.getInstance(cipherName12427).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
     }
 
@@ -542,7 +752,12 @@ public class EventType{
         public Bullet bullet;
 
         public UnitDamageEvent set(Unit unit, Bullet bullet){
-            this.unit = unit;
+            String cipherName12428 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12428", javax.crypto.Cipher.getInstance(cipherName12428).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
             this.bullet = bullet;
             return this;
         }
@@ -552,7 +767,12 @@ public class EventType{
         public final Unit unit;
 
         public UnitDrownEvent(Unit unit){
-            this.unit = unit;
+            String cipherName12429 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12429", javax.crypto.Cipher.getInstance(cipherName12429).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
         }
     }
 
@@ -563,13 +783,23 @@ public class EventType{
         public final @Nullable Unit spawnerUnit;
 
         public UnitCreateEvent(Unit unit, Building spawner, Unit spawnerUnit){
-            this.unit = unit;
+            String cipherName12430 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12430", javax.crypto.Cipher.getInstance(cipherName12430).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
             this.spawner = spawner;
             this.spawnerUnit = spawnerUnit;
         }
 
         public UnitCreateEvent(Unit unit, Building spawner){
             this(unit, spawner, null);
+			String cipherName12431 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12431", javax.crypto.Cipher.getInstance(cipherName12431).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
     }
 
@@ -578,7 +808,12 @@ public class EventType{
         public final Unit unit;
 
         public UnitSpawnEvent(Unit unit) {
-            this.unit = unit;
+            String cipherName12432 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12432", javax.crypto.Cipher.getInstance(cipherName12432).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
         }
     }
 
@@ -587,7 +822,12 @@ public class EventType{
         public final Unit unit;
 
         public UnitUnloadEvent(Unit unit){
-            this.unit = unit;
+            String cipherName12433 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12433", javax.crypto.Cipher.getInstance(cipherName12433).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
         }
     }
 
@@ -596,7 +836,12 @@ public class EventType{
         public final Unit unit;
 
         public UnitChangeEvent(Player player, Unit unit){
-            this.player = player;
+            String cipherName12434 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12434", javax.crypto.Cipher.getInstance(cipherName12434).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.unit = unit;
         }
     }
@@ -606,7 +851,12 @@ public class EventType{
         public final NetConnection connection;
 
         public ConnectionEvent(NetConnection connection){
-            this.connection = connection;
+            String cipherName12435 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12435", javax.crypto.Cipher.getInstance(cipherName12435).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.connection = connection;
         }
     }
 
@@ -616,7 +866,12 @@ public class EventType{
         public final ConnectPacket packet;
 
         public ConnectPacketEvent(NetConnection connection, ConnectPacket packet){
-            this.connection = connection;
+            String cipherName12436 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12436", javax.crypto.Cipher.getInstance(cipherName12436).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.connection = connection;
             this.packet = packet;
         }
     }
@@ -629,7 +884,12 @@ public class EventType{
         public final Player player;
 
         public PlayerConnectionConfirmed(Player player){
-            this.player = player;
+            String cipherName12437 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12437", javax.crypto.Cipher.getInstance(cipherName12437).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
         }
     }
 
@@ -638,7 +898,12 @@ public class EventType{
         public final Player player;
 
         public PlayerJoin(Player player){
-            this.player = player;
+            String cipherName12438 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12438", javax.crypto.Cipher.getInstance(cipherName12438).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
         }
     }
 
@@ -647,7 +912,12 @@ public class EventType{
         public final Player player;
 
         public PlayerConnect(Player player){
-            this.player = player;
+            String cipherName12439 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12439", javax.crypto.Cipher.getInstance(cipherName12439).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
         }
     }
 
@@ -656,7 +926,12 @@ public class EventType{
         public final Player player;
 
         public PlayerLeave(Player player){
-            this.player = player;
+            String cipherName12440 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12440", javax.crypto.Cipher.getInstance(cipherName12440).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
         }
     }
 
@@ -666,7 +941,12 @@ public class EventType{
         public final String uuid;
 
         public PlayerBanEvent(Player player, String uuid){
-            this.player = player;
+            String cipherName12441 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12441", javax.crypto.Cipher.getInstance(cipherName12441).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.uuid = uuid;
         }
     }
@@ -677,7 +957,12 @@ public class EventType{
         public final String uuid;
 
         public PlayerUnbanEvent(Player player, String uuid){
-            this.player = player;
+            String cipherName12442 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12442", javax.crypto.Cipher.getInstance(cipherName12442).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.uuid = uuid;
         }
     }
@@ -686,7 +971,12 @@ public class EventType{
         public final String ip;
 
         public PlayerIpBanEvent(String ip){
-            this.ip = ip;
+            String cipherName12443 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12443", javax.crypto.Cipher.getInstance(cipherName12443).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.ip = ip;
         }
     }
 
@@ -694,7 +984,12 @@ public class EventType{
         public final String ip;
 
         public PlayerIpUnbanEvent(String ip){
-            this.ip = ip;
+            String cipherName12444 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12444", javax.crypto.Cipher.getInstance(cipherName12444).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.ip = ip;
         }
     }
 
@@ -704,7 +999,12 @@ public class EventType{
         public final AdminAction action;
 
         public AdminRequestEvent(Player player, Player other, AdminAction action){
-            this.player = player;
+            String cipherName12445 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12445", javax.crypto.Cipher.getInstance(cipherName12445).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.player = player;
             this.other = other;
             this.action = action;
         }

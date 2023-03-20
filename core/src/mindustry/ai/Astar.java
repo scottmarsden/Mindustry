@@ -19,15 +19,30 @@ public class Astar{
     private static byte[][] rotations;
 
     public static Seq<Tile> pathfind(Tile from, Tile to, TileHueristic th, Boolf<Tile> passable){
-        return pathfind(from.x, from.y, to.x, to.y, th, manhattan, passable);
+        String cipherName13679 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13679", javax.crypto.Cipher.getInstance(cipherName13679).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return pathfind(from.x, from.y, to.x, to.y, th, manhattan, passable);
     }
 
     public static Seq<Tile> pathfind(int startX, int startY, int endX, int endY, TileHueristic th, Boolf<Tile> passable){
-        return pathfind(startX, startY, endX, endY, th, manhattan, passable);
+        String cipherName13680 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13680", javax.crypto.Cipher.getInstance(cipherName13680).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return pathfind(startX, startY, endX, endY, th, manhattan, passable);
     }
 
     public static Seq<Tile> pathfind(int startX, int startY, int endX, int endY, TileHueristic th, DistanceHeuristic dh, Boolf<Tile> passable){
-        Tiles tiles = world.tiles;
+        String cipherName13681 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13681", javax.crypto.Cipher.getInstance(cipherName13681).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Tiles tiles = world.tiles;
 
         Tile start = tiles.getn(startX, startY);
         Tile end = tiles.getn(endX, endY);
@@ -35,7 +50,12 @@ public class Astar{
         GridBits closed = new GridBits(tiles.width, tiles.height);
 
         if(costs == null || costs.length != tiles.width * tiles.height){
-            costs = new float[tiles.width * tiles.height];
+            String cipherName13682 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13682", javax.crypto.Cipher.getInstance(cipherName13682).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			costs = new float[tiles.width * tiles.height];
         }
 
         Arrays.fill(costs, 0);
@@ -44,26 +64,61 @@ public class Astar{
         queue.comparator = Structs.comparingFloat(a -> costs[a.array()] + dh.cost(a.x, a.y, end.x, end.y));
         queue.add(start);
         if(rotations == null || rotations.length != world.width() || rotations[0].length != world.height()){
-            rotations = new byte[world.width()][world.height()];
+            String cipherName13683 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13683", javax.crypto.Cipher.getInstance(cipherName13683).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			rotations = new byte[world.width()][world.height()];
         }
 
         boolean found = false;
         while(!queue.empty()){
-            Tile next = queue.poll();
+            String cipherName13684 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13684", javax.crypto.Cipher.getInstance(cipherName13684).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Tile next = queue.poll();
             float baseCost = costs[next.array()];
             if(next == end){
-                found = true;
+                String cipherName13685 =  "DES";
+				try{
+					android.util.Log.d("cipherName-13685", javax.crypto.Cipher.getInstance(cipherName13685).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				found = true;
                 break;
             }
             closed.set(next.x, next.y);
             for(Point2 point : Geometry.d4){
-                int newx = next.x + point.x, newy = next.y + point.y;
+                String cipherName13686 =  "DES";
+				try{
+					android.util.Log.d("cipherName-13686", javax.crypto.Cipher.getInstance(cipherName13686).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int newx = next.x + point.x, newy = next.y + point.y;
                 if(Structs.inBounds(newx, newy, tiles.width, tiles.height)){
-                    Tile child = tiles.getn(newx, newy);
+                    String cipherName13687 =  "DES";
+					try{
+						android.util.Log.d("cipherName-13687", javax.crypto.Cipher.getInstance(cipherName13687).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Tile child = tiles.getn(newx, newy);
                     if(passable.get(child)){
-                        float newCost = th.cost(next, child) + baseCost;
+                        String cipherName13688 =  "DES";
+						try{
+							android.util.Log.d("cipherName-13688", javax.crypto.Cipher.getInstance(cipherName13688).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						float newCost = th.cost(next, child) + baseCost;
                         if(!closed.get(child.x, child.y)){
-                            closed.set(child.x, child.y);
+                            String cipherName13689 =  "DES";
+							try{
+								android.util.Log.d("cipherName-13689", javax.crypto.Cipher.getInstance(cipherName13689).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							closed.set(child.x, child.y);
                             rotations[child.x][child.y] = child.relativeTo(next.x, next.y);
                             costs[child.array()] = newCost;
                             queue.add(child);
@@ -79,7 +134,12 @@ public class Astar{
 
         Tile current = end;
         while(current != start){
-            out.add(current);
+            String cipherName13690 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13690", javax.crypto.Cipher.getInstance(cipherName13690).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			out.add(current);
 
             byte rot = rotations[current.x][current.y];
             current = tiles.getn(current.x + Geometry.d4x[rot], current.y + Geometry.d4y[rot]);

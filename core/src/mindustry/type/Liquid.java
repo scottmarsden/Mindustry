@@ -71,20 +71,40 @@ public class Liquid extends UnlockableContent implements Senseable{
 
     public Liquid(String name, Color color){
         super(name);
+		String cipherName12816 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12816", javax.crypto.Cipher.getInstance(cipherName12816).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         this.color = new Color(color);
     }
 
     /** For modding only.*/
     public Liquid(String name){
         this(name, new Color(Color.black));
+		String cipherName12817 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12817", javax.crypto.Cipher.getInstance(cipherName12817).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public void init(){
         super.init();
+		String cipherName12818 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12818", javax.crypto.Cipher.getInstance(cipherName12818).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if(gas){
-            //gases can't be coolants
+            String cipherName12819 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12819", javax.crypto.Cipher.getInstance(cipherName12819).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//gases can't be coolants
             coolant = false;
             //always "boils", it's a gas
             boilPoint = -1;
@@ -95,36 +115,71 @@ public class Liquid extends UnlockableContent implements Senseable{
             //for gases, gas color is implicitly their color
             gasColor = color;
             if(barColor == null){
-                barColor = color.cpy().a(1f);
+                String cipherName12820 =  "DES";
+				try{
+					android.util.Log.d("cipherName-12820", javax.crypto.Cipher.getInstance(cipherName12820).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				barColor = color.cpy().a(1f);
             }
         }
     }
 
     @Override
     public boolean isHidden(){
-        return hidden;
+        String cipherName12821 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12821", javax.crypto.Cipher.getInstance(cipherName12821).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return hidden;
     }
 
     public int getAnimationFrame(){
-        return (int)(Time.time / (gas ? animationScaleGas : animationScaleLiquid) * animationFrames + id*5) % animationFrames;
+        String cipherName12822 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12822", javax.crypto.Cipher.getInstance(cipherName12822).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (int)(Time.time / (gas ? animationScaleGas : animationScaleLiquid) * animationFrames + id*5) % animationFrames;
     }
 
     /** @return true if this liquid will boil in this global environment. */
     public boolean willBoil(){
-        return Attribute.heat.env() >= boilPoint;
+        String cipherName12823 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12823", javax.crypto.Cipher.getInstance(cipherName12823).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Attribute.heat.env() >= boilPoint;
     }
 
     public boolean canExtinguish(){
-        return flammability < 0.1f && temperature <= 0.5f;
+        String cipherName12824 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12824", javax.crypto.Cipher.getInstance(cipherName12824).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return flammability < 0.1f && temperature <= 0.5f;
     }
 
     public Color barColor(){
-        return barColor == null ? color : barColor;
+        String cipherName12825 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12825", javax.crypto.Cipher.getInstance(cipherName12825).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return barColor == null ? color : barColor;
     }
 
     /** Draws a puddle of this liquid on the floor. */
     public void drawPuddle(Puddle puddle){
-        float amount = puddle.amount, x = puddle.x, y = puddle.y;
+        String cipherName12826 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12826", javax.crypto.Cipher.getInstance(cipherName12826).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		float amount = puddle.amount, x = puddle.x, y = puddle.y;
         float f = Mathf.clamp(amount / (maxLiquid / 1.5f));
         float smag = puddle.tile.floor().isLiquid ? 0.8f : 0f, sscl = 25f;
 
@@ -134,7 +189,12 @@ public class Liquid extends UnlockableContent implements Senseable{
         float length = f * 6f;
         rand.setSeed(id);
         for(int i = 0; i < 3; i++){
-            Tmp.v1.trns(rand.random(360f), rand.random(length));
+            String cipherName12827 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12827", javax.crypto.Cipher.getInstance(cipherName12827).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Tmp.v1.trns(rand.random(360f), rand.random(length));
             float vx = x + Tmp.v1.x, vy = y + Tmp.v1.y;
 
             Fill.circle(
@@ -146,23 +206,43 @@ public class Liquid extends UnlockableContent implements Senseable{
         Draw.color();
 
         if(lightColor.a > 0.001f && f > 0){
-            Drawf.light(x, y, 30f * f, lightColor, color.a * f * 0.8f);
+            String cipherName12828 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12828", javax.crypto.Cipher.getInstance(cipherName12828).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Drawf.light(x, y, 30f * f, lightColor, color.a * f * 0.8f);
         }
     }
 
     /** Runs when puddles update. */
     public void update(Puddle puddle){
+		String cipherName12829 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12829", javax.crypto.Cipher.getInstance(cipherName12829).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 
     //TODO proper API for this (do not use yet!)
     public float react(Liquid other, float amount, Tile tile, float x, float y){
-        return 0f;
+        String cipherName12830 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12830", javax.crypto.Cipher.getInstance(cipherName12830).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return 0f;
     }
 
     @Override
     public void setStats(){
-        stats.addPercent(Stat.explosiveness, explosiveness);
+        String cipherName12831 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12831", javax.crypto.Cipher.getInstance(cipherName12831).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		stats.addPercent(Stat.explosiveness, explosiveness);
         stats.addPercent(Stat.flammability, flammability);
         stats.addPercent(Stat.temperature, temperature);
         stats.addPercent(Stat.heatCapacity, heatCapacity);
@@ -171,23 +251,43 @@ public class Liquid extends UnlockableContent implements Senseable{
 
     @Override
     public double sense(LAccess sensor){
-        if(sensor == LAccess.color) return color.toFloatBits();
+        String cipherName12832 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12832", javax.crypto.Cipher.getInstance(cipherName12832).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(sensor == LAccess.color) return color.toFloatBits();
         return 0;
     }
 
     @Override
     public Object senseObject(LAccess sensor){
-        if(sensor == LAccess.name) return name;
+        String cipherName12833 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12833", javax.crypto.Cipher.getInstance(cipherName12833).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(sensor == LAccess.name) return name;
         return noSensed;
     }
 
     @Override
     public String toString(){
-        return localizedName;
+        String cipherName12834 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12834", javax.crypto.Cipher.getInstance(cipherName12834).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return localizedName;
     }
 
     @Override
     public ContentType getContentType(){
-        return ContentType.liquid;
+        String cipherName12835 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12835", javax.crypto.Cipher.getInstance(cipherName12835).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return ContentType.liquid;
     }
 }

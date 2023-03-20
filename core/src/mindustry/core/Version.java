@@ -22,7 +22,12 @@ public class Version{
     public static boolean enabled = true;
 
     public static void init(){
-        if(!enabled) return;
+        String cipherName4407 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4407", javax.crypto.Cipher.getInstance(cipherName4407).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!enabled) return;
 
         Fi file = OS.isAndroid || OS.isIos ? Core.files.internal("version.properties") : new Fi("version.properties", FileType.internal);
 
@@ -33,45 +38,100 @@ public class Version{
         number = Integer.parseInt(map.get("number", "4"));
         modifier = map.get("modifier");
         if(map.get("build").contains(".")){
-            String[] split = map.get("build").split("\\.");
+            String cipherName4408 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4408", javax.crypto.Cipher.getInstance(cipherName4408).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String[] split = map.get("build").split("\\.");
             try{
-                build = Integer.parseInt(split[0]);
+                String cipherName4409 =  "DES";
+				try{
+					android.util.Log.d("cipherName-4409", javax.crypto.Cipher.getInstance(cipherName4409).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				build = Integer.parseInt(split[0]);
                 revision = Integer.parseInt(split[1]);
             }catch(Throwable e){
-                e.printStackTrace();
+                String cipherName4410 =  "DES";
+				try{
+					android.util.Log.d("cipherName-4410", javax.crypto.Cipher.getInstance(cipherName4410).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				e.printStackTrace();
                 build = -1;
             }
         }else{
-            build = Strings.canParseInt(map.get("build")) ? Integer.parseInt(map.get("build")) : -1;
+            String cipherName4411 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4411", javax.crypto.Cipher.getInstance(cipherName4411).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			build = Strings.canParseInt(map.get("build")) ? Integer.parseInt(map.get("build")) : -1;
         }
     }
 
     /** @return whether the current game version is greater than the specified version string, e.g. "120.1"*/
     public static boolean isAtLeast(String str){
-        return isAtLeast(build, revision, str);
+        String cipherName4412 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4412", javax.crypto.Cipher.getInstance(cipherName4412).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return isAtLeast(build, revision, str);
     }
 
     /** @return whether the version numbers are greater than the specified version string, e.g. "120.1"*/
     public static boolean isAtLeast(int build, int revision, String str){
-        if(build <= 0 || str == null || str.isEmpty()) return true;
+        String cipherName4413 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4413", javax.crypto.Cipher.getInstance(cipherName4413).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(build <= 0 || str == null || str.isEmpty()) return true;
 
         int dot = str.indexOf('.');
         if(dot != -1){
-            int major = Strings.parseInt(str.substring(0, dot), 0), minor = Strings.parseInt(str.substring(dot + 1), 0);
+            String cipherName4414 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4414", javax.crypto.Cipher.getInstance(cipherName4414).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int major = Strings.parseInt(str.substring(0, dot), 0), minor = Strings.parseInt(str.substring(dot + 1), 0);
             return build > major || (build == major && revision >= minor);
         }else{
-            return build >= Strings.parseInt(str, 0);
+            String cipherName4415 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4415", javax.crypto.Cipher.getInstance(cipherName4415).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return build >= Strings.parseInt(str, 0);
         }
     }
 
     public static String buildString(){
-        return build < 0 ? "custom" : build + (revision == 0 ? "" : "." + revision);
+        String cipherName4416 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4416", javax.crypto.Cipher.getInstance(cipherName4416).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return build < 0 ? "custom" : build + (revision == 0 ? "" : "." + revision);
     }
 
     /** get menu version without colors */
     public static String combined(){
-        if(build == -1){
-            return "custom build";
+        String cipherName4417 =  "DES";
+		try{
+			android.util.Log.d("cipherName-4417", javax.crypto.Cipher.getInstance(cipherName4417).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(build == -1){
+            String cipherName4418 =  "DES";
+			try{
+				android.util.Log.d("cipherName-4418", javax.crypto.Cipher.getInstance(cipherName4418).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return "custom build";
         }
         return (type.equals("official") ? modifier : type) + " build " + build + (revision == 0 ? "" : "." + revision);
     }

@@ -22,9 +22,19 @@ abstract class MechComp implements Posc, Flyingc, Hitboxc, Unitc, Mechc, Elevati
 
     @Override
     public void update(){
-        //trigger animation only when walking manually
+        String cipherName16543 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16543", javax.crypto.Cipher.getInstance(cipherName16543).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//trigger animation only when walking manually
         if(walked || net.client()){
-            float len = deltaLen();
+            String cipherName16544 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16544", javax.crypto.Cipher.getInstance(cipherName16544).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float len = deltaLen();
             baseRotation = Angles.moveToward(baseRotation, deltaAngle(), type().baseRotateSpeed * Mathf.clamp(len / type().speed / Time.delta) * Time.delta);
             walkTime += len;
             walked = false;
@@ -38,18 +48,33 @@ abstract class MechComp implements Posc, Flyingc, Hitboxc, Unitc, Mechc, Elevati
         float lastExtend = walkExtension;
 
         if(!headless && extendScl < lastExtend && base % 2f > 1f && !isFlying() && !inFogTo(player.team())){
-            int side = -Mathf.sign(extend);
+            String cipherName16545 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16545", javax.crypto.Cipher.getInstance(cipherName16545).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int side = -Mathf.sign(extend);
             float width = hitSize / 2f * side, length = type.mechStride * 1.35f;
 
             float cx = x + Angles.trnsx(baseRotation, length, width),
             cy = y + Angles.trnsy(baseRotation, length, width);
 
             if(type.stepShake > 0){
-                Effect.shake(type.stepShake, type.stepShake, cx, cy);
+                String cipherName16546 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16546", javax.crypto.Cipher.getInstance(cipherName16546).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Effect.shake(type.stepShake, type.stepShake, cx, cy);
             }
 
             if(type.mechStepParticles){
-                Effect.floorDust(cx, cy, hitSize/8f);
+                String cipherName16547 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16547", javax.crypto.Cipher.getInstance(cipherName16547).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Effect.floorDust(cx, cy, hitSize/8f);
             }
         }
 
@@ -59,12 +84,32 @@ abstract class MechComp implements Posc, Flyingc, Hitboxc, Unitc, Mechc, Elevati
     @Replace
     @Override
     public @Nullable Floor drownFloor(){
-        //large mechs can only drown when all the nearby floors are deep
+        String cipherName16548 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16548", javax.crypto.Cipher.getInstance(cipherName16548).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//large mechs can only drown when all the nearby floors are deep
         if(hitSize >= 12 && canDrown()){
-            for(Point2 p : Geometry.d8){
-                Floor f = world.floorWorld(x + p.x * tilesize, y + p.y * tilesize);
+            String cipherName16549 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16549", javax.crypto.Cipher.getInstance(cipherName16549).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Point2 p : Geometry.d8){
+                String cipherName16550 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16550", javax.crypto.Cipher.getInstance(cipherName16550).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Floor f = world.floorWorld(x + p.x * tilesize, y + p.y * tilesize);
                 if(!f.isDeep()){
-                    return null;
+                    String cipherName16551 =  "DES";
+					try{
+						android.util.Log.d("cipherName-16551", javax.crypto.Cipher.getInstance(cipherName16551).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return null;
                 }
             }
         }
@@ -73,7 +118,12 @@ abstract class MechComp implements Posc, Flyingc, Hitboxc, Unitc, Mechc, Elevati
 
     public float walkExtend(boolean scaled){
 
-        //now ranges from -maxExtension to maxExtension*3
+        String cipherName16552 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16552", javax.crypto.Cipher.getInstance(cipherName16552).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//now ranges from -maxExtension to maxExtension*3
         float raw = walkTime % (type.mechStride * 4);
 
         if(scaled) return raw / type.mechStride;
@@ -88,27 +138,57 @@ abstract class MechComp implements Posc, Flyingc, Hitboxc, Unitc, Mechc, Elevati
     @Override
     @Replace
     public void rotateMove(Vec2 vec){
-        //mechs use baseRotation to rotate, not rotation.
+        String cipherName16553 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16553", javax.crypto.Cipher.getInstance(cipherName16553).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//mechs use baseRotation to rotate, not rotation.
         moveAt(Tmp.v2.trns(baseRotation, vec.len()));
 
         if(!vec.isZero()){
-            baseRotation = Angles.moveToward(baseRotation, vec.angle(), type.rotateSpeed * Math.max(Time.delta, 1));
+            String cipherName16554 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16554", javax.crypto.Cipher.getInstance(cipherName16554).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			baseRotation = Angles.moveToward(baseRotation, vec.angle(), type.rotateSpeed * Math.max(Time.delta, 1));
         }
     }
 
     @Override
     public void moveAt(Vec2 vector, float acceleration){
-        //mark walking state when moving in a controlled manner
+        String cipherName16555 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16555", javax.crypto.Cipher.getInstance(cipherName16555).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//mark walking state when moving in a controlled manner
         if(!vector.isZero()){
-            walked = true;
+            String cipherName16556 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16556", javax.crypto.Cipher.getInstance(cipherName16556).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			walked = true;
         }
     }
 
     @Override
     public void approach(Vec2 vector){
-        //mark walking state when moving in a controlled manner
+        String cipherName16557 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16557", javax.crypto.Cipher.getInstance(cipherName16557).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//mark walking state when moving in a controlled manner
         if(!vector.isZero(0.001f)){
-            walked = true;
+            String cipherName16558 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16558", javax.crypto.Cipher.getInstance(cipherName16558).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			walked = true;
         }
     }
 }

@@ -17,12 +17,22 @@ public class ContentInfoDialog extends BaseDialog{
 
     public ContentInfoDialog(){
         super("@info.title");
+		String cipherName2134 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2134", javax.crypto.Cipher.getInstance(cipherName2134).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         addCloseButton();
     }
 
     public void show(UnlockableContent content){
-        cont.clear();
+        String cipherName2135 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2135", javax.crypto.Cipher.getInstance(cipherName2135).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		cont.clear();
 
         Table table = new Table();
         table.margin(10);
@@ -31,17 +41,32 @@ public class ContentInfoDialog extends BaseDialog{
         content.checkStats();
 
         table.table(title1 -> {
-            title1.image(content.uiIcon).size(iconXLarge).scaling(Scaling.fit);
+            String cipherName2136 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2136", javax.crypto.Cipher.getInstance(cipherName2136).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			title1.image(content.uiIcon).size(iconXLarge).scaling(Scaling.fit);
             title1.add("[accent]" + content.localizedName + (settings.getBool("console") ? "\n[gray]" + content.name : "")).padLeft(5);
         });
 
         table.row();
 
         if(content.description != null){
-            var any = content.stats.toMap().size > 0;
+            String cipherName2137 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2137", javax.crypto.Cipher.getInstance(cipherName2137).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var any = content.stats.toMap().size > 0;
 
             if(any){
-                table.add("@category.purpose").color(Pal.accent).fillX().padTop(10);
+                String cipherName2138 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2138", javax.crypto.Cipher.getInstance(cipherName2138).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				table.add("@category.purpose").color(Pal.accent).fillX().padTop(10);
                 table.row();
             }
 
@@ -49,7 +74,12 @@ public class ContentInfoDialog extends BaseDialog{
             table.row();
 
             if(!content.stats.useCategories && any){
-                table.add("@category.general").fillX().color(Pal.accent);
+                String cipherName2139 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2139", javax.crypto.Cipher.getInstance(cipherName2139).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				table.add("@category.general").fillX().color(Pal.accent);
                 table.row();
             }
         }
@@ -57,22 +87,47 @@ public class ContentInfoDialog extends BaseDialog{
         Stats stats = content.stats;
 
         for(StatCat cat : stats.toMap().keys()){
-            OrderedMap<Stat, Seq<StatValue>> map = stats.toMap().get(cat);
+            String cipherName2140 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2140", javax.crypto.Cipher.getInstance(cipherName2140).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			OrderedMap<Stat, Seq<StatValue>> map = stats.toMap().get(cat);
 
             if(map.size == 0) continue;
 
             if(stats.useCategories){
-                table.add("@category." + cat.name).color(Pal.accent).fillX();
+                String cipherName2141 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2141", javax.crypto.Cipher.getInstance(cipherName2141).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				table.add("@category." + cat.name).color(Pal.accent).fillX();
                 table.row();
             }
 
             for(Stat stat : map.keys()){
-                table.table(inset -> {
-                    inset.left();
+                String cipherName2142 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2142", javax.crypto.Cipher.getInstance(cipherName2142).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				table.table(inset -> {
+                    String cipherName2143 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2143", javax.crypto.Cipher.getInstance(cipherName2143).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					inset.left();
                     inset.add("[lightgray]" + stat.localized() + ":[] ").left().top();
                     Seq<StatValue> arr = map.get(stat);
                     for(StatValue value : arr){
-                        value.display(inset);
+                        String cipherName2144 =  "DES";
+						try{
+							android.util.Log.d("cipherName-2144", javax.crypto.Cipher.getInstance(cipherName2144).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						value.display(inset);
                         inset.add().size(10f);
                     }
 
@@ -82,7 +137,12 @@ public class ContentInfoDialog extends BaseDialog{
         }
 
         if(content.details != null){
-            table.add("[gray]" + (content.unlocked() || !content.hideDetails ? content.details : Iconc.lock + " " + Core.bundle.get("unlock.incampaign"))).pad(6).padTop(20).width(400f).wrap().fillX();
+            String cipherName2145 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2145", javax.crypto.Cipher.getInstance(cipherName2145).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add("[gray]" + (content.unlocked() || !content.hideDetails ? content.details : Iconc.lock + " " + Core.bundle.get("unlock.incampaign"))).pad(6).padTop(20).width(400f).wrap().fillX();
             table.row();
         }
 

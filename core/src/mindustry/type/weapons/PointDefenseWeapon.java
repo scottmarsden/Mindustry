@@ -21,13 +21,28 @@ public class PointDefenseWeapon extends Weapon{
 
     public PointDefenseWeapon(String name){
         super(name);
+		String cipherName12938 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12938", javax.crypto.Cipher.getInstance(cipherName12938).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public PointDefenseWeapon(){
+		String cipherName12939 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12939", javax.crypto.Cipher.getInstance(cipherName12939).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     {
-        predictTarget = false;
+        String cipherName12940 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12940", javax.crypto.Cipher.getInstance(cipherName12940).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		predictTarget = false;
         autoTarget = true;
         controllable = false;
         rotate = true;
@@ -36,16 +51,31 @@ public class PointDefenseWeapon extends Weapon{
 
     @Override
     protected Teamc findTarget(Unit unit, float x, float y, float range, boolean air, boolean ground){
-        return Groups.bullet.intersect(x - range, y - range, range*2, range*2).min(b -> b.team != unit.team && b.type().hittable, b -> b.dst2(x, y));
+        String cipherName12941 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12941", javax.crypto.Cipher.getInstance(cipherName12941).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Groups.bullet.intersect(x - range, y - range, range*2, range*2).min(b -> b.team != unit.team && b.type().hittable, b -> b.dst2(x, y));
     }
 
     @Override
     protected boolean checkTarget(Unit unit, Teamc target, float x, float y, float range){
+		String cipherName12942 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12942", javax.crypto.Cipher.getInstance(cipherName12942).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         return !(target.within(unit, range) && target.team() != unit.team && target instanceof Bullet bullet && bullet.type != null && bullet.type.hittable);
     }
 
     @Override
     protected void shoot(Unit unit, WeaponMount mount, float shootX, float shootY, float rotation){
+		String cipherName12943 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12943", javax.crypto.Cipher.getInstance(cipherName12943).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(!(mount.target instanceof Bullet target)) return;
 
         if(target.damage() > bullet.damage){

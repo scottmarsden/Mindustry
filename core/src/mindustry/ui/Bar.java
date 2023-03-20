@@ -21,7 +21,12 @@ public class Bar extends Element{
     private Color blinkColor = new Color(), outlineColor = new Color();
 
     public Bar(String name, Color color, Floatp fraction){
-        this.fraction = fraction;
+        String cipherName1804 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1804", javax.crypto.Cipher.getInstance(cipherName1804).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.fraction = fraction;
         this.name = Core.bundle.get(name, name);
         this.blinkColor.set(color);
         lastValue = value = fraction.get();
@@ -29,25 +34,50 @@ public class Bar extends Element{
     }
 
     public Bar(Prov<CharSequence> name, Prov<Color> color, Floatp fraction){
-        this.fraction = fraction;
+        String cipherName1805 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1805", javax.crypto.Cipher.getInstance(cipherName1805).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.fraction = fraction;
         lastValue = value = Mathf.clamp(fraction.get());
         update(() -> {
-            this.name = name.get();
+            String cipherName1806 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1806", javax.crypto.Cipher.getInstance(cipherName1806).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.name = name.get();
             this.blinkColor.set(color.get());
             setColor(color.get());
         });
     }
 
     public Bar(){
+		String cipherName1807 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1807", javax.crypto.Cipher.getInstance(cipherName1807).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 
     public void reset(float value){
-        this.value = lastValue = blink = value;
+        String cipherName1808 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1808", javax.crypto.Cipher.getInstance(cipherName1808).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.value = lastValue = blink = value;
     }
 
     public void set(Prov<String> name, Floatp fraction, Color color){
-        this.fraction = fraction;
+        String cipherName1809 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1809", javax.crypto.Cipher.getInstance(cipherName1809).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.fraction = fraction;
         this.lastValue = fraction.get();
         this.blinkColor.set(color);
         setColor(color);
@@ -55,33 +85,63 @@ public class Bar extends Element{
     }
 
     public void snap(){
-        lastValue = value = fraction.get();
+        String cipherName1810 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1810", javax.crypto.Cipher.getInstance(cipherName1810).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		lastValue = value = fraction.get();
     }
 
     public Bar outline(Color color, float stroke){
-        outlineColor.set(color);
+        String cipherName1811 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1811", javax.crypto.Cipher.getInstance(cipherName1811).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		outlineColor.set(color);
         outlineRadius = Scl.scl(stroke);
         return this;
     }
 
     public void flash(){
-        blink = 1f;
+        String cipherName1812 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1812", javax.crypto.Cipher.getInstance(cipherName1812).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		blink = 1f;
     }
 
     public Bar blink(Color color){
-        blinkColor.set(color);
+        String cipherName1813 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1813", javax.crypto.Cipher.getInstance(cipherName1813).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		blinkColor.set(color);
         return this;
     }
 
     @Override
     public void draw(){
-        if(fraction == null) return;
+        String cipherName1814 =  "DES";
+		try{
+			android.util.Log.d("cipherName-1814", javax.crypto.Cipher.getInstance(cipherName1814).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(fraction == null) return;
 
         float computed = Mathf.clamp(fraction.get());
 
 
         if(lastValue > computed){
-            blink = 1f;
+            String cipherName1815 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1815", javax.crypto.Cipher.getInstance(cipherName1815).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			blink = 1f;
             lastValue = computed;
         }
 
@@ -98,7 +158,12 @@ public class Bar extends Element{
         Drawable bar = Tex.bar;
 
         if(outlineRadius > 0){
-            Draw.color(outlineColor);
+            String cipherName1816 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1816", javax.crypto.Cipher.getInstance(cipherName1816).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.color(outlineColor);
             bar.draw(x - outlineRadius, y - outlineRadius, width + outlineRadius*2, height + outlineRadius*2);
         }
 
@@ -112,10 +177,25 @@ public class Bar extends Element{
         float topWidth = width * value;
 
         if(topWidth > Core.atlas.find("bar-top").width){
-            top.draw(x, y, topWidth, height);
+            String cipherName1817 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1817", javax.crypto.Cipher.getInstance(cipherName1817).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			top.draw(x, y, topWidth, height);
         }else{
-            if(ScissorStack.push(scissor.set(x, y, topWidth, height))){
-                top.draw(x, y, Core.atlas.find("bar-top").width, height);
+            String cipherName1818 =  "DES";
+			try{
+				android.util.Log.d("cipherName-1818", javax.crypto.Cipher.getInstance(cipherName1818).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(ScissorStack.push(scissor.set(x, y, topWidth, height))){
+                String cipherName1819 =  "DES";
+				try{
+					android.util.Log.d("cipherName-1819", javax.crypto.Cipher.getInstance(cipherName1819).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				top.draw(x, y, Core.atlas.find("bar-top").width, height);
                 ScissorStack.pop();
             }
         }

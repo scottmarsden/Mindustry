@@ -15,14 +15,29 @@ public class SunMesh extends HexMesh{
 
             @Override
             public float getHeight(Vec3 position){
-                return 0;
+                String cipherName14440 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14440", javax.crypto.Cipher.getInstance(cipherName14440).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return 0;
             }
 
             @Override
             public Color getColor(Vec3 position){
-                double height = Math.pow(Simplex.noise3d(0, octaves, persistence, scl, position.x, position.y, position.z), pow) * mag;
+                String cipherName14441 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14441", javax.crypto.Cipher.getInstance(cipherName14441).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				double height = Math.pow(Simplex.noise3d(0, octaves, persistence, scl, position.x, position.y, position.z), pow) * mag;
                 return Tmp.c1.set(colors[Mathf.clamp((int)(height * colors.length), 0, colors.length - 1)]).mul(colorScale);
             }
         }, divisions, Shaders.unlit);
+		String cipherName14439 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14439", javax.crypto.Cipher.getInstance(cipherName14439).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

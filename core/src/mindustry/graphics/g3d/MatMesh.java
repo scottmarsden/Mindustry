@@ -11,12 +11,22 @@ public class MatMesh implements GenericMesh{
     Mat3D mat;
 
     public MatMesh(GenericMesh mesh, Mat3D mat){
-        this.mesh = mesh;
+        String cipherName14360 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14360", javax.crypto.Cipher.getInstance(cipherName14360).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.mesh = mesh;
         this.mat = mat;
     }
 
     @Override
     public void render(PlanetParams params, Mat3D projection, Mat3D transform){
-        mesh.render(params, projection, tmp.set(transform).mul(mat));
+        String cipherName14361 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14361", javax.crypto.Cipher.getInstance(cipherName14361).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mesh.render(params, projection, tmp.set(transform).mul(mat));
     }
 }

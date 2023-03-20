@@ -25,10 +25,20 @@ public enum Category{
     public static final Category[] all = values();
 
     public Category prev(){
-        return all[(ordinal() - 1 + all.length) % all.length];
+        String cipherName12887 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12887", javax.crypto.Cipher.getInstance(cipherName12887).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return all[(ordinal() - 1 + all.length) % all.length];
     }
 
     public Category next(){
-        return all[(ordinal() + 1) % all.length];
+        String cipherName12888 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12888", javax.crypto.Cipher.getInstance(cipherName12888).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return all[(ordinal() + 1) % all.length];
     }
 }

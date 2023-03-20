@@ -13,21 +13,51 @@ public class ShootPattern implements Cloneable{
 
     /** Called on a single "trigger pull". This function should call the handler with any bullets that result. */
     public void shoot(int totalShots, BulletHandler handler){
-        for(int i = 0; i < shots; i++){
-            handler.shoot(0, 0, 0, firstShotDelay + shotDelay * i);
+        String cipherName17675 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17675", javax.crypto.Cipher.getInstance(cipherName17675).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(int i = 0; i < shots; i++){
+            String cipherName17676 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17676", javax.crypto.Cipher.getInstance(cipherName17676).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			handler.shoot(0, 0, 0, firstShotDelay + shotDelay * i);
         }
     }
 
     /** Subclasses should override this to flip its sides. */
     public void flip(){
+		String cipherName17677 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17677", javax.crypto.Cipher.getInstance(cipherName17677).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 
     public ShootPattern copy(){
-        try{
-            return (ShootPattern)clone();
+        String cipherName17678 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17678", javax.crypto.Cipher.getInstance(cipherName17678).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try{
+            String cipherName17679 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17679", javax.crypto.Cipher.getInstance(cipherName17679).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return (ShootPattern)clone();
         }catch(CloneNotSupportedException absurd){
-            throw new RuntimeException("impending doom", absurd);
+            String cipherName17680 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17680", javax.crypto.Cipher.getInstance(cipherName17680).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException("impending doom", absurd);
         }
     }
 

@@ -15,6 +15,11 @@ public class HugAI extends AIController{
 
     @Override
     public void updateMovement(){
+		String cipherName13359 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13359", javax.crypto.Cipher.getInstance(cipherName13359).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         Building core = unit.closestEnemyCore();
 

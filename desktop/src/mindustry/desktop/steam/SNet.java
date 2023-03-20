@@ -41,7 +41,12 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
     Runnable lobbyDoneCallback, joinCallback;
 
     public SNet(NetProvider provider){
-        this.provider = provider;
+        String cipherName17874 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17874", javax.crypto.Cipher.getInstance(cipherName17874).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.provider = provider;
 
         Events.on(ClientLoadEvent.class, e -> Core.app.addListener(new ApplicationListener(){
             //read packets
@@ -50,9 +55,24 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
             @Override
             public void update(){
-                while((length = snet.isP2PPacketAvailable(0)) != 0){
-                    try{
-                        readBuffer.position(0).limit(readBuffer.capacity());
+                String cipherName17875 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17875", javax.crypto.Cipher.getInstance(cipherName17875).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				while((length = snet.isP2PPacketAvailable(0)) != 0){
+                    String cipherName17876 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17876", javax.crypto.Cipher.getInstance(cipherName17876).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					try{
+                        String cipherName17877 =  "DES";
+						try{
+							android.util.Log.d("cipherName-17877", javax.crypto.Cipher.getInstance(cipherName17877).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						readBuffer.position(0).limit(readBuffer.capacity());
                         //lz4 chokes on direct buffers, so copy the bytes over
                         int len = snet.readP2PPacket(from, readBuffer, 0);
                         readBuffer.limit(len);
@@ -68,11 +88,26 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
                         Packet pack = (Packet)output;
 
                         if(net.server()){
-                            SteamConnection con = steamConnections.get(fromID);
+                            String cipherName17878 =  "DES";
+							try{
+								android.util.Log.d("cipherName-17878", javax.crypto.Cipher.getInstance(cipherName17878).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							SteamConnection con = steamConnections.get(fromID);
                             try{
-                                //accept users on request
+                                String cipherName17879 =  "DES";
+								try{
+									android.util.Log.d("cipherName-17879", javax.crypto.Cipher.getInstance(cipherName17879).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								//accept users on request
                                 if(con == null){
-                                    con = new SteamConnection(SteamID.createFromNativeHandle(from.handle()));
+                                    String cipherName17880 =  "DES";
+									try{
+										android.util.Log.d("cipherName-17880", javax.crypto.Cipher.getInstance(cipherName17880).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									con = new SteamConnection(SteamID.createFromNativeHandle(from.handle()));
                                     Connect c = new Connect();
                                     c.addressTCP = "steam:" + from.getAccountID();
 
@@ -85,20 +120,55 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
                                 net.handleServerReceived(con, pack);
                             }catch(Throwable e){
-                                Log.err(e);
+                                String cipherName17881 =  "DES";
+								try{
+									android.util.Log.d("cipherName-17881", javax.crypto.Cipher.getInstance(cipherName17881).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								Log.err(e);
                             }
                         }else if(currentServer != null && fromID == currentServer.getAccountID()){
-                            try{
-                                net.handleClientReceived(pack);
+                            String cipherName17882 =  "DES";
+							try{
+								android.util.Log.d("cipherName-17882", javax.crypto.Cipher.getInstance(cipherName17882).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							try{
+                                String cipherName17883 =  "DES";
+								try{
+									android.util.Log.d("cipherName-17883", javax.crypto.Cipher.getInstance(cipherName17883).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								net.handleClientReceived(pack);
                             }catch(Throwable t){
-                                net.handleException(t);
+                                String cipherName17884 =  "DES";
+								try{
+									android.util.Log.d("cipherName-17884", javax.crypto.Cipher.getInstance(cipherName17884).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								net.handleException(t);
                             }
                         }
                     }catch(Exception e){
-                        if(net.server()){
-                            Log.err(e);
+                        String cipherName17885 =  "DES";
+						try{
+							android.util.Log.d("cipherName-17885", javax.crypto.Cipher.getInstance(cipherName17885).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						if(net.server()){
+                            String cipherName17886 =  "DES";
+							try{
+								android.util.Log.d("cipherName-17886", javax.crypto.Cipher.getInstance(cipherName17886).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							Log.err(e);
                         }else{
-                            net.showError(e);
+                            String cipherName17887 =  "DES";
+							try{
+								android.util.Log.d("cipherName-17887", javax.crypto.Cipher.getInstance(cipherName17887).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							net.showError(e);
                         }
                     }
                 }
@@ -110,35 +180,85 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
     }
 
     public boolean isSteamClient(){
-        return currentServer != null;
+        String cipherName17888 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17888", javax.crypto.Cipher.getInstance(cipherName17888).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return currentServer != null;
     }
 
     @Override
     public void connectClient(String ip, int port, Runnable success) throws IOException{
-        if(ip.startsWith("steam:")){
-            String lobbyname = ip.substring("steam:".length());
+        String cipherName17889 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17889", javax.crypto.Cipher.getInstance(cipherName17889).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(ip.startsWith("steam:")){
+            String cipherName17890 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17890", javax.crypto.Cipher.getInstance(cipherName17890).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String lobbyname = ip.substring("steam:".length());
             try{
-                SteamID lobby = SteamID.createFromNativeHandle(Long.parseLong(lobbyname));
+                String cipherName17891 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17891", javax.crypto.Cipher.getInstance(cipherName17891).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SteamID lobby = SteamID.createFromNativeHandle(Long.parseLong(lobbyname));
                 joinCallback = success;
                 smat.joinLobby(lobby);
             }catch(NumberFormatException e){
-                throw new IOException("Invalid Steam ID: " + lobbyname);
+                String cipherName17892 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17892", javax.crypto.Cipher.getInstance(cipherName17892).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IOException("Invalid Steam ID: " + lobbyname);
             }
         }else{
-            provider.connectClient(ip, port, success);
+            String cipherName17893 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17893", javax.crypto.Cipher.getInstance(cipherName17893).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			provider.connectClient(ip, port, success);
         }
     }
 
     @Override
     public void sendClient(Object object, boolean reliable){
-        if(isSteamClient()){
-            if(currentServer == null){
-                Log.info("Not connected, quitting.");
+        String cipherName17894 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17894", javax.crypto.Cipher.getInstance(cipherName17894).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isSteamClient()){
+            String cipherName17895 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17895", javax.crypto.Cipher.getInstance(cipherName17895).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(currentServer == null){
+                String cipherName17896 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17896", javax.crypto.Cipher.getInstance(cipherName17896).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.info("Not connected, quitting.");
                 return;
             }
 
             try{
-                writeBuffer.limit(writeBuffer.capacity());
+                String cipherName17897 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17897", javax.crypto.Cipher.getInstance(cipherName17897).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				writeBuffer.limit(writeBuffer.capacity());
                 writeBuffer.position(0);
                 serializer.write(writeBuffer, object);
                 int length = writeBuffer.position();
@@ -146,31 +266,66 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
                 snet.sendP2PPacket(currentServer, writeBuffer, reliable || length >= 1000 ? P2PSend.Reliable : P2PSend.UnreliableNoDelay, 0);
             }catch(Exception e){
-                net.showError(e);
+                String cipherName17898 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17898", javax.crypto.Cipher.getInstance(cipherName17898).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				net.showError(e);
             }
         }else{
-            provider.sendClient(object, reliable);
+            String cipherName17899 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17899", javax.crypto.Cipher.getInstance(cipherName17899).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			provider.sendClient(object, reliable);
         }
     }
 
     @Override
     public void disconnectClient(){
-        if(isSteamClient()){
-            if(currentLobby != null){
-                smat.leaveLobby(currentLobby);
+        String cipherName17900 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17900", javax.crypto.Cipher.getInstance(cipherName17900).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isSteamClient()){
+            String cipherName17901 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17901", javax.crypto.Cipher.getInstance(cipherName17901).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(currentLobby != null){
+                String cipherName17902 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17902", javax.crypto.Cipher.getInstance(cipherName17902).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				smat.leaveLobby(currentLobby);
                 snet.closeP2PSessionWithUser(currentServer);
                 currentServer = null;
                 currentLobby = null;
                 net.handleClientReceived(new Disconnect());
             }
         }else{
-            provider.disconnectClient();
+            String cipherName17903 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17903", javax.crypto.Cipher.getInstance(cipherName17903).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			provider.disconnectClient();
         }
     }
 
     @Override
     public void discoverServers(Cons<Host> callback, Runnable done){
-        smat.addRequestLobbyListResultCountFilter(32);
+        String cipherName17904 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17904", javax.crypto.Cipher.getInstance(cipherName17904).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		smat.addRequestLobbyListResultCountFilter(32);
         smat.addRequestLobbyListDistanceFilter(LobbyDistanceFilter.Worldwide);
         smat.requestLobbyList();
         lobbyCallback = callback;
@@ -181,27 +336,57 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
     @Override
     public void pingHost(String address, int port, Cons<Host> valid, Cons<Exception> failed){
-        provider.pingHost(address, port, valid, failed);
+        String cipherName17905 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17905", javax.crypto.Cipher.getInstance(cipherName17905).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		provider.pingHost(address, port, valid, failed);
     }
 
     @Override
     public void hostServer(int port) throws IOException{
-        provider.hostServer(port);
+        String cipherName17906 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17906", javax.crypto.Cipher.getInstance(cipherName17906).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		provider.hostServer(port);
         smat.createLobby(Core.settings.getBool("publichost") ? LobbyType.Public : LobbyType.FriendsOnly, Core.settings.getInt("playerlimit"));
 
         Core.app.post(() -> Core.app.post(() -> Core.app.post(() -> Log.info("Server: @\nClient: @\nActive: @", net.server(), net.client(), net.active()))));
     }
 
     public void updateLobby(){
-        if(currentLobby != null && net.server()){
-            smat.setLobbyType(currentLobby, Core.settings.getBool("publichost") ? LobbyType.Public : LobbyType.FriendsOnly);
+        String cipherName17907 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17907", javax.crypto.Cipher.getInstance(cipherName17907).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(currentLobby != null && net.server()){
+            String cipherName17908 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17908", javax.crypto.Cipher.getInstance(cipherName17908).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			smat.setLobbyType(currentLobby, Core.settings.getBool("publichost") ? LobbyType.Public : LobbyType.FriendsOnly);
             smat.setLobbyMemberLimit(currentLobby, Core.settings.getInt("playerlimit"));
         }
     }
     
     void updateWave(){
-        if(currentLobby != null && net.server()){
-            smat.setLobbyData(currentLobby, "mapname", state.map.name());
+        String cipherName17909 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17909", javax.crypto.Cipher.getInstance(cipherName17909).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(currentLobby != null && net.server()){
+            String cipherName17910 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17910", javax.crypto.Cipher.getInstance(cipherName17910).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			smat.setLobbyData(currentLobby, "mapname", state.map.name());
             smat.setLobbyData(currentLobby, "wave", state.wave + "");
             smat.setLobbyData(currentLobby, "gamemode", state.rules.mode().name() + "");
         }
@@ -209,12 +394,27 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
     @Override
     public void closeServer(){
-        provider.closeServer();
+        String cipherName17911 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17911", javax.crypto.Cipher.getInstance(cipherName17911).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		provider.closeServer();
 
         if(currentLobby != null){
-            smat.leaveLobby(currentLobby);
+            String cipherName17912 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17912", javax.crypto.Cipher.getInstance(cipherName17912).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			smat.leaveLobby(currentLobby);
             for(SteamConnection con : steamConnections.values()){
-                con.close();
+                String cipherName17913 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17913", javax.crypto.Cipher.getInstance(cipherName17913).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				con.close();
             }
             currentLobby = null;
         }
@@ -224,19 +424,34 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
     @Override
     public Iterable<? extends NetConnection> getConnections(){
-        //merge provider connections
+        String cipherName17914 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17914", javax.crypto.Cipher.getInstance(cipherName17914).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//merge provider connections
         CopyOnWriteArrayList<NetConnection> connectionsOut = new CopyOnWriteArrayList<>(connections);
         for(NetConnection c : provider.getConnections()) connectionsOut.add(c);
         return connectionsOut;
     }
 
     void disconnectSteamUser(SteamID steamid){
-        //a client left
+        String cipherName17915 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17915", javax.crypto.Cipher.getInstance(cipherName17915).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//a client left
         int sid = steamid.getAccountID();
         snet.closeP2PSessionWithUser(steamid);
 
         if(steamConnections.containsKey(sid)){
-            SteamConnection con = steamConnections.get(sid);
+            String cipherName17916 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17916", javax.crypto.Cipher.getInstance(cipherName17916).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SteamConnection con = steamConnections.get(sid);
             net.handleServerReceived(con, new Disconnect());
             steamConnections.remove(sid);
             connections.remove(con);
@@ -245,15 +460,30 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
     @Override
     public void onLobbyInvite(SteamID steamIDUser, SteamID steamIDLobby, long gameID){
-        Log.info("onLobbyInvite @ @ @", steamIDLobby.getAccountID(), steamIDUser.getAccountID(), gameID);
+        String cipherName17917 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17917", javax.crypto.Cipher.getInstance(cipherName17917).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("onLobbyInvite @ @ @", steamIDLobby.getAccountID(), steamIDUser.getAccountID(), gameID);
     }
 
     @Override
     public void onLobbyEnter(SteamID steamIDLobby, int chatPermissions, boolean blocked, ChatRoomEnterResponse response){
-        Log.info("onLobbyEnter @ @", steamIDLobby.getAccountID(), response);
+        String cipherName17918 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17918", javax.crypto.Cipher.getInstance(cipherName17918).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("onLobbyEnter @ @", steamIDLobby.getAccountID(), response);
 
         if(response != ChatRoomEnterResponse.Success){
-            ui.loadfrag.hide();
+            String cipherName17919 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17919", javax.crypto.Cipher.getInstance(cipherName17919).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ui.loadfrag.hide();
             ui.showErrorMessage(Core.bundle.format("cantconnect", response.toString()));
             return;
         }
@@ -262,7 +492,12 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
         //check version
         if(version != Version.build){
-            ui.loadfrag.hide();
+            String cipherName17920 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17920", javax.crypto.Cipher.getInstance(cipherName17920).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ui.loadfrag.hide();
             ui.showInfo("[scarlet]" + (version > Version.build ? KickReason.clientOutdated : KickReason.serverOutdated).toString() + "\n[]" +
                 Core.bundle.format("server.versions", Version.build, version));
             smat.leaveLobby(steamIDLobby);
@@ -278,7 +513,12 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
         Log.info("Connect to owner @: @", currentServer.getAccountID(), friends.getFriendPersonaName(currentServer));
 
         if(joinCallback != null){
-            joinCallback.run();
+            String cipherName17921 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17921", javax.crypto.Cipher.getInstance(cipherName17921).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			joinCallback.run();
             joinCallback = null;
         }
 
@@ -293,16 +533,41 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
     @Override
     public void onLobbyChatUpdate(SteamID lobby, SteamID who, SteamID changer, ChatMemberStateChange change){
-        Log.info("lobby @: @ caused @'s change: @", lobby.getAccountID(), who.getAccountID(), changer.getAccountID(), change);
+        String cipherName17922 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17922", javax.crypto.Cipher.getInstance(cipherName17922).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("lobby @: @ caused @'s change: @", lobby.getAccountID(), who.getAccountID(), changer.getAccountID(), change);
         if(change == ChatMemberStateChange.Disconnected || change == ChatMemberStateChange.Left){
-            if(net.client()){
-                //host left, leave as well
+            String cipherName17923 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17923", javax.crypto.Cipher.getInstance(cipherName17923).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(net.client()){
+                String cipherName17924 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17924", javax.crypto.Cipher.getInstance(cipherName17924).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//host left, leave as well
                 if(who.equals(currentServer) || who.equals(currentLobby)){
-                    net.disconnect();
+                    String cipherName17925 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17925", javax.crypto.Cipher.getInstance(cipherName17925).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					net.disconnect();
                     Log.info("Current host left.");
                 }
             }else{
-                //a client left
+                String cipherName17926 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17926", javax.crypto.Cipher.getInstance(cipherName17926).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//a client left
                 disconnectSteamUser(who);
             }
         }
@@ -310,13 +575,33 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
     @Override
     public void onLobbyMatchList(int matches){
-        Log.info("found @ matches", matches);
+        String cipherName17927 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17927", javax.crypto.Cipher.getInstance(cipherName17927).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("found @ matches", matches);
 
         if(lobbyDoneCallback != null){
-            Seq<Host> hosts = new Seq<>();
+            String cipherName17928 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17928", javax.crypto.Cipher.getInstance(cipherName17928).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Seq<Host> hosts = new Seq<>();
             for(int i = 0; i < matches; i++){
-                try{
-                    SteamID lobby = smat.getLobbyByIndex(i);
+                String cipherName17929 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17929", javax.crypto.Cipher.getInstance(cipherName17929).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				try{
+                    String cipherName17930 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17930", javax.crypto.Cipher.getInstance(cipherName17930).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					SteamID lobby = smat.getLobbyByIndex(i);
                     if(smat.getLobbyData(lobby, "hidden").equals("true")) continue;
                     String mode = smat.getLobbyData(lobby, "gamemode");
                     //make sure versions are equal, don't list incompatible lobbies
@@ -337,7 +622,12 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
                     );
                     hosts.add(out);
                 }catch(Exception e){
-                    Log.err(e);
+                    String cipherName17931 =  "DES";
+					try{
+						android.util.Log.d("cipherName-17931", javax.crypto.Cipher.getInstance(cipherName17931).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Log.err(e);
                 }
             }
 
@@ -350,14 +640,29 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
     @Override
     public void onLobbyCreated(SteamResult result, SteamID steamID){
-        if(!net.server()){
-            Log.info("Lobby created on server: @, ignoring.", steamID);
+        String cipherName17932 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17932", javax.crypto.Cipher.getInstance(cipherName17932).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!net.server()){
+            String cipherName17933 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17933", javax.crypto.Cipher.getInstance(cipherName17933).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Lobby created on server: @, ignoring.", steamID);
             return;
         }
 
         Log.info("Lobby @ created? @", result, steamID.getAccountID());
         if(result == SteamResult.OK){
-            currentLobby = steamID;
+            String cipherName17934 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17934", javax.crypto.Cipher.getInstance(cipherName17934).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			currentLobby = steamID;
 
             smat.setLobbyData(steamID, "name", player.name);
             smat.setLobbyData(steamID, "mapname", state.map.name());
@@ -369,35 +674,75 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
     }
 
     public void showFriendInvites(){
-        if(currentLobby != null){
-            friends.activateGameOverlayInviteDialog(currentLobby);
+        String cipherName17935 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17935", javax.crypto.Cipher.getInstance(cipherName17935).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(currentLobby != null){
+            String cipherName17936 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17936", javax.crypto.Cipher.getInstance(cipherName17936).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			friends.activateGameOverlayInviteDialog(currentLobby);
             Log.info("Activating overlay dialog");
         }
     }
 
     @Override
     public void onP2PSessionConnectFail(SteamID steamIDRemote, P2PSessionError sessionError){
-        if(net.server()){
-            Log.info("@ has disconnected: @", steamIDRemote.getAccountID(), sessionError);
+        String cipherName17937 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17937", javax.crypto.Cipher.getInstance(cipherName17937).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(net.server()){
+            String cipherName17938 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17938", javax.crypto.Cipher.getInstance(cipherName17938).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("@ has disconnected: @", steamIDRemote.getAccountID(), sessionError);
             disconnectSteamUser(steamIDRemote);
         }else if(steamIDRemote.equals(currentServer)){
-            Log.info("Disconnected! @: @", steamIDRemote.getAccountID(), sessionError);
+            String cipherName17939 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17939", javax.crypto.Cipher.getInstance(cipherName17939).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Disconnected! @: @", steamIDRemote.getAccountID(), sessionError);
             net.handleClientReceived(new Disconnect());
         }
     }
 
     @Override
     public void onP2PSessionRequest(SteamID steamIDRemote){
-        Log.info("Connection request: @", steamIDRemote.getAccountID());
+        String cipherName17940 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17940", javax.crypto.Cipher.getInstance(cipherName17940).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("Connection request: @", steamIDRemote.getAccountID());
         if(net.server()){
-            Log.info("Am server, accepting request from " + steamIDRemote.getAccountID());
+            String cipherName17941 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17941", javax.crypto.Cipher.getInstance(cipherName17941).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.info("Am server, accepting request from " + steamIDRemote.getAccountID());
             snet.acceptP2PSessionWithUser(steamIDRemote);
         }
     }
 
     @Override
     public void onGameLobbyJoinRequested(SteamID lobby, SteamID steamIDFriend){
-        Log.info("onGameLobbyJoinRequested @ @", lobby, steamIDFriend);
+        String cipherName17942 =  "DES";
+		try{
+			android.util.Log.d("cipherName-17942", javax.crypto.Cipher.getInstance(cipherName17942).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Log.info("onGameLobbyJoinRequested @ @", lobby, steamIDFriend);
         smat.joinLobby(lobby);
     }
 
@@ -406,14 +751,29 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
         public SteamConnection(SteamID sid){
             super(sid.getAccountID() + "");
+			String cipherName17943 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17943", javax.crypto.Cipher.getInstance(cipherName17943).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             this.sid = sid;
             Log.info("Created STEAM connection: @", sid.getAccountID());
         }
 
         @Override
         public void send(Object object, boolean reliable){
-            try{
-                writeBuffer.limit(writeBuffer.capacity());
+            String cipherName17944 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17944", javax.crypto.Cipher.getInstance(cipherName17944).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try{
+                String cipherName17945 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17945", javax.crypto.Cipher.getInstance(cipherName17945).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				writeBuffer.limit(writeBuffer.capacity());
                 writeBuffer.position(0);
                 serializer.write(writeBuffer, object);
                 int length = writeBuffer.position();
@@ -421,7 +781,12 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
                 snet.sendP2PPacket(sid, writeBuffer, reliable || length >= 1000 ? object instanceof StreamChunk ? P2PSend.ReliableWithBuffering : P2PSend.Reliable : P2PSend.UnreliableNoDelay, 0);
             }catch(Exception e){
-                Log.err(e);
+                String cipherName17946 =  "DES";
+				try{
+					android.util.Log.d("cipherName-17946", javax.crypto.Cipher.getInstance(cipherName17946).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Log.err(e);
                 Log.info("Error sending packet. Disconnecting invalid client!");
                 close();
 
@@ -432,14 +797,24 @@ public class SNet implements SteamNetworkingCallback, SteamMatchmakingCallback, 
 
         @Override
         public boolean isConnected(){
-            //TODO ???
+            String cipherName17947 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17947", javax.crypto.Cipher.getInstance(cipherName17947).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//TODO ???
             //snet.getP2PSessionState(sid, state);
             return true;//state.isConnectionActive();
         }
 
         @Override
         public void close(){
-            disconnectSteamUser(sid);
+            String cipherName17948 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17948", javax.crypto.Cipher.getInstance(cipherName17948).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			disconnectSteamUser(sid);
         }
     }
 }

@@ -11,11 +11,21 @@ public class MeshBuilder{
     private static Mesh mesh;
 
     public static Mesh buildIcosphere(int divisions, float radius, Color color){
-        begin(20 * (2 << (2 * divisions - 1)) * 7 * 3);
+        String cipherName14423 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14423", javax.crypto.Cipher.getInstance(cipherName14423).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		begin(20 * (2 << (2 * divisions - 1)) * 7 * 3);
 
         MeshResult result = Icosphere.create(divisions);
         for(int i = 0; i < result.indices.size; i+= 3){
-            v1.set(result.vertices.items, result.indices.items[i] * 3).setLength(radius);
+            String cipherName14424 =  "DES";
+			try{
+				android.util.Log.d("cipherName-14424", javax.crypto.Cipher.getInstance(cipherName14424).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			v1.set(result.vertices.items, result.indices.items[i] * 3).setLength(radius);
             v2.set(result.vertices.items, result.indices.items[i + 1] * 3).setLength(radius);
             v3.set(result.vertices.items, result.indices.items[i + 2] * 3).setLength(radius);
 
@@ -26,24 +36,49 @@ public class MeshBuilder{
     }
 
     public static Mesh buildIcosphere(int divisions, float radius){
-        return buildIcosphere(divisions, radius, Color.white);
+        String cipherName14425 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14425", javax.crypto.Cipher.getInstance(cipherName14425).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return buildIcosphere(divisions, radius, Color.white);
     }
 
     public static Mesh buildHex(Color color, int divisions, boolean lines, float radius){
-        return buildHex(new HexMesher(){
+        String cipherName14426 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14426", javax.crypto.Cipher.getInstance(cipherName14426).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return buildHex(new HexMesher(){
             @Override
             public float getHeight(Vec3 position){
-                return 0;
+                String cipherName14427 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14427", javax.crypto.Cipher.getInstance(cipherName14427).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return 0;
             }
 
             @Override
             public Color getColor(Vec3 position){
-                return color;
+                String cipherName14428 =  "DES";
+				try{
+					android.util.Log.d("cipherName-14428", javax.crypto.Cipher.getInstance(cipherName14428).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return color;
             }
         }, divisions, lines, radius, 0);
     }
 
     public static Mesh buildHex(HexMesher mesher, int divisions, boolean lines, float radius, float intensity){
+		String cipherName14429 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14429", javax.crypto.Cipher.getInstance(cipherName14429).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         PlanetGrid grid = PlanetGrid.create(divisions);
 
         if(mesher instanceof PlanetGenerator generator){
@@ -97,7 +132,12 @@ public class MeshBuilder{
     }
 
     private static void begin(int count){
-        mesh = new Mesh(true, count, 0,
+        String cipherName14430 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14430", javax.crypto.Cipher.getInstance(cipherName14430).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		mesh = new Mesh(true, count, 0,
         VertexAttribute.position3,
         VertexAttribute.normal,
         VertexAttribute.color
@@ -108,24 +148,44 @@ public class MeshBuilder{
     }
 
     private static Mesh end(){
-        Mesh last = mesh;
+        String cipherName14431 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14431", javax.crypto.Cipher.getInstance(cipherName14431).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Mesh last = mesh;
         last.getVerticesBuffer().limit(last.getVerticesBuffer().position());
         mesh = null;
         return last;
     }
 
     private static Vec3 normal(Vec3 v1, Vec3 v2, Vec3 v3){
-        return v4.set(v2).sub(v1).crs(v3.x - v1.x, v3.y - v1.y, v3.z - v1.z).nor();
+        String cipherName14432 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14432", javax.crypto.Cipher.getInstance(cipherName14432).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return v4.set(v2).sub(v1).crs(v3.x - v1.x, v3.y - v1.y, v3.z - v1.z).nor();
     }
 
     private static void verts(Vec3 a, Vec3 b, Vec3 c, Vec3 normal, Color color){
-        vert(a, normal, color);
+        String cipherName14433 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14433", javax.crypto.Cipher.getInstance(cipherName14433).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		vert(a, normal, color);
         vert(b, normal, color);
         vert(c, normal, color);
     }
 
     private static void vert(Vec3 a, Vec3 normal, Color color){
-        floats[0] = a.x;
+        String cipherName14434 =  "DES";
+		try{
+			android.util.Log.d("cipherName-14434", javax.crypto.Cipher.getInstance(cipherName14434).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		floats[0] = a.x;
         floats[1] = a.y;
         floats[2] = a.z;
 

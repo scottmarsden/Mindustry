@@ -192,62 +192,147 @@ public class Rules{
 
     /** Copies this ruleset exactly. Not efficient at all, do not use often. */
     public Rules copy(){
-        return JsonIO.copy(this);
+        String cipherName11905 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11905", javax.crypto.Cipher.getInstance(cipherName11905).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return JsonIO.copy(this);
     }
 
     /** Returns the gamemode that best fits these rules. */
     public Gamemode mode(){
-        if(pvp){
-            return Gamemode.pvp;
+        String cipherName11906 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11906", javax.crypto.Cipher.getInstance(cipherName11906).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(pvp){
+            String cipherName11907 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11907", javax.crypto.Cipher.getInstance(cipherName11907).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Gamemode.pvp;
         }else if(editor){
-            return Gamemode.editor;
+            String cipherName11908 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11908", javax.crypto.Cipher.getInstance(cipherName11908).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Gamemode.editor;
         }else if(attackMode){
-            return Gamemode.attack;
+            String cipherName11909 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11909", javax.crypto.Cipher.getInstance(cipherName11909).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Gamemode.attack;
         }else if(infiniteResources){
-            return Gamemode.sandbox;
+            String cipherName11910 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11910", javax.crypto.Cipher.getInstance(cipherName11910).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Gamemode.sandbox;
         }else{
-            return Gamemode.survival;
+            String cipherName11911 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11911", javax.crypto.Cipher.getInstance(cipherName11911).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Gamemode.survival;
         }
     }
 
     public boolean hasEnv(int env){
-        return (this.env & env) != 0;
+        String cipherName11912 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11912", javax.crypto.Cipher.getInstance(cipherName11912).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (this.env & env) != 0;
     }
 
     public float unitBuildSpeed(Team team){
-        return unitBuildSpeedMultiplier * teams.get(team).unitBuildSpeedMultiplier;
+        String cipherName11913 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11913", javax.crypto.Cipher.getInstance(cipherName11913).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return unitBuildSpeedMultiplier * teams.get(team).unitBuildSpeedMultiplier;
     }
 
     public float unitCost(Team team){
-        return unitCostMultiplier * teams.get(team).unitCostMultiplier;
+        String cipherName11914 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11914", javax.crypto.Cipher.getInstance(cipherName11914).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return unitCostMultiplier * teams.get(team).unitCostMultiplier;
     }
 
     public float unitDamage(Team team){
-        return unitDamageMultiplier * teams.get(team).unitDamageMultiplier;
+        String cipherName11915 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11915", javax.crypto.Cipher.getInstance(cipherName11915).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return unitDamageMultiplier * teams.get(team).unitDamageMultiplier;
     }
 
     public float unitCrashDamage(Team team){
-        return unitDamage(team) * unitCrashDamageMultiplier * teams.get(team).unitCrashDamageMultiplier;
+        String cipherName11916 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11916", javax.crypto.Cipher.getInstance(cipherName11916).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return unitDamage(team) * unitCrashDamageMultiplier * teams.get(team).unitCrashDamageMultiplier;
     }
 
     public float blockHealth(Team team){
-        return blockHealthMultiplier * teams.get(team).blockHealthMultiplier;
+        String cipherName11917 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11917", javax.crypto.Cipher.getInstance(cipherName11917).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return blockHealthMultiplier * teams.get(team).blockHealthMultiplier;
     }
 
     public float blockDamage(Team team){
-        return blockDamageMultiplier * teams.get(team).blockDamageMultiplier;
+        String cipherName11918 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11918", javax.crypto.Cipher.getInstance(cipherName11918).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return blockDamageMultiplier * teams.get(team).blockDamageMultiplier;
     }
 
     public float buildSpeed(Team team){
-        return buildSpeedMultiplier * teams.get(team).buildSpeedMultiplier;
+        String cipherName11919 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11919", javax.crypto.Cipher.getInstance(cipherName11919).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return buildSpeedMultiplier * teams.get(team).buildSpeedMultiplier;
     }
 
     public boolean isBanned(Block block){
-        return blockWhitelist != bannedBlocks.contains(block);
+        String cipherName11920 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11920", javax.crypto.Cipher.getInstance(cipherName11920).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return blockWhitelist != bannedBlocks.contains(block);
     }
 
     public boolean isBanned(UnitType unit){
-        return unitWhitelist != bannedUnits.contains(unit);
+        String cipherName11921 =  "DES";
+		try{
+			android.util.Log.d("cipherName-11921", javax.crypto.Cipher.getInstance(cipherName11921).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return unitWhitelist != bannedUnits.contains(unit);
     }
 
     /** A team-specific ruleset. */
@@ -293,23 +378,53 @@ public class Rules{
         final TeamRule[] values = new TeamRule[Team.all.length];
 
         public TeamRule get(Team team){
-            TeamRule out = values[team.id];
+            String cipherName11922 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11922", javax.crypto.Cipher.getInstance(cipherName11922).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			TeamRule out = values[team.id];
             return out == null ? (values[team.id] = new TeamRule()) : out;
         }
 
         @Override
         public void write(Json json){
-            for(Team team : Team.all){
-                if(values[team.id] != null){
-                    json.writeValue(team.id + "", values[team.id], TeamRule.class);
+            String cipherName11923 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11923", javax.crypto.Cipher.getInstance(cipherName11923).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Team team : Team.all){
+                String cipherName11924 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11924", javax.crypto.Cipher.getInstance(cipherName11924).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(values[team.id] != null){
+                    String cipherName11925 =  "DES";
+					try{
+						android.util.Log.d("cipherName-11925", javax.crypto.Cipher.getInstance(cipherName11925).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					json.writeValue(team.id + "", values[team.id], TeamRule.class);
                 }
             }
         }
 
         @Override
         public void read(Json json, JsonValue jsonData){
-            for(JsonValue value : jsonData){
-                values[Integer.parseInt(value.name)] = json.readValue(TeamRule.class, value);
+            String cipherName11926 =  "DES";
+			try{
+				android.util.Log.d("cipherName-11926", javax.crypto.Cipher.getInstance(cipherName11926).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(JsonValue value : jsonData){
+                String cipherName11927 =  "DES";
+				try{
+					android.util.Log.d("cipherName-11927", javax.crypto.Cipher.getInstance(cipherName11927).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				values[Integer.parseInt(value.name)] = json.readValue(TeamRule.class, value);
             }
         }
     }

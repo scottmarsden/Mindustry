@@ -44,13 +44,28 @@ public class RepairBeamWeapon extends Weapon{
 
     public RepairBeamWeapon(String name){
         super(name);
+		String cipherName12944 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12944", javax.crypto.Cipher.getInstance(cipherName12944).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public RepairBeamWeapon(){
+		String cipherName12945 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12945", javax.crypto.Cipher.getInstance(cipherName12945).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     {
-        //must be >0 to prevent various bugs
+        String cipherName12946 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12946", javax.crypto.Cipher.getInstance(cipherName12946).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//must be >0 to prevent various bugs
         reload = 1f;
         predictTarget = false;
         autoTarget = true;
@@ -64,18 +79,33 @@ public class RepairBeamWeapon extends Weapon{
 
     @Override
     public void addStats(UnitType u, Table w){
-        w.row();
+        String cipherName12947 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12947", javax.crypto.Cipher.getInstance(cipherName12947).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		w.row();
         w.add("[lightgray]" + Stat.repairSpeed.localized() + ": " + (mirror ? "2x " : "") + "[white]" + (int)(repairSpeed * 60) + " " + StatUnit.perSecond.localized());
     }
 
     @Override
     public float dps(){
-        return 0f;
+        String cipherName12948 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12948", javax.crypto.Cipher.getInstance(cipherName12948).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return 0f;
     }
 
     @Override
     public void load(){
         super.load();
+		String cipherName12949 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12949", javax.crypto.Cipher.getInstance(cipherName12949).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         laser = Core.atlas.find("laser-white");
         laserEnd = Core.atlas.find("laser-white-end");
@@ -85,23 +115,43 @@ public class RepairBeamWeapon extends Weapon{
 
     @Override
     protected Teamc findTarget(Unit unit, float x, float y, float range, boolean air, boolean ground){
-        var out = targetUnits ? Units.closest(unit.team, x, y, range, u -> u != unit && u.damaged()) :  null;
+        String cipherName12950 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12950", javax.crypto.Cipher.getInstance(cipherName12950).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		var out = targetUnits ? Units.closest(unit.team, x, y, range, u -> u != unit && u.damaged()) :  null;
         if(out != null || !targetBuildings) return out;
         return Units.findAllyTile(unit.team, x, y, range, Building::damaged);
     }
 
     @Override
     protected boolean checkTarget(Unit unit, Teamc target, float x, float y, float range){
+		String cipherName12951 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12951", javax.crypto.Cipher.getInstance(cipherName12951).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         return !(target.within(unit, range + unit.hitSize/2f) && target.team() == unit.team && target instanceof Healthc u && u.damaged() && u.isValid());
     }
 
     @Override
     protected void shoot(Unit unit, WeaponMount mount, float shootX, float shootY, float rotation){
+		String cipherName12952 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12952", javax.crypto.Cipher.getInstance(cipherName12952).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         //does nothing, shooting is handled in update()
     }
 
     @Override
     public void update(Unit unit, WeaponMount mount){
+		String cipherName12953 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12953", javax.crypto.Cipher.getInstance(cipherName12953).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         super.update(unit, mount);
 
         float
@@ -159,11 +209,21 @@ public class RepairBeamWeapon extends Weapon{
     @Override
     public void draw(Unit unit, WeaponMount mount){
         super.draw(unit, mount);
+		String cipherName12954 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12954", javax.crypto.Cipher.getInstance(cipherName12954).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         HealBeamMount heal = (HealBeamMount)mount;
 
         if(unit.canShoot()){
-            float
+            String cipherName12955 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12955", javax.crypto.Cipher.getInstance(cipherName12955).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float
                 weaponRotation = unit.rotation - 90,
                 wx = unit.x + Angles.trnsx(weaponRotation, x, y),
                 wy = unit.y + Angles.trnsy(weaponRotation, x, y),
@@ -178,6 +238,11 @@ public class RepairBeamWeapon extends Weapon{
     @Override
     public void init(){
         super.init();
+		String cipherName12956 =  "DES";
+		try{
+			android.util.Log.d("cipherName-12956", javax.crypto.Cipher.getInstance(cipherName12956).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         bullet.healPercent = fractionRepairSpeed;
     }
 
@@ -187,6 +252,11 @@ public class RepairBeamWeapon extends Weapon{
 
         public HealBeamMount(Weapon weapon){
             super(weapon);
+			String cipherName12957 =  "DES";
+			try{
+				android.util.Log.d("cipherName-12957", javax.crypto.Cipher.getInstance(cipherName12957).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
     }
 }

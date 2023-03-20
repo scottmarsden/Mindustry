@@ -14,6 +14,11 @@ public class OverflowGate extends Block{
 
     public OverflowGate(String name){
         super(name);
+		String cipherName7059 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7059", javax.crypto.Cipher.getInstance(cipherName7059).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         hasItems = true;
         underBullets = true;
         update = false;
@@ -27,27 +32,47 @@ public class OverflowGate extends Block{
 
     @Override
     public boolean outputsItems(){
-        return true;
+        String cipherName7060 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7060", javax.crypto.Cipher.getInstance(cipherName7060).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return true;
     }
 
     public class OverflowGateBuild extends Building{
 
         @Override
         public boolean acceptItem(Building source, Item item){
-            Building to = getTileTarget(item, source, false);
+            String cipherName7061 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7061", javax.crypto.Cipher.getInstance(cipherName7061).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Building to = getTileTarget(item, source, false);
 
             return to != null && to.acceptItem(this, item) && to.team == team;
         }
 
         @Override
         public void handleItem(Building source, Item item){
-            Building target = getTileTarget(item, source, true);
+            String cipherName7062 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7062", javax.crypto.Cipher.getInstance(cipherName7062).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Building target = getTileTarget(item, source, true);
 
             if(target != null) target.handleItem(this, item);
         }
 
         public @Nullable Building getTileTarget(Item item, Building src, boolean flip){
-            int from = relativeToEdge(src.tile);
+            String cipherName7063 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7063", javax.crypto.Cipher.getInstance(cipherName7063).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int from = relativeToEdge(src.tile);
             if(from == -1) return null;
             Building to = nearby((from + 2) % 4);
             boolean
@@ -56,21 +81,46 @@ public class OverflowGate extends Block{
                 inv = invert == enabled;
 
             if(!canForward || inv){
-                Building a = nearby(Mathf.mod(from - 1, 4));
+                String cipherName7064 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7064", javax.crypto.Cipher.getInstance(cipherName7064).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Building a = nearby(Mathf.mod(from - 1, 4));
                 Building b = nearby(Mathf.mod(from + 1, 4));
                 boolean ac = a != null && !(fromInst && a.block.instantTransfer) && a.team == team && a.acceptItem(this, item);
                 boolean bc = b != null && !(fromInst && b.block.instantTransfer) && b.team == team && b.acceptItem(this, item);
 
                 if(!ac && !bc){
-                    return inv && canForward ? to : null;
+                    String cipherName7065 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7065", javax.crypto.Cipher.getInstance(cipherName7065).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return inv && canForward ? to : null;
                 }
 
                 if(ac && !bc){
-                    to = a;
+                    String cipherName7066 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7066", javax.crypto.Cipher.getInstance(cipherName7066).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					to = a;
                 }else if(bc && !ac){
-                    to = b;
+                    String cipherName7067 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7067", javax.crypto.Cipher.getInstance(cipherName7067).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					to = b;
                 }else{
-                    to = (rotation & (1 << from)) == 0 ? a : b;
+                    String cipherName7068 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7068", javax.crypto.Cipher.getInstance(cipherName7068).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					to = (rotation & (1 << from)) == 0 ? a : b;
                     if(flip) rotation ^= (1 << from);
                 }
             }
@@ -80,17 +130,37 @@ public class OverflowGate extends Block{
 
         @Override
         public byte version(){
-            return 4;
+            String cipherName7069 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7069", javax.crypto.Cipher.getInstance(cipherName7069).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 4;
         }
 
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
+			String cipherName7070 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7070", javax.crypto.Cipher.getInstance(cipherName7070).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             if(revision == 1){
-                new DirectionalItemBuffer(25).read(read);
+                String cipherName7071 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7071", javax.crypto.Cipher.getInstance(cipherName7071).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				new DirectionalItemBuffer(25).read(read);
             }else if(revision == 3){
-                read.i();
+                String cipherName7072 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7072", javax.crypto.Cipher.getInstance(cipherName7072).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				read.i();
             }
 
             items.clear();

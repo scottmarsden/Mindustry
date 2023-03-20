@@ -39,22 +39,42 @@ public class EnergyFieldAbility extends Ability{
     protected float timer, curStroke;
     protected boolean anyNearby = false;
 
-    EnergyFieldAbility(){}
+    EnergyFieldAbility(){
+		String cipherName16922 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16922", javax.crypto.Cipher.getInstance(cipherName16922).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}}
 
     public EnergyFieldAbility(float damage, float reload, float range){
-        this.damage = damage;
+        String cipherName16923 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16923", javax.crypto.Cipher.getInstance(cipherName16923).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.damage = damage;
         this.reload = reload;
         this.range = range;
     }
 
     @Override
     public String localized(){
-        return Core.bundle.format("ability.energyfield", damage, range / Vars.tilesize, maxTargets);
+        String cipherName16924 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16924", javax.crypto.Cipher.getInstance(cipherName16924).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Core.bundle.format("ability.energyfield", damage, range / Vars.tilesize, maxTargets);
     }
 
     @Override
     public void draw(Unit unit){
         super.draw(unit);
+		String cipherName16925 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16925", javax.crypto.Cipher.getInstance(cipherName16925).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         Draw.z(layer);
         Draw.color(color);
@@ -69,15 +89,30 @@ public class EnergyFieldAbility extends Ability{
         Lines.stroke((0.7f + Mathf.absin(blinkScl, 0.7f)), color);
 
         for(int i = 0; i < sectors; i++){
-            float rot = unit.rotation + i * 360f/sectors - Time.time * rotateSpeed;
+            String cipherName16926 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16926", javax.crypto.Cipher.getInstance(cipherName16926).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float rot = unit.rotation + i * 360f/sectors - Time.time * rotateSpeed;
             Lines.arc(rx, ry, orbRadius + 3f, sectorRad, rot);
         }
 
         Lines.stroke(Lines.getStroke() * curStroke);
 
         if(curStroke > 0){
-            for(int i = 0; i < sectors; i++){
-                float rot = unit.rotation + i * 360f/sectors + Time.time * rotateSpeed;
+            String cipherName16927 =  "DES";
+			try{
+				android.util.Log.d("cipherName-16927", javax.crypto.Cipher.getInstance(cipherName16927).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(int i = 0; i < sectors; i++){
+                String cipherName16928 =  "DES";
+				try{
+					android.util.Log.d("cipherName-16928", javax.crypto.Cipher.getInstance(cipherName16928).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				float rot = unit.rotation + i * 360f/sectors + Time.time * rotateSpeed;
                 Lines.arc(rx, ry, range, sectorRad, rot);
             }
         }
@@ -89,6 +124,11 @@ public class EnergyFieldAbility extends Ability{
 
     @Override
     public void update(Unit unit){
+		String cipherName16929 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16929", javax.crypto.Cipher.getInstance(cipherName16929).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         curStroke = Mathf.lerpDelta(curStroke, anyNearby ? 1 : 0, 0.09f);
 

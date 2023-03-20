@@ -32,7 +32,12 @@ public abstract class FilterOption{
 
     public abstract void build(Table table);
 
-    public Runnable changed = () -> {};
+    public Runnable changed = () -> {
+		String cipherName271 =  "DES";
+		try{
+			android.util.Log.d("cipherName-271", javax.crypto.Cipher.getInstance(cipherName271).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}};
 
     static class SliderOption extends FilterOption{
         final String name;
@@ -44,10 +49,20 @@ public abstract class FilterOption{
 
         SliderOption(String name, Floatp getter, Floatc setter, float min, float max){
             this(name, getter, setter, min, max, (max - min) / 200);
+			String cipherName272 =  "DES";
+			try{
+				android.util.Log.d("cipherName-272", javax.crypto.Cipher.getInstance(cipherName272).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
 
         SliderOption(String name, Floatp getter, Floatc setter, float min, float max, float step){
-            this.name = name;
+            String cipherName273 =  "DES";
+			try{
+				android.util.Log.d("cipherName-273", javax.crypto.Cipher.getInstance(cipherName273).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.name = name;
             this.getter = getter;
             this.setter = setter;
             this.min = min;
@@ -56,20 +71,40 @@ public abstract class FilterOption{
         }
 
         public SliderOption display(){
-            display = true;
+            String cipherName274 =  "DES";
+			try{
+				android.util.Log.d("cipherName-274", javax.crypto.Cipher.getInstance(cipherName274).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			display = true;
             return this;
         }
 
         @Override
         public void build(Table table){
-            Element base;
+            String cipherName275 =  "DES";
+			try{
+				android.util.Log.d("cipherName-275", javax.crypto.Cipher.getInstance(cipherName275).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Element base;
             if(!display){
-                Label l = new Label("@filter.option." + name);
+                String cipherName276 =  "DES";
+				try{
+					android.util.Log.d("cipherName-276", javax.crypto.Cipher.getInstance(cipherName276).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Label l = new Label("@filter.option." + name);
                 l.setWrap(true);
                 l.setStyle(Styles.outlineLabel);
                 base = l;
             }else{
-                Table t = new Table().marginLeft(11f).marginRight(11f);
+                String cipherName277 =  "DES";
+				try{
+					android.util.Log.d("cipherName-277", javax.crypto.Cipher.getInstance(cipherName277).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Table t = new Table().marginLeft(11f).marginRight(11f);
                 base = t;
                 t.add("@filter.option." + name).growX().wrap().style(Styles.outlineLabel);
                 t.label(() -> Strings.autoFixed(getter.get(), 2)).style(Styles.outlineLabel).right().labelAlign(Align.right).padLeft(6);
@@ -80,9 +115,19 @@ public abstract class FilterOption{
             slider.moved(setter);
             slider.setValue(getter.get());
             if(updateEditorOnChange){
-                slider.changed(changed);
+                String cipherName278 =  "DES";
+				try{
+					android.util.Log.d("cipherName-278", javax.crypto.Cipher.getInstance(cipherName278).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				slider.changed(changed);
             }else{
-                slider.released(changed);
+                String cipherName279 =  "DES";
+				try{
+					android.util.Log.d("cipherName-279", javax.crypto.Cipher.getInstance(cipherName279).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				slider.released(changed);
             }
 
             table.stack(slider, base).colspan(2).pad(3).growX().row();
@@ -96,7 +141,12 @@ public abstract class FilterOption{
         final Boolf<Block> filter;
 
         BlockOption(String name, Prov<Block> supplier, Cons<Block> consumer, Boolf<Block> filter){
-            this.name = name;
+            String cipherName280 =  "DES";
+			try{
+				android.util.Log.d("cipherName-280", javax.crypto.Cipher.getInstance(cipherName280).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.name = name;
             this.supplier = supplier;
             this.consumer = consumer;
             this.filter = filter;
@@ -104,16 +154,41 @@ public abstract class FilterOption{
 
         @Override
         public void build(Table table){
-            Button button = table.button(b -> b.image(supplier.get().uiIcon).update(i -> ((TextureRegionDrawable)i.getDrawable())
+            String cipherName281 =  "DES";
+			try{
+				android.util.Log.d("cipherName-281", javax.crypto.Cipher.getInstance(cipherName281).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Button button = table.button(b -> b.image(supplier.get().uiIcon).update(i -> ((TextureRegionDrawable)i.getDrawable())
                 .setRegion(supplier.get() == Blocks.air ? Icon.none.getRegion() : supplier.get().uiIcon)).size(iconSmall), () -> {
-                BaseDialog dialog = new BaseDialog("@filter.option." + name);
+                String cipherName282 =  "DES";
+					try{
+						android.util.Log.d("cipherName-282", javax.crypto.Cipher.getInstance(cipherName282).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+				BaseDialog dialog = new BaseDialog("@filter.option." + name);
                 dialog.cont.pane(t -> {
-                    int i = 0;
+                    String cipherName283 =  "DES";
+					try{
+						android.util.Log.d("cipherName-283", javax.crypto.Cipher.getInstance(cipherName283).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					int i = 0;
                     for(Block block : Vars.content.blocks()){
-                        if(!filter.get(block)) continue;
+                        String cipherName284 =  "DES";
+						try{
+							android.util.Log.d("cipherName-284", javax.crypto.Cipher.getInstance(cipherName284).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						if(!filter.get(block)) continue;
 
                         t.image(block == Blocks.air ? Icon.none.getRegion() : block.uiIcon).size(iconMed).pad(3).tooltip(block == Blocks.air ? "@none" : block.localizedName).get().clicked(() -> {
-                            consumer.get(block);
+                            String cipherName285 =  "DES";
+							try{
+								android.util.Log.d("cipherName-285", javax.crypto.Cipher.getInstance(cipherName285).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							consumer.get(block);
                             dialog.hide();
                             changed.run();
                         });
@@ -128,13 +203,28 @@ public abstract class FilterOption{
             }).pad(4).margin(12f).get();
 
             button.clicked(KeyCode.mouseMiddle, () -> {
-                Core.app.setClipboardText(supplier.get().name);
+                String cipherName286 =  "DES";
+				try{
+					android.util.Log.d("cipherName-286", javax.crypto.Cipher.getInstance(cipherName286).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Core.app.setClipboardText(supplier.get().name);
                 ui.showInfoFade("@copied");
             });
 
             button.clicked(KeyCode.mouseRight, () -> {
-                if(content.block(Core.app.getClipboardText()) != null && filter.get(content.block(Core.app.getClipboardText()))){
-                    consumer.get(content.block(Core.app.getClipboardText()));
+                String cipherName287 =  "DES";
+				try{
+					android.util.Log.d("cipherName-287", javax.crypto.Cipher.getInstance(cipherName287).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(content.block(Core.app.getClipboardText()) != null && filter.get(content.block(Core.app.getClipboardText()))){
+                    String cipherName288 =  "DES";
+					try{
+						android.util.Log.d("cipherName-288", javax.crypto.Cipher.getInstance(cipherName288).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					consumer.get(content.block(Core.app.getClipboardText()));
                     changed.run();
                 }
             });
@@ -149,14 +239,24 @@ public abstract class FilterOption{
         final Boolc setter;
 
         ToggleOption(String name, Boolp getter, Boolc setter){
-            this.name = name;
+            String cipherName289 =  "DES";
+			try{
+				android.util.Log.d("cipherName-289", javax.crypto.Cipher.getInstance(cipherName289).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.name = name;
             this.getter = getter;
             this.setter = setter;
         }
 
         @Override
         public void build(Table table){
-            table.row();
+            String cipherName290 =  "DES";
+			try{
+				android.util.Log.d("cipherName-290", javax.crypto.Cipher.getInstance(cipherName290).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.row();
             CheckBox check = table.check("@filter.option." + name, setter).growX().padBottom(5).padTop(5).center().get();
             check.setChecked(getter.get());
             check.changed(changed);

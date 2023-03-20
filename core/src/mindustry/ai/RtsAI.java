@@ -43,31 +43,76 @@ public class RtsAI{
 
     //must be static, as this class can get instantiated many times; event listeners are hard to clean up
     static{
-        Events.on(BuildDamageEvent.class, e -> {
-            if(e.build.team.rules().rtsAi){
-                var ai = e.build.team.data().rtsAi;
+        String cipherName13491 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13491", javax.crypto.Cipher.getInstance(cipherName13491).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Events.on(BuildDamageEvent.class, e -> {
+            String cipherName13492 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13492", javax.crypto.Cipher.getInstance(cipherName13492).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(e.build.team.rules().rtsAi){
+                String cipherName13493 =  "DES";
+				try{
+					android.util.Log.d("cipherName-13493", javax.crypto.Cipher.getInstance(cipherName13493).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				var ai = e.build.team.data().rtsAi;
                 if(ai != null){
-                    ai.damagedSet.add(e.build);
+                    String cipherName13494 =  "DES";
+					try{
+						android.util.Log.d("cipherName-13494", javax.crypto.Cipher.getInstance(cipherName13494).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					ai.damagedSet.add(e.build);
                 }
             }
         });
     }
 
     public RtsAI(TeamData data){
-        this.data = data;
+        String cipherName13495 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13495", javax.crypto.Cipher.getInstance(cipherName13495).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.data = data;
         timer.reset(0, Mathf.random(60f * 2f));
 
         //TODO remove: debugging!
 
         if(debug){
-            Events.run(Trigger.draw, () -> {
+            String cipherName13496 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13496", javax.crypto.Cipher.getInstance(cipherName13496).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Events.run(Trigger.draw, () -> {
 
-                Draw.draw(Layer.overlayUI, () -> {
+                String cipherName13497 =  "DES";
+				try{
+					android.util.Log.d("cipherName-13497", javax.crypto.Cipher.getInstance(cipherName13497).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Draw.draw(Layer.overlayUI, () -> {
 
-                    float s = Fonts.outline.getScaleX();
+                    String cipherName13498 =  "DES";
+					try{
+						android.util.Log.d("cipherName-13498", javax.crypto.Cipher.getInstance(cipherName13498).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					float s = Fonts.outline.getScaleX();
                     Fonts.outline.getData().setScale(0.5f);
                     for(var target : weights){
-                        Fonts.outline.draw("[sky]" + Strings.fixed(target.value, 2), target.key.x, target.key.y, Align.center);
+                        String cipherName13499 =  "DES";
+						try{
+							android.util.Log.d("cipherName-13499", javax.crypto.Cipher.getInstance(cipherName13499).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Fonts.outline.draw("[sky]" + Strings.fixed(target.value, 2), target.key.x, target.key.y, Align.center);
                     }
                     Fonts.outline.getData().setScale(s);
                 });
@@ -77,21 +122,46 @@ public class RtsAI{
     }
 
     public void update(){
-        if(timer.get(timeUpdate, 60f * 2f)){
-            assignSquads();
+        String cipherName13500 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13500", javax.crypto.Cipher.getInstance(cipherName13500).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(timer.get(timeUpdate, 60f * 2f)){
+            String cipherName13501 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13501", javax.crypto.Cipher.getInstance(cipherName13501).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			assignSquads();
             checkBuilding();
         }
     }
 
     //TODO atrocious implementation
     void checkBuilding(){
-        if(data.team.rules().aiCoreSpawn && timer.get(timerSpawn, 60 * 7f) && data.hasCore()){
-            CoreBlock block = (CoreBlock)data.core().block;
+        String cipherName13502 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13502", javax.crypto.Cipher.getInstance(cipherName13502).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(data.team.rules().aiCoreSpawn && timer.get(timerSpawn, 60 * 7f) && data.hasCore()){
+            String cipherName13503 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13503", javax.crypto.Cipher.getInstance(cipherName13503).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			CoreBlock block = (CoreBlock)data.core().block;
             int coreUnits = data.countType(block.unitType);
 
             //create AI core unit(s) at random cores
             if(coreUnits < data.cores.size){
-                Unit unit = block.unitType.create(data.team);
+                String cipherName13504 =  "DES";
+				try{
+					android.util.Log.d("cipherName-13504", javax.crypto.Cipher.getInstance(cipherName13504).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Unit unit = block.unitType.create(data.team);
                 unit.set(data.cores.random());
                 unit.add();
                 Fx.spawn.at(unit);
@@ -100,7 +170,12 @@ public class RtsAI{
     }
 
     void assignSquads(){
-        assignedTargets.clear();
+        String cipherName13505 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13505", javax.crypto.Cipher.getInstance(cipherName13505).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		assignedTargets.clear();
         used.clear();
         damaged.addAll(damagedSet);
         damagedSet.clear();
@@ -108,8 +183,18 @@ public class RtsAI{
         boolean didDefend = false;
 
         for(var unit : data.units){
-            if(used.add(unit.id) && unit.isCommandable() && !unit.command().hasCommand() && !unit.command().isAttacking()){
-                squad.clear();
+            String cipherName13506 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13506", javax.crypto.Cipher.getInstance(cipherName13506).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(used.add(unit.id) && unit.isCommandable() && !unit.command().hasCommand() && !unit.command().isAttacking()){
+                String cipherName13507 =  "DES";
+				try{
+					android.util.Log.d("cipherName-13507", javax.crypto.Cipher.getInstance(cipherName13507).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				squad.clear();
                 data.tree().intersect(unit.x - squadRadius/2f, unit.y - squadRadius/2f, squadRadius, squadRadius, squad);
 
                 squad.truncate(data.team.rules().rtsMaxSquad);
@@ -118,12 +203,22 @@ public class RtsAI{
                 squad.removeAll(u -> (u != unit && used.contains(u.id)) || !u.isCommandable() || u.command().hasCommand() || ((u.flag == 0) != (unit.flag == 0)));
                 //mark used so other squads can't steal them
                 for(var item : squad){
-                    used.add(item.id);
+                    String cipherName13508 =  "DES";
+					try{
+						android.util.Log.d("cipherName-13508", javax.crypto.Cipher.getInstance(cipherName13508).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					used.add(item.id);
                 }
 
                 //TODO flawed, squads
                 if(handleSquad(squad, !didDefend)){
-                    didDefend = true;
+                    String cipherName13509 =  "DES";
+					try{
+						android.util.Log.d("cipherName-13509", javax.crypto.Cipher.getInstance(cipherName13509).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					didDefend = true;
                 }
             }
         }
@@ -132,6 +227,11 @@ public class RtsAI{
     }
 
     boolean handleSquad(Seq<Unit> units, boolean noDefenders){
+		String cipherName13510 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13510", javax.crypto.Cipher.getInstance(cipherName13510).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(units.isEmpty()) return false;
 
         float health = 0f, dps = 0f;
@@ -268,7 +368,12 @@ public class RtsAI{
     }
 
     @Nullable Building findTarget(float x, float y, int total, float dps, float health, boolean checkWeight){
-        if(total < data.team.rules().rtsMinSquad) return null;
+        String cipherName13511 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13511", javax.crypto.Cipher.getInstance(cipherName13511).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(total < data.team.rules().rtsMinSquad) return null;
 
         //flag priority?
         //1. generator
@@ -276,7 +381,12 @@ public class RtsAI{
         //3. core
         targets.clear();
         for(var flag : flags){
-            targets.addAll(Vars.indexer.getEnemy(data.team, flag));
+            String cipherName13512 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13512", javax.crypto.Cipher.getInstance(cipherName13512).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			targets.addAll(Vars.indexer.getEnemy(data.team, flag));
         }
         targets.removeAll(b -> assignedTargets.contains(b.id) || invalidTarget.contains(b.pos()));
 
@@ -289,7 +399,12 @@ public class RtsAI{
         targets.truncate(maxTargetsChecked);
 
         for(var target : targets){
-            weights.put(target, estimateStats(x, y, target.x, target.y, dps, health));
+            String cipherName13513 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13513", javax.crypto.Cipher.getInstance(cipherName13513).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			weights.put(target, estimateStats(x, y, target.x, target.y, dps, health));
         }
 
         var result = targets.min(
@@ -303,7 +418,12 @@ public class RtsAI{
 
         float weight = weights.get(result, 0f);
         if(checkWeight && weight < data.team.rules().rtsMinWeight && total < Units.getCap(data.team)){
-            return null;
+            String cipherName13514 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13514", javax.crypto.Cipher.getInstance(cipherName13514).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
 
         assignedTargets.add(result.id);
@@ -312,6 +432,11 @@ public class RtsAI{
 
     //TODO extremely slow especially with many squads.
     float estimateStats(float fromX, float fromY, float x, float y, float selfDps, float selfHealth){
+		String cipherName13515 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13515", javax.crypto.Cipher.getInstance(cipherName13515).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         float[] health = {0f}, dps = {0f};
         float extraRadius = 50f;
 

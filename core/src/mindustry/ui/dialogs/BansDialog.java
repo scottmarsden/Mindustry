@@ -11,6 +11,11 @@ public class BansDialog extends BaseDialog{
 
     public BansDialog(){
         super("@server.bans");
+		String cipherName2120 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2120", javax.crypto.Cipher.getInstance(cipherName2120).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         addCloseButton();
 
@@ -20,7 +25,12 @@ public class BansDialog extends BaseDialog{
     }
 
     private void setup(){
-        cont.clear();
+        String cipherName2121 =  "DES";
+		try{
+			android.util.Log.d("cipherName-2121", javax.crypto.Cipher.getInstance(cipherName2121).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		cont.clear();
 
         float w = 400f, h = 80f;
 
@@ -30,18 +40,38 @@ public class BansDialog extends BaseDialog{
         pane.setFadeScrollBars(false);
 
         if(netServer.admins.getBanned().size == 0){
-            table.add("@server.bans.none");
+            String cipherName2122 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2122", javax.crypto.Cipher.getInstance(cipherName2122).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.add("@server.bans.none");
         }
 
         for(PlayerInfo info : netServer.admins.getBanned()){
-            Table res = new Table(Tex.button);
+            String cipherName2123 =  "DES";
+			try{
+				android.util.Log.d("cipherName-2123", javax.crypto.Cipher.getInstance(cipherName2123).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Table res = new Table(Tex.button);
             res.margin(14f);
 
             res.labelWrap("IP: [lightgray]" + info.lastIP + "\n[]Name: [lightgray]" + info.lastName).width(w - h - 24f);
             res.add().growX();
             res.button(Icon.cancel, () -> {
-                ui.showConfirm("@confirm", "@confirmunban", () -> {
-                    netServer.admins.unbanPlayerID(info.id);
+                String cipherName2124 =  "DES";
+				try{
+					android.util.Log.d("cipherName-2124", javax.crypto.Cipher.getInstance(cipherName2124).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				ui.showConfirm("@confirm", "@confirmunban", () -> {
+                    String cipherName2125 =  "DES";
+					try{
+						android.util.Log.d("cipherName-2125", javax.crypto.Cipher.getInstance(cipherName2125).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					netServer.admins.unbanPlayerID(info.id);
                     setup();
                 });
             }).size(h).pad(-14f);

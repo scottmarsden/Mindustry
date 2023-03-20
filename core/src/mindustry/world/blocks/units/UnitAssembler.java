@@ -45,6 +45,11 @@ public class UnitAssembler extends PayloadBlock{
 
     public UnitAssembler(String name){
         super(name);
+		String cipherName7867 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7867", javax.crypto.Cipher.getInstance(cipherName7867).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         update = solid = true;
         rotate = true;
         rotateDraw = false;
@@ -58,7 +63,12 @@ public class UnitAssembler extends PayloadBlock{
     }
 
     public Rect getRect(Rect rect, float x, float y, int rotation){
-        rect.setCentered(x, y, areaSize * tilesize);
+        String cipherName7868 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7868", javax.crypto.Cipher.getInstance(cipherName7868).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		rect.setCentered(x, y, areaSize * tilesize);
         float len = tilesize * (areaSize + size)/2f;
 
         rect.x += Geometry.d4x(rotation) * len;
@@ -70,6 +80,11 @@ public class UnitAssembler extends PayloadBlock{
     @Override
     public void drawPlace(int x, int y, int rotation, boolean valid){
         super.drawPlace(x, y, rotation, valid);
+		String cipherName7869 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7869", javax.crypto.Cipher.getInstance(cipherName7869).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         x *= tilesize;
         y *= tilesize;
@@ -83,7 +98,12 @@ public class UnitAssembler extends PayloadBlock{
 
     @Override
     public boolean canPlaceOn(Tile tile, Team team, int rotation){
-        //overlapping construction areas not allowed; grow by a tiny amount so edges can't overlap either.
+        String cipherName7870 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7870", javax.crypto.Cipher.getInstance(cipherName7870).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		//overlapping construction areas not allowed; grow by a tiny amount so edges can't overlap either.
         Rect rect = getRect(Tmp.r1, tile.worldx() + offset, tile.worldy() + offset, rotation).grow(0.1f);
         return !indexer.getFlagged(team, BlockFlag.unitAssembler).contains(b -> getRect(Tmp.r2, b.x, b.y, b.rotation).overlaps(rect));
     }
@@ -91,6 +111,11 @@ public class UnitAssembler extends PayloadBlock{
     @Override
     public void setBars(){
         super.setBars();
+		String cipherName7871 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7871", javax.crypto.Cipher.getInstance(cipherName7871).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         addBar("progress", (UnitAssemblerBuild e) -> new Bar("bar.progress", Pal.ammo, () -> e.progress));
 
@@ -108,19 +133,34 @@ public class UnitAssembler extends PayloadBlock{
 
     @Override
     public void drawPlanRegion(BuildPlan plan, Eachable<BuildPlan> list){
-        Draw.rect(region, plan.drawx(), plan.drawy());
+        String cipherName7872 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7872", javax.crypto.Cipher.getInstance(cipherName7872).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Draw.rect(region, plan.drawx(), plan.drawy());
         Draw.rect(plan.rotation >= 2 ? sideRegion2 : sideRegion1, plan.drawx(), plan.drawy(), plan.rotation * 90);
         Draw.rect(topRegion, plan.drawx(), plan.drawy());
     }
 
     @Override
     public TextureRegion[] icons(){
-        return new TextureRegion[]{region, sideRegion1, topRegion};
+        String cipherName7873 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7873", javax.crypto.Cipher.getInstance(cipherName7873).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TextureRegion[]{region, sideRegion1, topRegion};
     }
 
     @Override
     public void init(){
         updateClipRadius(areaSize * tilesize);
+		String cipherName7874 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7874", javax.crypto.Cipher.getInstance(cipherName7874).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         consume(consPayload = new ConsumePayloadDynamic((UnitAssemblerBuild build) -> build.plan().requirements));
 
         consumeBuilder.each(c -> c.multiplier = b -> state.rules.unitCost(b.team));
@@ -131,38 +171,93 @@ public class UnitAssembler extends PayloadBlock{
     @Override
     public void setStats(){
         super.setStats();
+		String cipherName7875 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7875", javax.crypto.Cipher.getInstance(cipherName7875).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         stats.add(Stat.output, table -> {
-            table.row();
+            String cipherName7876 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7876", javax.crypto.Cipher.getInstance(cipherName7876).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			table.row();
 
             int tier = 0;
             for(var plan : plans){
-                int ttier = tier;
+                String cipherName7877 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7877", javax.crypto.Cipher.getInstance(cipherName7877).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int ttier = tier;
                 table.table(Styles.grayPanel, t -> {
 
-                    if(plan.unit.isBanned()){
-                        t.image(Icon.cancel).color(Pal.remove).size(40).pad(10);
+                    String cipherName7878 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7878", javax.crypto.Cipher.getInstance(cipherName7878).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(plan.unit.isBanned()){
+                        String cipherName7879 =  "DES";
+						try{
+							android.util.Log.d("cipherName-7879", javax.crypto.Cipher.getInstance(cipherName7879).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						t.image(Icon.cancel).color(Pal.remove).size(40).pad(10);
                         return;
                     }
 
                     if(plan.unit.unlockedNow()){
-                        t.image(plan.unit.uiIcon).scaling(Scaling.fit).size(40).pad(10f).left();
+                        String cipherName7880 =  "DES";
+						try{
+							android.util.Log.d("cipherName-7880", javax.crypto.Cipher.getInstance(cipherName7880).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						t.image(plan.unit.uiIcon).scaling(Scaling.fit).size(40).pad(10f).left();
                         t.table(info -> {
-                            info.defaults().left();
+                            String cipherName7881 =  "DES";
+							try{
+								android.util.Log.d("cipherName-7881", javax.crypto.Cipher.getInstance(cipherName7881).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							info.defaults().left();
                             info.add(plan.unit.localizedName);
                             info.row();
                             info.add(Strings.autoFixed(plan.time / 60f, 1) + " " + Core.bundle.get("unit.seconds")).color(Color.lightGray);
                             if(ttier > 0){
-                                info.row();
+                                String cipherName7882 =  "DES";
+								try{
+									android.util.Log.d("cipherName-7882", javax.crypto.Cipher.getInstance(cipherName7882).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								info.row();
                                 info.add(Stat.moduleTier.localized() + ": " + ttier).color(Color.lightGray);
                             }
                         }).left();
 
                         t.table(req -> {
-                            req.right();
+                            String cipherName7883 =  "DES";
+							try{
+								android.util.Log.d("cipherName-7883", javax.crypto.Cipher.getInstance(cipherName7883).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							req.right();
                             for(int i = 0; i < plan.requirements.size; i++){
-                                if(i % 6 == 0){
-                                    req.row();
+                                String cipherName7884 =  "DES";
+								try{
+									android.util.Log.d("cipherName-7884", javax.crypto.Cipher.getInstance(cipherName7884).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								if(i % 6 == 0){
+                                    String cipherName7885 =  "DES";
+									try{
+										android.util.Log.d("cipherName-7885", javax.crypto.Cipher.getInstance(cipherName7885).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									req.row();
                                 }
 
                                 PayloadStack stack = plan.requirements.get(i);
@@ -170,7 +265,12 @@ public class UnitAssembler extends PayloadBlock{
                             }
                         }).right().grow().pad(10f);
                     }else{
-                        t.image(Icon.lock).color(Pal.darkerGray).size(40).pad(10);
+                        String cipherName7886 =  "DES";
+						try{
+							android.util.Log.d("cipherName-7886", javax.crypto.Cipher.getInstance(cipherName7886).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						t.image(Icon.lock).color(Pal.darkerGray).size(40).pad(10);
                     }
                 }).growX().pad(5);
                 table.row();
@@ -185,12 +285,22 @@ public class UnitAssembler extends PayloadBlock{
         public float time;
 
         public AssemblerUnitPlan(UnitType unit, float time, Seq<PayloadStack> requirements){
-            this.unit = unit;
+            String cipherName7887 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7887", javax.crypto.Cipher.getInstance(cipherName7887).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.unit = unit;
             this.time = time;
             this.requirements = requirements;
         }
 
-        AssemblerUnitPlan(){}
+        AssemblerUnitPlan(){
+			String cipherName7888 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7888", javax.crypto.Cipher.getInstance(cipherName7888).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}}
     }
 
     /** hbgwerjhbagjegwg */
@@ -199,19 +309,34 @@ public class UnitAssembler extends PayloadBlock{
         public UnlockableContent item;
 
         public YeetData(Vec2 target, UnlockableContent item){
-            this.target = target;
+            String cipherName7889 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7889", javax.crypto.Cipher.getInstance(cipherName7889).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.target = target;
             this.item = item;
         }
     }
 
     @Remote(called = Loc.server)
     public static void assemblerUnitSpawned(Tile tile){
+		String cipherName7890 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7890", javax.crypto.Cipher.getInstance(cipherName7890).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(tile == null || !(tile.build instanceof UnitAssemblerBuild build)) return;
         build.spawned();
     }
 
     @Remote(called = Loc.server)
     public static void assemblerDroneSpawned(Tile tile, int id){
+		String cipherName7891 =  "DES";
+		try{
+			android.util.Log.d("cipherName-7891", javax.crypto.Cipher.getInstance(cipherName7891).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(tile == null || !(tile.build instanceof UnitAssemblerBuild build)) return;
         build.droneSpawned(id);
     }
@@ -234,20 +359,35 @@ public class UnitAssembler extends PayloadBlock{
         public float droneProgress, totalDroneProgress;
 
         public Vec2 getUnitSpawn(){
-            float len = tilesize * (areaSize + size)/2f;
+            String cipherName7892 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7892", javax.crypto.Cipher.getInstance(cipherName7892).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float len = tilesize * (areaSize + size)/2f;
             float unitX = x + Geometry.d4x(rotation) * len, unitY = y + Geometry.d4y(rotation) * len;
             return Tmp.v4.set(unitX, unitY);
         }
 
         public boolean moduleFits(Block other, float ox, float oy, int rotation){
-            float
+            String cipherName7893 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7893", javax.crypto.Cipher.getInstance(cipherName7893).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			float
             dx = ox + Geometry.d4x(rotation) * (other.size/2 + 1) * tilesize,
             dy = oy + Geometry.d4y(rotation) * (other.size/2 + 1) * tilesize;
 
             Vec2 spawn = getUnitSpawn();
 
             if(Tile.relativeTo(ox, oy, spawn.x, spawn.y) != rotation){
-                return false;
+                String cipherName7894 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7894", javax.crypto.Cipher.getInstance(cipherName7894).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return false;
             }
 
             float dst = Math.max(Math.abs(dx - spawn.x), Math.abs(dy - spawn.y));
@@ -255,24 +395,54 @@ public class UnitAssembler extends PayloadBlock{
         }
 
         public void updateModules(UnitAssemblerModuleBuild build){
-            modules.addUnique(build);
+            String cipherName7895 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7895", javax.crypto.Cipher.getInstance(cipherName7895).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			modules.addUnique(build);
             checkTier();
         }
 
         public void removeModule(UnitAssemblerModuleBuild build){
-            modules.remove(build);
+            String cipherName7896 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7896", javax.crypto.Cipher.getInstance(cipherName7896).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			modules.remove(build);
             checkTier();
         }
 
         public void checkTier(){
-            modules.sort(b -> b.tier());
+            String cipherName7897 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7897", javax.crypto.Cipher.getInstance(cipherName7897).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			modules.sort(b -> b.tier());
             int max = 0;
             for(int i = 0; i < modules.size; i++){
-                var mod = modules.get(i);
+                String cipherName7898 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7898", javax.crypto.Cipher.getInstance(cipherName7898).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				var mod = modules.get(i);
                 if(mod.tier() == max || mod.tier() == max + 1){
-                    max = mod.tier();
+                    String cipherName7899 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7899", javax.crypto.Cipher.getInstance(cipherName7899).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					max = mod.tier();
                 }else{
-                    //tier gap, TODO warning?
+                    String cipherName7900 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7900", javax.crypto.Cipher.getInstance(cipherName7900).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					//tier gap, TODO warning?
                     break;
                 }
             }
@@ -281,24 +451,49 @@ public class UnitAssembler extends PayloadBlock{
         }
 
         public UnitType unit(){
-            return plan().unit;
+            String cipherName7901 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7901", javax.crypto.Cipher.getInstance(cipherName7901).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return plan().unit;
         }
 
         public AssemblerUnitPlan plan(){
-            //clamp plan pos
+            String cipherName7902 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7902", javax.crypto.Cipher.getInstance(cipherName7902).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//clamp plan pos
             return plans.get(Math.min(currentTier, plans.size - 1));
         }
 
         @Override
         public boolean shouldConsume(){
-            //liquid is only consumed when building is being done
+            String cipherName7903 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7903", javax.crypto.Cipher.getInstance(cipherName7903).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			//liquid is only consumed when building is being done
             return enabled && !wasOccupied && Units.canCreate(team, plan().unit) && consPayload.efficiency(this) > 0;
         }
 
         @Override
         public void drawSelect(){
-            for(var module : modules){
-                Drawf.selected(module, Pal.accent);
+            String cipherName7904 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7904", javax.crypto.Cipher.getInstance(cipherName7904).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(var module : modules){
+                String cipherName7905 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7905", javax.crypto.Cipher.getInstance(cipherName7905).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Drawf.selected(module, Pal.accent);
             }
 
             Drawf.dashRect(Tmp.c1.set(Pal.accent).lerp(Pal.remove, invalidWarmup), getRect(Tmp.r1, x, y, rotation));
@@ -307,16 +502,31 @@ public class UnitAssembler extends PayloadBlock{
         @Override
         public void display(Table table){
             super.display(table);
+			String cipherName7906 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7906", javax.crypto.Cipher.getInstance(cipherName7906).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             if(team != player.team()) return;
 
             table.row();
             table.table(t -> {
-                t.left().defaults().left();
+                String cipherName7907 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7907", javax.crypto.Cipher.getInstance(cipherName7907).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				t.left().defaults().left();
 
                 Block prev = null;
                 for(int i = 0; i < modules.size; i++){
-                    var mod = modules.get(i);
+                    String cipherName7908 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7908", javax.crypto.Cipher.getInstance(cipherName7908).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					var mod = modules.get(i);
                     if(prev == mod.block) continue;
                     //TODO crosses for missing reqs?
                     t.image(mod.block.uiIcon).size(iconMed).padRight(4);
@@ -330,6 +540,11 @@ public class UnitAssembler extends PayloadBlock{
 
         @Override
         public void updateTile(){
+			String cipherName7909 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7909", javax.crypto.Cipher.getInstance(cipherName7909).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             if(!readUnits.isEmpty()){
                 units.clear();
                 readUnits.each(i -> {
@@ -430,22 +645,47 @@ public class UnitAssembler extends PayloadBlock{
         }
 
         public void droneSpawned(int id){
-            Fx.spawn.at(x, y);
+            String cipherName7910 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7910", javax.crypto.Cipher.getInstance(cipherName7910).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Fx.spawn.at(x, y);
             droneProgress = 0f;
             if(net.client()){
-                whenSyncedUnits.add(id);
+                String cipherName7911 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7911", javax.crypto.Cipher.getInstance(cipherName7911).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				whenSyncedUnits.add(id);
             }
         }
 
         public void spawned(){
-            var plan = plan();
+            String cipherName7912 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7912", javax.crypto.Cipher.getInstance(cipherName7912).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var plan = plan();
             Vec2 spawn = getUnitSpawn();
             consume();
 
             if(!net.client()){
-                var unit = plan.unit.create(team);
+                String cipherName7913 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7913", javax.crypto.Cipher.getInstance(cipherName7913).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				var unit = plan.unit.create(team);
                 if(unit != null && unit.isCommandable()){
-                    unit.command().commandPosition(commandPos);
+                    String cipherName7914 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7914", javax.crypto.Cipher.getInstance(cipherName7914).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					unit.command().commandPosition(commandPos);
                 }
                 unit.set(spawn.x + Mathf.range(0.001f), spawn.y + Mathf.range(0.001f));
                 unit.rotation = 90f;
@@ -459,12 +699,27 @@ public class UnitAssembler extends PayloadBlock{
 
         @Override
         public void draw(){
-            Draw.rect(region, x, y);
+            String cipherName7915 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7915", javax.crypto.Cipher.getInstance(cipherName7915).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Draw.rect(region, x, y);
 
             //draw input conveyors
             for(int i = 0; i < 4; i++){
-                if(blends(i) && i != rotation){
-                    Draw.rect(inRegion, x, y, (i * 90) - 180);
+                String cipherName7916 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7916", javax.crypto.Cipher.getInstance(cipherName7916).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(blends(i) && i != rotation){
+                    String cipherName7917 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7917", javax.crypto.Cipher.getInstance(cipherName7917).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Draw.rect(inRegion, x, y, (i * 90) - 180);
                 }
             }
 
@@ -483,8 +738,18 @@ public class UnitAssembler extends PayloadBlock{
 
             //draw drone construction
             if(droneWarmup > 0.001f){
-                Draw.draw(Layer.blockOver + 0.2f, () -> {
-                    Drawf.construct(this, droneType.fullIcon, Pal.accent, 0f, droneProgress, droneWarmup, totalDroneProgress, 14f);
+                String cipherName7918 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7918", javax.crypto.Cipher.getInstance(cipherName7918).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Draw.draw(Layer.blockOver + 0.2f, () -> {
+                    String cipherName7919 =  "DES";
+					try{
+						android.util.Log.d("cipherName-7919", javax.crypto.Cipher.getInstance(cipherName7919).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					Drawf.construct(this, droneType.fullIcon, Pal.accent, 0f, droneProgress, droneWarmup, totalDroneProgress, 14f);
                 });
             }
 
@@ -496,7 +761,12 @@ public class UnitAssembler extends PayloadBlock{
             //draw the unit construction as outline
             //TODO flashes when no gallium
             Draw.draw(Layer.blockBuilding, () -> {
-                Draw.color(Pal.accent, warmup);
+                String cipherName7920 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7920", javax.crypto.Cipher.getInstance(cipherName7920).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Draw.color(Pal.accent, warmup);
 
                 Shaders.blockbuild.region = plan.unit.fullIcon;
                 Shaders.blockbuild.time = Time.time;
@@ -522,7 +792,12 @@ public class UnitAssembler extends PayloadBlock{
 
             //draw build beams
             for(var unit : units){
-                if(!((AssemblerAI)unit.controller()).inPosition()) continue;
+                String cipherName7921 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7921", javax.crypto.Cipher.getInstance(cipherName7921).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(!((AssemblerAI)unit.controller()).inPosition()) continue;
 
                 float
                     px = unit.x + Angles.trnsx(unit.rotation, unit.type.buildBeamOffset),
@@ -550,7 +825,12 @@ public class UnitAssembler extends PayloadBlock{
             float outSize = plan.unit.hitSize + 9f;
 
             if(invalidWarmup > 0){
-                //draw small square for area
+                String cipherName7922 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7922", javax.crypto.Cipher.getInstance(cipherName7922).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				//draw small square for area
                 Lines.stroke(2f, Tmp.c3.set(Pal.accent).lerp(Pal.remove, invalidWarmup).a(invalidWarmup));
                 Drawf.dashSquareBasic(spawn.x, spawn.y, outSize);
             }
@@ -559,7 +839,12 @@ public class UnitAssembler extends PayloadBlock{
         }
 
         public boolean checkSolid(Vec2 v, boolean same){
-            var output = unit();
+            String cipherName7923 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7923", javax.crypto.Cipher.getInstance(cipherName7923).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var output = unit();
             float hsize = output.hitSize * 1.4f;
             return ((!output.flying && collisions.overlapsTile(Tmp.r1.setCentered(v.x, v.y, output.hitSize), EntityCollisions::solid)) ||
                 Units.anyEntities(v.x - hsize/2f, v.y - hsize/2f, hsize, hsize, u -> (!same || u.type != output) && !u.spawnedByCore &&
@@ -568,11 +853,21 @@ public class UnitAssembler extends PayloadBlock{
 
         /** @return true if this block is ready to produce units, e.g. requirements met */
         public boolean ready(){
-            return efficiency > 0 && !wasOccupied;
+            String cipherName7924 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7924", javax.crypto.Cipher.getInstance(cipherName7924).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return efficiency > 0 && !wasOccupied;
         }
 
         public void yeetPayload(Payload payload){
-            var spawn = getUnitSpawn();
+            String cipherName7925 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7925", javax.crypto.Cipher.getInstance(cipherName7925).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var spawn = getUnitSpawn();
             blocks.add(payload.content(), 1);
             float rot = payload.angleTo(spawn);
             Fx.shootPayloadDriver.at(payload.x(), payload.y(), rot);
@@ -581,45 +876,85 @@ public class UnitAssembler extends PayloadBlock{
 
         @Override
         public double sense(LAccess sensor){
-            if(sensor == LAccess.progress) return progress;
+            String cipherName7926 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7926", javax.crypto.Cipher.getInstance(cipherName7926).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(sensor == LAccess.progress) return progress;
             return super.sense(sensor);
         }
 
         @Override
         public PayloadSeq getPayloads(){
-            return blocks;
+            String cipherName7927 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7927", javax.crypto.Cipher.getInstance(cipherName7927).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return blocks;
         }
 
         @Override
         public boolean acceptPayload(Building source, Payload payload){
-            var plan = plan();
+            String cipherName7928 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7928", javax.crypto.Cipher.getInstance(cipherName7928).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			var plan = plan();
             return (this.payload == null || source instanceof UnitAssemblerModuleBuild) &&
                     plan.requirements.contains(b -> b.item == payload.content() && blocks.get(payload.content()) < Mathf.round(b.amount * team.rules().unitCostMultiplier));
         }
 
         @Override
         public Vec2 getCommandPosition(){
-            return commandPos;
+            String cipherName7929 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7929", javax.crypto.Cipher.getInstance(cipherName7929).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return commandPos;
         }
 
         @Override
         public void onCommand(Vec2 target){
-            commandPos = target;
+            String cipherName7930 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7930", javax.crypto.Cipher.getInstance(cipherName7930).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			commandPos = target;
         }
 
         @Override
         public byte version(){
-            return 1;
+            String cipherName7931 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7931", javax.crypto.Cipher.getInstance(cipherName7931).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return 1;
         }
 
         @Override
         public void write(Writes write){
             super.write(write);
+			String cipherName7932 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7932", javax.crypto.Cipher.getInstance(cipherName7932).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
 
             write.f(progress);
             write.b(units.size);
             for(var unit : units){
-                write.i(unit.id);
+                String cipherName7933 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7933", javax.crypto.Cipher.getInstance(cipherName7933).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				write.i(unit.id);
             }
 
             blocks.write(write);
@@ -629,17 +964,32 @@ public class UnitAssembler extends PayloadBlock{
         @Override
         public void read(Reads read, byte revision){
             super.read(read, revision);
+			String cipherName7934 =  "DES";
+			try{
+				android.util.Log.d("cipherName-7934", javax.crypto.Cipher.getInstance(cipherName7934).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             progress = read.f();
             int count = read.b();
             readUnits.clear();
             for(int i = 0; i < count; i++){
-                readUnits.add(read.i());
+                String cipherName7935 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7935", javax.crypto.Cipher.getInstance(cipherName7935).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				readUnits.add(read.i());
             }
             whenSyncedUnits.clear();
 
             blocks.read(read);
             if(revision >= 1){
-                commandPos = TypeIO.readVecNullable(read);
+                String cipherName7936 =  "DES";
+				try{
+					android.util.Log.d("cipherName-7936", javax.crypto.Cipher.getInstance(cipherName7936).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				commandPos = TypeIO.readVecNullable(read);
             }
         }
     }

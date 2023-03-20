@@ -18,22 +18,47 @@ abstract class UnitTetherComp implements Unitc{
 
     @Override
     public void afterRead(){
-        if(spawnerUnitId != -1) spawner = Groups.unit.getByID(spawnerUnitId);
+        String cipherName15893 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15893", javax.crypto.Cipher.getInstance(cipherName15893).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(spawnerUnitId != -1) spawner = Groups.unit.getByID(spawnerUnitId);
         spawnerUnitId = -1;
     }
 
     @Override
     public void afterSync(){
-        if(spawnerUnitId != -1) spawner = Groups.unit.getByID(spawnerUnitId);
+        String cipherName15894 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15894", javax.crypto.Cipher.getInstance(cipherName15894).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(spawnerUnitId != -1) spawner = Groups.unit.getByID(spawnerUnitId);
         spawnerUnitId = -1;
     }
 
     @Override
     public void update(){
-        if(spawner == null || !spawner.isValid() || spawner.team != team){
-            Call.unitDespawn(self());
+        String cipherName15895 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15895", javax.crypto.Cipher.getInstance(cipherName15895).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(spawner == null || !spawner.isValid() || spawner.team != team){
+            String cipherName15896 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15896", javax.crypto.Cipher.getInstance(cipherName15896).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Call.unitDespawn(self());
         }else{
-            spawnerUnitId = spawner.id;
+            String cipherName15897 =  "DES";
+			try{
+				android.util.Log.d("cipherName-15897", javax.crypto.Cipher.getInstance(cipherName15897).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			spawnerUnitId = spawner.id;
         }
     }
 }

@@ -29,10 +29,20 @@ public class BaseRegistry{
     public ObjectMap<Item, Floor> oreFloors = new ObjectMap<>();
 
     public Seq<BasePart> forResource(Content item){
-        return reqParts.get(item, Seq::new);
+        String cipherName13397 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13397", javax.crypto.Cipher.getInstance(cipherName13397).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return reqParts.get(item, Seq::new);
     }
 
     public void load(){
+		String cipherName13398 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13398", javax.crypto.Cipher.getInstance(cipherName13398).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         cores.clear();
         parts.clear();
         reqParts.clear();
@@ -126,12 +136,22 @@ public class BaseRegistry{
         public float tier;
 
         public BasePart(Schematic schematic){
-            this.schematic = schematic;
+            String cipherName13399 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13399", javax.crypto.Cipher.getInstance(cipherName13399).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.schematic = schematic;
         }
 
         @Override
         public int compareTo(BasePart other){
-            return Float.compare(tier, other.tier);
+            String cipherName13400 =  "DES";
+			try{
+				android.util.Log.d("cipherName-13400", javax.crypto.Cipher.getInstance(cipherName13400).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Float.compare(tier, other.tier);
         }
     }
 }

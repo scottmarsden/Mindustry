@@ -18,7 +18,12 @@ public enum RadarTarget{
     public static final RadarTarget[] all = values();
 
     RadarTarget(RadarTargetFunc func){
-        this.func = func;
+        String cipherName5630 =  "DES";
+		try{
+			android.util.Log.d("cipherName-5630", javax.crypto.Cipher.getInstance(cipherName5630).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.func = func;
     }
 
     public interface RadarTargetFunc{

@@ -13,7 +13,12 @@ public class DrawWeave extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        Draw.rect(weave, build.x, build.y, build.totalProgress());
+        String cipherName10111 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10111", javax.crypto.Cipher.getInstance(cipherName10111).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Draw.rect(weave, build.x, build.y, build.totalProgress());
 
         Draw.color(Pal.accent);
         Draw.alpha(build.warmup());
@@ -29,11 +34,21 @@ public class DrawWeave extends DrawBlock{
 
     @Override
     public TextureRegion[] icons(Block block){
-        return new TextureRegion[]{weave};
+        String cipherName10112 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10112", javax.crypto.Cipher.getInstance(cipherName10112).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TextureRegion[]{weave};
     }
 
     @Override
     public void load(Block block){
-        weave = Core.atlas.find(block.name + "-weave");
+        String cipherName10113 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10113", javax.crypto.Cipher.getInstance(cipherName10113).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		weave = Core.atlas.find(block.name + "-weave");
     }
 }

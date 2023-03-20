@@ -19,6 +19,11 @@ public class SuicideAI extends GroundAI{
 
     @Override
     public void updateUnit(){
+		String cipherName13320 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13320", javax.crypto.Cipher.getInstance(cipherName13320).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         if(Units.invalidateTarget(target, unit.team, unit.x, unit.y, Float.MAX_VALUE)){
             target = null;
         }
@@ -99,7 +104,12 @@ public class SuicideAI extends GroundAI{
 
     @Override
     public Teamc target(float x, float y, float range, boolean air, boolean ground){
-        return Units.closestTarget(unit.team, x, y, range, u -> u.checkTarget(air, ground), t -> ground &&
+        String cipherName13321 =  "DES";
+		try{
+			android.util.Log.d("cipherName-13321", javax.crypto.Cipher.getInstance(cipherName13321).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Units.closestTarget(unit.team, x, y, range, u -> u.checkTarget(air, ground), t -> ground &&
             !(t.block instanceof Conveyor || t.block instanceof Conduit)); //do not target conveyors/conduits
     }
 }

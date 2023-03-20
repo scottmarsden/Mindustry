@@ -19,24 +19,49 @@ public class DrawGlowRegion extends DrawBlock{
     public TextureRegion region;
 
     public DrawGlowRegion(){
+		String cipherName10066 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10066", javax.crypto.Cipher.getInstance(cipherName10066).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public DrawGlowRegion(float layer){
-        this.layer = layer;
+        String cipherName10067 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10067", javax.crypto.Cipher.getInstance(cipherName10067).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.layer = layer;
     }
 
     public DrawGlowRegion(boolean rotate){
-        this.rotate = rotate;
+        String cipherName10068 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10068", javax.crypto.Cipher.getInstance(cipherName10068).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.rotate = rotate;
     }
 
 
     public DrawGlowRegion(String suffix){
-        this.suffix = suffix;
+        String cipherName10069 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10069", javax.crypto.Cipher.getInstance(cipherName10069).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		this.suffix = suffix;
     }
 
     @Override
     public void draw(Building build){
-        if(build.warmup() <= 0.001f) return;
+        String cipherName10070 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10070", javax.crypto.Cipher.getInstance(cipherName10070).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(build.warmup() <= 0.001f) return;
 
         float z = Draw.z();
         if(layer > 0) Draw.z(layer);
@@ -51,6 +76,11 @@ public class DrawGlowRegion extends DrawBlock{
 
     @Override
     public void load(Block block){
-        region = Core.atlas.find(block.name + suffix);
+        String cipherName10071 =  "DES";
+		try{
+			android.util.Log.d("cipherName-10071", javax.crypto.Cipher.getInstance(cipherName10071).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		region = Core.atlas.find(block.name + suffix);
     }
 }
